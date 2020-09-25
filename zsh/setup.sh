@@ -7,6 +7,3 @@ cd fonts
 ./install.sh
 cd ..
 rm -rf fonts
-
-rm ~/.zshrc
-ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
