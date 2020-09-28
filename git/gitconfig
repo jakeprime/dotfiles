@@ -4,7 +4,7 @@
 #	user = Jake Prime
 	email = jake.prime@gmail.com
 	excludesfile = /Users/jake/.gitignore_global
-	editor = /usr/local/bin/vim
+	editor = vi
 [push]
 	default = simple
 [user]
