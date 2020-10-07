@@ -139,6 +139,14 @@
     "vg": {
       "name": "vickymg",
       "email": "vicky.gray@futurelearn.com"
+    },
+    "mm": {
+      "name": "matmoore",
+      "email": "mat.moore@futurelearn.com"
+    },
+    "hw": {
+      "name": "harriethw",
+      "email": "harriet.hw@futurelearn.com"
     }
   }
 }
