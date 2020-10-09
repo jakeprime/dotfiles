@@ -17,6 +17,7 @@ gbir() {
 
 # rails
 alias be="bundle exec"
+alias spring="bin/spring"
 
 # rusty bucket
 alias rb="cd /Users/jake/work/rusty-bucket/rails"
