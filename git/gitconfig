@@ -8,7 +8,7 @@
 [push]
 	default = simple
 [user]
-	name = Jake Prime
+	name = jakeprime
 	email = jake.prime@gmail.com
 [filter "lfs"]
 	required = true
