@@ -6,6 +6,7 @@ alias flrs="fl && be rails s"
 
 # git
 alias gadd="git add -N . && git add -p ."
+alias grim="git fetch && git rebase -i origin/master"
 gqrb() {
   git set-upstream
   git fetch origin "$@:$@" && git pull && git rebase "$@"
