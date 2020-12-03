@@ -4,6 +4,10 @@ alias kapow="fl && gup && fligo app refresh && be rails db:migrate && code ."
 alias fljs="fl && fligo app start"
 alias flrs="fl && be rails s"
 
+function vpn {
+  networksetup -connectpppoeservice "FutureLearn"
+}
+
 # git
 alias gadd="git add -N . && git add -p ."
 alias grim="git fetch && git rebase -i origin/master"
