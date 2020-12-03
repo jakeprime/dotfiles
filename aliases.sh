@@ -11,6 +11,8 @@ function vpn {
 # git
 alias gadd="git add -N . && git add -p ."
 alias grim="git fetch && git rebase -i origin/master"
+alias grc="git rebase --continue"
+alias gra="git rebase --abort"
 gqrb() {
   git set-upstream
   git fetch origin "$@:$@" && git pull && git rebase "$@"
@@ -22,6 +24,7 @@ gbir() {
 
 # rails
 alias be="bundle exec"
+alias rdbm="rails db:migrate"
 alias spring="bin/spring"
 
 # rusty bucket
