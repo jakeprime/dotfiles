@@ -22,6 +22,9 @@ gbir() {
   git rebase -i --autosquash $(git merge-base --fork-point "$@" $(git rev-parse --abbrev-ref HEAD))
 }
 
+# prime translatrix
+alias pt="cd /Users/jake/work/primetranslatrix/primetranslatrix-3"
+
 # rails
 alias be="bundle exec"
 alias rdbm="rails db:migrate"
