@@ -147,6 +147,46 @@
     "hw": {
       "name": "harriethw",
       "email": "harriet.hw@futurelearn.com"
+    },
+    "al": {
+      "name": "torrocus",
+      "email": "aleksander.malaszkiewicz@futurelearn.com"
+    },
+    "gl": {
+      "name": "grzegorzlisowski",
+      "email": "grzegorz.lisowski@futurelearn.com"
+    },
+    "jj": {
+      "name": "hirokiraj",
+      "email": "jakub.jatczak@futurelearn.com"
+    },
+    "jk": {
+      "name": "foreverhungry",
+      "email": "joanna.kolonko@futurelearn.com"
+    },
+    "kp": {
+      "name": "sloneorzeszki",
+      "email": "krzysztof.pomykacz@futurelearn.com"
+    },
+    "ls": {
+      "name": "louiseswift",
+      "email": "louise.swift@futurelearn.com"
+    },
+    "maxs": {
+      "name": "maxshelley",
+      "email": "max.shelley@futurelearn.com"
+    },
+    "mb": {
+      "name": "mc-bro",
+      "email": "maciej.brodecki@futurelearn.com"
+    },
+    "sean": {
+      "name": "toypadlock",
+      "email": "sean.clothier@futurelearn.com"
+    },
+    "tw": {
+      "name": "tomwinter",
+      "email": "tom.winter@futurelearn.com"
     }
   }
 }
