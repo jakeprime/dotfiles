@@ -5,7 +5,10 @@ alias fljs="fl && fligo app start"
 alias flrs="fl && be rails s"
 
 function vpn {
-  networksetup -connectpppoeservice "FutureLearn"
+  echo 'Application("Tunnelblick").connect("futurelearn")' | osascript -l JavaScript
+}
+function vpn-off {
+  echo 'Application("Tunnelblick").disconnect("futurelearn")' | osascript -l JavaScript
 }
 
 # git
