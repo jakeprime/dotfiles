@@ -35,3 +35,6 @@ alias spring="bin/spring"
 
 # rusty bucket
 alias rb="cd /Users/jake/work/rusty-bucket/rails"
+
+# vscode
+alias own-code="sudo chown -R $(whoami) /Applications/Visual\ Studio\ Code.app"
