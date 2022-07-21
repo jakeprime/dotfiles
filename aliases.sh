@@ -1,6 +1,6 @@
 # futurelearn
 alias fl="cd /Users/jake/work/futurelearn/futurelearn"
-alias kapow="fl && gup && fligo app refresh && be rails db:migrate && code ."
+alias kapow="ssh-add --apple-use-keychain ~/.ssh/futurelearn_rsa && fl && gup && fligo app refresh && be rails db:migrate && code ."
 alias fljs="fl && fligo app start"
 alias flrs="fl && be rails s"
 
