@@ -33,6 +33,8 @@ alias pt="cd /Users/jake/work/primetranslatrix/primetranslatrix-3"
 alias be="bundle exec"
 alias rdbm="rails db:migrate"
 alias spring="bin/spring"
+alias rs="bundle exec rails server"
+alias rc="bundle exec rails console"
 
 # rusty bucket
 alias rb="cd /Users/jake/work/rusty-bucket/rails"
