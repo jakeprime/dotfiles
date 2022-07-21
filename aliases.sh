@@ -16,6 +16,7 @@ alias gadd="git add -N . && git add -p ."
 alias grim="git fetch && git rebase -i origin/master"
 alias grc="git rebase --continue"
 alias gra="git rebase --abort"
+alias gci="git rebase --keep-empty -i master -x \"git push --force-with-lease\""
 gqrb() {
   git set-upstream
   git fetch origin "$@:$@" && git pull && git rebase "$@"
