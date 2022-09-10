@@ -33,3 +33,5 @@
 	autosquash = true
 [commit]
 	verbose = true
+[merge]
+	conflictstyle = diff3
