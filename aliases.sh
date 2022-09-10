@@ -6,9 +6,14 @@ alias flrs="fl && be rails s"
 
 function vpn {
   echo 'Application("Tunnelblick").connect("futurelearn")' | osascript -l JavaScript
+  notify
 }
 function vpn-off {
   echo 'Application("Tunnelblick").disconnect("futurelearn")' | osascript -l JavaScript
+}
+
+notify() {
+  (sleep 1200 && osascript -e 'display notification "Is the VPN still on?"') &
 }
 
 # git
