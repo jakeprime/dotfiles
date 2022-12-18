@@ -1,20 +1,4 @@
-# futurelearn
-alias fl="cd /Users/jake/work/futurelearn/futurelearn"
-alias kapow="ssh-add --apple-use-keychain ~/.ssh/futurelearn_rsa && fl && gup && brew services stop mysql@5.7 && fligo app services start && fligo app refresh && be rails db:migrate && code ."
-alias fljs="fl && fligo app start"
-alias flrs="fl && be rails s"
-
-function vpn {
-  echo 'Application("Tunnelblick").connect("futurelearn")' | osascript -l JavaScript
-  notify
-}
-function vpn-off {
-  echo 'Application("Tunnelblick").disconnect("futurelearn")' | osascript -l JavaScript
-}
-
-notify() {
-  (sleep 1200 && osascript -e 'display notification "Is the VPN still on?"') &
-}
+alias kapow="ssh-add --apple-use-keychain ~/.ssh/id_ed25519"
 
 # git
 alias gadd="git add -N . && git add -p ."
@@ -36,7 +20,7 @@ alias pt="cd /Users/jake/work/primetranslatrix/primetranslatrix-3"
 
 # rails
 alias be="bundle exec"
-alias rdbm="rails db:migrate"
+alias rdbm="bundle exec rails db:migrate"
 alias spring="bin/spring"
 alias rs="bundle exec rails server"
 alias rc="bundle exec rails console"

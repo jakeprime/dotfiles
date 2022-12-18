@@ -1,5 +1,3 @@
-source ~/.dotfiles/secrets.sh
-
 source ~/.dotfiles/aliases.sh
 source ~/.dotfiles/env.sh
 source ~/.dotfiles/goenv.sh
