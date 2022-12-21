@@ -1,4 +1,5 @@
 source ~/.dotfiles/aliases.sh
+source ~/.dotfiles/aws.sh
 source ~/.dotfiles/env.sh
 source ~/.dotfiles/goenv.sh
 source ~/.dotfiles/key-bindings.sh
