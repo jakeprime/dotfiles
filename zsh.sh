@@ -5,3 +5,5 @@ ZSH_THEME="agnoster"
 plugins=(git extract brew sudo macos zsh-autosuggestions zsh-z)
 
 source $ZSH/oh-my-zsh.sh
+
+prompt_context(){}
