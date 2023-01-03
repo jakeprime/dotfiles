@@ -9,7 +9,7 @@
 	default = simple
 [user]
 	name = jakeprime
-	email = jake.prime@gmail.com
+	email = jake@jakeprime.com
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
