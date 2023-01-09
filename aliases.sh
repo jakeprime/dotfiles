@@ -1,4 +1,7 @@
-alias kapow="ssh-add --apple-use-keychain ~/.ssh/id_ed25519"
+alias kapow="ssh-add --apple-use-keychain ~/.ssh/id_ed25519 && cl && code ."
+
+# cleo
+alias cl="cd /Users/jake/work/cleo/meetcleo"
 
 # git
 alias gadd="git add -N . && git add -p ."
