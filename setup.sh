@@ -7,3 +7,5 @@
 ~/.dotfiles/zsh/setup.sh
 
 git clone https://github.com/syndbg/goenv.git ~/.goenv
+
+echo 'AddKeysToAgent yes' >> ~/.ssh/config
