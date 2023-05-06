@@ -570,6 +570,7 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (use-package shades-of-purple-theme
     :config (load-theme 'shades-of-purple t))
+  (defalias 'forward-evil-word 'forward-evil-symbol)
 )
 
 
