@@ -32,7 +32,9 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
+   '(react
+     ruby
+     markdown
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -41,15 +43,17 @@ This function should only modify configuration layer settings."
      ;; auto-completion
      ;; better-defaults
      emacs-lisp
-     ;; git
+     (git :variables
+          git-enable-magit-delta-plugin t)
      helm
      ;; lsp
-     ;; markdown
+     markdown
      multiple-cursors
      ;; org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
+     (shell :variables
+            shell-default-height 30
+            shell-default-position 'bottom
+            shell-default-shell 'vterm)
      ;; spell-checking
      ;; syntax-checking
      ;; version-control
@@ -551,6 +555,7 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
+  (setq-default git-magit-status-fullscreen t)
 )
 
 
@@ -570,6 +575,13 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (use-package shades-of-purple-theme
     :config (load-theme 'shades-of-purple t))
+
+  (setq magit-repository-directories
+    '(("~/work/" . 2)))
+
+  (require 'git-commit)
+  (global-git-commit-mode t)
+
   (defalias 'forward-evil-word 'forward-evil-symbol)
 )
 
@@ -588,4 +600,13 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(evil-escape-key-sequence [106 107])
  '(ns-right-alternate-modifier 'none)
+ '(package-selected-packages
+   '(emmet-mode import-js grizzl js-doc rjsx-mode js2-mode tern web-beautify yasnippet el-get exec-path-from-shell magit-delta add-node-modules-path bundler chruby counsel-gtags counsel swiper ivy dap-mode lsp-docker lsp-treemacs bui lsp-mode enh-ruby-mode ggtags minitest prettier-js rake rbenv robe inf-ruby rspec-mode rubocop rubocopfmt ruby-hash-syntax ruby-refactor ruby-test-mode ruby-tools rvm seeing-is-believing forge yaml ghub closql emacsql treepy git-link git-messenger git-modes git-timemachine gitignore-templates helm-git-grep helm-ls-git smeargle treemacs-magit magit magit-section git-commit with-editor transient esh-help eshell-prompt-extras eshell-z multi-term multi-vterm shell-pop terminal-here vterm xterm-color company-emoji company emoji-cheat-sheet-plus gh-md markdown-toc markdown-mode mmm-mode valign vmd-mode writeroom-mode evil-lion winum helm-themes google-translate paradox evil-cleverparens evil-iedit-state inspector helm-org elisp-def evil-evilified-state indent-guide auto-compile link-hint devdocs ace-jump-helm-line evil-easymotion org-superstar evil-textobj-line pcre2el flycheck-elsa evil-visual-mark-mode shades-of-purple-theme hide-comnt aggressive-indent which-key volatile-highlights elisp-slime-nav symon nameless highlight-numbers macrostep clean-aindent-mode diminish highlight-parentheses drag-stuff hl-todo string-inflection all-the-icons vim-powerline vi-tilde-fringe expand-region helm-make uuidgen evil-collection evil-anzu request treemacs-projectile info+ emr lorem-ipsum fancy-battery flx-ido helm-mode-manager helm-projectile help-fns+ hybrid-mode dumb-jump evil-surround evil-lisp-state eval-sexp-fu undo-tree evil-matchit golden-ratio auto-highlight-symbol treemacs-persp editorconfig spacemacs-purpose-popwin evil-visualstar evil-mc helm-purpose dotenv-mode ace-link treemacs-evil toc-org helm-ag evil-unimpaired restart-emacs evil-goggles highlight-indentation evil-numbers treemacs-icons-dired evil-tutor evil-exchange helm-descbinds evil-args hungry-delete space-doc ws-butler evil-escape flycheck-package spacemacs-whitespace-cleanup column-enforce-mode quickrun multi-line open-junk-file rainbow-delimiters define-word spaceline overseer helm-xref centered-cursor-mode evil-indent-plus helm-swoop symbol-overlay evil-nerd-commenter term-cursor password-generator string-edit-at-point dired-quick-sort popwin eyebrowse holy-mode)))
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
 )
