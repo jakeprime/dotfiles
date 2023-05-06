@@ -64,7 +64,7 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages '(shades-of-purple-theme)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -256,8 +256,8 @@ It should only modify the values of Spacemacs settings."
    ;; Default font or prioritized list of fonts. The `:size' can be specified as
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
-   dotspacemacs-default-font '("Source Code Pro"
-                               :size 10.0
+   dotspacemacs-default-font '("Cascadia Code"
+                               :size 14.0
                                :weight normal
                                :width normal)
 
@@ -568,6 +568,8 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+  (use-package shades-of-purple-theme
+    :config (load-theme 'shades-of-purple t))
 )
 
 
