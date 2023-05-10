@@ -5,10 +5,11 @@
 	email = jake.prime@gmail.com
 	excludesfile = /Users/jake/.gitignore_global
 	editor = vi
+  pager = delta
 [push]
 	default = simple
 [user]
-	name = jakeprime
+	name = Jake Prime
 	email = jake@jakeprime.com
 [filter "lfs"]
 	required = true
@@ -31,5 +32,15 @@
 	autosquash = true
 [commit]
 	verbose = true
+	template = /Users/jake/.gitmessage
 [merge]
 	conflictstyle = diff3
+[github]
+	user = jakeprime
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true
+  light = false
+[diff]
+  colorMoved = default
