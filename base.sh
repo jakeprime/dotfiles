@@ -8,3 +8,6 @@ source ~/.dotfiles/python.sh
 source ~/.dotfiles/ruby.sh
 source ~/.dotfiles/scripts.sh
 source ~/.dotfiles/zsh.sh
+
+export PATH="/Applications/Emacs.app/Contents/MacOS:$PATH"
+export PATH="/Users/jake/.config/emacs/bin:$PATH"
