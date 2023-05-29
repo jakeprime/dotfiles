@@ -74,7 +74,6 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(shades-of-purple-theme)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -561,8 +560,8 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-  (set-face-attribute 'default nil :shadow nil)
   (setq-default git-magit-status-fullscreen t)
+  (add-to-list 'custom-theme-load-path "~/.spacemacs.d/")
 )
 
 
@@ -580,8 +579,14 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  (use-package shades-of-purple-theme
-    :config (load-theme 'shades-of-purple t))
+  (load-theme 'jakewave t)
+  (set-face-attribute 'font-lock-keyword-face nil :shadow '(10.0 "#fc199a" 0 . 0))
+  (set-face-attribute 'font-lock-function-name-face nil :shadow '(10.0 "#d1b539" 0 . 0))
+  (set-face-attribute 'font-lock-type-face nil :shadow '(10.0 "#fad000" 0 . 0))
+  (set-face-attribute 'font-lock-string-face nil :shadow '(10.0 "#a5ff90" 0 . 0))
+  (set-face-attribute 'font-lock-comment-face nil :shadow '(5.0 "#574497" 0 . 0))
+
+
 
   (setq magit-repository-directories
     '(("~/work/" . 2)))
@@ -617,6 +622,8 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   '("32317010074f030fb201c1fc290c032f11537fd4c83ca781b701677df4839136" "3eb4e22ad16897534eca6968ee9c88fbcb983875310e474ef6c0b7579cadfc07" "67a321541a565ebb0edfb00d0ee3f88f7e3c256e9e17c8f68e57d8c210400a0f" default))
  '(evil-escape-key-sequence [106 107])
  '(ns-right-alternate-modifier 'none)
  '(package-selected-packages
