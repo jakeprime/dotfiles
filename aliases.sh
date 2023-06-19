@@ -29,7 +29,7 @@ alias rs="bundle exec rails server"
 alias rc="bundle exec rails console"
 
 # rusty bucket
-alias rb="cd /Users/jake/work/rusty-bucket/rails"
+alias rb="cd /Users/jake/work/rusty-bucket/rusty-bucket"
 
 # vscode
 alias own-code="sudo chown -R $(whoami) /Applications/Visual\ Studio\ Code.app"
