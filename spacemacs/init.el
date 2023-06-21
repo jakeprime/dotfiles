@@ -609,6 +609,10 @@ before packages are loaded."
                     ,(rx (or "}" "]" "end"))                       ; Block end
                     ,(rx (or "#" "=begin"))                        ; Comment start
                     ruby-forward-sexp nil)))
+  (add-hook 'ruby-mode-hook
+            (lambda ()
+              (setq-local flycheck-command-wrapper-function
+                          (lambda (command) (append '("bundle" "exec") command)))))
 )
 
 
