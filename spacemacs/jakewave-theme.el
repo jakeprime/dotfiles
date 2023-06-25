@@ -4,6 +4,7 @@
 (custom-theme-set-faces
  'jakewave
  '(ansi-color-bright-red ((t (:foreground "#fc199a" :background "#fc199a"))))
+ '(ansi-color-green ((t (:foreground "#A5FF90" :background "#A5FF90"))))
  '(ansi-color-red ((t (:foreground "#fc199a" :background "#fc199a"))))
  '(button ((t (:inherit (link)))))
  '(compilation-mode-line-fail ((t (:foreground "#fc199a"))))
