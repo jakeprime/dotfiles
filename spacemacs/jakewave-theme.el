@@ -44,7 +44,7 @@
  '(isearch ((t (:foreground "#2D2B55" :background "#FF7300"))))
  '(isearch-fail ((((class color) (min-colors 88) (background light)) (:background "RosyBrown1")) (((class color) (min-colors 88) (background dark)) (:background "red4")) (((class color) (min-colors 16)) (:background "red")) (((class color) (min-colors 8)) (:background "red")) (((class color grayscale)) (:foreground "grey")) (t (:inverse-video t))))
  '(lazy-highlight ((t (:weight normal :background "#FFFF03" :inherit (isearch)))))
- '(line-number ((t (:background "#1D0432" :foreground "#520C8B"))))
+ '(line-number ((t (:background "#1D0432" :foreground "#4A1E64"))))
  '(line-number-current-line ((t (:background "#1D0432" :foreground "#7912CE"))))
  '(link ((t (:underline (:color foreground-color :style line :position nil) :foreground "#9EFFFF"))))
  '(link-visited ((t (:underline (:color foreground-color :style line :position nil) :foreground "#c56ec3"))))

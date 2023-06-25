@@ -586,7 +586,8 @@ before packages are loaded."
   (set-face-attribute 'font-lock-type-face nil :shadow '(10.0 "#fad000" 0 . 0))
   (set-face-attribute 'font-lock-string-face nil :shadow '(10.0 "#a5ff90" 0 . 0))
   (set-face-attribute 'font-lock-comment-face nil :shadow '(5.0 "#574497" 0 . 0))
-  (set-face-attribute 'line-number-current-line nil :shadow '(10.0 "#7912CE" 0 . 0))
+  (set-face-attribute 'line-number nil :shadow '(10.0 "#4A1E64" 0 . 0))
+  (set-face-attribute 'line-number-current-line nil :shadow '(10.0 "#7912ce" 0 . 0))
   (set-face-attribute 'rainbow-delimiters-depth-1-face nil :shadow '(10.0 "#c773cd" 0 . 0))
   (set-face-attribute 'rainbow-delimiters-depth-2-face nil :shadow '(10.0 "#fc199a" 0 . 0))
   (set-face-attribute 'rainbow-delimiters-depth-3-face nil :shadow '(10.0 "#ffcc00" 0 . 0))
@@ -596,8 +597,6 @@ before packages are loaded."
   (set-face-attribute 'rainbow-delimiters-depth-7-face nil :shadow '(10.0 "#ffcc00" 0 . 0))
   (set-face-attribute 'rainbow-delimiters-depth-8-face nil :shadow '(10.0 "#61e2ff" 0 . 0))
   (set-face-attribute 'rainbow-delimiters-depth-9-face nil :shadow '(10.0 "#c773cd" 0 . 0))
-
-
 
   (require 'gptel)
 
