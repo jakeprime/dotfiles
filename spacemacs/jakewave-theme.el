@@ -3,10 +3,14 @@
 
 (custom-theme-set-faces
  'jakewave
+ '(ansi-color-bright-red ((t (:foreground "#fc199a" :background "#fc199a"))))
+ '(ansi-color-red ((t (:foreground "#fc199a" :background "#fc199a"))))
  '(button ((t (:inherit (link)))))
+ '(compilation-mode-line-fail ((t (:foreground "#fc199a"))))
  '(cursor ((t (:background "#fc199a"))))
  '(default ((t (:inherit nil :stipple nil :background "#200933" :foreground "#61e2ff" :inverse-video nil :box nil :strike-through nil :extend nil :overline nil :underline nil :shadow nil :slant normal :weight regular :width normal :foundry "nil"))))
  '(diff-added ((t (:foreground "#A5FF90"))))
+ '(error ((t (:foreground "#fc199a"))))
  '(escape-glyph ((t (:foreground "#9EFFFF"))))
  '(font-lock-bracket-face ((t (:inherit (font-lock-punctuation-face)))))
  '(font-lock-builtin-face ((t (:foreground "#FAD000"))))
