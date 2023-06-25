@@ -1,6 +1,7 @@
 export ZSH="/Users/jake/.oh-my-zsh"
 
 ZSH_THEME="agnoster"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
 
 plugins=(git extract brew sudo macos zsh-autosuggestions zsh-z)
 
