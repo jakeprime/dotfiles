@@ -35,6 +35,7 @@ This function should only modify configuration layer settings."
    '(
      (colors :variables
              colors-enable-nyan-cat-progress-bar t)
+     csv
      emacs-lisp
      (git :variables
           git-enable-magit-delta-plugin t)
