@@ -83,6 +83,8 @@
  '(vterm-color-green ((t (:foreground "#A5FF90" :background "#A5FF90"))))
  '(vterm-color-red ((t (:foreground "#fc199a" :background "#fc199a"))))
  '(vterm-color-yellow ((t (:foreground "#E79D0F" :background "#E79D0F"))))
+ '(web-mode-javascript-string-face ((t (:inherit (default) :foreground "#A5FF90"))))
+ '(web-mode-keyword-face ((t (:inherit bold :foreground "#fc199a" :slant normal))))
 )
 
 (provide-theme 'jakewave)
