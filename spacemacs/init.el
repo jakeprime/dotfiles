@@ -46,6 +46,7 @@ This function should only modify configuration layer settings."
                  javascript-backend 'tide
                  )
      json
+     lsp
      markdown
      multiple-cursors
      react
@@ -67,7 +68,6 @@ This function should only modify configuration layer settings."
      version-control
      yaml
      ;; better-defaults
-     ;; lsp
      ;; org
      ;; spell-checking
      )
