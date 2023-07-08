@@ -43,7 +43,6 @@ This function should only modify configuration layer settings."
      html
      json
      markdown
-     markdown
      multiple-cursors
      react
      (ruby :variables
