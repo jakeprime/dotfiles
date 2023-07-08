@@ -42,6 +42,9 @@ This function should only modify configuration layer settings."
           git-enable-magit-delta-plugin t)
      helm
      html
+     (javascript :variables
+                 javascript-backend 'tide
+                 )
      json
      markdown
      multiple-cursors
@@ -56,8 +59,11 @@ This function should only modify configuration layer settings."
             shell-default-position 'bottom
             shell-default-shell 'vterm)
      syntax-checking
+     tide
      treemacs
-     typescript
+     (typescript :variables
+                 typescript-backend 'tide
+                 )
      version-control
      yaml
      ;; better-defaults
@@ -82,7 +88,7 @@ This function should only modify configuration layer settings."
    ;; A list of packages that will not be installed and loaded.
    dotspacemacs-excluded-packages '()
 
-   dotspacemacs-additional-packages '(gptel tide)
+   dotspacemacs-additional-packages '(gptel)
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
