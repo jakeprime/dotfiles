@@ -602,7 +602,6 @@ before packages are loaded."
   (set-face-attribute 'rainbow-delimiters-depth-7-face nil :shadow '(10.0 "#ffcc00" 0 . 0))
   (set-face-attribute 'rainbow-delimiters-depth-8-face nil :shadow '(10.0 "#61e2ff" 0 . 0))
   (set-face-attribute 'rainbow-delimiters-depth-9-face nil :shadow '(10.0 "#c773cd" 0 . 0))
-  (set-face-attribute 'web-mode-javascript-string-face nil :shadow '(10.0 "#a5ff90" 0 . 0))
 
   (require 'gptel)
 
