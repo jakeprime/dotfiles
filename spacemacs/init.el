@@ -33,6 +33,7 @@ This function should only modify configuration layer settings."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     auto-completion
      (colors :variables
              colors-enable-nyan-cat-progress-bar t)
      csv
@@ -59,7 +60,6 @@ This function should only modify configuration layer settings."
      typescript
      version-control
      yaml
-     ;; auto-completion
      ;; better-defaults
      ;; lsp
      ;; org
