@@ -74,6 +74,7 @@
  '(region ((t (:extend t :foreground "#FFEE80" :background "#99589E"))))
  '(secondary-selection ((t (:extend t :background "#100a14"))))
  '(shadow ((t (:foreground "#494685"))))
+ '(tide-hl-identifier-face ((t (:foreground nil :background "#371057"))))
  '(tooltip ((t (:weight normal :slant normal :underline nil :foreground "#b2b2b2" :background "#5e5079"))))
  '(trailing-whitespace ((t (:background "#2aa1ae"))))
  '(variable-pitch ((((type w32)) (:foundry "outline" :family "Arial")) (t (:family "Sans Serif"))))
