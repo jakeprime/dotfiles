@@ -44,12 +44,15 @@ This function should only modify configuration layer settings."
      helm
      html
      (javascript :variables
-                 javascript-backend 'tide
+                 javascript-backend 'lsp
+                 javascript-fmt-on-save t
+                 javascript-fmt-tool 'prettier
                  )
      json
      lsp
      markdown
      multiple-cursors
+     prettier
      react
      (ruby :variables
            ruby-version-manager 'rbenv
@@ -64,7 +67,10 @@ This function should only modify configuration layer settings."
      tide
      treemacs
      (typescript :variables
-                 typescript-backend 'tide
+                 typescript-backend 'lsp
+                 typescript-fmt-on-save t
+                 typescript-fmt-tool 'prettier
+                 typescript-linter 'eslint
                  )
      version-control
      yaml
