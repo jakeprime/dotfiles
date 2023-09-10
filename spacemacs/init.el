@@ -642,6 +642,11 @@ before packages are loaded."
             (lambda ()
               (setq-local flycheck-command-wrapper-function
                           (lambda (command) (append '("bundle" "exec") command)))))
+  (add-hook 'haml-mode-hook
+            (lambda ()
+              (setq-local flycheck-command-wrapper-function
+                          (lambda (command) (append '("bundle" "exec") command)))))
+
   (with-eval-after-load 'company
     ;; disable inline previews
     (delq 'company-preview-if-just-one-frontend company-frontends))
