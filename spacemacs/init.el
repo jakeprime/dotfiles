@@ -646,6 +646,7 @@ before packages are loaded."
             (lambda ()
               (setq-local flycheck-command-wrapper-function
                           (lambda (command) (append '("bundle" "exec") command)))))
+   
 
   (with-eval-after-load 'company
     ;; disable inline previews
@@ -664,7 +665,12 @@ before packages are loaded."
       (setq lsp-diagnostics-provider :none)))
 
   (add-hook 'lsp-mode-hook 'disable-lsp-for-ruby)
-)
+
+
+  (add-hook 'inf-ruby-mode-hook
+            (lambda() (let ((p "\\|\\(^\\[cleo\\]\\[development\\] main:[0-9]+> *\\)"))
+                        (setq inf-ruby-first-prompt-pattern (concat inf-ruby-first-prompt-pattern p))
+                        (setq inf-ruby-prompt-pattern (concat inf-ruby-prompt-pattern p))))))
 
 
 ;; Do not write anything past this comment. This is where Emacs will
