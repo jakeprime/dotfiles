@@ -56,7 +56,7 @@ This function should only modify configuration layer settings."
      react
      (ruby :variables
            ruby-version-manager 'rbenv
-           ruby-test-runner 'minitest
+           ;; ruby-test-runner 'minitest
            )
      ruby-on-rails
      (shell :variables
