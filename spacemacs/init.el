@@ -648,7 +648,7 @@ before packages are loaded."
             (lambda ()
               (setq-local flycheck-command-wrapper-function
                           (lambda (command) (append '("bundle" "exec") command)))))
-   
+
 
   (with-eval-after-load 'company
     ;; disable inline previews
@@ -673,6 +673,13 @@ before packages are loaded."
             (lambda() (let ((p "\\|\\(^\\[cleo\\]\\[development\\] main:[0-9]+> *\\)"))
                         (setq inf-ruby-first-prompt-pattern (concat inf-ruby-first-prompt-pattern p))
                         (setq inf-ruby-prompt-pattern (concat inf-ruby-prompt-pattern p))))))
+
+  (defun my-remove-trailing-whitespace ()
+    "Remove trailing whitespace on save, only in non-special buffers."
+    (when (not (string-match-p "^\*.*\*$" (buffer-name)))
+      (delete-trailing-whitespace)))
+
+  (add-hook 'before-save-hook 'my-remove-trailing-whitespace)
 
   (defun my-org-mode-hook ()
     (org-indent-mode)
