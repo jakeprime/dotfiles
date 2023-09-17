@@ -674,6 +674,8 @@ before packages are loaded."
                         (setq inf-ruby-first-prompt-pattern (concat inf-ruby-first-prompt-pattern p))
                         (setq inf-ruby-prompt-pattern (concat inf-ruby-prompt-pattern p))))))
 
+  (setq insert-directory-program "gls")
+
   (defun my-remove-trailing-whitespace ()
     "Remove trailing whitespace on save, only in non-special buffers."
     (when (not (string-match-p "^\*.*\*$" (buffer-name)))
