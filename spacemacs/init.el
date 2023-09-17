@@ -52,6 +52,9 @@ This function should only modify configuration layer settings."
      lsp
      markdown
      multiple-cursors
+     (org :variables
+          org-ellipsis " ▾"
+          org-hide-emphasis-markers t)
      prettier
      react
      (ruby :variables
@@ -74,7 +77,6 @@ This function should only modify configuration layer settings."
                  )
      version-control
      yaml
-     ;; org
      ;; spell-checking
      )
 
@@ -672,6 +674,14 @@ before packages are loaded."
                         (setq inf-ruby-first-prompt-pattern (concat inf-ruby-first-prompt-pattern p))
                         (setq inf-ruby-prompt-pattern (concat inf-ruby-prompt-pattern p))))))
 
+  (defun my-org-mode-hook ()
+    (org-indent-mode)
+    (variable-pitch-mode 1)
+    (auto-fill-mode 0)
+    (visual-line-mode 1)
+    (setq evil-auto-indent nil))
+
+  (add-hook 'org-mode-hook 'my-org-mode-hook)
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
