@@ -53,8 +53,13 @@ This function should only modify configuration layer settings."
      markdown
      multiple-cursors
      (org :variables
+          org-agenda-files '("~/org/Tasks.org")
+          org-archive-location "~/org/Archive.org::datetree/"
           org-ellipsis " ▾"
-          org-hide-emphasis-markers t)
+          org-hide-emphasis-markers t
+          org-log-done 'time
+          org-log-into-drawer t
+          )
      prettier
      react
      (ruby :variables
@@ -697,7 +702,7 @@ before packages are loaded."
 
   (add-hook 'org-mode-hook 'my-org-mode-hook)
 
-  (setq org-superstar-headline-bullets-list '(""))
+  (setq org-superstar-headline-bullets-list '(" " "●" "○" "◦" "•" "◦" "•"))
   (setq org-superstar-item-bullet-alist
         '((?+ . ?•)
           (?* . ?•)

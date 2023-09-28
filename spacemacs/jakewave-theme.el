@@ -78,6 +78,7 @@
   `(org-block ((t (:inherit (fixed-pitch) :background ,jake-purple-dark))))
   `(org-block-begin-line ((t (:inherit (fixed-pitch) :foreground ,jake-purple-subtle :background ,jake-purple-dark))))
   `(org-block-end-line ((t (:inherit (fixed-pitch) :foreground ,jake-purple-subtle :background ,jake-purple-dark))))
+  `(org-code ((t (:inherit (fixed-pitch) :background ,jake-purple-dark :foreground ,jake-pink))))
   `(org-checkbox-statistics-done ((t (:inherit (fixed-pitch) :foreground ,jake-green))))
   `(org-checkbox-statistics-todo ((t (:inherit (fixed-pitch) :foreground ,jake-pink))))
   `(org-checkbox ((t (:inherit (fixed-pitch) :foreground ,jake-green))))
