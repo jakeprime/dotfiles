@@ -33,7 +33,6 @@ This function should only modify configuration layer settings."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     auto-completion
      better-defaults
      (colors :variables
              colors-enable-nyan-cat-progress-bar t)
@@ -87,6 +86,7 @@ This function should only modify configuration layer settings."
                  )
      version-control
      yaml
+     ;; auto-completion
      ;; spell-checking
      )
 
