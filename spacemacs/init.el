@@ -741,6 +741,7 @@ This function is called at the very end of Spacemacs initialization."
  '(doom-modeline-mu4e t)
  '(doom-modeline-time nil)
  '(evil-escape-key-sequence [106 107])
+ '(gptel-default-mode 'org-mode)
  '(gptel-model "gpt-4")
  '(ns-right-alternate-modifier 'none)
  '(package-selected-packages
