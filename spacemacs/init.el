@@ -610,24 +610,29 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  (load-theme 'jakewave t)
-  (set-face-attribute 'default nil :family "Cascadia Code" :height 130)
-  (set-face-attribute 'font-lock-keyword-face nil :shadow '(10.0 "#fc199a" 0 . 0))
-  (set-face-attribute 'font-lock-function-name-face nil :shadow '(10.0 "#d1b539" 0 . 0))
-  (set-face-attribute 'font-lock-type-face nil :shadow '(10.0 "#fad000" 0 . 0))
-  (set-face-attribute 'font-lock-string-face nil :shadow '(10.0 "#a5ff90" 0 . 0))
-  (set-face-attribute 'font-lock-comment-face nil :shadow '(5.0 "#574497" 0 . 0))
-  (set-face-attribute 'line-number nil :shadow '(10.0 "#4A1E64" 0 . 0))
-  (set-face-attribute 'line-number-current-line nil :shadow '(10.0 "#7912ce" 0 . 0))
-  (set-face-attribute 'rainbow-delimiters-depth-1-face nil :shadow '(10.0 "#c773cd" 0 . 0))
-  (set-face-attribute 'rainbow-delimiters-depth-2-face nil :shadow '(10.0 "#fc199a" 0 . 0))
-  (set-face-attribute 'rainbow-delimiters-depth-3-face nil :shadow '(10.0 "#ffcc00" 0 . 0))
-  (set-face-attribute 'rainbow-delimiters-depth-4-face nil :shadow '(10.0 "#61e2ff" 0 . 0))
-  (set-face-attribute 'rainbow-delimiters-depth-5-face nil :shadow '(10.0 "#c773cd" 0 . 0))
-  (set-face-attribute 'rainbow-delimiters-depth-6-face nil :shadow '(10.0 "#fc199a" 0 . 0))
-  (set-face-attribute 'rainbow-delimiters-depth-7-face nil :shadow '(10.0 "#ffcc00" 0 . 0))
-  (set-face-attribute 'rainbow-delimiters-depth-8-face nil :shadow '(10.0 "#61e2ff" 0 . 0))
-  (set-face-attribute 'rainbow-delimiters-depth-9-face nil :shadow '(10.0 "#c773cd" 0 . 0))
+
+  (let ((jake-pink "#fc199a")
+        (jake-yellow "#d1b539")
+        (jake-dark "#200933")
+        (jake-green "#a5ff90")
+        (jake-cyan "#61e2ff")
+        (jake-purple-dark "#371057")
+        (jake-purple "#9963ff")
+        (jake-purple-subtle "#574497")
+        )
+
+
+    (load-theme 'jakewave t)
+    (set-face-attribute 'default nil :family "Cascadia Code" :height 130)
+    (set-face-attribute 'jake-cyan-glow nil :shadow `(10.0 ,jake-cyan 0 . 0))
+    (set-face-attribute 'jake-green-glow nil :shadow `(10.0 ,jake-green 0 . 0))
+    (set-face-attribute 'jake-pink-glow nil :shadow `(10.0 ,jake-pink 0 . 0))
+    (set-face-attribute 'jake-purple-glow nil :shadow `(10.0 ,jake-purple 0 . 0))
+    (set-face-attribute 'jake-purple-subtle-glow nil :shadow `(5.0 ,jake-purple-subtle 0 . 0))
+    (set-face-attribute 'jake-yellow-glow nil :shadow `(10.0 ,jake-yellow 0 . 0))
+    (set-face-attribute 'line-number nil :shadow '(10.0 "#4A1E64" 0 . 0))
+    (set-face-attribute 'line-number-current-line nil :shadow '(10.0 "#7912ce" 0 . 0))
+  )
 
   (require 'gptel)
 
