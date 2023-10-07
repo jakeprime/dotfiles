@@ -147,6 +147,8 @@
   `(region ((t (:extend t :foreground "#FFEE80" :background "#99589E"))))
   `(secondary-selection ((t (:extend t :background "#100a14"))))
   `(shadow ((t (:foreground "#494685"))))
+  `(show-paren-match ((t (:foreground unspecified))))
+  `(sp-show-pair-match-face ((t (:foreground unspecified))))
   `(tide-hl-identifier-face ((t (:foreground unspecified :background ,jake-purple-dark))))
   `(tooltip ((t (:weight normal :slant normal :underline nil :foreground "#b2b2b2" :background "#5e5079"))))
   `(trailing-whitespace ((t (:background "#2aa1ae"))))
