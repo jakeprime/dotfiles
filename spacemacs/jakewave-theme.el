@@ -11,6 +11,14 @@
       (jake-purple-subtle "#574497")
       )
 
+  (defface jake-no-glow `((t)) "jakewave non glowing face.")
+
+  (defface jake-cyan `((t (:foreground ,jake-cyan))) "jakewave non glowing cyan face.")
+  (defface jake-yellow `((t (:foreground ,jake-yellow))) "jakewave non glowing yellow face.")
+  (defface jake-green `((t (:foreground ,jake-green))) "jakewave non glowing green face.")
+  (defface jake-pink `((t (:foreground ,jake-pink))) "jakewave non glowing pink face.")
+  (defface jake-purple `((t (:foreground ,jake-purple))) "jakewave non glowing purple face.")
+  (defface jake-purple-subtle `((t (:foreground ,jake-purple-subtle))) "jakewave non glowing purple-subtle face.")
 
   (defface jake-cyan-glow `((t (:foreground ,jake-cyan))) "jakewave glowing cyan face.")
   (defface jake-yellow-glow `((t (:foreground ,jake-yellow))) "jakewave glowing yellow face.")
@@ -50,8 +58,13 @@
   `(doom-modeline-bar-inactive ((t (:background ,jake-purple-dark))))
   `(doom-modeline-buffer-file ((t (:inherit jake-green-glow :foreground unspecified))))
   `(doom-modeline-buffer-modified ((t (:inherit jake-pink-glow :foreground unspecified))))
+  `(doom-modeline-error ((t (:inherit jake-pink))))
+  `(doom-modeline-evil-insert-state ((t (:inherit jake-purple))))
+  `(doom-modeline-evil-motion-state ((t (:inherit jake-cyan))))
+  `(doom-modeline-evil-normal-state ((t (:inherit jake-green))))
   `(doom-modeline-info ((t (:inherit jake-green-glow :foreground unspecified))))
   `(doom-modeline-project-dir ((t (:inherit jake-purple-glow :foreground unspecified))))
+  `(doom-modeline-warning ((t (:inherit jake-yellow))))
   `(error ((t (:foreground ,jake-pink))))
   `(escape-glyph ((t (:foreground "#9EFFFF"))))
   `(fixed-pitch ((t (:family "Cascadia Code"))))
