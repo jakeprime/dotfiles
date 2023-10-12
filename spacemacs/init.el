@@ -624,7 +624,7 @@ before packages are loaded."
 
 
     (load-theme 'jakewave t)
-    (set-face-attribute 'default nil :family "Cascadia Code" :height 130)
+    (set-face-attribute 'default nil :family "Cascadia Code" :height 130 :weight 'light)
 
     (set-face-attribute 'jake-no-glow nil :shadow nil)
     (set-face-attribute 'jake-cyan nil :shadow nil)
