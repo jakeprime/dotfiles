@@ -78,6 +78,7 @@
   `(doom-modeline-warning ((t (:inherit jake-yellow))))
   `(error ((t (:foreground ,jake-pink))))
   `(escape-glyph ((t (:foreground "#9EFFFF"))))
+  `(evil-ex-lazy-highlight ((t (:inherit (jake-no-glow bold) :foreground ,jake-dark :background ,jake-green))))
   `(fixed-pitch ((t (:family ,jake-fixed))))
   `(font-lock-bracket-face ((t (:inherit font-lock-punctuation-face :foreground unspecified))))
   `(font-lock-builtin-face ((t (:foreground ,jake-yellow))))
