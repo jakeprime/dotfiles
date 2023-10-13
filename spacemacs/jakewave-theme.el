@@ -50,6 +50,8 @@
   `(dired-directory ((t (:inherit (font-lock-constant-face) :foreground unspecified :background unspecified))))
   `(diredfl-compressed-file-suffix ((t (:inherit jake-green-glow))))
   `(diredfl-date-time ((t (:inherit jake-purple-glow))))
+  `(diredfl-deletion ((t (:inherit (jake-pink-glow bold) :foreground unspecified :background unspecified))))
+  `(diredfl-deletion-file-name ((t (:inherit jake-purple-subtle-glow :foreground unspecified))))
   `(diredfl-dir-heading ((t (:inherit jake-pink-glow))))
   `(diredfl-dir-name ((t (:inherit jake-pink-glow))))
   `(diredfl-dir-priv ((t (:inherit jake-yellow-glow))))
