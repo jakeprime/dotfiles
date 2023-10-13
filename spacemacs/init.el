@@ -717,8 +717,8 @@ before packages are loaded."
     (delq 'company-preview-if-just-one-frontend company-frontends))
 
   (with-eval-after-load 'copilot
-    (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
-    (define-key copilot-completion-map (kbd "C-<tab>") 'copilot-accept-completion-by-word))
+    (define-key copilot-completion-map (kbd "C-<tab>") 'copilot-accept-completion)
+    (define-key copilot-completion-map (kbd "M-<tab>") 'copilot-accept-completion-by-word))
 
   (add-hook 'prog-mode-hook 'copilot-mode)
 
