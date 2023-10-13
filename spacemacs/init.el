@@ -103,7 +103,9 @@ This function should only modify configuration layer settings."
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(
+                                    treemacs-icons-dired
+                                    )
 
    dotspacemacs-additional-packages
    '(
