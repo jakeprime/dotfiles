@@ -773,6 +773,8 @@ before packages are loaded."
 
   (add-hook 'dired-mode-hook 'diredfl-mode)
 
+  (remove-hook 'org-mode-hook 'org-eldoc-load)
+
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (defun dotspacemacs/emacs-custom-settings ()
