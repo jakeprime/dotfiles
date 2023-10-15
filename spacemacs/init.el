@@ -779,6 +779,11 @@ before packages are loaded."
 
   (add-hook 'dired-mode-hook 'diredfl-mode)
 
+  (setq org-capture-templates
+        '(("j" "Journal"
+            entry (file+datetree "~/Org/Journal/2023-10.org")
+            "* %?\n%i\n%a")))
+
   (remove-hook 'org-mode-hook 'org-eldoc-load)
 
   (setq grep-program "/opt/homebrew/bin/ggrep")
