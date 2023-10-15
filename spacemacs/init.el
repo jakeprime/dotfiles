@@ -771,6 +771,12 @@ before packages are loaded."
         smtpmail-smtp-service 587
         smtpmail-debug-info t)
 
+  (setq mu4e-maildir-shortcuts
+         '(("/gmail/Inbox" . ?i)))
+  (setq mu4e-alert-interesting-mail-query
+        "flag:unread AND maildir:/gmail/Inbox")
+  (add-hook 'mu4e-index-updated-hook #'mu4e-alert-enable-mode-line-display)
+
   (add-hook 'dired-mode-hook 'diredfl-mode)
 
   (remove-hook 'org-mode-hook 'org-eldoc-load)
