@@ -781,6 +781,8 @@ before packages are loaded."
 
   (remove-hook 'org-mode-hook 'org-eldoc-load)
 
+  (setq grep-program "/opt/homebrew/bin/ggrep")
+
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
 (defun dotspacemacs/emacs-custom-settings ()
