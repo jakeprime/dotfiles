@@ -42,5 +42,6 @@
 [delta]
   navigate = true
   light = false
+  max-line-length = 0
 [diff]
   colorMoved = default
