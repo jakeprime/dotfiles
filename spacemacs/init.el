@@ -772,10 +772,39 @@ before packages are loaded."
         smtpmail-smtp-service 587
         smtpmail-debug-info t)
 
+  (with-eval-after-load 'mu4e
+    (setq mu4e-contexts
+          (list
+           (make-mu4e-context
+            :name "Cleo"
+            :match-func
+            (lambda (msg)
+              (when msg
+                (string-prefix-p "/cleo" (mu4e-message-field msg :maildir))))
+            :vars '((user-mail-address . "jake@meetcleo.com")
+                    (user-full-name . "Jake Prime")
+                    (mu4e-refile-folder . "/cleo/[Gmail]/All Mail")
+                    (mu4e-sent-folder . "/cleo/[Gmail]/Sent Mail")
+                    (mu4e-drafts-folder . "/cleo/[Gmail]/Drafts")
+                    (mu4e-trash-folder . "/cleo/[Gmail]/Trash")
+                    (mu4e-alert-interesting-mail-query . "flag:unread AND maildir:/cleo/Inbox")))
+            (make-mu4e-context
+              :name "Personal"
+              :match-func
+                (lambda (msg)
+                  (when msg
+                    (string-prefix-p "/personal" (mu4e-message-field msg :maildir))))
+              :vars '((user-mail-address . "jake@jakeprime.com")
+                      (user-full-name . "Jake Prime")
+                      (mu4e-refile-folder . "/personal/[Google Mail]/All Mail")
+                      (mu4e-sent-folder . "/personal/[Google Mail]/Sent Mail")
+                      (mu4e-alert-interesting-mail-query . "flag:unread AND maildir:/personal/Inbox")
+                      (mu4e-trash-folder . "/personal/[Google Mail]/Bin"))))))
+
+
   (setq mu4e-maildir-shortcuts
-         '(("/gmail/Inbox" . ?i)))
-  (setq mu4e-alert-interesting-mail-query
-        "flag:unread AND maildir:/gmail/Inbox")
+         '((:maildir "/cleo/Inbox" :key ?c :name "Cleo")
+           (:maildir "/personal/Inbox" :key ?p :name "Personal")))
   (add-hook 'mu4e-index-updated-hook #'mu4e-alert-enable-mode-line-display)
 
   (add-hook 'dired-mode-hook 'diredfl-mode)
@@ -820,6 +849,11 @@ This function is called at the very end of Spacemacs initialization."
  '(gptel-default-mode 'org-mode)
  '(gptel-model "gpt-4")
  '(highlight-parentheses-colors '("Springgreen3" "IndianRed1" "IndianRed3" "IndianRed4") nil nil "Customized with use-package highlight-parentheses")
+ '(mu4e-bookmarks
+   '((:name "Cleo" :query "maildir:/cleo/Inbox" :key 99)
+     (:name "Unread Cleo" :query "flag:unread AND maildir:/cleo/Inbox" :key 67)
+     (:name "Personal" :query "maildir:/personal/Inbox" :key 112)
+     (:name "Unread Personal" :query "flag:unread AND maildir:/personal/Inbox" :key 80)))
  '(ns-right-alternate-modifier 'none)
  '(package-selected-packages
    '(smudge helm-spotify-plus multi spotify xah-fly-keys diredfl all-the-icons-nerd-fonts helm-mu wfnames mu4e-alert mu4e-maildirs-extension org-bullets persistent-scratch unkillable-scratch mwim unfill csv-mode color-identifiers-mode rainbow-identifiers rainbow-mode tide gptel company-web web-completion-data counsel-css helm-css-scss impatient-mode htmlize pug-mode sass-mode haml-mode scss-mode slim-mode tagedit yaml-mode typescript-mode web-mode ac-ispell auto-complete auto-yasnippet flycheck-pos-tip pos-tip fuzzy helm-c-yasnippet helm-company helm-lsp lsp-origami origami lsp-ui yasnippet-snippets browse-at-remote git-gutter-fringe fringe-helper git-gutter emmet-mode import-js grizzl js-doc rjsx-mode js2-mode tern web-beautify yasnippet el-get exec-path-from-shell magit-delta add-node-modules-path bundler chruby counsel-gtags counsel swiper ivy dap-mode lsp-docker lsp-treemacs bui lsp-mode enh-ruby-mode ggtags minitest prettier-js rake rbenv robe inf-ruby rspec-mode rubocop rubocopfmt ruby-hash-syntax ruby-refactor ruby-test-mode ruby-tools rvm seeing-is-believing forge yaml ghub closql emacsql treepy git-link git-messenger git-modes git-timemachine gitignore-templates helm-git-grep helm-ls-git smeargle treemacs-magit magit magit-section git-commit with-editor transient esh-help eshell-prompt-extras eshell-z multi-term multi-vterm shell-pop terminal-here vterm xterm-color company-emoji company emoji-cheat-sheet-plus gh-md markdown-toc markdown-mode mmm-mode valign vmd-mode writeroom-mode evil-lion winum helm-themes google-translate paradox evil-cleverparens evil-iedit-state inspector helm-org elisp-def evil-evilified-state indent-guide auto-compile link-hint devdocs ace-jump-helm-line evil-easymotion org-superstar evil-textobj-line pcre2el flycheck-elsa evil-visual-mark-mode shades-of-purple-theme hide-comnt aggressive-indent which-key volatile-highlights elisp-slime-nav symon nameless highlight-numbers macrostep clean-aindent-mode diminish highlight-parentheses drag-stuff hl-todo string-inflection all-the-icons vim-powerline vi-tilde-fringe expand-region helm-make uuidgen evil-collection evil-anzu request treemacs-projectile info+ emr lorem-ipsum fancy-battery flx-ido helm-mode-manager helm-projectile help-fns+ hybrid-mode dumb-jump evil-surround evil-lisp-state eval-sexp-fu undo-tree evil-matchit golden-ratio auto-highlight-symbol treemacs-persp editorconfig spacemacs-purpose-popwin evil-visualstar evil-mc helm-purpose dotenv-mode ace-link treemacs-evil toc-org helm-ag evil-unimpaired restart-emacs evil-goggles highlight-indentation evil-numbers treemacs-icons-dired evil-tutor evil-exchange helm-descbinds evil-args hungry-delete space-doc ws-butler evil-escape flycheck-package spacemacs-whitespace-cleanup column-enforce-mode quickrun multi-line open-junk-file rainbow-delimiters define-word spaceline overseer helm-xref centered-cursor-mode evil-indent-plus helm-swoop symbol-overlay evil-nerd-commenter term-cursor password-generator string-edit-at-point dired-quick-sort popwin eyebrowse holy-mode))
