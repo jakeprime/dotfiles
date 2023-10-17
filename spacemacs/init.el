@@ -734,7 +734,7 @@ before packages are loaded."
   (add-hook 'inf-ruby-mode-hook
             (lambda() (let ((p "\\|\\(^\\[cleo\\]\\[development\\] main:[0-9]+> *\\)"))
                         (setq inf-ruby-first-prompt-pattern (concat inf-ruby-first-prompt-pattern p))
-                        (setq inf-ruby-prompt-pattern (concat inf-ruby-prompt-pattern p))))))
+                        (setq inf-ruby-prompt-pattern (concat inf-ruby-prompt-pattern p)))))
 
   (setq insert-directory-program "gls")
 
@@ -824,6 +824,7 @@ before packages are loaded."
          :user "jakeprime"))
   (setq smudge-oauth2-client-id "4805869b494d49caa5ff7ea83a01ebf8")
   ;; (define-key smudge-mode-map (kbd "C-c .") 'smudge-command-map))
+)
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
