@@ -174,7 +174,7 @@
   `(org-superstar-leading ((t (:inherit (fixed-pitch) :foreground ,jake-dark))))
   `(org-table ((t (:inherit (fixed-pitch) :foreground ,jake-pink :background ,jake-purple-dark))))
   `(org-todo ((t (:inherit jake-pink-glow :background unspecified :foreground unspecified :family ,jake-script :height 0.75 :weight thin))))
-  `(org-verbatim ((t (:inherit (fixed-pitch jake-yellow-glow) :foreground unspecified :background ,jake-purple-dark))))
+  `(org-verbatim ((t (:inherit (fixed-pitch jake-yellow-glow) :foreground unspecified :background ,jake-purple-dark :weight ,jake-normal-weight))))
   `(query-replace ((t (:inherit (isearch)))))
   `(rainbow-delimiters-depth-1-face ((t (:inherit (jake-pink-glow bold) :foreground unspecified))))
   `(rainbow-delimiters-depth-2-face ((t (:inherit (jake-yellow-glow bold) :foreground unspecified))))
