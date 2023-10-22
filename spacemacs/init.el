@@ -825,6 +825,7 @@ before packages are loaded."
          :user "jakeprime"))
   (setq smudge-oauth2-client-id "4805869b494d49caa5ff7ea83a01ebf8")
   (with-eval-after-load 'smudge
+    (global-smudge-remote-mode)
     (define-key smudge-mode-map (kbd "C-c .") 'smudge-command-map))
 )
 
