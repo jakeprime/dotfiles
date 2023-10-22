@@ -33,3 +33,8 @@ alias rb="cd /Users/jake/work/rusty-bucket/rusty-bucket"
 
 # vscode
 alias own-code="sudo chown -R $(whoami) /Applications/Visual\ Studio\ Code.app"
+
+# OS
+alias dockl="defaults write com.apple.dock orientation left && killall Dock"
+alias dockb="defaults write com.apple.dock orientation bottom && killall Dock"
+alias dockr="defaults write com.apple.dock orientation right && killall Dock"
