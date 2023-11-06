@@ -621,6 +621,7 @@ before packages are loaded."
         (jake-dark "#200933")
         (jake-green "#a5ff90")
         (jake-cyan "#61e2ff")
+        (jake-cyan-highlight "#9EFFFF")
         (jake-purple-dark "#371057")
         (jake-purple "#9963ff")
         (jake-purple-subtle "#574497")
@@ -639,6 +640,7 @@ before packages are loaded."
     (set-face-attribute 'jake-yellow nil :shadow nil)
 
     (set-face-attribute 'jake-cyan-glow nil :shadow `(10.0 ,jake-cyan 0 . 0))
+    (set-face-attribute 'jake-cyan-highlight-glow nil :shadow `(10.0 ,jake-cyan-highlight 0 . 0))
     (set-face-attribute 'jake-green-glow nil :shadow `(10.0 ,jake-green 0 . 0))
     (set-face-attribute 'jake-pink-glow nil :shadow `(10.0 ,jake-pink 0 . 0))
     (set-face-attribute 'jake-purple-glow nil :shadow `(10.0 ,jake-purple 0 . 0))

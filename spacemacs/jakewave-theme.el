@@ -29,6 +29,7 @@
   (defface jake-purple-subtle `((t (:foreground ,jake-purple-subtle))) "jakewave non glowing purple-subtle face.")
 
   (defface jake-cyan-glow `((t (:foreground ,jake-cyan))) "jakewave glowing cyan face.")
+  (defface jake-cyan-highlight-glow `((t (:foreground ,jake-cyan-highlight))) "jakewave glowing cyan face.")
   (defface jake-yellow-glow `((t (:foreground ,jake-yellow))) "jakewave glowing yellow face.")
   (defface jake-green-glow `((t (:foreground ,jake-green))) "jakewave glowing green face.")
   (defface jake-pink-glow `((t (:foreground ,jake-pink))) "jakewave glowing pink face.")
@@ -167,7 +168,7 @@
   `(org-level-6 ((t (:family ,jake-variable-heading :foreground ,jake-yellow :height 1.1))))
   `(org-level-7 ((t (:family ,jake-variable-heading :foreground ,jake-yellow :height 1.1))))
   `(org-level-8 ((t (:family ,jake-variable-heading :foreground ,jake-yellow :height 1.1))))
-  `(org-link ((t (:foreground ,jake-cyan-highlight :underline unspecified))))
+  `(org-link ((t (:inherit (jake-cyan-highlight-glow) :foreground unspecified :underline unspecified))))
   `(org-meta-line ((t (:inherit (fixed-pitch) :foreground ,jake-purple-subtle :background unspecified))))
   `(org-special-keyword ((t (:inherit jake-purple-subtle :foreground unspecified :family ,jake-script))))
   `(org-superstar-item ((t (:inherit (fixed-pitch) :foreground ,jake-pink))))
