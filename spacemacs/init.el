@@ -832,6 +832,14 @@ before packages are loaded."
 
   (spacemacs/set-leader-keys
     "oi" 'ibuffer)
+
+  (defun browse-commit-on-github ()
+    (interactive)
+    (let ((hash (oref (magit-current-blame-chunk) orig-rev))) ;; elpa/28.2/develop/magit-20230523.1431/magit-blame.el:920:28
+      (browse-url (concat "https://www.github.com/meetcleo/meetcleo/commit/" hash))
+      ))
+  (spacemacs/set-leader-keys
+    "oc" 'browse-commit-on-github)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
