@@ -833,6 +833,8 @@ before packages are loaded."
 
   (spacemacs/set-leader-keys
     "oi" 'ibuffer)
+  (spacemacs/set-leader-keys
+    "og" 'gptel)
 
   (defun browse-commit-on-github ()
     (interactive)
