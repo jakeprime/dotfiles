@@ -829,6 +829,9 @@ before packages are loaded."
   (with-eval-after-load 'smudge
     (global-smudge-remote-mode)
     (define-key smudge-mode-map (kbd "C-c .") 'smudge-command-map))
+
+  (spacemacs/set-leader-keys
+    "oi" 'ibuffer)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
