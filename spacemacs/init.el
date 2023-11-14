@@ -779,6 +779,19 @@ before packages are loaded."
     (setq mu4e-contexts
           (list
            (make-mu4e-context
+            :name "Test"
+            :match-func
+            (lambda (msg)
+              (when msg
+                (string-prefix-p "/testing" (mu4e-message-field msg :maildir))))
+            :vars '((user-mail-address . "jake.prime.can@gmail.com")
+                    (user-full-name . "Can Adian")
+                    (mu4e-refile-folder . "/testing/[Gmail]/All Mail")
+                    (mu4e-sent-folder . "/testing/[Gmail]/Sent Mail")
+                    (mu4e-drafts-folder . "/testing/[Gmail]/Drafts")
+                    (mu4e-trash-folder . "/testing/[Gmail]/Trash")
+                    (mu4e-alert-interesting-mail-query . "flag:unread AND maildir:/test/Inbox")))
+           (make-mu4e-context
             :name "Cleo"
             :match-func
             (lambda (msg)
