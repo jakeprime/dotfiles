@@ -1,0 +1,33 @@
+# Keep the original date of the email always
+CopyArrivalDate yes
+
+
+IMAPAccount testing
+# Address to connect to
+Host imap.gmail.com
+Port 993
+User jake.prime.can@gmail.com
+PassCmd "pass imap/jake.prime.can@gmail.com"
+SSLType IMAPS
+AuthMechs PLAIN
+
+IMAPStore testing-remote
+Account testing
+
+MaildirStore testing-local
+SubFolders Verbatim
+# The trailing "/" is important
+Path ~/.mail/testing/
+Inbox ~/.mail/testing/Inbox
+
+Channel testing
+Far :testing-remote:
+Near :testing-local:
+# The visible gmail folders are configured in Gmail, it will only show "All Mail"
+Patterns *
+# Automatically create missing mailboxes, both locally and on the server
+Create Both
+# Sync the movement of messages between folders and deletions, add after making sure the sync works
+Expunge Both
+# Save the synchronization state files in the relevant directory
+SyncState *

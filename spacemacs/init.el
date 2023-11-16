@@ -50,7 +50,7 @@ This function should only modify configuration layer settings."
      lsp
      markdown
      (mu4e :variables
-           mu4e-installation-path "/opt/homebrew/Cellar/mu/1.10.7/share/emacs/site-lisp/mu/mu4e"
+           mu4e-installation-path "/opt/homebrew/Cellar/mu/1.10.8/share/emacs/site-lisp/mu/mu4e"
            mu4e-get-mail-command "mbsync -a"
            mu4e-update-interval (* 5 60)
            mu4e-change-filenames-when-moving t
@@ -771,6 +771,7 @@ before packages are loaded."
         smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
         smtpmail-auth-credentials (expand-file-name "~/.authinfo")
         smtpmail-default-smtp-server "smtp.gmail.com"
+        smtpmail-smtp-user "jake@meetcleo.com"
         smtpmail-smtp-server "smtp.gmail.com"
         smtpmail-smtp-service 587
         smtpmail-debug-info t)
@@ -788,39 +789,15 @@ before packages are loaded."
                     (user-full-name . "Can Adian")
                     (mu4e-refile-folder . "/testing/[Gmail]/All Mail")
                     (mu4e-sent-folder . "/testing/[Gmail]/Sent Mail")
-                    (mu4e-drafts-folder . "/testing/[Gmail]/Drafts")
-                    (mu4e-trash-folder . "/testing/[Gmail]/Trash")
-                    (mu4e-alert-interesting-mail-query . "flag:unread AND maildir:/test/Inbox")))
-           (make-mu4e-context
-            :name "Cleo"
-            :match-func
-            (lambda (msg)
-              (when msg
-                (string-prefix-p "/cleo" (mu4e-message-field msg :maildir))))
-            :vars '((user-mail-address . "jake@meetcleo.com")
-                    (user-full-name . "Jake Prime")
-                    (mu4e-refile-folder . "/cleo/[Gmail]/All Mail")
-                    (mu4e-sent-folder . "/cleo/[Gmail]/Sent Mail")
-                    (mu4e-drafts-folder . "/cleo/[Gmail]/Drafts")
-                    (mu4e-trash-folder . "/cleo/[Gmail]/Trash")
-                    (mu4e-alert-interesting-mail-query . "flag:unread AND maildir:/cleo/Inbox")))
-            (make-mu4e-context
-              :name "Personal"
-              :match-func
-                (lambda (msg)
-                  (when msg
-                    (string-prefix-p "/personal" (mu4e-message-field msg :maildir))))
-              :vars '((user-mail-address . "jake@jakeprime.com")
-                      (user-full-name . "Jake Prime")
-                      (mu4e-refile-folder . "/personal/[Google Mail]/All Mail")
-                      (mu4e-sent-folder . "/personal/[Google Mail]/Sent Mail")
-                      (mu4e-alert-interesting-mail-query . "flag:unread AND maildir:/personal/Inbox")
-                      (mu4e-trash-folder . "/personal/[Google Mail]/Bin"))))))
+                    (mu4e-trash-folder . "/testing/[mbsync]/Trash")
+                    (mu4e-alert-interesting-mail-query . "flag:unread AND maildir:/test/Inbox")
+                    (smtpmail-smtp-user . "jake.prime.can@gmail.com")
+    )))))
 
 
-  (setq mu4e-maildir-shortcuts
-         '((:maildir "/cleo/Inbox" :key ?c :name "Cleo")
-           (:maildir "/personal/Inbox" :key ?p :name "Personal")))
+  ;; (setq mu4e-maildir-shortcuts
+  ;;        '((:maildir "/cleo/Inbox" :key ?c :name "Cleo")
+  ;;          (:maildir "/personal/Inbox" :key ?p :name "Personal")))
   (add-hook 'mu4e-index-updated-hook #'mu4e-alert-enable-mode-line-display)
 
   (add-hook 'dired-mode-hook 'diredfl-mode)
