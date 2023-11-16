@@ -31,3 +31,63 @@ Create Both
 Expunge Both
 # Save the synchronization state files in the relevant directory
 SyncState *
+
+
+IMAPAccount cleo
+# Address to connect to
+Host imap.gmail.com
+Port 993
+User jake@meetcleo.com
+PassCmd "pass imap/jake@meetcleo.com"
+SSLType IMAPS
+AuthMechs PLAIN
+
+IMAPStore cleo-remote
+Account cleo
+
+MaildirStore cleo-local
+SubFolders Verbatim
+# The trailing "/" is important
+Path ~/.mail/cleo/
+Inbox ~/.mail/cleo/Inbox
+
+Channel cleo
+Far :cleo-remote:
+Near :cleo-local:
+# The visible gmail folders are configured in Gmail, it will only show "All Mail"
+Patterns *
+# Automatically create missing mailboxes, both locally and on the server
+Create Both
+# Sync the movement of messages between folders and deletions, add after making sure the sync works
+Expunge Both
+# Save the synchronization state files in the relevant directory
+SyncState *
+
+IMAPAccount personal
+# Address to connect to
+Host imap.gmail.com
+Port 993
+User jake.prime@gmail.com
+PassCmd "pass imap/jake.prime@gmail.com"
+SSLType IMAPS
+AuthMechs PLAIN
+
+IMAPStore personal-remote
+Account personal
+
+MaildirStore personal-local
+SubFolders Verbatim
+# The trailing "/" is important
+Path ~/.mail/personal/
+Inbox ~/.mail/personal/Inbox
+
+Channel personal
+Far :personal-remote:
+Near :personal-local:
+Patterns INBOX "[Google Mail]*"
+# Automatically create missing mailboxes, both locally and on the server
+Create Both
+# Sync the movement of messages between folders and deletions, add after making sure the sync works
+Expunge Both
+# Save the synchronization state files in the relevant directory
+SyncState *
