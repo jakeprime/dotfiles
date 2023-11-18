@@ -789,7 +789,8 @@ before packages are loaded."
                     (user-full-name . "Jake Prime")
                     (mu4e-refile-folder . "/cleo/[Gmail]/All Mail")
                     (mu4e-sent-folder . "/cleo/[Gmail]/Sent Mail")
-                    (mu4e-alert-interesting-mail-query . "flag:unread AND maildir:/testing/Inbox")
+                    (mu4e-trash-folder . "/cleo/[Gmail]/Trash")
+                    (mu4e-alert-interesting-mail-query . "flag:unread AND maildir:/cleo/Inbox")
                     (smtpmail-smtp-user . "jake@meetcleo.com")))
            (make-mu4e-context
             :name "Personal"
@@ -801,6 +802,7 @@ before packages are loaded."
                     (user-full-name . "Jake Prime")
                     (mu4e-refile-folder . "/personal/[Google Mail]/All Mail")
                     (mu4e-sent-folder . "/personal/[Google Mail]/Sent Mail")
+                    (mu4e-trash-folder . "/personal/[Google Mail]/Bin")
                     (mu4e-alert-interesting-mail-query . "flag:unread AND maildir:/personal/Inbox")
                     (smtpmail-smtp-user . "jake.prime@gmail.com")))
            (make-mu4e-context
@@ -813,14 +815,23 @@ before packages are loaded."
                     (user-full-name . "Can Adian")
                     (mu4e-refile-folder . "/testing/[Gmail]/All Mail")
                     (mu4e-sent-folder . "/testing/[Gmail]/Sent Mail")
+                    (mu4e-trash-folder . "/testing/[Gmail]/Trash")
                     (mu4e-alert-interesting-mail-query . "flag:unread AND maildir:/testing/Inbox")
                     (smtpmail-smtp-user . "jake.prime.can@gmail.com")))
-           )))
-
+           ))
+    (add-to-list 'mu4e-marks
+                 '(trash
+                  :char ("d" . "▼")
+                  :prompt "dtrash"
+                  :dyn-target (lambda (target msg) (mu4e-get-trash-folder msg))
+                  :action (lambda (docid msg target)
+                            (mu4e--server-move docid
+                                               (mu4e--mark-check-target target) "-N")))))
 
   (setq mu4e-maildir-shortcuts
          '((:maildir "/cleo/Inbox" :key ?c :name "Cleo")
-           (:maildir "/personal/Inbox" :key ?p :name "Personal")))
+           (:maildir "/personal/Inbox" :key ?p :name "Personal")
+           (:maildir "/testing/Inbox" :key ?t :name "Testing")))
   (add-hook 'mu4e-index-updated-hook #'mu4e-alert-enable-mode-line-display)
 
   (add-hook 'dired-mode-hook 'diredfl-mode)
