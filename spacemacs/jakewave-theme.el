@@ -97,7 +97,7 @@
   `(font-lock-negation-char-face ((t (:foreground "#a45bad"))))
   `(font-lock-number-face ((t nil)))
   `(font-lock-operator-face ((t (:inherit (font-lock-keyword-face) :foreground unspecified))))
-  `(font-lock-preprocessor-face ((t (:foreground "#bc6ec5"))))
+  `(font-lock-preprocessor-face ((t (:inherit jake-pink-glow :foreground unspecified))))
   `(font-lock-property-name-face ((t (:inherit (font-lock-variable-name-face)))))
   `(font-lock-property-use-face ((t (:inherit (font-lock-property-name-face)))))
   `(font-lock-punctuation-face ((t (:inherit (font-lock-keyword-face) :foreground unspecified))))
