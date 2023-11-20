@@ -832,6 +832,11 @@ before packages are loaded."
          '((:maildir "/cleo/Inbox" :key ?c :name "Cleo")
            (:maildir "/personal/Inbox" :key ?p :name "Personal")
            (:maildir "/testing/Inbox" :key ?t :name "Testing")))
+  (setq mu4e-headers-attach-mark '("a" . "+"))
+  (setq mu4e-headers-list-mark '("l" . "@"))
+  (setq mu4e-headers-personal-mark '("p" . "."))
+  (setq mu4e-headers-flagged-mark '("f" . "!"))
+
   (add-hook 'mu4e-index-updated-hook #'mu4e-alert-enable-mode-line-display)
 
   (add-hook 'dired-mode-hook 'diredfl-mode)
