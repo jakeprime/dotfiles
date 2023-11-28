@@ -14,7 +14,7 @@
       (jake-fixed "Cascadia Code")
       (jake-variable "Noto Sans")
       (jake-variable-heading "Spectral")
-      (jake-script "Marker Felt")
+      (jake-script "Monaspace Radon")
 
       (jake-normal-weight 'light)
       )
