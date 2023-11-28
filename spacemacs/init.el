@@ -700,6 +700,8 @@ before packages are loaded."
   (add-hook 'ruby-mode-hook
             (lambda () (hs-minor-mode)))
 
+  (remove-hook 'magit-status-sections-hook 'magit-insert-issues)
+
   (eval-after-load "hideshow"
     '(add-to-list 'hs-special-modes-alist
                   `(ruby-mode
