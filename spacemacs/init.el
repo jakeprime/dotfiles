@@ -826,7 +826,7 @@ before packages are loaded."
                   :dyn-target (lambda (target msg) (mu4e-get-trash-folder msg))
                   :action (lambda (docid msg target)
                             (mu4e--server-move docid
-                                               (mu4e--mark-check-target target) "-N")))))
+                                               (mu4e--mark-check-target target) "+S-N")))))
 
   (setq mu4e-maildir-shortcuts
          '((:maildir "/cleo/Inbox" :key ?c :name "Cleo" :hide t)
