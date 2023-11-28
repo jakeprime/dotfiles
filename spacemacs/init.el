@@ -836,6 +836,7 @@ before packages are loaded."
   (setq mu4e-headers-list-mark '("l" . "@"))
   (setq mu4e-headers-personal-mark '("p" . "."))
   (setq mu4e-headers-flagged-mark '("f" . "!"))
+  (setq mu4e-headers-new-mark '("N" . "*"))
 
   (add-hook 'mu4e-index-updated-hook #'mu4e-alert-enable-mode-line-display)
 
