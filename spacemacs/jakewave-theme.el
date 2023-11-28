@@ -169,6 +169,7 @@
   `(org-level-7 ((t (:family ,jake-variable-heading :foreground "#58DEF6" :height 1.1))))
   `(org-level-8 ((t (:family ,jake-variable-heading :foreground "#58DEF6" :height 1.1))))
   `(org-link ((t (:inherit (jake-cyan-highlight-glow) :foreground unspecified :underline unspecified))))
+  `(org-link ((t (:inherit (jake-cyan-highlight-glow) :foreground unspecified :underline t))))
   `(org-meta-line ((t (:inherit (fixed-pitch) :foreground ,jake-purple-subtle :background unspecified))))
   `(org-special-keyword ((t (:inherit jake-purple-subtle :foreground unspecified :family ,jake-script))))
   `(org-superstar-item ((t (:inherit (fixed-pitch) :foreground ,jake-pink))))
