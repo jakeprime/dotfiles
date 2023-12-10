@@ -699,7 +699,7 @@ before packages are loaded."
   (add-hook 'ruby-mode-hook
             (lambda () (hs-minor-mode)))
 
-  (remove-hook 'magit-status-sections-hook 'magit-insert-issues)
+  (add-hook 'emacs-lisp-mode-hook (lambda () (bug-reference-mode -1)))
 
   (eval-after-load "hideshow"
     '(add-to-list 'hs-special-modes-alist
