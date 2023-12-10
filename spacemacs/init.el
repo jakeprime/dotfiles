@@ -874,6 +874,8 @@ before packages are loaded."
     "oi" 'ibuffer)
   (spacemacs/set-leader-keys
     "og" 'gptel)
+  (spacemacs/set-leader-keys
+    "of" 'toggle-frame-fullscreen)
 
   (defun browse-commit-on-github ()
     (interactive)
