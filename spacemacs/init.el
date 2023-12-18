@@ -75,6 +75,10 @@ This function should only modify configuration layer settings."
             shell-default-height 30
             shell-default-position 'bottom
             shell-default-shell 'vterm)
+     (spacemacs-evil :variables
+       spacemacs-evil-collection-allowed-list '(info forge magit vterm eww dired quickrun ediff)
+                      )
+
      syntax-checking
      tide
      treemacs
