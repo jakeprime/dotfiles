@@ -727,7 +727,8 @@ before packages are loaded."
 
   (with-eval-after-load 'copilot
     (define-key copilot-completion-map (kbd "C-<tab>") 'copilot-accept-completion)
-    (define-key copilot-completion-map (kbd "M-<tab>") 'copilot-accept-completion-by-word))
+    (define-key copilot-completion-map (kbd "M-<tab>") 'copilot-accept-completion-by-word)
+    (set-variable 'lisp-indent-offset 2))
 
   (use-package helm-posframe
     :ensure t
