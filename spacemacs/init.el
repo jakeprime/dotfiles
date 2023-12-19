@@ -314,6 +314,7 @@ It should only modify the values of Spacemacs settings."
    ;; Default font or prioritized list of fonts. The `:size' can be specified as
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
+   dotspacemacs-default-font '()
 
    ;; The leader key (default "SPC")
    dotspacemacs-leader-key "SPC"
@@ -606,7 +607,6 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-  (add-to-list 'custom-theme-load-path "~/.spacemacs.d/")
 )
 
 
@@ -624,75 +624,9 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-
-  (let ((jake-pink "#fc199a")
-        (jake-yellow "#d1b539")
-        (jake-dark "#200933")
-        (jake-green "#a5ff90")
-        (jake-cyan "#61e2ff")
-        (jake-cyan-highlight "#9EFFFF")
-        (jake-purple-dark "#371057")
-        (jake-purple "#9963ff")
-        (jake-purple-subtle "#574497")
-        )
-
-
-    (load-theme 'jakewave t)
-    (set-face-attribute 'default nil :family "Cascadia Code" :height 130 :weight 'light)
-
-    (set-face-attribute 'jake-no-glow nil :shadow nil)
-    (set-face-attribute 'jake-cyan nil :shadow nil)
-    (set-face-attribute 'jake-green nil :shadow nil)
-    (set-face-attribute 'jake-pink nil :shadow nil)
-    (set-face-attribute 'jake-purple nil :shadow nil)
-    (set-face-attribute 'jake-purple-subtle nil :shadow nil)
-    (set-face-attribute 'jake-yellow nil :shadow nil)
-
-    (set-face-attribute 'jake-cyan-glow nil :shadow `(10.0 ,jake-cyan 0 . 0))
-    (set-face-attribute 'jake-cyan-highlight-glow nil :shadow `(10.0 ,jake-cyan-highlight 0 . 0))
-    (set-face-attribute 'jake-green-glow nil :shadow `(10.0 ,jake-green 0 . 0))
-    (set-face-attribute 'jake-pink-glow nil :shadow `(10.0 ,jake-pink 0 . 0))
-    (set-face-attribute 'jake-purple-glow nil :shadow `(10.0 ,jake-purple 0 . 0))
-    (set-face-attribute 'jake-purple-subtle-glow nil :shadow `(5.0 ,jake-purple-subtle 0 . 0))
-    (set-face-attribute 'jake-yellow-glow nil :shadow `(10.0 ,jake-yellow 0 . 0))
-    (set-face-attribute 'line-number nil :shadow '(10.0 "#4A1E64" 0 . 0))
-    (set-face-attribute 'line-number-current-line nil :shadow '(10.0 "#7912ce" 0 . 0))
-
-    (set-face-attribute 'nerd-icons-blue nil :shadow nil)
-    (set-face-attribute 'nerd-icons-blue-alt nil :shadow nil)
-    (set-face-attribute 'nerd-icons-cyan nil :shadow nil)
-    (set-face-attribute 'nerd-icons-cyan-alt nil :shadow nil)
-    (set-face-attribute 'nerd-icons-dblue nil :shadow nil)
-    (set-face-attribute 'nerd-icons-dcyan nil :shadow nil)
-    (set-face-attribute 'nerd-icons-dgreen nil :shadow nil)
-    (set-face-attribute 'nerd-icons-dmaroon nil :shadow nil)
-    (set-face-attribute 'nerd-icons-dorange nil :shadow nil)
-    (set-face-attribute 'nerd-icons-dpink nil :shadow nil)
-    (set-face-attribute 'nerd-icons-dpurple nil :shadow nil)
-    (set-face-attribute 'nerd-icons-dred nil :shadow nil)
-    (set-face-attribute 'nerd-icons-dsilver nil :shadow nil)
-    (set-face-attribute 'nerd-icons-dyellow nil :shadow nil)
-    (set-face-attribute 'nerd-icons-green nil :shadow nil)
-    (set-face-attribute 'nerd-icons-lblue nil :shadow nil)
-    (set-face-attribute 'nerd-icons-lcyan nil :shadow nil)
-    (set-face-attribute 'nerd-icons-lgreen nil :shadow nil)
-    (set-face-attribute 'nerd-icons-lmaroon nil :shadow nil)
-    (set-face-attribute 'nerd-icons-lorange nil :shadow nil)
-    (set-face-attribute 'nerd-icons-lpink nil :shadow nil)
-    (set-face-attribute 'nerd-icons-lpurple nil :shadow nil)
-    (set-face-attribute 'nerd-icons-lred nil :shadow nil)
-    (set-face-attribute 'nerd-icons-lsilver nil :shadow nil)
-    (set-face-attribute 'nerd-icons-lyellow nil :shadow nil)
-    (set-face-attribute 'nerd-icons-maroon nil :shadow nil)
-    (set-face-attribute 'nerd-icons-orange nil :shadow nil)
-    (set-face-attribute 'nerd-icons-pink nil :shadow nil)
-    (set-face-attribute 'nerd-icons-purple nil :shadow nil)
-    (set-face-attribute 'nerd-icons-purple-alt nil :shadow nil)
-    (set-face-attribute 'nerd-icons-red nil :shadow nil)
-    (set-face-attribute 'nerd-icons-red-alt nil :shadow nil)
-    (set-face-attribute 'nerd-icons-silver nil :shadow nil)
-    (set-face-attribute 'nerd-icons-yellow nil :shadow nil)
-  )
+  (add-to-list 'load-path "~/.spacemacs.d/")
+  (add-to-list 'custom-theme-load-path "~/.spacemacs.d/")
+  (load "faces-init")
 
   (require 'gptel)
 
@@ -911,8 +845,8 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   '("32317010074f030fb201c1fc290c032f11537fd4c83ca781b701677df4839136" "3eb4e22ad16897534eca6968ee9c88fbcb983875310e474ef6c0b7579cadfc07" "67a321541a565ebb0edfb00d0ee3f88f7e3c256e9e17c8f68e57d8c210400a0f" default))
+ ;; '(custom-safe-themes
+ ;;   '("32317010074f030fb201c1fc290c032f11537fd4c83ca781b701677df4839136" "3eb4e22ad16897534eca6968ee9c88fbcb983875310e474ef6c0b7579cadfc07" "67a321541a565ebb0edfb00d0ee3f88f7e3c256e9e17c8f68e57d8c210400a0f" default))
  '(doom-modeline-buffer-encoding 'nondefault)
  '(doom-modeline-env-enable-ruby nil)
  '(doom-modeline-env-version nil)
