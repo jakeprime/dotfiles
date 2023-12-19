@@ -724,6 +724,10 @@ before packages are loaded."
               (setq-local flycheck-command-wrapper-function
                           (lambda (command) (append '("bundle" "exec") command)))))
 
+  (add-hook 'Info-mode-hook
+    (lambda ()
+      (variable-pitch-mode t)))
+
 
   (with-eval-after-load 'company
     ;; disable inline previews
