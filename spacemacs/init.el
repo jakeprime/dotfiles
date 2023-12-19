@@ -726,7 +726,9 @@ before packages are loaded."
 
   (add-hook 'Info-mode-hook
     (lambda ()
-      (variable-pitch-mode t)))
+      (variable-pitch-mode t)
+      (visual-fill-column-mode 1)
+      (setq visual-fill-column-center-text t)))
 
 
   (with-eval-after-load 'company
