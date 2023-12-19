@@ -33,6 +33,11 @@ This function should only modify configuration layer settings."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     ;; ----------------------------------------------------------------
+     ;; Example of useful layers you may want to use right away.
+     ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
+     ;; `M-m f e R' (Emacs style) to install them.
+     ;; ----------------------------------------------------------------
      better-defaults
      colors
      csv
@@ -90,9 +95,7 @@ This function should only modify configuration layer settings."
                  )
      version-control
      yaml
-     ;; auto-completion
-     ;; spell-checking
-     )
+   )
 
 
    ;; List of additional packages that will be installed without being wrapped
@@ -103,30 +106,29 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
+    dotspacemacs-additional-packages
+    '(
+       (copilot :location (recipe
+                            :fetcher github
+                            :repo "zerolfx/copilot.el"
+                            :files ("*.el" "dist")))
+       dap-mode
+       diredfl
+       gptel
+       helm-posframe
+       posframe
+       transient-posframe
+       which-key-posframe
+     )
 
-   ;; A list of packages that cannot be updated.
-   dotspacemacs-frozen-packages '()
+    ;; A list of packages that cannot be updated.
+    dotspacemacs-frozen-packages '()
 
-   ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(
-                                    highlight-parentheses
-                                    treemacs-icons-dired
-                                    )
-
-   dotspacemacs-additional-packages
-   '(
-     (copilot :location (recipe
-                         :fetcher github
-                         :repo "zerolfx/copilot.el"
-                         :files ("*.el" "dist")))
-     dap-mode
-     diredfl
-     gptel
-     helm-posframe
-     posframe
-     transient-posframe
-     which-key-posframe
-    )
+    ;; A list of packages that will not be installed and loaded.
+    dotspacemacs-excluded-packages '(
+                                      highlight-parentheses
+                                      treemacs-icons-dired
+                                      )
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
