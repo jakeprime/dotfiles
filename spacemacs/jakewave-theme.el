@@ -119,7 +119,7 @@
   `(gnus-header-name ((t (:foreground ,jake-pink))))
   `(gnus-header-subject ((t (:inherit jake-green-glow :foreground unspecified))))
   `(header-line ((t (:background ,jake-purple-dark :overline ,jake-purple))))
-  `(helm-M-x-key ((t :inherit jake-green-glow :foreground unspecified :box (:line-width -1 :color ,jake-green))))
+  `(helm-M-x-key ((t :inherit jake-green-glow :foreground unspecified :box t)))
   `(helm-command-active-mode ((t :inherit jake-yellow-glow :foreground unspecified)))
   `(helm-posframe-border ((t :background ,jake-yellow)))
   `(helm-selection ((t :inherit highlight :background unspecified)))
