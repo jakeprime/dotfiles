@@ -11,10 +11,10 @@
       (jake-purple "#9963ff")
       (jake-purple-subtle "#574497")
 
-      (jake-fixed "Monaspace Argon")
+      (jake-fixed "MonaspiceAr Nerd Font")
       (jake-variable "Noto Sans")
       (jake-variable-heading "Spectral")
-      (jake-script "Monaspace Radon")
+      (jake-script "MonaspiceRn Nerd Font")
 
       (jake-normal-weight 'light)
       )
