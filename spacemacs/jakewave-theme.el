@@ -11,13 +11,15 @@
       (jake-purple "#9963ff")
       (jake-purple-subtle "#574497")
 
-      (jake-fixed "Cascadia Code")
+      (jake-fixed "Monaspace Argon")
       (jake-variable "Noto Sans")
       (jake-variable-heading "Spectral")
       (jake-script "Monaspace Radon")
 
       (jake-normal-weight 'light)
       )
+
+  (defface jake-script `((t (:family ,jake-script))) "jakewave script face.")
 
   (defface jake-no-glow `((t)) "jakewave non glowing face.")
 
@@ -86,10 +88,10 @@
   `(font-lock-bracket-face ((t (:inherit font-lock-punctuation-face :foreground unspecified))))
   `(font-lock-builtin-face ((t (:foreground ,jake-yellow))))
   `(font-lock-comment-delimiter-face ((default (:inherit font-lock-comment-face))))
-  `(font-lock-comment-face ((t (:inherit jake-purple-subtle-glow :slant italic :foreground unspecified :background unspecified))))
+  `(font-lock-comment-face ((t (:inherit (jake-script jake-purple-subtle-glow) :foreground unspecified :background unspecified))))
   `(font-lock-constant-face ((t (:foreground ,jake-purple))))
   `(font-lock-delimiter-face ((t (:inherit (font-lock-punctuation-face)))))
-  `(font-lock-doc-face ((t (:inherit jake-purple-subtle-glow :foreground unspecified))))
+  `(font-lock-doc-face ((t (:inherit (jake-script jake-purple-glow) :foreground unspecified))))
   `(font-lock-doc-markup-face ((t (:inherit (font-lock-constant-face)))))
   `(font-lock-escape-face ((t (:inherit (font-lock-regexp-grouping-backslash)))))
   `(font-lock-function-call-face ((t (:inherit (font-lock-function-name-face)))))
