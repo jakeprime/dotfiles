@@ -213,6 +213,8 @@
   `(tide-hl-identifier-face ((t (:foreground unspecified :background ,jake-purple-dark))))
   `(tooltip ((t (:weight normal :slant normal :underline nil :foreground "#b2b2b2" :background "#5e5079"))))
   `(trailing-whitespace ((t (:background "#2aa1ae"))))
+  `(transient-argument ((t (:inherit jake-green-glow))))
+  `(transient-inactive-argument ((t (:inherit jake-purple-glow :foreground unspecified))))
   `(transient-posframe ((t :background ,jake-purple-dark)))
   `(transient-posframe-border ((t :background ,jake-yellow)))
   `(variable-pitch ((t (:family ,jake-variable :height 1.3 :weight light))))
