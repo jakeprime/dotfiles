@@ -847,8 +847,6 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- ;; '(custom-safe-themes
- ;;   '("32317010074f030fb201c1fc290c032f11537fd4c83ca781b701677df4839136" "3eb4e22ad16897534eca6968ee9c88fbcb983875310e474ef6c0b7579cadfc07" "67a321541a565ebb0edfb00d0ee3f88f7e3c256e9e17c8f68e57d8c210400a0f" default))
  '(doom-modeline-buffer-encoding 'nondefault)
  '(doom-modeline-env-enable-ruby nil)
  '(doom-modeline-env-version nil)
