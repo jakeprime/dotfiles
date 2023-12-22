@@ -1,6 +1,16 @@
 (deftheme jakewave
   "Created 2023-05-27.")
 
+(defun jake-interpolate-color (color1 color2 ratio)
+  "Interpolate between COLOR1 and COLOR2 by RATIO."
+  (let* ((c1 (color-name-to-rgb color1))
+  (c2 (color-name-to-rgb color2))
+  (red   (+ (* (- (nth 0 c2) (nth 0 c1)) ratio) (nth 0 c1)))
+  (green (+ (* (- (nth 1 c2) (nth 1 c1)) ratio) (nth 1 c1)))
+  (blue  (+ (* (- (nth 2 c2) (nth 2 c1)) ratio) (nth 2 c1))))
+  (apply 'color-rgb-to-hex (list red green blue))))
+
+
 (let ((jake-pink "#fc199a")
       (jake-yellow "#fad000")
       (jake-dark "#200933")
@@ -13,11 +23,19 @@
 
       (jake-fixed "MonaspiceAr Nerd Font")
       (jake-variable "Noto Sans")
-      (jake-variable-heading "Spectral")
+      (jake-variable-heading "MonaspiceRn Nerd Font")
       (jake-script "MonaspiceRn Nerd Font")
 
       (jake-normal-weight 'light)
-      )
+
+      (jake-org-2 (jake-interpolate-color jake-yellow jake-cyan 0.0))
+      (jake-org-3 (jake-interpolate-color jake-yellow jake-cyan 0.3))
+      (jake-org-4 (jake-interpolate-color jake-yellow jake-cyan 0.6))
+      (jake-org-5 (jake-interpolate-color jake-yellow jake-cyan 0.7))
+      (jake-org-6 (jake-interpolate-color jake-yellow jake-cyan 0.8))
+      (jake-org-7 (jake-interpolate-color jake-yellow jake-cyan 0.9))
+      (jake-org-8 (jake-interpolate-color jake-yellow jake-cyan 0.95)))
+
 
   (defface jake-script `((t (:family ,jake-script))) "jakewave script face.")
 
@@ -178,14 +196,14 @@
     `(org-drawer ((t (:inherit (jake-script jake-purple-subtle) :background unspecified :foreground unspecified))))
     `(org-ellipsis ((t (:inherit jake-green-glow :foreground unspecified))))
     `(org-indent ((t (:inherit (org-hide fixed-pitch)))))
-    `(org-level-1 ((t (:family ,jake-variable-heading :inherit jake-yellow-glow :foreground unspecified :height 2.0))))
-    `(org-level-2 ((t (:family ,jake-variable-heading :foreground ,jake-green :height 1.5))))
-    `(org-level-3 ((t (:family ,jake-variable-heading :foreground "#74F1BA" :height 1.25))))
-    `(org-level-4 ((t (:family ,jake-variable-heading :foreground "#65E5DB" :height 1.1))))
-    `(org-level-5 ((t (:family ,jake-variable-heading :foreground "#58DEF6" :height 1.1))))
-    `(org-level-6 ((t (:family ,jake-variable-heading :foreground "#58DEF6" :height 1.1))))
-    `(org-level-7 ((t (:family ,jake-variable-heading :foreground "#58DEF6" :height 1.1))))
-    `(org-level-8 ((t (:family ,jake-variable-heading :foreground "#58DEF6" :height 1.1))))
+    `(org-level-1 ((t (:family ,jake-variable-heading :inherit jake-pink-glow :foreground unspecified :height 2.0))))
+    `(org-level-2 ((t (:family ,jake-variable :foreground ,jake-org-2 :height 1.5))))
+    `(org-level-3 ((t (:family ,jake-variable :foreground ,jake-org-3 :height 1.25))))
+    `(org-level-4 ((t (:family ,jake-variable :foreground ,jake-org-4 :height 1.1))))
+    `(org-level-5 ((t (:family ,jake-variable :foreground ,jake-org-5 :height 1.1))))
+    `(org-level-6 ((t (:family ,jake-variable :foreground ,jake-org-6 :height 1.1))))
+    `(org-level-7 ((t (:family ,jake-variable :foreground ,jake-org-7 :height 1.1))))
+    `(org-level-8 ((t (:family ,jake-variable :foreground ,jake-org-8 :height 1.1))))
     `(org-link ((t (:inherit (jake-cyan-highlight-glow) :foreground unspecified :underline unspecified))))
     `(org-meta-line ((t (:inherit (fixed-pitch) :foreground ,jake-purple-subtle :background unspecified))))
     `(org-priority ((t (:inherit (jake-script jake-purple) :foreground unspecified :height 0.75 :weight ,jake-normal-weight))))
