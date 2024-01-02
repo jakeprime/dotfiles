@@ -777,19 +777,6 @@ before packages are loaded."
                     (mu4e-trash-folder . "/personal/[Google Mail]/Bin")
                     (mu4e-alert-interesting-mail-query . "flag:unread AND maildir:/personal/Inbox")
                     (smtpmail-smtp-user . "jake.prime@gmail.com")))
-           (make-mu4e-context
-            :name "Test"
-            :match-func
-            (lambda (msg)
-              (when msg
-                (string-prefix-p "/testing" (mu4e-message-field msg :maildir))))
-            :vars '((user-mail-address . "jake.prime.can@gmail.com")
-                    (user-full-name . "Can Adian")
-                    (mu4e-refile-folder . "/testing/[Gmail]/All Mail")
-                    (mu4e-sent-folder . "/testing/[Gmail]/Sent Mail")
-                    (mu4e-trash-folder . "/testing/[Gmail]/Trash")
-                    (mu4e-alert-interesting-mail-query . "flag:unread AND maildir:/testing/Inbox")
-                    (smtpmail-smtp-user . "jake.prime.can@gmail.com")))
            ))
     (add-to-list 'mu4e-marks
                  '(trash
@@ -802,8 +789,7 @@ before packages are loaded."
 
   (setq mu4e-maildir-shortcuts
          '((:maildir "/cleo/Inbox" :key ?c :name "Cleo" :hide t)
-           (:maildir "/personal/Inbox" :key ?p :name "Personal" :hide t)
-           (:maildir "/testing/Inbox" :key ?t :name "Testing" :hide t)))
+           (:maildir "/personal/Inbox" :key ?p :name "Personal" :hide t)))
   (setq mu4e-headers-attach-mark '("a" . "+"))
   (setq mu4e-headers-list-mark '("l" . "@"))
   (setq mu4e-headers-personal-mark '("p" . "."))
