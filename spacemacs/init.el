@@ -75,6 +75,7 @@ This function should only modify configuration layer settings."
           org-journal-file-format "%Y-%m-%d.org"
           org-journal-time-prefix "** TODO "
           org-journal-time-format ""
+          org-tags-column 1
           )
      prettier
      react
