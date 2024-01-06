@@ -38,3 +38,5 @@ alias own-code="sudo chown -R $(whoami) /Applications/Visual\ Studio\ Code.app"
 alias dockl="defaults write com.apple.dock orientation left && killall Dock"
 alias dockb="defaults write com.apple.dock orientation bottom && killall Dock"
 alias dockr="defaults write com.apple.dock orientation right && killall Dock"
+
+alias xcode14="open /Applications/Xcode-14.app/Contents/MacOS/Xcode"
