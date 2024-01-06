@@ -69,6 +69,7 @@ This function should only modify configuration layer settings."
           org-hide-emphasis-markers t
           org-log-done 'time
           org-log-into-drawer t
+          org-todo-keywords '((sequence "TODO" "|" "DONE" "REJECTED"))
           org-enable-org-journal-support t
           org-journal-dir "~/Org/Journal/"
           org-journal-file-format "%Y-%m-%d.org"
