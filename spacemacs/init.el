@@ -675,6 +675,9 @@ before packages are loaded."
               (setq-local flycheck-command-wrapper-function
                           (lambda (command) (append '("bundle" "exec") command)))))
 
+  (with-eval-after-load 'flycheck
+    (setq-default flycheck-disabled-checkers (append flycheck-disabled-checkers '(ruby-reek))))
+
   (add-hook 'Info-mode-hook
     (lambda ()
       (variable-pitch-mode t)
