@@ -833,6 +833,12 @@ before packages are loaded."
     "og" 'gptel)
   (spacemacs/set-leader-keys
     "of" 'toggle-frame-fullscreen)
+  (spacemacs/set-leader-keys
+    "oql" 'hs-hide-level)
+  (spacemacs/set-leader-keys
+    "oqs" 'hs-show-block)
+  (spacemacs/set-leader-keys
+    "oqh" 'hs-hide-block)
 
   (defun browse-commit-on-github ()
     (interactive)
