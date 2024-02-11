@@ -828,6 +828,20 @@ before packages are loaded."
       ))
   (spacemacs/set-leader-keys
     "oc" 'browse-commit-on-github)
+
+  (add-hook 'calendar-today-visible-hook 'calendar-mark-today)
+  (add-hook 'calendar-mode-hook
+            (lambda ()
+              (setq-local cursor-type nil
+                          evil-default-cursor '(nil nil)
+                          evil-normal-state-cursor '(nil nil)
+                          evil-emacs-state-cursor '(nil nil)
+                          evil-motion-state-cursor '(nil nil)
+                          evil-insert-state-cursor '(nil nil)
+                          evil-visual-state-cursor '(nil nil)
+                          evil-replace-state-cursor '(nil nil))
+              (spacemacs/disable-hl-line-mode)))
+
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
