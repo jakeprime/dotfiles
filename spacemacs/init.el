@@ -797,7 +797,17 @@ before packages are loaded."
                   :dyn-target (lambda (target msg) (mu4e-get-trash-folder msg))
                   :action (lambda (docid msg target)
                             (mu4e--server-move docid
-                                               (mu4e--mark-check-target target) "+S-N")))))
+                                               (mu4e--mark-check-target target) "+S-N"))))
+    (add-to-list 'mu4e-marks
+                 '(flag
+                  :char ("+" . "★")
+                  :prompt "dflag"
+                  :dyn-target (lambda (target msg)
+                                (replace-regexp-in-string "All Mail" "Starred"
+                                                          (mu4e-get-refile-folder msg)))
+                  :action (lambda (docid msg target)
+                            (mu4e--server-move docid
+                                               (mu4e--mark-check-target target))))))
 
   (setq mu4e-maildir-shortcuts
          '((:maildir "/cleo/Inbox" :key ?c :name "Cleo" :hide t)
