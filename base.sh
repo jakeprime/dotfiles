@@ -12,5 +12,6 @@ source ~/.dotfiles/zsh.sh
 
 export PATH="/Applications/Emacs.app/Contents/MacOS:$PATH"
 export PATH="/Users/jake/.config/emacs/bin:$PATH"
+export PATH="$PATH:/usr/local/bin/platform-tools/"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
