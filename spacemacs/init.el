@@ -129,7 +129,6 @@ This function should only modify configuration layer settings."
                            :fetcher github
                            :repo "zozowell/helm-ag"
                            :branch "further-support-rg"))
-       helm-posframe
        posframe
        transient-posframe
        which-key-posframe
@@ -694,12 +693,7 @@ before packages are loaded."
     (define-key copilot-completion-map (kbd "M-<tab>") 'copilot-accept-completion-by-word)
     (set-variable 'lisp-indent-offset 2))
 
-  (use-package helm-posframe
-    :ensure t
-    :init (helm-posframe-enable))
 
-  (with-eval-after-load 'helm-posframe
-    (setq helm-posframe-width 200))
 
   (use-package transient-posframe
     :ensure t
