@@ -15,3 +15,4 @@ export PATH="/Users/jake/.config/emacs/bin:$PATH"
 export PATH="$PATH:/usr/local/bin/platform-tools/"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"
