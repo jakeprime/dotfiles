@@ -118,12 +118,6 @@ This function should only modify configuration layer settings."
        dap-mode
        diredfl
        gptel
-       ;; support rg 14
-       ;; https://github.com/syl20bnr/spacemacs/issues/16200
-       (helm-ag :location (recipe
-                           :fetcher github
-                           :repo "zozowell/helm-ag"
-                           :branch "further-support-rg"))
        posframe
        transient-posframe
        which-key-posframe
