@@ -855,6 +855,9 @@ before packages are loaded."
                           evil-replace-state-cursor '(nil nil))
               (spacemacs/disable-hl-line-mode)))
 
+  (assq-delete-all 'ruby-Test::Unit compilation-error-regexp-alist-alist)
+  (add-to-list 'compilation-error-regexp-alist-alist '(ruby-Test::Unit "^ +\\([^ (].*\\):\\([1-9][0-9]*\\):in " 1 2))
+  (assoc 'ruby-Test::Unit compilation-error-regexp-alist-alist)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
