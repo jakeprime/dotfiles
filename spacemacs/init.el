@@ -118,9 +118,6 @@ This function should only modify configuration layer settings."
        dap-mode
        diredfl
        gptel
-       posframe
-       transient-posframe
-       which-key-posframe
      )
 
     ;; A list of packages that cannot be updated.
@@ -313,7 +310,9 @@ It should only modify the values of Spacemacs settings."
    ;; (default t)
    dotspacemacs-colorize-cursor-according-to-state t
 
-   ;; Default font or prioritized list of fonts. The `:size' can be specified as
+   ;; Default font or prioritized list of fonts. This setting has no effect when
+   ;; running Emacs in terminal. The font set here will be used for default and
+   ;; fixed-pitch faces. The `:size' can be specified as
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
    dotspacemacs-default-font '()
@@ -391,8 +390,12 @@ It should only modify the values of Spacemacs settings."
    ;; Which-key frame position. Possible values are `right', `bottom' and
    ;; `right-then-bottom'. right-then-bottom tries to display the frame to the
    ;; right; if there is insufficient space it displays it at the bottom.
+   ;; It is also possible to use a posframe with the following cons cell
+   ;; `(posframe . position)' where position can be one of `center',
+   ;; `top-center', `bottom-center', `top-left-corner', `top-right-corner',
+   ;; `top-right-corner', `bottom-left-corner' or `bottom-right-corner'
    ;; (default 'bottom)
-   dotspacemacs-which-key-position 'bottom
+   dotspacemacs-which-key-position '(posframe . center)
 
    ;; Control where `switch-to-buffer' displays the buffer. If nil,
    ;; `switch-to-buffer' displays the buffer in the current window even if
@@ -521,7 +524,7 @@ It should only modify the values of Spacemacs settings."
    ;; List of search tool executable names. Spacemacs uses the first installed
    ;; tool of the list. Supported tools are `rg', `ag', `pt', `ack' and `grep'.
    ;; (default '("rg" "ag" "pt" "ack" "grep"))
-   dotspacemacs-search-tools '("rg" "grep")
+   dotspacemacs-search-tools '("rg" "ag" "pt" "ack" "grep")
 
    ;; Format specification for setting the frame title.
    ;; %a - the `abbreviated-file-name', or `buffer-name'
@@ -681,16 +684,6 @@ before packages are loaded."
     (define-key copilot-completion-map (kbd "C-<tab>") 'copilot-accept-completion)
     (define-key copilot-completion-map (kbd "M-<tab>") 'copilot-accept-completion-by-word)
     (set-variable 'lisp-indent-offset 2))
-
-
-
-  (use-package transient-posframe
-    :ensure t
-    :init (transient-posframe-mode))
-
-  (use-package which-key-posframe
-    :ensure t
-    :init (which-key-posframe-mode))
 
   (add-hook 'prog-mode-hook 'copilot-mode)
 
@@ -873,13 +866,13 @@ This function is called at the very end of Spacemacs initialization."
  '(highlight-parentheses-colors '("Springgreen3" "IndianRed1" "IndianRed3" "IndianRed4") nil nil "Customized with use-package highlight-parentheses")
  '(ns-right-alternate-modifier 'none)
  '(package-selected-packages
-    '(sql-indent sqlup-mode org-roam which-key-posframe transient-posframe helm-posframe orgit-forge orgit org xah-fly-keys diredfl all-the-icons-nerd-fonts helm-mu wfnames mu4e-alert mu4e-maildirs-extension org-bullets persistent-scratch unkillable-scratch mwim unfill csv-mode color-identifiers-mode rainbow-identifiers rainbow-mode tide gptel company-web web-completion-data counsel-css helm-css-scss impatient-mode htmlize pug-mode sass-mode haml-mode scss-mode slim-mode tagedit yaml-mode typescript-mode web-mode ac-ispell auto-complete auto-yasnippet flycheck-pos-tip pos-tip fuzzy helm-c-yasnippet helm-company helm-lsp lsp-origami origami lsp-ui yasnippet-snippets browse-at-remote git-gutter-fringe fringe-helper git-gutter emmet-mode import-js grizzl js-doc rjsx-mode js2-mode tern web-beautify yasnippet el-get exec-path-from-shell magit-delta add-node-modules-path bundler chruby counsel-gtags counsel swiper ivy dap-mode lsp-docker lsp-treemacs bui lsp-mode enh-ruby-mode ggtags minitest prettier-js rake rbenv robe inf-ruby rspec-mode rubocop rubocopfmt ruby-hash-syntax ruby-refactor ruby-test-mode ruby-tools rvm seeing-is-believing forge yaml ghub closql emacsql treepy git-link git-messenger git-modes git-timemachine gitignore-templates helm-git-grep helm-ls-git smeargle treemacs-magit magit magit-section git-commit with-editor transient esh-help eshell-prompt-extras eshell-z multi-term multi-vterm shell-pop terminal-here vterm xterm-color company-emoji company emoji-cheat-sheet-plus gh-md markdown-toc markdown-mode mmm-mode valign vmd-mode writeroom-mode evil-lion winum helm-themes google-translate paradox evil-cleverparens evil-iedit-state inspector helm-org elisp-def evil-evilified-state indent-guide auto-compile link-hint devdocs ace-jump-helm-line evil-easymotion org-superstar evil-textobj-line pcre2el flycheck-elsa evil-visual-mark-mode shades-of-purple-theme hide-comnt aggressive-indent which-key volatile-highlights elisp-slime-nav symon nameless highlight-numbers macrostep clean-aindent-mode diminish highlight-parentheses drag-stuff hl-todo string-inflection all-the-icons vim-powerline vi-tilde-fringe expand-region helm-make uuidgen evil-collection evil-anzu request treemacs-projectile info+ emr lorem-ipsum fancy-battery flx-ido helm-mode-manager helm-projectile help-fns+ hybrid-mode dumb-jump evil-surround evil-lisp-state eval-sexp-fu undo-tree evil-matchit golden-ratio auto-highlight-symbol treemacs-persp editorconfig spacemacs-purpose-popwin evil-visualstar evil-mc helm-purpose dotenv-mode ace-link treemacs-evil toc-org helm-ag evil-unimpaired restart-emacs evil-goggles highlight-indentation evil-numbers treemacs-icons-dired evil-tutor evil-exchange helm-descbinds evil-args hungry-delete space-doc ws-butler evil-escape  fsflycheck-package spacemacs-whitespace-cleanup column-enforce-mode quickrun multi-line open-junk-file rainbow-delimiters define-word spaceline overseer helm-xref centered-cursor-mode evil-indent-plus helm-swoop symbol-overlay evil-nerd-commenter term-cursor password-generator string-edit-at-point dired-quick-sort popwin eyebrowse holy-mode))
+   '(copilot diff-hl nerd-icons eat evil-org feature-mode package-lint gnuplot helm-comint helm-org-rifle multiple-cursors hierarchy json-reformat json-snatcher nodejs-repl npm-mode org-cliplink org-contrib org-download org-mime org-pomodoro org-present org-category-capture org-rich-yank inflections skewer-mode sql-indent sqlup-mode org-roam helm-posframe orgit-forge orgit org xah-fly-keys diredfl all-the-icons-nerd-fonts helm-mu wfnames mu4e-alert mu4e-maildirs-extension org-bullets persistent-scratch unkillable-scratch mwim unfill csv-mode color-identifiers-mode rainbow-identifiers rainbow-mode tide company-web web-completion-data counsel-css helm-css-scss impatient-mode htmlize pug-mode sass-mode haml-mode scss-mode slim-mode tagedit yaml-mode typescript-mode web-mode ac-ispell auto-complete auto-yasnippet flycheck-pos-tip pos-tip fuzzy helm-c-yasnippet helm-company helm-lsp lsp-origami origami lsp-ui yasnippet-snippets browse-at-remote git-gutter-fringe fringe-helper git-gutter emmet-mode import-js grizzl js-doc rjsx-mode js2-mode tern web-beautify yasnippet el-get exec-path-from-shell magit-delta add-node-modules-path bundler chruby counsel-gtags counsel swiper ivy dap-mode lsp-docker lsp-treemacs bui lsp-mode enh-ruby-mode ggtags minitest prettier-js rake rbenv robe inf-ruby rspec-mode rubocop rubocopfmt ruby-hash-syntax ruby-refactor ruby-test-mode ruby-tools rvm seeing-is-believing forge yaml ghub closql emacsql treepy git-link git-messenger git-modes git-timemachine gitignore-templates helm-git-grep helm-ls-git smeargle treemacs-magit magit magit-section git-commit with-editor transient esh-help eshell-prompt-extras eshell-z multi-term multi-vterm shell-pop terminal-here vterm xterm-color company-emoji company emoji-cheat-sheet-plus gh-md markdown-toc markdown-mode mmm-mode valign vmd-mode writeroom-mode evil-lion winum helm-themes google-translate paradox evil-cleverparens evil-iedit-state inspector helm-org elisp-def evil-evilified-state indent-guide auto-compile link-hint devdocs ace-jump-helm-line evil-easymotion org-superstar evil-textobj-line pcre2el flycheck-elsa evil-visual-mark-mode shades-of-purple-theme hide-comnt aggressive-indent volatile-highlights elisp-slime-nav symon nameless highlight-numbers macrostep clean-aindent-mode diminish highlight-parentheses drag-stuff hl-todo string-inflection all-the-icons vim-powerline vi-tilde-fringe expand-region helm-make uuidgen evil-collection evil-anzu request treemacs-projectile info+ emr lorem-ipsum fancy-battery flx-ido helm-mode-manager helm-projectile help-fns+ hybrid-mode dumb-jump evil-surround evil-lisp-state eval-sexp-fu undo-tree evil-matchit golden-ratio auto-highlight-symbol treemacs-persp editorconfig spacemacs-purpose-popwin evil-visualstar evil-mc helm-purpose dotenv-mode ace-link treemacs-evil toc-org evil-unimpaired restart-emacs evil-goggles highlight-indentation evil-numbers treemacs-icons-dired evil-tutor evil-exchange helm-descbinds evil-args hungry-delete space-doc ws-butler evil-escape fsflycheck-package spacemacs-whitespace-cleanup column-enforce-mode quickrun multi-line open-junk-file rainbow-delimiters define-word spaceline overseer helm-xref centered-cursor-mode evil-indent-plus helm-swoop symbol-overlay evil-nerd-commenter term-cursor password-generator string-edit-at-point dired-quick-sort popwin eyebrowse holy-mode))
  '(safe-local-variable-values
-    '((ruby-test-runner quote minitest)
-       (ruby-test-runner . rspec)
-       (javascript-backend . tide)
-       (javascript-backend . tern)
-       (javascript-backend . lsp)))
+   '((ruby-test-runner quote minitest)
+     (ruby-test-runner . rspec)
+     (javascript-backend . tide)
+     (javascript-backend . tern)
+     (javascript-backend . lsp)))
  '(user-mail-address "jake@meetcleo.com"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
