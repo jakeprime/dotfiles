@@ -117,7 +117,6 @@ This function should only modify configuration layer settings."
                             :files ("*.el" "dist")))
        dap-mode
        diredfl
-       gptel
      )
 
     ;; A list of packages that cannot be updated.
@@ -634,8 +633,6 @@ before packages are loaded."
   (add-to-list 'custom-theme-load-path "~/.spacemacs.d/")
   (load "faces-init")
 
-  (require 'gptel)
-
   (setq magit-repository-directories
     '(("~/work/" . 2)))
 
@@ -806,8 +803,6 @@ before packages are loaded."
   (spacemacs/set-leader-keys
     "oi" 'ibuffer)
   (spacemacs/set-leader-keys
-    "og" 'gptel)
-  (spacemacs/set-leader-keys
     "of" 'toggle-frame-fullscreen)
   (spacemacs/set-leader-keys
     "oql" 'hs-hide-level)
@@ -861,8 +856,6 @@ This function is called at the very end of Spacemacs initialization."
  '(doom-modeline-mu4e t)
  '(doom-modeline-time nil)
  '(evil-escape-key-sequence [106 107])
- '(gptel-default-mode 'org-mode)
- '(gptel-model "gpt-4")
  '(highlight-parentheses-colors '("Springgreen3" "IndianRed1" "IndianRed3" "IndianRed4") nil nil "Customized with use-package highlight-parentheses")
  '(ns-right-alternate-modifier 'none)
  '(package-selected-packages
