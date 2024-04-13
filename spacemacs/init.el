@@ -75,6 +75,7 @@ This function should only modify configuration layer settings."
      prettier
      react
      (ruby :variables
+           ruby-test-runner 'ruby-test
            ruby-version-manager 'rbenv
            rbenv-show-active-ruby-in-modeline nil
            )
