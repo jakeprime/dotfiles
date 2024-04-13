@@ -47,6 +47,7 @@ This function should only modify configuration layer settings."
                  javascript-fmt-tool 'prettier
                  )
      json
+     llm-client
      lsp
      markdown
      (mu4e :variables
@@ -811,6 +812,14 @@ before packages are loaded."
     "oqs" 'hs-show-block)
   (spacemacs/set-leader-keys
     "oqh" 'hs-hide-block)
+
+  (defun jake/open-chat-gpt ()
+    (interactive)
+    (gptel "*ChatGPT*")
+    (let ((buffer (get-buffer "*ChatGPT*")))
+      (switch-to-buffer buffer)))
+  (spacemacs/set-leader-keys
+    "og" 'jake/open-chat-gpt)
 
   (defun browse-commit-on-github ()
     (interactive)
