@@ -47,7 +47,9 @@ This function should only modify configuration layer settings."
                  javascript-fmt-tool 'prettier
                  )
      json
-     llm-client
+     (llm-client :variables
+                 gptel-model "gpt-4-turbo-preview")
+
      lsp
      markdown
      (mu4e :variables
