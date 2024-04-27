@@ -2,7 +2,7 @@ alias kapow="cl && code ."
 
 # cleo
 alias cl="cd /Users/jake/work/cleo/meetcleo"
-alias cl-ios="cl && cd packages/native-app && yarn && cd ios && bundle && be pod install --repo-update && yarn ios --simulator=\"iPhone 15 Pro (17.2)\""
+alias cl-ios="cl && cd packages/native-app && yarn && cd ios && bundle && be pod install --no-repo-update && yarn ios --simulator=\"iPhone 15 Pro (17.2)\""
 
 # git
 alias gadd="git add -N . && git add -p ."
