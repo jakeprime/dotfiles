@@ -48,7 +48,7 @@ This function should only modify configuration layer settings."
                  )
      json
      (llm-client :variables
-                 gptel-model "gpt-4-turbo-preview")
+                 gptel-model "gpt-4")
 
      lsp
      markdown
