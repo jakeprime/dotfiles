@@ -815,6 +815,8 @@ before packages are loaded."
     "oqs" 'hs-show-block)
   (spacemacs/set-leader-keys
     "oqh" 'hs-hide-block)
+  (spacemacs/set-leader-keys
+    "ow" 'wdired-change-to-wdired-mode)
 
   (defun jake/open-chat-gpt ()
     (interactive)
