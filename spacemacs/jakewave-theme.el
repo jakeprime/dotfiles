@@ -296,6 +296,7 @@
     `(web-mode-html-tag-face ((t (:inherit (jake-yellow-glow) :foreground unspecified))))
     `(web-mode-keyword-face ((t (:inherit (font-lock-keyword-face) :foreground unspecified))))
     `(web-mode-string-face ((t (:inherit (font-lock-string-face) :foreground unspecified))))
+    `(web-mode-symbol-face ((t (:inherit font-lock-constant-face :foreground unspecified))))
     `(web-mode-variable-name-face ((t :foreground unspecified)))
     `(which-key-command-description-face ((t :inherit jake-cyan :foreground unspecified)))
     `(which-key-group-description-face ((t :inherit jake-yellow-glow :foreground unspecified)))

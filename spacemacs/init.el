@@ -121,6 +121,7 @@ This function should only modify configuration layer settings."
                             :repo "zerolfx/copilot.el"
                             :files ("*.el" "dist")))
        dap-mode
+       dired-single
        diredfl
        transient-posframe
      )
@@ -854,6 +855,23 @@ before packages are loaded."
   (use-package transient-posframe
     :ensure t
     :init (transient-posframe-mode))
+
+  (require 'dired-single)
+  (defun jake/dired-single ()
+    "Bunch of stuff to run for dired, either immediately or when it's
+   loaded."
+    ;; <add other dired customizations here>
+    (define-key dired-mode-map [return] 'dired-single-buffer)
+    (define-key dired-mode-map "^"
+      (function
+        (lambda nil (interactive) (dired-single-buffer "..")))))
+
+  ;; if dired's already loaded, then the keymap will be bound
+  (if (boundp 'dired-mode-map)
+    ;; we're good to go; just add our bindings
+    (jake/dired-single)
+    ;; it's not loaded yet, so add our bindings to the load-hook
+    (add-hook 'dired-load-hook 'jake/dired-single))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
