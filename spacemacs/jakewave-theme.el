@@ -118,7 +118,7 @@
     `(evil-ex-lazy-highlight ((t (:inherit (jake-no-glow bold) :foreground ,jake-dark :background ,jake-green))))
     `(fixed-pitch ((t (:family ,jake-fixed))))
     `(font-lock-bracket-face ((t (:inherit font-lock-punctuation-face :foreground unspecified))))
-    `(font-lock-builtin-face ((t (:foreground ,jake-yellow))))
+    `(font-lock-builtin-face ((t (:inherit jake-pink-glow :foreground unspecified))))
     `(font-lock-comment-delimiter-face ((default (:inherit font-lock-comment-face))))
     `(font-lock-comment-face ((t (:inherit (jake-script jake-purple-subtle-glow) :foreground unspecified :background unspecified))))
     `(font-lock-constant-face ((t (:foreground ,jake-purple))))
