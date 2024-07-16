@@ -54,7 +54,7 @@ This function should only modify configuration layer settings."
      lsp
      markdown
      (mu4e :variables
-           mu4e-installation-path "/opt/homebrew/Cellar/mu/1.10.8/share/emacs/site-lisp/mu/mu4e"
+           mu4e-installation-path "/opt/homebrew/Cellar/mu/1.12.5/share/emacs/site-lisp/mu/mu4e"
            mu4e-get-mail-command "mbsync -a"
            mu4e-update-interval (* 5 60)
            mu4e-change-filenames-when-moving t
