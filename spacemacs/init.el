@@ -45,6 +45,7 @@ This function should only modify configuration layer settings."
                  javascript-backend 'lsp
                  javascript-fmt-on-save t
                  javascript-fmt-tool 'prettier
+                 js-indent-level 2
                  )
      json
      (llm-client :variables
@@ -100,7 +101,8 @@ This function should only modify configuration layer settings."
                  typescript-fmt-on-save t
                  typescript-fmt-tool 'prettier
                  typescript-linter 'eslint
-                 )
+                 typescript-indent-level 2
+        )
      version-control
      yaml
    )
@@ -855,6 +857,12 @@ before packages are loaded."
   (use-package transient-posframe
     :ensure t
     :init (transient-posframe-mode))
+
+  (add-hook 'web-mode-hook
+            (lambda ()
+              (setq web-mode-markup-indent-offset 2)
+              (setq web-mode-css-indent-offset 2)
+              (setq web-mode-code-indent-offset 2)))
 
   (require 'dired-single)
   (defun jake/dired-single ()
