@@ -1,1 +1,0 @@
-export AWS_PROFILE=Engineer-878877078763
