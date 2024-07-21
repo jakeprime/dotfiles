@@ -20,7 +20,7 @@ set term=xterm-256color
 set termencoding=utf-8
 
 set ruler
-imap jk <Esc>
+inoremap jk <Esc>
 
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
