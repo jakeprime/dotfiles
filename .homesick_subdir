@@ -1,3 +1,4 @@
 .config/hypr
+.config/waybar
 .oh-my-zsh
 .spacemacs.d
