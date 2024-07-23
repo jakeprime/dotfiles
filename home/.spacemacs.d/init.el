@@ -48,17 +48,8 @@ This function should only modify configuration layer settings."
                  js-indent-level 2
                  )
      json
-     (llm-client :variables
-                 gptel-model "gpt-4")
-
      lsp
      markdown
-     (mu4e :variables
-           mu4e-installation-path "/opt/homebrew/Cellar/mu/1.12.5/share/emacs/site-lisp/mu/mu4e"
-           mu4e-get-mail-command "mbsync -a"
-           mu4e-update-interval (* 5 60)
-           mu4e-change-filenames-when-moving t
-           )
      multiple-cursors
      (org :variables
           org-agenda-files '("~/Org/Tasks.org" "~/Org/Journal/")
@@ -118,10 +109,6 @@ This function should only modify configuration layer settings."
    ;; Also include the dependencies as they will not be resolved automatically.
     dotspacemacs-additional-packages
     '(
-       (copilot :location (recipe
-                            :fetcher github
-                            :repo "zerolfx/copilot.el"
-                            :files ("*.el" "dist")))
        dap-mode
        dired-single
        diredfl
@@ -686,13 +673,6 @@ before packages are loaded."
     ;; disable inline previews
     (delq 'company-preview-if-just-one-frontend company-frontends))
 
-  (with-eval-after-load 'copilot
-    (define-key copilot-completion-map (kbd "C-<tab>") 'copilot-accept-completion)
-    (define-key copilot-completion-map (kbd "M-<tab>") 'copilot-accept-completion-by-word)
-    (set-variable 'lisp-indent-offset 2))
-
-  (add-hook 'prog-mode-hook 'copilot-mode)
-
   (defun disable-lsp-for-ruby ()
     (when (derived-mode-p 'ruby-mode)
       (setq lsp-diagnostics-provider :none)))
@@ -741,66 +721,6 @@ before packages are loaded."
         smtpmail-smtp-service 587
         smtpmail-debug-info t)
 
-  (with-eval-after-load 'mu4e
-    (setq mu4e-contexts
-          (list
-           (make-mu4e-context
-            :name "Cleo"
-            :match-func
-            (lambda (msg)
-              (when msg
-                (string-prefix-p "/cleo" (mu4e-message-field msg :maildir))))
-            :vars '((user-mail-address . "jake@meetcleo.com")
-                    (user-full-name . "Jake Prime")
-                    (mu4e-refile-folder . "/cleo/[Gmail]/All Mail")
-                    (mu4e-sent-folder . "/cleo/[Gmail]/Sent Mail")
-                    (mu4e-trash-folder . "/cleo/[Gmail]/Trash")
-                    (mu4e-alert-interesting-mail-query . "flag:unread AND maildir:/cleo/Inbox")
-                    (smtpmail-smtp-user . "jake@meetcleo.com")))
-           (make-mu4e-context
-            :name "Personal"
-            :match-func
-            (lambda (msg)
-              (when msg
-                (string-prefix-p "/personal" (mu4e-message-field msg :maildir))))
-            :vars '((user-mail-address . "jake@jakeprime.com")
-                    (user-full-name . "Jake Prime")
-                    (mu4e-refile-folder . "/personal/[Google Mail]/All Mail")
-                    (mu4e-sent-folder . "/personal/[Google Mail]/Sent Mail")
-                    (mu4e-trash-folder . "/personal/[Google Mail]/Bin")
-                    (mu4e-alert-interesting-mail-query . "flag:unread AND maildir:/personal/Inbox")
-                    (smtpmail-smtp-user . "jake.prime@gmail.com")))
-           ))
-    (add-to-list 'mu4e-marks
-                 '(trash
-                  :char ("d" . "▼")
-                  :prompt "dtrash"
-                  :dyn-target (lambda (target msg) (mu4e-get-trash-folder msg))
-                  :action (lambda (docid msg target)
-                            (mu4e--server-move docid
-                                               (mu4e--mark-check-target target) "+S-N"))))
-    (add-to-list 'mu4e-marks
-                 '(flag
-                  :char ("+" . "★")
-                  :prompt "dflag"
-                  :dyn-target (lambda (target msg)
-                                (replace-regexp-in-string "All Mail" "Starred"
-                                                          (mu4e-get-refile-folder msg)))
-                  :action (lambda (docid msg target)
-                            (mu4e--server-move docid
-                                               (mu4e--mark-check-target target))))))
-
-  (setq mu4e-maildir-shortcuts
-         '((:maildir "/cleo/Inbox" :key ?c :name "Cleo" :hide t)
-           (:maildir "/personal/Inbox" :key ?p :name "Personal" :hide t)))
-  (setq mu4e-headers-attach-mark '("a" . "+"))
-  (setq mu4e-headers-list-mark '("l" . "@"))
-  (setq mu4e-headers-personal-mark '("p" . "."))
-  (setq mu4e-headers-flagged-mark '("f" . "!"))
-  (setq mu4e-headers-new-mark '("N" . "*"))
-
-  (add-hook 'mu4e-index-updated-hook #'mu4e-alert-enable-mode-line-display)
-
   (add-hook 'dired-mode-hook 'diredfl-mode)
 
 
@@ -820,14 +740,6 @@ before packages are loaded."
     "oqh" 'hs-hide-block)
   (spacemacs/set-leader-keys
     "ow" 'wdired-change-to-wdired-mode)
-
-  (defun jake/open-chat-gpt ()
-    (interactive)
-    (gptel "*ChatGPT*")
-    (let ((buffer (get-buffer "*ChatGPT*")))
-      (switch-to-buffer buffer)))
-  (spacemacs/set-leader-keys
-    "og" 'jake/open-chat-gpt)
 
   (defun browse-commit-on-github ()
     (interactive)

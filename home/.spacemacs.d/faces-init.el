@@ -10,7 +10,10 @@
       )
 
 
-  (set-face-attribute 'default nil :family "MonaspiceAr Nerd Font" :height 130 :weight 'light)
+  ;; :height should be 130 for Mac, and 200 for Linux
+  ;; for sharp font rendering on linux we have to remove the scaling so
+  ;; the text size is much smaller on an HiDPI screen.
+  (set-face-attribute 'default nil :family "MonaspiceAr Nerd Font" :height 200 :weight 'light)
   (load-theme 'jakewave t)
   (load-theme 'jakewave t) ;; Necessary, but why? 🤷‍♂️
 
@@ -24,7 +27,7 @@
 
   (set-face-attribute 'jake-cyan-glow nil :shadow `(10.0 ,jake-cyan 0 . 0))
   (set-face-attribute 'jake-cyan-highlight-glow nil :shadow `(10.0 ,jake-cyan-highlight 0 . 0))
-  (set-face-attribute 'jake-green-glow nil :shadow `(10.0 ,jake-green 0 . 0))
+  (set-face-attribute 'jake-green-glow nil :shadow `(20.0 ,jake-green 0 . 0))
   (set-face-attribute 'jake-pink-glow nil :shadow `(10.0 ,jake-pink 0 . 0))
   (set-face-attribute 'jake-purple-glow nil :shadow `(10.0 ,jake-purple 0 . 0))
   (set-face-attribute 'jake-purple-subtle-glow nil :shadow `(5.0 ,jake-purple-subtle 0 . 0))
@@ -66,4 +69,4 @@
   (set-face-attribute 'nerd-icons-red-alt nil :shadow nil)
   (set-face-attribute 'nerd-icons-silver nil :shadow nil)
   (set-face-attribute 'nerd-icons-yellow nil :shadow nil)
-)
+  )
