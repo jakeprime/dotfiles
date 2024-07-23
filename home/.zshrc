@@ -1,3 +1,22 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000000
+SAVEHIST=1000000
+setopt autocd
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/jake/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+# fix blurry fonts in Chrome
+export MOZ_ENABLE_WAYLAND=1
+
+. /opt/asdf-vm/asdf.sh
+
 # cleo
 alias cl="cd ~/work/cleo/meetcleo"
 alias cl-ios="cl && cd packages/native-app && yarn && cd ios && bundle && be pod install --no-repo-update && yarn ios --simulator=\"iPhone 15 Pro (17.2)\""
