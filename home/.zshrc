@@ -47,7 +47,7 @@ export HISTFILE=~/.zsh_history
 setopt APPEND_HISTORY
 bindkey "^[^[[D" backward-word
 bindkey "^[^[[C" forward-word
-export ZSH="~/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="agnoster"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
