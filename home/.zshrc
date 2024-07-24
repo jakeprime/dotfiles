@@ -23,7 +23,7 @@ alias cl-ios="cl && cd packages/native-app && yarn && cd ios && bundle && be pod
 
 # git
 alias gadd="git add -N . && git add -p ."
-alias grim="git fetch && git rebase -i --rebase-merges origin/main"
+alias grm="git fetch && git rebase -i --rebase-merges origin/main"
 
 # prime translatrix
 alias pt="cd ~/work/primetranslatrix/primetranslatrix-3"
