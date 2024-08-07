@@ -52,7 +52,7 @@ This function should only modify configuration layer settings."
      markdown
      multiple-cursors
      (org :variables
-          org-agenda-files '("~/Org/Tasks.org" "~/Org/Journal/")
+          org-agenda-files '("~/gdrive/Org/Tasks.org" "~/gdrive/Org/Journal/")
           org-archive-location "~/Org/Archive.org::datetree/"
           org-refile-targets '((org-agenda-files :maxlevel . 1))
           org-ellipsis " ▾"
@@ -61,7 +61,7 @@ This function should only modify configuration layer settings."
           org-log-into-drawer t
           org-todo-keywords '((sequence "TODO" "|" "DONE" "REJECTED"))
           org-enable-org-journal-support t
-          org-journal-dir "~/Org/Journal/"
+          org-journal-dir "~/gdrive/Org/Journal/"
           org-journal-file-format "%Y-%m-%d.org"
           org-journal-time-prefix "** TODO "
           org-journal-time-format ""
