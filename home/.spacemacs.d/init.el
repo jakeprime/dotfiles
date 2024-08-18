@@ -47,6 +47,8 @@ This function should only modify configuration layer settings."
                  javascript-fmt-tool 'prettier
                  js-indent-level 2
                  )
+     (llm-client :variables
+                 gptel-model "gpt-4")
      json
      lsp
      markdown
@@ -792,6 +794,14 @@ before packages are loaded."
   (remove-hook 'org-mode-hook 'org-eldoc-load)
 
   (setq grep-program "/opt/homebrew/bin/ggrep")
+
+  (defun jake/open-chat-gpt ()
+    (interactive)
+    (gptel "*ChatGPT*")
+    (let ((buffer (get-buffer "*ChatGPT*")))
+      (switch-to-buffer buffer)))
+  (spacemacs/set-leader-keys
+    "og" 'jake/open-chat-gpt)
 
   (spacemacs/set-leader-keys
     "oi" 'ibuffer)
