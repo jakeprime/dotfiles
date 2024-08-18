@@ -32,8 +32,7 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
-     better-defaults
+   '(better-defaults
      colors
      compleseus
      csv
@@ -94,6 +93,7 @@ This function should only modify configuration layer settings."
      sql
      syntax-checking
      tide
+     toml
      treemacs
      (typescript :variables
                  typescript-backend 'lsp
@@ -943,14 +943,14 @@ This function is called at the very end of Spacemacs initialization."
                  spacemacs-whitespace-cleanup sql-indent sqlup-mode
                  string-edit-at-point string-inflection swiper symbol-overlay
                  symon tagedit term-cursor terminal-here tern tide toc-org
-                 transient transient-posframe treemacs-evil treemacs-icons-dired
-                 treemacs-magit treemacs-persp treemacs-projectile treepy
-                 typescript-mode undo-tree unfill unkillable-scratch uuidgen
-                 valign vertico vi-tilde-fringe vim-powerline vmd-mode
-                 volatile-highlights vterm web-beautify web-completion-data
-                 web-mode wfnames wgrep winum with-editor writeroom-mode ws-butler
-                 xah-fly-keys xterm-color yaml yaml-mode yasnippet
-                 yasnippet-snippets))
+                 toml-mode transient transient-posframe treemacs-evil
+                 treemacs-icons-dired treemacs-magit treemacs-persp
+                 treemacs-projectile treepy typescript-mode undo-tree unfill
+                 unkillable-scratch uuidgen valign vertico vi-tilde-fringe
+                 vim-powerline vmd-mode volatile-highlights vterm web-beautify
+                 web-completion-data web-mode wfnames wgrep winum with-editor
+                 writeroom-mode ws-butler xah-fly-keys xterm-color yaml yaml-mode
+                 yasnippet yasnippet-snippets))
    '(safe-local-variable-values
      '((ruby-test-runner quote minitest) (ruby-test-runner . rspec)
        (javascript-backend . tide) (javascript-backend . tern)
