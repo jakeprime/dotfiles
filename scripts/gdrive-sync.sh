@@ -43,7 +43,7 @@ RCLONE_REMOTE="gdrive:"
 # RCLONE_CMD: The sync command and arguments:
 ## (This example is for one-way sync):
 ## (Consider using other modes like `bisync` or `move` [see `man rclone` for details]):
-RCLONE_CMD="rclone -v bisync ${RCLONE_REMOTE} ${RCLONE_SYNC_PATH} --create-empty-src-dirs --compare size,modtime,checksum --slow-hash-sync-only --resilient -MvP --drive-skip-gdocs --fix-case"
+RCLONE_CMD="rclone -v bisync ${RCLONE_REMOTE} ${RCLONE_SYNC_PATH} --create-empty-src-dirs --compare size,modtime,checksum --slow-hash-sync-only --resilient -MvP --fix-case --drive-export-formats link.html"
 
 # WATCH_EVENTS: The file events that inotifywait should watch for:
 WATCH_EVENTS="modify,delete,create,move"
