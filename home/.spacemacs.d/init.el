@@ -882,12 +882,68 @@ This function is called at the very end of Spacemacs initialization."
    '(lsp-ruby-lsp-use-bundler t)
    '(ns-right-alternate-modifier 'none)
    '(package-selected-packages
-     '(compleseus-spacemacs-help consult-lsp consult-yasnippet embark-consult consult embark marginalia orderless vertico wgrep transient-posframe copilot diff-hl nerd-icons eat evil-org feature-mode package-lint gnuplot helm-comint helm-org-rifle multiple-cursors hierarchy json-reformat json-snatcher nodejs-repl npm-mode org-cliplink org-contrib org-download org-mime org-pomodoro org-present org-category-capture org-rich-yank inflections skewer-mode sql-indent sqlup-mode org-roam helm-posframe orgit-forge orgit org xah-fly-keys diredfl all-the-icons-nerd-fonts helm-mu wfnames mu4e-alert mu4e-maildirs-extension org-bullets persistent-scratch unkillable-scratch mwim unfill csv-mode color-identifiers-mode rainbow-identifiers rainbow-mode tide company-web web-completion-data counsel-css helm-css-scss impatient-mode htmlize pug-mode sass-mode haml-mode scss-mode slim-mode tagedit yaml-mode typescript-mode web-mode ac-ispell auto-complete auto-yasnippet flycheck-pos-tip pos-tip fuzzy helm-c-yasnippet helm-company helm-lsp lsp-origami origami lsp-ui yasnippet-snippets browse-at-remote git-gutter-fringe fringe-helper git-gutter emmet-mode import-js grizzl js-doc rjsx-mode js2-mode tern web-beautify yasnippet el-get exec-path-from-shell magit-delta add-node-modules-path bundler chruby counsel-gtags counsel swiper ivy dap-mode lsp-docker lsp-treemacs bui lsp-mode enh-ruby-mode ggtags minitest prettier-js rake rbenv robe inf-ruby rspec-mode rubocop rubocopfmt ruby-hash-syntax ruby-refactor ruby-test-mode ruby-tools rvm seeing-is-believing forge yaml ghub closql emacsql treepy git-link git-messenger git-modes git-timemachine gitignore-templates helm-git-grep helm-ls-git smeargle treemacs-magit magit magit-section git-commit with-editor transient esh-help eshell-prompt-extras eshell-z multi-term multi-vterm shell-pop terminal-here vterm xterm-color company-emoji company emoji-cheat-sheet-plus gh-md markdown-toc markdown-mode mmm-mode valign vmd-mode writeroom-mode evil-lion winum helm-themes google-translate paradox evil-cleverparens evil-iedit-state inspector helm-org elisp-def evil-evilified-state indent-guide auto-compile link-hint devdocs ace-jump-helm-line evil-easymotion org-superstar evil-textobj-line pcre2el flycheck-elsa evil-visual-mark-mode shades-of-purple-theme hide-comnt aggressive-indent volatile-highlights elisp-slime-nav symon nameless highlight-numbers macrostep clean-aindent-mode diminish highlight-parentheses drag-stuff hl-todo string-inflection all-the-icons vim-powerline vi-tilde-fringe expand-region helm-make uuidgen evil-collection evil-anzu request treemacs-projectile info+ emr lorem-ipsum fancy-battery flx-ido helm-mode-manager helm-projectile help-fns+ hybrid-mode dumb-jump evil-surround evil-lisp-state eval-sexp-fu undo-tree evil-matchit golden-ratio auto-highlight-symbol treemacs-persp editorconfig spacemacs-purpose-popwin evil-visualstar evil-mc helm-purpose dotenv-mode ace-link treemacs-evil toc-org evil-unimpaired restart-emacs evil-goggles highlight-indentation evil-numbers treemacs-icons-dired evil-tutor evil-exchange helm-descbinds evil-args hungry-delete space-doc ws-butler evil-escape fsflycheck-package spacemacs-whitespace-cleanup column-enforce-mode quickrun multi-line open-junk-file rainbow-delimiters define-word spaceline overseer helm-xref centered-cursor-mode evil-indent-plus helm-swoop symbol-overlay evil-nerd-commenter term-cursor password-generator string-edit-at-point dired-quick-sort popwin eyebrowse holy-mode))
+     '(ac-ispell ace-jump-helm-line ace-link add-node-modules-path aggressive-indent
+                 all-the-icons all-the-icons-nerd-fonts auto-compile auto-complete
+                 auto-highlight-symbol auto-yasnippet browse-at-remote bui bundler
+                 centered-cursor-mode chruby clean-aindent-mode closql
+                 color-identifiers-mode column-enforce-mode company company-emoji
+                 company-web compleseus-spacemacs-help consult consult-lsp
+                 consult-yasnippet copilot counsel counsel-css counsel-gtags
+                 csv-mode dap-mode define-word devdocs diff-hl diminish
+                 dired-quick-sort diredfl dotenv-mode drag-stuff dumb-jump eat
+                 editorconfig el-get elisp-def elisp-slime-nav ellama emacsql
+                 embark embark-consult emmet-mode emoji-cheat-sheet-plus emr
+                 enh-ruby-mode esh-help eshell-prompt-extras eshell-z eval-sexp-fu
+                 evil-anzu evil-args evil-cleverparens evil-collection
+                 evil-easymotion evil-escape evil-evilified-state evil-exchange
+                 evil-goggles evil-iedit-state evil-indent-plus evil-lion
+                 evil-lisp-state evil-matchit evil-mc evil-nerd-commenter
+                 evil-numbers evil-org evil-surround evil-textobj-line evil-tutor
+                 evil-unimpaired evil-visual-mark-mode evil-visualstar
+                 exec-path-from-shell expand-region eyebrowse fancy-battery
+                 feature-mode flx-ido flycheck-elsa flycheck-pos-tip forge
+                 fringe-helper fsflycheck-package fuzzy ggtags gh-md ghub
+                 git-commit git-gutter git-gutter-fringe git-link git-messenger
+                 git-modes git-timemachine gitignore-templates gnuplot
+                 golden-ratio google-translate gptel grizzl haml-mode
+                 helm-c-yasnippet helm-comint helm-company helm-css-scss
+                 helm-descbinds helm-git-grep helm-ls-git helm-lsp helm-make
+                 helm-mode-manager helm-mu helm-org helm-org-rifle helm-posframe
+                 helm-projectile helm-purpose helm-swoop helm-themes helm-xref
+                 help-fns+ hide-comnt hierarchy highlight-indentation
+                 highlight-numbers highlight-parentheses hl-todo holy-mode htmlize
+                 hungry-delete hybrid-mode impatient-mode import-js indent-guide
+                 inf-ruby inflections info+ inspector ivy js-doc js2-mode
+                 json-reformat json-snatcher link-hint lorem-ipsum lsp-docker
+                 lsp-mode lsp-origami lsp-treemacs lsp-ui macrostep magit
+                 magit-delta magit-section marginalia markdown-mode markdown-toc
+                 minitest mmm-mode mu4e-alert mu4e-maildirs-extension multi-line
+                 multi-term multi-vterm multiple-cursors mwim nameless nerd-icons
+                 nodejs-repl npm-mode open-junk-file orderless org org-bullets
+                 org-category-capture org-cliplink org-contrib org-download
+                 org-mime org-pomodoro org-present org-rich-yank org-roam
+                 org-superstar orgit orgit-forge origami overseer package-lint
+                 paradox password-generator pcre2el persistent-scratch plz popwin
+                 pos-tip prettier-js pug-mode quickrun rainbow-delimiters
+                 rainbow-identifiers rainbow-mode rake rbenv request restart-emacs
+                 rjsx-mode robe rspec-mode rubocop rubocopfmt ruby-hash-syntax
+                 ruby-refactor ruby-test-mode ruby-tools rvm sass-mode scss-mode
+                 seeing-is-believing shades-of-purple-theme shell-pop skewer-mode
+                 slim-mode smeargle space-doc spaceline spacemacs-purpose-popwin
+                 spacemacs-whitespace-cleanup sql-indent sqlup-mode
+                 string-edit-at-point string-inflection swiper symbol-overlay
+                 symon tagedit term-cursor terminal-here tern tide toc-org
+                 transient transient-posframe treemacs-evil treemacs-icons-dired
+                 treemacs-magit treemacs-persp treemacs-projectile treepy
+                 typescript-mode undo-tree unfill unkillable-scratch uuidgen
+                 valign vertico vi-tilde-fringe vim-powerline vmd-mode
+                 volatile-highlights vterm web-beautify web-completion-data
+                 web-mode wfnames wgrep winum with-editor writeroom-mode ws-butler
+                 xah-fly-keys xterm-color yaml yaml-mode yasnippet
+                 yasnippet-snippets))
    '(safe-local-variable-values
-     '((ruby-test-runner quote minitest)
-       (ruby-test-runner . rspec)
-       (javascript-backend . tide)
-       (javascript-backend . tern)
+     '((ruby-test-runner quote minitest) (ruby-test-runner . rspec)
+       (javascript-backend . tide) (javascript-backend . tern)
        (javascript-backend . lsp)))
    '(user-mail-address "jake@meetcleo.com"))
   (custom-set-faces
