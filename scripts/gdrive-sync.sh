@@ -79,8 +79,7 @@ rclone_sync() {
 		    ${RCLONE_SYNC_PATH} 2>/dev/null
 	if [ $? -eq 0 ]; then
 	    # File change detected, sync the files after waiting a few seconds:
-	    sleep ${SYNC_DELAY} && ${RCLONE_CMD} && \
-		notify "Synchronized new file changes"
+	    sleep ${SYNC_DELAY} && ${RCLONE_CMD}
 	elif [ $? -eq 1 ]; then
 	    # inotify error occured
 	    notify "inotifywait error exit code 1"
