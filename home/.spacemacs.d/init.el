@@ -529,6 +529,14 @@ It should only modify the values of Spacemacs settings."
    ;; (default '("rg" "ag" "pt" "ack" "grep"))
    dotspacemacs-search-tools '("rg" "ag" "pt" "ack" "grep")
 
+   ;; The backend used for undo/redo functionality. Possible values are
+   ;; `undo-tree', `undo-fu' and `undo-redo', see also `evil-undo-system'.
+   ;; Note that saved undo history does not get transferred when changing
+   ;; from undo-tree to undo-fu or undo-redo.
+   ;; The default is currently 'undo-tree, but it will likely be changed
+   ;; and at some point removed because undo-tree is not maintained anymore.
+   dotspacemacs-undo-system 'undo-tree
+
    ;; Format specification for setting the frame title.
    ;; %a - the `abbreviated-file-name', or `buffer-name'
    ;; %t - `projectile-project-name'
@@ -895,41 +903,42 @@ This function is called at the very end of Spacemacs initialization."
      '(ac-ispell ace-jump-helm-line ace-link add-node-modules-path aggressive-indent
                  all-the-icons all-the-icons-nerd-fonts auto-compile auto-complete
                  auto-highlight-symbol auto-yasnippet browse-at-remote bui bundler
-                 centered-cursor-mode chruby clean-aindent-mode closql
+                 centered-cursor-mode chruby circe clean-aindent-mode closql
                  color-identifiers-mode column-enforce-mode company company-emoji
                  company-web compleseus-spacemacs-help consult consult-lsp
                  consult-yasnippet copilot counsel counsel-css counsel-gtags
                  csv-mode dap-mode define-word devdocs diff-hl diminish
                  dired-quick-sort diredfl dotenv-mode drag-stuff dumb-jump eat
                  editorconfig el-get elisp-def elisp-slime-nav ellama emacsql
-                 embark embark-consult emmet-mode emoji-cheat-sheet-plus emr
-                 enh-ruby-mode esh-help eshell-prompt-extras eshell-z eval-sexp-fu
-                 evil-anzu evil-args evil-cleverparens evil-collection
-                 evil-easymotion evil-escape evil-evilified-state evil-exchange
-                 evil-goggles evil-iedit-state evil-indent-plus evil-lion
-                 evil-lisp-state evil-matchit evil-mc evil-nerd-commenter
-                 evil-numbers evil-org evil-surround evil-textobj-line evil-tutor
-                 evil-unimpaired evil-visual-mark-mode evil-visualstar
-                 exec-path-from-shell expand-region eyebrowse fancy-battery
-                 feature-mode flx-ido flycheck-elsa flycheck-pos-tip forge
-                 fringe-helper fsflycheck-package fuzzy ggtags gh-md ghub
-                 git-commit git-gutter git-gutter-fringe git-link git-messenger
-                 git-modes git-timemachine gitignore-templates gnuplot
-                 golden-ratio google-translate gptel grizzl haml-mode
-                 helm-c-yasnippet helm-comint helm-company helm-css-scss
-                 helm-descbinds helm-git-grep helm-ls-git helm-lsp helm-make
-                 helm-mode-manager helm-mu helm-org helm-org-rifle helm-posframe
-                 helm-projectile helm-purpose helm-swoop helm-themes helm-xref
-                 help-fns+ hide-comnt hierarchy highlight-indentation
-                 highlight-numbers highlight-parentheses hl-todo holy-mode htmlize
-                 hungry-delete hybrid-mode impatient-mode import-js indent-guide
-                 inf-ruby inflections info+ inspector ivy js-doc js2-mode
-                 json-reformat json-snatcher link-hint lorem-ipsum lsp-docker
-                 lsp-mode lsp-origami lsp-treemacs lsp-ui macrostep magit
-                 magit-delta magit-section marginalia markdown-mode markdown-toc
-                 minitest mmm-mode mu4e-alert mu4e-maildirs-extension multi-line
-                 multi-term multi-vterm multiple-cursors mwim nameless nerd-icons
-                 nodejs-repl npm-mode open-junk-file orderless org org-bullets
+                 embark embark-consult emmet-mode emoji-cheat-sheet-plus emojify
+                 emr enh-ruby-mode esh-help eshell-prompt-extras eshell-z
+                 eval-sexp-fu evil-anzu evil-args evil-cleverparens
+                 evil-collection evil-easymotion evil-escape evil-evilified-state
+                 evil-exchange evil-goggles evil-iedit-state evil-indent-plus
+                 evil-lion evil-lisp-state evil-matchit evil-mc
+                 evil-nerd-commenter evil-numbers evil-org evil-surround
+                 evil-textobj-line evil-tutor evil-unimpaired
+                 evil-visual-mark-mode evil-visualstar exec-path-from-shell
+                 expand-region eyebrowse fancy-battery feature-mode flx-ido
+                 flycheck-elsa flycheck-pos-tip forge fringe-helper
+                 fsflycheck-package fuzzy ggtags gh-md ghub git-commit git-gutter
+                 git-gutter-fringe git-link git-messenger git-modes
+                 git-timemachine gitignore-templates gnuplot golden-ratio
+                 google-translate gptel grizzl haml-mode helm helm-c-yasnippet
+                 helm-comint helm-company helm-core helm-css-scss helm-descbinds
+                 helm-git-grep helm-ls-git helm-lsp helm-make helm-mode-manager
+                 helm-mu helm-org helm-org-rifle helm-posframe helm-projectile
+                 helm-purpose helm-swoop helm-themes helm-xref help-fns+
+                 hide-comnt hierarchy highlight-indentation highlight-numbers
+                 highlight-parentheses hl-todo holy-mode htmlize hungry-delete
+                 hybrid-mode impatient-mode import-js indent-guide inf-ruby
+                 inflections info+ inspector ivy js-doc js2-mode json-reformat
+                 json-snatcher link-hint lorem-ipsum lsp-docker lsp-mode
+                 lsp-origami lsp-treemacs lsp-ui macrostep magit magit-delta
+                 magit-section marginalia markdown-mode markdown-toc minitest
+                 mmm-mode mu4e-alert mu4e-maildirs-extension multi-line multi-term
+                 multi-vterm multiple-cursors mwim nameless nerd-icons nodejs-repl
+                 npm-mode oauth2 open-junk-file orderless org org-bullets
                  org-category-capture org-cliplink org-contrib org-download
                  org-mime org-pomodoro org-present org-rich-yank org-roam
                  org-superstar orgit orgit-forge origami overseer package-lint
@@ -939,18 +948,19 @@ This function is called at the very end of Spacemacs initialization."
                  rjsx-mode robe rspec-mode rubocop rubocopfmt ruby-hash-syntax
                  ruby-refactor ruby-test-mode ruby-tools rvm sass-mode scss-mode
                  seeing-is-believing shades-of-purple-theme shell-pop skewer-mode
-                 slim-mode smeargle space-doc spaceline spacemacs-purpose-popwin
-                 spacemacs-whitespace-cleanup sql-indent sqlup-mode
-                 string-edit-at-point string-inflection swiper symbol-overlay
-                 symon tagedit term-cursor terminal-here tern tide toc-org
-                 toml-mode transient transient-posframe treemacs-evil
+                 slack slim-mode smeargle space-doc spaceline
+                 spacemacs-purpose-popwin spacemacs-whitespace-cleanup sql-indent
+                 sqlup-mode string-edit-at-point string-inflection swiper
+                 symbol-overlay symon tagedit term-cursor terminal-here tern tide
+                 toc-org toml-mode transient transient-posframe treemacs-evil
                  treemacs-icons-dired treemacs-magit treemacs-persp
                  treemacs-projectile treepy typescript-mode undo-tree unfill
                  unkillable-scratch uuidgen valign vertico vi-tilde-fringe
                  vim-powerline vmd-mode volatile-highlights vterm web-beautify
-                 web-completion-data web-mode wfnames wgrep winum with-editor
-                 writeroom-mode ws-butler xah-fly-keys xterm-color yaml yaml-mode
-                 yasnippet yasnippet-snippets))
+                 web-completion-data web-mode websocket wfnames wgrep
+                 which-key-posframe winum with-editor writeroom-mode ws-butler
+                 xah-fly-keys xterm-color yaml yaml-mode yasnippet
+                 yasnippet-snippets))
    '(safe-local-variable-values
      '((ruby-test-runner quote minitest) (ruby-test-runner . rspec)
        (javascript-backend . tide) (javascript-backend . tern)
