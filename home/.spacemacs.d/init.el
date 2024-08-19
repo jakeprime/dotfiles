@@ -965,7 +965,8 @@ This function is called at the very end of Spacemacs initialization."
      '((ruby-test-runner quote minitest) (ruby-test-runner . rspec)
        (javascript-backend . tide) (javascript-backend . tern)
        (javascript-backend . lsp)))
-   '(user-mail-address "jake@meetcleo.com"))
+   '(user-mail-address "jake@meetcleo.com")
+   '(vc-follow-symlinks t))
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
    ;; If you edit it by hand, you could mess it up, so be careful.
