@@ -23,6 +23,9 @@ alias H=Hyprland
 alias cl="cd ~/work/cleo/meetcleo"
 alias cl-ios="cl && cd packages/native-app && yarn && cd ios && bundle && be pod install --no-repo-update && yarn ios --simulator=\"iPhone 15 Pro (17.2)\""
 
+export HOMEBREW_GITHUB_API_TOKEN=$(pass show github/homebrew)
+export AWS_PROFILE=Engineer-878877078763
+
 # git
 alias gadd="git add -N . && git add -p ."
 alias grm="git fetch && git rebase -i --rebase-merges origin/main"
@@ -59,3 +62,5 @@ plugins=(git extract sudo zsh-autosuggestions z)
 source $ZSH/oh-my-zsh.sh
 
 prompt_context(){}
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
