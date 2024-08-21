@@ -897,7 +897,9 @@ This function is called at the very end of Spacemacs initialization."
    '(doom-modeline-time nil)
    '(evil-escape-key-sequence [106 107])
    '(highlight-parentheses-colors '("Springgreen3" "IndianRed1" "IndianRed3" "IndianRed4") nil nil "Customized with use-package highlight-parentheses")
+   '(lsp-rubocop-use-bundler t)
    '(lsp-ruby-lsp-use-bundler t)
+   '(lsp-solargraph-use-bundler t)
    '(ns-right-alternate-modifier 'none)
    '(package-selected-packages
      '(ac-ispell ace-jump-helm-line ace-link add-node-modules-path aggressive-indent
