@@ -45,6 +45,7 @@ This function should only modify configuration layer settings."
                  javascript-backend 'lsp
                  javascript-fmt-on-save t
                  javascript-fmt-tool 'prettier
+                 javascript-linter 'eslint
                  js-indent-level 2
                  )
      json
