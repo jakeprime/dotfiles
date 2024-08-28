@@ -7,7 +7,7 @@ alias cl-ios="clm && yarn && cd ios && pod install --no-repo-update && cd .. && 
 
 # git
 alias gadd="git add -N . && git add -p ."
-alias grim="git fetch && git rebase -i --rebase-merges origin/main"
+alias gfrm="git fetch && git rebase -i --rebase-merges origin/main"
 alias grc="git rebase --continue"
 alias gra="git rebase --abort"
 alias grimx="git fetch && git rebase --keep-empty -i origin HEAD:[branch_name] -x \"git push --force-with-lease\""
