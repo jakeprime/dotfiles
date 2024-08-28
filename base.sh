@@ -5,7 +5,6 @@ source ~/.dotfiles/goenv.sh
 source ~/.dotfiles/key-bindings.sh
 source ~/.dotfiles/nvm.sh
 source ~/.dotfiles/python.sh
-source ~/.dotfiles/ruby.sh
 source ~/.dotfiles/scripts.sh
 source ~/.dotfiles/secrets.sh
 source ~/.dotfiles/zsh.sh
@@ -16,3 +15,5 @@ export PATH="$PATH:/usr/local/bin/platform-tools/"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
