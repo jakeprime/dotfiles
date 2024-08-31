@@ -16,6 +16,7 @@ compinit
 export MOZ_ENABLE_WAYLAND=1
 
 . /opt/asdf-vm/asdf.sh
+. ~/.asdf/plugins/java/set-java-home.zsh
 
 alias H=Hyprland
 
