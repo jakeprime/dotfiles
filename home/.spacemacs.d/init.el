@@ -875,6 +875,9 @@ before packages are loaded."
       (jake/dired-single)
     ;; it's not loaded yet, so add our bindings to the load-hook
     (add-hook 'dired-load-hook 'jake/dired-single))
+
+  (advice-add 'lsp :before (lambda (&rest _args) (eval '(setf (lsp-session-server-id->folders (lsp-session)) (ht)))))
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
