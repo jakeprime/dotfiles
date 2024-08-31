@@ -53,6 +53,7 @@ setopt APPEND_HISTORY
 bindkey "^[^[[D" backward-word
 bindkey "^[^[[C" forward-word
 export ZSH="$HOME/.oh-my-zsh"
+export LC_TIME="en_GB.UTF-8"
 
 ZSH_THEME="agnoster"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
