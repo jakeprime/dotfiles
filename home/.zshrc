@@ -42,7 +42,7 @@ alias rs="bundle exec rails server"
 alias rc="bundle exec rails console"
 
 # rusty bucket
-alias rb="cd ~/work/rusty-bucket/rusty-bucket"
+alias rb="cd ~/work/personal/rusty-bucket"
 
 export EDITOR=vim
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
