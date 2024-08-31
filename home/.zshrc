@@ -29,7 +29,7 @@ export AWS_PROFILE=Engineer-878877078763
 
 # git
 alias gadd="git add -N . && git add -p ."
-alias grm="git fetch && git rebase -i --rebase-merges origin/main"
+alias gfrm="git fetch && git rebase -i --rebase-merges origin/main"
 
 # prime translatrix
 alias pt="cd ~/work/primetranslatrix/primetranslatrix-3"
