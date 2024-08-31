@@ -878,6 +878,12 @@ before packages are loaded."
 
   (advice-add 'lsp :before (lambda (&rest _args) (eval '(setf (lsp-session-server-id->folders (lsp-session)) (ht)))))
 
+  (with-eval-after-load 'lsp-mode
+    (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\].bundle\\'")
+    (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]tmp\\'")
+    (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\.jest-tmp\\'")
+    (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\.expo\\'")
+    (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]Pods\\'"))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
