@@ -35,11 +35,11 @@ This function should only modify configuration layer settings."
     '(
        better-defaults
        colors
-       compleseus
        csv
        emacs-lisp
        (git :variables
          git-enable-magit-delta-plugin t)
+       helm
        html
        (javascript :variables
          javascript-backend 'lsp
