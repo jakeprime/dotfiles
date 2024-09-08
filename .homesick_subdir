@@ -1,8 +1,3 @@
-.config/hypr
-.config/kitty
-.config/mako
-.config/waybar
-.config/wofi
 .oh-my-zsh
 .spacemacs.d
 .config
