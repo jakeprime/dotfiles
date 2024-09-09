@@ -1,8 +1,5 @@
 .config
+.config/ags
 .config/hypr
-.config/hypr/custom
-.config/hypr/hyprland
-.config/hypr/hyprlock
-.config/hypr/shaders
 .oh-my-zsh
 .spacemacs.d
