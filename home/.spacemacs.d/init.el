@@ -177,7 +177,8 @@ It should only modify the values of Spacemacs settings."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner 'official
+   dotspacemacs-startup-banner "~/.spacemacs.d/vaporwave-sun.png"
+
 
    ;; Scale factor controls the scaling (size) of the startup banner. Default
    ;; value is `auto' for scaling the logo automatically to fit all buffer
@@ -246,7 +247,7 @@ It should only modify the values of Spacemacs settings."
    ;; refer to the DOCUMENTATION.org for more info on how to create your own
    ;; spaceline theme. Value can be a symbol or list with additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
-   dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
+   dotspacemacs-mode-line-theme 'doom
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
@@ -610,13 +611,13 @@ This function is called at the very end of Spacemacs initialization."
          auto-compile auto-highlight-symbol auto-yasnippet bui bundler
          centered-cursor-mode chruby clean-aindent-mode closql code-review
          column-enforce-mode company dap-mode deferred define-word devdocs
-         diminish dired-quick-sort disable-mouse dotenv-mode drag-stuff dumb-jump
-         editorconfig elisp-def elisp-demos elisp-slime-nav emacsql emojify emr
-         eval-sexp-fu evil-anzu evil-args evil-cleverparens evil-collection
-         evil-easymotion evil-escape evil-evilified-state evil-exchange
-         evil-goggles evil-iedit-state evil-indent-plus evil-lion evil-lisp-state
-         evil-matchit evil-mc evil-nerd-commenter evil-numbers evil-org
-         evil-surround evil-textobj-line evil-tutor evil-unimpaired
+         diminish dired-quick-sort disable-mouse doom-modeline dotenv-mode
+         drag-stuff dumb-jump editorconfig elisp-def elisp-demos elisp-slime-nav
+         emacsql emojify emr eval-sexp-fu evil-anzu evil-args evil-cleverparens
+         evil-collection evil-easymotion evil-escape evil-evilified-state
+         evil-exchange evil-goggles evil-iedit-state evil-indent-plus evil-lion
+         evil-lisp-state evil-matchit evil-mc evil-nerd-commenter evil-numbers
+         evil-org evil-surround evil-textobj-line evil-tutor evil-unimpaired
          evil-visual-mark-mode evil-visualstar expand-region eyebrowse
          fancy-battery feature-mode flx-ido flycheck-elsa flycheck-package
          flycheck-pos-tip forge ghub git-link git-messenger git-modes
@@ -631,22 +632,22 @@ This function is called at the very end of Spacemacs initialization."
          json-navigator json-reformat json-snatcher link-hint livid-mode log4e
          lorem-ipsum lsp-docker lsp-mode lsp-origami lsp-treemacs lsp-ui macrostep
          magit magit-delta magit-section markdown-mode minitest multi-line
-         multiple-cursors nameless nodejs-repl npm-mode open-junk-file org
-         org-category-capture org-cliplink org-contrib org-download org-mime
+         multiple-cursors nameless nerd-icons nodejs-repl npm-mode open-junk-file
+         org org-category-capture org-cliplink org-contrib org-download org-mime
          org-pomodoro org-present org-project-capture org-projectile org-rich-yank
          org-superstar orgit orgit-forge origami overseer paradox
          password-generator pcre2el popwin pos-tip prettier-js projectile-rails
          quickrun rainbow-delimiters rake rbenv request restart-emacs robe
          rspec-mode rubocop rubocopfmt ruby-hash-syntax ruby-refactor
-         ruby-test-mode ruby-tools rvm seeing-is-believing simple-httpd
-         skewer-mode smeargle space-doc spaceline spacemacs-purpose-popwin
-         spacemacs-whitespace-cleanup string-edit-at-point string-inflection
-         symbol-overlay symon term-cursor toc-org transient treemacs-evil
-         treemacs-icons-dired treemacs-magit treemacs-persp treemacs-projectile
-         treepy typescript-mode undo-fu undo-fu-session uuidgen vi-tilde-fringe
-         vim-powerline volatile-highlights vundo web-beautify which-key winum
-         with-editor writeroom-mode ws-butler xterm-color yaml yasnippet
-         yasnippet-snippets)))
+         ruby-test-mode ruby-tools rvm seeing-is-believing shrink-path
+         simple-httpd skewer-mode smeargle space-doc spaceline
+         spacemacs-purpose-popwin spacemacs-whitespace-cleanup
+         string-edit-at-point string-inflection symbol-overlay symon term-cursor
+         toc-org transient treemacs-evil treemacs-icons-dired treemacs-magit
+         treemacs-persp treemacs-projectile treepy typescript-mode undo-fu
+         undo-fu-session uuidgen vi-tilde-fringe vim-powerline volatile-highlights
+         vundo web-beautify which-key winum with-editor writeroom-mode ws-butler
+         xterm-color yaml yasnippet yasnippet-snippets)))
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
    ;; If you edit it by hand, you could mess it up, so be careful.
