@@ -46,7 +46,7 @@ This function should only modify configuration layer settings."
      ;; lsp
      ;; markdown
      multiple-cursors
-     ;; org
+     org
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
@@ -600,34 +600,36 @@ This function is called at the very end of Spacemacs initialization."
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
    '(package-selected-packages
-     '(a ace-jump-helm-line ace-link aggressive-indent all-the-icons auto-compile
-         auto-highlight-symbol centered-cursor-mode clean-aindent-mode closql
-         code-review column-enforce-mode deferred define-word devdocs diminish
-         dired-quick-sort disable-mouse dotenv-mode drag-stuff dumb-jump
-         editorconfig elisp-def elisp-demos elisp-slime-nav emacsql emojify emr
-         eval-sexp-fu evil-anzu evil-args evil-cleverparens evil-collection
-         evil-easymotion evil-escape evil-evilified-state evil-exchange
-         evil-goggles evil-iedit-state evil-indent-plus evil-lion evil-lisp-state
-         evil-matchit evil-mc evil-nerd-commenter evil-numbers evil-surround
-         evil-textobj-line evil-tutor evil-unimpaired evil-visual-mark-mode
-         evil-visualstar expand-region eyebrowse fancy-battery flx-ido
-         flycheck-elsa flycheck-package forge ghub git-link git-messenger
-         git-modes git-timemachine gitignore-templates golden-ratio
-         google-translate helm-ag helm-comint helm-descbinds helm-git-grep
-         helm-ls-git helm-make helm-mode-manager helm-org helm-projectile
-         helm-purpose helm-swoop helm-themes helm-xref hide-comnt
-         highlight-indentation highlight-numbers highlight-parentheses hl-todo
-         holy-mode hungry-delete hybrid-mode indent-guide info+ inspector
-         link-hint lorem-ipsum macrostep magit magit-section markdown-mode
-         multi-line nameless open-junk-file org-superstar overseer paradox
-         password-generator pcre2el popwin quickrun rainbow-delimiters request
-         restart-emacs smeargle space-doc spaceline spacemacs-purpose-popwin
-         spacemacs-whitespace-cleanup string-edit-at-point string-inflection
-         symbol-overlay symon term-cursor toc-org transient treemacs-evil
-         treemacs-icons-dired treemacs-magit treemacs-persp treemacs-projectile
-         treepy undo-fu undo-fu-session uuidgen vi-tilde-fringe vim-powerline
-         volatile-highlights vundo which-key winum with-editor writeroom-mode
-         ws-butler yaml)))
+     '(a ace-jump-helm-line ace-link aggressive-indent alert all-the-icons
+         auto-compile auto-highlight-symbol centered-cursor-mode
+         clean-aindent-mode closql code-review column-enforce-mode deferred
+         define-word devdocs diminish dired-quick-sort disable-mouse dotenv-mode
+         drag-stuff dumb-jump editorconfig elisp-def elisp-demos elisp-slime-nav
+         emacsql emojify emr eval-sexp-fu evil-anzu evil-args evil-cleverparens
+         evil-collection evil-easymotion evil-escape evil-evilified-state
+         evil-exchange evil-goggles evil-iedit-state evil-indent-plus evil-lion
+         evil-lisp-state evil-matchit evil-mc evil-nerd-commenter evil-numbers
+         evil-org evil-surround evil-textobj-line evil-tutor evil-unimpaired
+         evil-visual-mark-mode evil-visualstar expand-region eyebrowse
+         fancy-battery flx-ido flycheck-elsa flycheck-package forge ghub git-link
+         git-messenger git-modes git-timemachine gitignore-templates gntp gnuplot
+         golden-ratio google-translate helm-ag helm-comint helm-descbinds
+         helm-git-grep helm-ls-git helm-make helm-mode-manager helm-org
+         helm-org-rifle helm-projectile helm-purpose helm-swoop helm-themes
+         helm-xref hide-comnt highlight-indentation highlight-numbers
+         highlight-parentheses hl-todo holy-mode htmlize hungry-delete hybrid-mode
+         indent-guide info+ inspector link-hint log4e lorem-ipsum macrostep magit
+         magit-section markdown-mode multi-line nameless open-junk-file org
+         org-category-capture org-cliplink org-contrib org-download org-mime
+         org-pomodoro org-present org-project-capture org-projectile org-rich-yank
+         org-superstar orgit orgit-forge overseer paradox password-generator
+         pcre2el popwin quickrun rainbow-delimiters request restart-emacs smeargle
+         space-doc spaceline spacemacs-purpose-popwin spacemacs-whitespace-cleanup
+         string-edit-at-point string-inflection symbol-overlay symon term-cursor
+         toc-org transient treemacs-evil treemacs-icons-dired treemacs-magit
+         treemacs-persp treemacs-projectile treepy undo-fu undo-fu-session uuidgen
+         vi-tilde-fringe vim-powerline volatile-highlights vundo which-key winum
+         with-editor writeroom-mode ws-butler yaml)))
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
    ;; If you edit it by hand, you could mess it up, so be careful.
