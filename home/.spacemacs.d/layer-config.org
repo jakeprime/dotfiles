@@ -1,0 +1,7 @@
+* Layer config
+These need to be set before the layers are defined.
+
+** Git
+#+begin_src emacs-lisp
+  (setq git-enable-magit-delta-plugin t)
+#+end_src

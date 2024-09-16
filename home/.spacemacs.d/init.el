@@ -5,6 +5,10 @@
 (defun dotspacemacs/layers ()
   "Layer configuration:
 This function should only modify configuration layer settings."
+
+  (org-babel-load-file
+   (expand-file-name "~/.spacemacs.d/layer-config.org" user-emacs-directory))
+
   (setq-default
    ;; Base distribution to use. This is a layer contained in the directory
    ;; `+distribution'. For now available distributions are `spacemacs-base'
@@ -624,21 +628,22 @@ This function is called at the very end of Spacemacs initialization."
          highlight-numbers highlight-parentheses hl-todo holy-mode htmlize
          hungry-delete hybrid-mode indent-guide inf-ruby inflections info+
          inspector link-hint log4e lorem-ipsum lsp-docker lsp-mode lsp-origami
-         lsp-treemacs lsp-ui macrostep magit magit-section markdown-mode minitest
-         multi-line nameless open-junk-file org org-category-capture org-cliplink
-         org-contrib org-download org-mime org-pomodoro org-present
-         org-project-capture org-projectile org-rich-yank org-superstar orgit
-         orgit-forge origami overseer paradox password-generator pcre2el popwin
-         pos-tip prettier-js projectile-rails quickrun rainbow-delimiters rake
-         rbenv request restart-emacs robe rspec-mode rubocop rubocopfmt
-         ruby-hash-syntax ruby-refactor ruby-test-mode ruby-tools rvm
-         seeing-is-believing smeargle space-doc spaceline spacemacs-purpose-popwin
-         spacemacs-whitespace-cleanup string-edit-at-point string-inflection
-         symbol-overlay symon term-cursor toc-org transient treemacs-evil
-         treemacs-icons-dired treemacs-magit treemacs-persp treemacs-projectile
-         treepy undo-fu undo-fu-session uuidgen vi-tilde-fringe vim-powerline
-         volatile-highlights vundo which-key winum with-editor writeroom-mode
-         ws-butler yaml yasnippet yasnippet-snippets)))
+         lsp-treemacs lsp-ui macrostep magit magit-delta magit-section
+         markdown-mode minitest multi-line nameless open-junk-file org
+         org-category-capture org-cliplink org-contrib org-download org-mime
+         org-pomodoro org-present org-project-capture org-projectile org-rich-yank
+         org-superstar orgit orgit-forge origami overseer paradox
+         password-generator pcre2el popwin pos-tip prettier-js projectile-rails
+         quickrun rainbow-delimiters rake rbenv request restart-emacs robe
+         rspec-mode rubocop rubocopfmt ruby-hash-syntax ruby-refactor
+         ruby-test-mode ruby-tools rvm seeing-is-believing smeargle space-doc
+         spaceline spacemacs-purpose-popwin spacemacs-whitespace-cleanup
+         string-edit-at-point string-inflection symbol-overlay symon term-cursor
+         toc-org transient treemacs-evil treemacs-icons-dired treemacs-magit
+         treemacs-persp treemacs-projectile treepy undo-fu undo-fu-session uuidgen
+         vi-tilde-fringe vim-powerline volatile-highlights vundo which-key winum
+         with-editor writeroom-mode ws-butler xterm-color yaml yasnippet
+         yasnippet-snippets)))
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
    ;; If you edit it by hand, you could mess it up, so be careful.

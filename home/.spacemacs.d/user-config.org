@@ -3,7 +3,6 @@ After everything has loaded.
 
 ** Git
 #+begin_src emacs-lisp
-  (setq git-enable-magit-delta-plugin t)
   (setq vc-follow-symlinks t)
 #+end_src
 
