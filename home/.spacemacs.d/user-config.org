@@ -1,0 +1,4 @@
+* Git
+#+begin_src emacs-lisp
+  (setq git-enable-magit-delta-plugin t)
+#+end_src
