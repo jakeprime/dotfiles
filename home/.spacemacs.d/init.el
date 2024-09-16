@@ -58,7 +58,9 @@ This function should only modify configuration layer settings."
      ;; spell-checking
      ;; syntax-checking
      ;; version-control
-     treemacs)
+     treemacs
+     typescript
+     )
 
 
    ;; List of additional packages that will be installed without being wrapped
@@ -622,24 +624,27 @@ This function is called at the very end of Spacemacs initialization."
          google-translate helm-ag helm-c-yasnippet helm-comint helm-company
          helm-descbinds helm-git-grep helm-ls-git helm-lsp helm-make
          helm-mode-manager helm-org helm-org-rifle helm-projectile helm-purpose
-         helm-swoop helm-themes helm-xref hide-comnt highlight-indentation
-         highlight-numbers highlight-parentheses hl-todo holy-mode htmlize
-         hungry-delete hybrid-mode indent-guide inf-ruby inflections info+
-         inspector link-hint log4e lorem-ipsum lsp-docker lsp-mode lsp-origami
-         lsp-treemacs lsp-ui macrostep magit magit-delta magit-section
-         markdown-mode minitest multi-line nameless open-junk-file org
+         helm-swoop helm-themes helm-xref hide-comnt hierarchy
+         highlight-indentation highlight-numbers highlight-parentheses hl-todo
+         holy-mode htmlize hungry-delete hybrid-mode indent-guide inf-ruby
+         inflections info+ inspector js-doc js2-mode js2-refactor json-mode
+         json-navigator json-reformat json-snatcher link-hint livid-mode log4e
+         lorem-ipsum lsp-docker lsp-mode lsp-origami lsp-treemacs lsp-ui macrostep
+         magit magit-delta magit-section markdown-mode minitest multi-line
+         multiple-cursors nameless nodejs-repl npm-mode open-junk-file org
          org-category-capture org-cliplink org-contrib org-download org-mime
          org-pomodoro org-present org-project-capture org-projectile org-rich-yank
          org-superstar orgit orgit-forge origami overseer paradox
          password-generator pcre2el popwin pos-tip prettier-js projectile-rails
          quickrun rainbow-delimiters rake rbenv request restart-emacs robe
          rspec-mode rubocop rubocopfmt ruby-hash-syntax ruby-refactor
-         ruby-test-mode ruby-tools rvm seeing-is-believing smeargle space-doc
-         spaceline spacemacs-purpose-popwin spacemacs-whitespace-cleanup
-         string-edit-at-point string-inflection symbol-overlay symon term-cursor
-         toc-org transient treemacs-evil treemacs-icons-dired treemacs-magit
-         treemacs-persp treemacs-projectile treepy undo-fu undo-fu-session uuidgen
-         vi-tilde-fringe vim-powerline volatile-highlights vundo which-key winum
+         ruby-test-mode ruby-tools rvm seeing-is-believing simple-httpd
+         skewer-mode smeargle space-doc spaceline spacemacs-purpose-popwin
+         spacemacs-whitespace-cleanup string-edit-at-point string-inflection
+         symbol-overlay symon term-cursor toc-org transient treemacs-evil
+         treemacs-icons-dired treemacs-magit treemacs-persp treemacs-projectile
+         treepy typescript-mode undo-fu undo-fu-session uuidgen vi-tilde-fringe
+         vim-powerline volatile-highlights vundo web-beautify which-key winum
          with-editor writeroom-mode ws-butler xterm-color yaml yasnippet
          yasnippet-snippets)))
   (custom-set-faces
