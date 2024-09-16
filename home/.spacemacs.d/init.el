@@ -6,8 +6,7 @@
   "Layer configuration:
 This function should only modify configuration layer settings."
 
-  (org-babel-load-file
-   (expand-file-name "~/.spacemacs.d/layer-config.org" user-emacs-directory))
+  (load-file "~/.spacemacs.d/layer-config.el")
 
   (setq-default
    ;; Base distribution to use. This is a layer contained in the directory
@@ -588,8 +587,7 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  (org-babel-load-file
-   (expand-file-name "~/.spacemacs.d/user-config.org" user-emacs-directory))
+  (load-file "~/.spacemacs.d/user-config.el")
   )
 
 

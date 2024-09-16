@@ -1,8 +1,14 @@
 * User config
 After everything has loaded.
+=, b t= to tangle files after editing.
 
 ** Git
-#+begin_src emacs-lisp
+
+#+begin_src emacs-lisp :tangle "~/.spacemacs.d/layer-config.el"
+  (setq git-enable-magit-delta-plugin t)
+#+end_src
+
+#+begin_src emacs-lisp :tangle "~/.spacemacs.d/user-config.el"
   (setq vc-follow-symlinks t)
 #+end_src
 
@@ -10,7 +16,7 @@ After everything has loaded.
 *** Bundler
 Make sure we use bundler for flycheck and lsp tools. Otherwise we would have issues when multiple projects use different versions, especially as the work ones are out of my individual control.
 
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle "~/.spacemacs.d/user-config.el"
   (setq lsp-rubocop-use-bundler t)
   (setq lsp-ruby-lsp-use-bundler t)
   (setq lsp-solargraph-use-bundler t)
@@ -24,7 +30,7 @@ Make sure we use bundler for flycheck and lsp tools. Otherwise we would have iss
 *** Tests
 For some reason by default there are a couple of spaces rendered at the beginning of the filename, breaking navigation.
 
-#+begin_src emacs-lisp
+#+begin_src emacs-lisp :tangle "~/.spacemacs.d/user-config.el"
   (assq-delete-all 'ruby-Test::Unit compilation-error-regexp-alist-alist)
   (add-to-list 'compilation-error-regexp-alist-alist '(ruby-Test::Unit "^ +\\([^ (].*\\):\\([1-9][0-9]*\\):in " 1 2))
   (assoc 'ruby-Test::Unit compilation-error-regexp-alist-alist)
