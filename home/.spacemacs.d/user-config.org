@@ -1,10 +1,14 @@
-* Git
+* User config
+After everything has loaded.
+
+** Git
 #+begin_src emacs-lisp
   (setq git-enable-magit-delta-plugin t)
+  (setq vc-follow-symlinks t)
 #+end_src
 
-* Ruby
-** Bundler
+** Ruby
+*** Bundler
 Make sure we use bundler for flycheck and lsp tools. Otherwise we would have issues when multiple projects use different versions, especially as the work ones are out of my individual control.
 
 #+begin_src emacs-lisp
@@ -18,7 +22,7 @@ Make sure we use bundler for flycheck and lsp tools. Otherwise we would have iss
                           (lambda (command) (append '("bundle" "exec") command)))))
 #+end_src
 
-** Tests
+*** Tests
 For some reason by default there are a couple of spaces rendered at the beginning of the filename, breaking navigation.
 
 #+begin_src emacs-lisp
