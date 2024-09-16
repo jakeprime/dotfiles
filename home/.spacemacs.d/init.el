@@ -33,80 +33,27 @@ This function should only modify configuration layer settings."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     better-defaults
-     colors
-     compleseus
-     csv
+     ;; ----------------------------------------------------------------
+     ;; Example of useful layers you may want to use right away.
+     ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
+     ;; `M-m f e R' (Emacs style) to install them.
+     ;; ----------------------------------------------------------------
+     ;; auto-completion
+     ;; better-defaults
      emacs-lisp
-     (git :variables
-          git-enable-magit-delta-plugin t)
-     html
-     (javascript :variables
-                 javascript-backend 'lsp
-                 javascript-fmt-on-save t
-                 javascript-fmt-tool 'prettier
-                 js-indent-level 2
-                 )
-     (llm-client :variables
-                 gptel-model "gpt-4")
-     json
-     lsp
-     markdown
-     (mu4e :variables
-           mu4e-installation-path "/usr/share/emacs/site-lisp/mu4e"
-           mu4e-get-mail-command "mbsync -a"
-           mu4e-update-interval (* 5 60)
-           mu4e-change-filenames-when-moving t
-           )
+     ;; git
+     helm
+     ;; lsp
+     ;; markdown
      multiple-cursors
-     (org :variables
-          org-agenda-files '("~/Org/Tasks.org" "~/Org/Journal/")
-          org-archive-location "~/Org/Archive.org::datetree/"
-          org-refile-targets '((org-agenda-files :maxlevel . 1))
-          org-ellipsis " ▾"
-          org-hide-emphasis-markers t
-          org-log-done 'time
-          org-log-into-drawer t
-          org-todo-keywords '((sequence "TODO" "|" "DONE" "REJECTED"))
-          org-enable-org-journal-support t
-          org-journal-dir "~/Org/Journal/"
-          org-journal-file-format "%Y-%m-%d.org"
-          org-journal-time-prefix "** TODO "
-          org-journal-time-format ""
-          org-tags-column 1
-          )
-     prettier
-     python
-     react
-     (ruby :variables
-           ruby-test-runner 'ruby-test
-           ruby-version-manager 'rbenv
-           rbenv-show-active-ruby-in-modeline nil
-           ruby-backend 'lsp
-           )
-     ruby-on-rails
-     (shell :variables
-            shell-default-height 30
-            shell-default-position 'bottom
-            shell-default-shell 'vterm)
-     (spacemacs-evil :variables
-                     spacemacs-evil-collection-allowed-list '(info forge magit vterm eww dired quickrun ediff)
-                     )
-     sql
-     syntax-checking
-     tide
-     toml
-     treemacs
-     (typescript :variables
-                 typescript-backend 'lsp
-                 typescript-fmt-on-save t
-                 typescript-fmt-tool 'prettier
-                 typescript-linter 'eslint
-                 typescript-indent-level 2
-                 )
-     version-control
-     yaml
-     )
+     ;; org
+     ;; (shell :variables
+     ;;        shell-default-height 30
+     ;;        shell-default-position 'bottom)
+     ;; spell-checking
+     ;; syntax-checking
+     ;; version-control
+     treemacs)
 
 
    ;; List of additional packages that will be installed without being wrapped
@@ -117,22 +64,13 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages
-   '(
-     dap-mode
-     dired-single
-     diredfl
-     transient-posframe
-     )
+   dotspacemacs-additional-packages '()
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(
-                                    highlight-parentheses
-                                    treemacs-icons-dired
-                                    )
+   dotspacemacs-excluded-packages '()
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
@@ -173,14 +111,6 @@ It should only modify the values of Spacemacs settings."
    ;;   ./emacs --dump-file=$HOME/.emacs.d/.cache/dumps/spacemacs-27.1.pdmp
    ;; (default (format "spacemacs-%s.pdmp" emacs-version))
    dotspacemacs-emacs-dumper-dump-file (format "spacemacs-%s.pdmp" emacs-version)
-
-   ;; If non-nil ELPA repositories are contacted via HTTPS whenever it's
-   ;; possible. Set it to nil if you have no way to use HTTPS in your
-   ;; environment, otherwise it is strongly recommended to let it set to t.
-   ;; This variable has no effect if Emacs is launched with the parameter
-   ;; `--insecure' which forces the value of this variable to nil.
-   ;; (default t)
-   dotspacemacs-elpa-https t
 
    ;; Maximum allowed time in seconds to contact an ELPA repository.
    ;; (default 5)
@@ -240,7 +170,7 @@ It should only modify the values of Spacemacs settings."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner "~/.spacemacs.d/vaporwave-sun.png"
+   dotspacemacs-startup-banner 'official
 
    ;; Scale factor controls the scaling (size) of the startup banner. Default
    ;; value is `auto' for scaling the logo automatically to fit all buffer
@@ -282,15 +212,15 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-new-empty-buffer-major-mode 'text-mode
 
    ;; Default major mode of the scratch buffer (default `text-mode')
-   dotspacemacs-scratch-mode 'org-mode
+   dotspacemacs-scratch-mode 'text-mode
 
    ;; If non-nil, *scratch* buffer will be persistent. Things you write down in
    ;; *scratch* buffer will be saved and restored automatically.
-   dotspacemacs-scratch-buffer-persistent t
+   dotspacemacs-scratch-buffer-persistent nil
 
    ;; If non-nil, `kill-buffer' on *scratch* buffer
    ;; will bury it instead of killing.
-   dotspacemacs-scratch-buffer-unkillable t
+   dotspacemacs-scratch-buffer-unkillable nil
 
    ;; Initial message in the scratch buffer, such as "Welcome to Spacemacs!"
    ;; (default nil)
@@ -309,7 +239,7 @@ It should only modify the values of Spacemacs settings."
    ;; refer to the DOCUMENTATION.org for more info on how to create your own
    ;; spaceline theme. Value can be a symbol or list with additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
-   dotspacemacs-mode-line-theme 'doom
+   dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
    ;; (default t)
@@ -320,7 +250,10 @@ It should only modify the values of Spacemacs settings."
    ;; fixed-pitch faces. The `:size' can be specified as
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
-   dotspacemacs-default-font '()
+   dotspacemacs-default-font '("Source Code Pro"
+                               :size 10.0
+                               :weight normal
+                               :width normal)
 
    ;; The leader key (default "SPC")
    dotspacemacs-leader-key "SPC"
@@ -400,7 +333,7 @@ It should only modify the values of Spacemacs settings."
    ;; `top-center', `bottom-center', `top-left-corner', `top-right-corner',
    ;; `top-right-corner', `bottom-left-corner' or `bottom-right-corner'
    ;; (default 'bottom)
-   dotspacemacs-which-key-position '(posframe . center)
+   dotspacemacs-which-key-position 'bottom
 
    ;; Control where `switch-to-buffer' displays the buffer. If nil,
    ;; `switch-to-buffer' displays the buffer in the current window even if
@@ -408,6 +341,11 @@ It should only modify the values of Spacemacs settings."
    ;; displays the buffer in a same-purpose window even if the buffer can be
    ;; displayed in the current window. (default nil)
    dotspacemacs-switch-to-buffer-prefers-purpose nil
+
+   ;; Whether side windows (such as those created by treemacs or neotree)
+   ;; are kept or minimized by `spacemacs/toggle-maximize-window' (SPC w m).
+   ;; (default t)
+   dotspacemacs-maximize-window-keep-side-windows t
 
    ;; If non-nil a progress bar is displayed when spacemacs is loading. This
    ;; may increase the boot time on some systems and emacs builds, set it to
@@ -430,7 +368,7 @@ It should only modify the values of Spacemacs settings."
    ;; If non-nil the frame is undecorated when Emacs starts up. Combine this
    ;; variable with `dotspacemacs-maximized-at-startup' to obtain fullscreen
    ;; without external boxes. Also disables the internal border. (default nil)
-   dotspacemacs-undecorated-at-startup t
+   dotspacemacs-undecorated-at-startup nil
 
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
@@ -465,7 +403,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; Show the scroll bar while scrolling. The auto hide time can be configured
    ;; by setting this variable to a number. (default t)
-   dotspacemacs-scroll-bar-while-scrolling nil
+   dotspacemacs-scroll-bar-while-scrolling t
 
    ;; Control line numbers activation.
    ;; If set to `t', `relative' or `visual' then line numbers are enabled in all
@@ -485,8 +423,7 @@ It should only modify the values of Spacemacs settings."
    ;;   :size-limit-kb 1000)
    ;; When used in a plist, `visual' takes precedence over `relative'.
    ;; (default nil)
-   dotspacemacs-line-numbers '(:disabled-for-modes dired-mode
-                                                   org-mode)
+   dotspacemacs-line-numbers nil
 
    ;; Code folding method. Possible values are `evil', `origami' and `vimish'.
    ;; (default 'evil)
@@ -499,7 +436,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil smartparens-mode will be enabled in programming modes.
    ;; (default t)
-   dotspacemacs-activate-smartparens-mode nil
+   dotspacemacs-activate-smartparens-mode t
 
    ;; If non-nil pressing the closing parenthesis `)' key in insert mode passes
    ;; over any automatically added closing parenthesis, bracket, quote, etc...
@@ -532,12 +469,11 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-search-tools '("rg" "ag" "pt" "ack" "grep")
 
    ;; The backend used for undo/redo functionality. Possible values are
-   ;; `undo-tree', `undo-fu' and `undo-redo', see also `evil-undo-system'.
+   ;; `undo-fu', `undo-redo' and `undo-tree' see also `evil-undo-system'.
    ;; Note that saved undo history does not get transferred when changing
-   ;; from undo-tree to undo-fu or undo-redo.
-   ;; The default is currently 'undo-tree, but it will likely be changed
-   ;; and at some point removed because undo-tree is not maintained anymore.
-   dotspacemacs-undo-system 'undo-tree
+   ;; your undo system. The default is currently `undo-fu' as `undo-tree'
+   ;; is not maintained anymore and `undo-redo' is very basic."
+   dotspacemacs-undo-system 'undo-fu
 
    ;; Format specification for setting the frame title.
    ;; %a - the `abbreviated-file-name', or `buffer-name'
@@ -574,6 +510,9 @@ It should only modify the values of Spacemacs settings."
    ;; to aggressively delete empty line and long sequences of whitespace,
    ;; `trailing' to delete only the whitespace at end of lines, `changed' to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
+   ;; The variable `global-spacemacs-whitespace-cleanup-modes' controls
+   ;; which major modes have whitespace cleanup enabled or disabled
+   ;; by default.
    ;; (default nil)
    dotspacemacs-whitespace-cleanup nil
 
@@ -625,7 +564,6 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-  (setq-default git-magit-status-fullscreen t)
   )
 
 
@@ -643,351 +581,8 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  (add-to-list 'load-path "~/.spacemacs.d/")
-  (add-to-list 'custom-theme-load-path "~/.spacemacs.d/")
-  (load "faces-init")
-
-  (setq magit-repository-directories
-        '(("~/work/" . 2)))
-
-  (require 'git-commit)
-  (global-git-commit-mode t)
-
-  (defalias 'forward-evil-word 'forward-evil-symbol)
-
-  ;; Ruby code folding
-  (add-hook 'ruby-mode-hook
-            (lambda () (hs-minor-mode)))
-
-  (add-hook 'emacs-lisp-mode-hook (lambda () (bug-reference-mode -1)))
-
-  (eval-after-load "hideshow"
-    '(add-to-list 'hs-special-modes-alist
-                  `(ruby-mode
-                    ,(rx (or "def" "class" "module" "do" "{" "[")) ; Block start
-                    ,(rx (or "}" "]" "end"))                       ; Block end
-                    ,(rx (or "#" "=begin"))                        ; Comment start
-                    ruby-forward-sexp nil)))
-  (add-hook 'ruby-mode-hook
-            (lambda ()
-              (setq-local flycheck-command-wrapper-function
-                          (lambda (command) (append '("bundle" "exec") command)))))
-  (add-hook 'haml-mode-hook
-            (lambda ()
-              (setq-local flycheck-command-wrapper-function
-                          (lambda (command) (append '("bundle" "exec") command)))))
-
-  (with-eval-after-load 'flycheck
-    (setq-default flycheck-disabled-checkers (append flycheck-disabled-checkers '(ruby-reek))))
-
-  (add-hook 'Info-mode-hook
-            (lambda ()
-              (variable-pitch-mode t)
-              (visual-fill-column-mode 1)
-              (setq visual-fill-column-center-text t)))
-
-
-  (with-eval-after-load 'company
-    ;; disable inline previews
-    (delq 'company-preview-if-just-one-frontend company-frontends))
-
-  (defun disable-lsp-for-ruby ()
-    (when (derived-mode-p 'ruby-mode)
-      (setq lsp-diagnostics-provider :none)))
-
-  (add-hook 'lsp-mode-hook 'disable-lsp-for-ruby)
-
-  (add-hook 'inf-ruby-mode-hook
-            (lambda() (let ((p "\\|\\(^\\[cleo\\]\\[development\\] main:[0-9]+> *\\)"))
-                        (setq inf-ruby-first-prompt-pattern (concat inf-ruby-first-prompt-pattern p))
-                        (setq inf-ruby-prompt-pattern (concat inf-ruby-prompt-pattern p)))))
-
-  (defun my-remove-trailing-whitespace ()
-    "Remove trailing whitespace on save, only in non-special buffers."
-    (when (not (string-match-p "^\*.*\*$" (buffer-name)))
-      (delete-trailing-whitespace)))
-
-  (add-hook 'before-save-hook 'my-remove-trailing-whitespace)
-
-  (defun my-org-mode-hook ()
-    (org-indent-mode)
-    (variable-pitch-mode 1)
-    (auto-fill-mode 0)
-    (visual-line-mode 1)
-    (visual-fill-column-mode 1)
-    (face-remap-add-relative 'hl-line `(:background nil))
-    (setq evil-auto-indent nil
-          visual-fill-column-width 120
-          visual-fill-column-center-text t))
-
-  (add-hook 'org-mode-hook 'my-org-mode-hook)
-
-  (setq org-superstar-headline-bullets-list '(" " "●" "○" "◦" "•" "◦" "•"))
-  (setq org-superstar-item-bullet-alist
-        '((?+ . ?•)
-          (?* . ?•)
-          (?- . ?•)))
-
-  (setq message-send-mail-function 'smtpmail-send-it
-        smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
-        smtpmail-auth-credentials (expand-file-name "~/.authinfo")
-        smtpmail-default-smtp-server "smtp.gmail.com"
-        smtpmail-smtp-user "jake@meetcleo.com"
-        smtpmail-smtp-server "smtp.gmail.com"
-        smtpmail-smtp-service 587
-        smtpmail-debug-info t)
-
-  (with-eval-after-load 'mu4e
-    (setq mu4e-contexts
-          (list
-           (make-mu4e-context
-            :name "Cleo"
-            :match-func
-            (lambda (msg)
-              (when msg
-                (string-prefix-p "/cleo" (mu4e-message-field msg :maildir))))
-            :vars '((user-mail-address . "jake@meetcleo.com")
-                    (user-full-name . "Jake Prime")
-                    (mu4e-refile-folder . "/cleo/[Gmail]/All Mail")
-                    (mu4e-sent-folder . "/cleo/[Gmail]/Sent Mail")
-                    (mu4e-trash-folder . "/cleo/[Gmail]/Trash")
-                    (mu4e-alert-interesting-mail-query . "flag:unread AND maildir:/cleo/Inbox")
-                    (smtpmail-smtp-user . "jake@meetcleo.com")))
-           (make-mu4e-context
-            :name "Personal"
-            :match-func
-            (lambda (msg)
-              (when msg
-                (string-prefix-p "/personal" (mu4e-message-field msg :maildir))))
-            :vars '((user-mail-address . "jake@jakeprime.com")
-                    (user-full-name . "Jake Prime")
-                    (mu4e-refile-folder . "/personal/[Google Mail]/All Mail")
-                    (mu4e-sent-folder . "/personal/[Google Mail]/Sent Mail")
-                    (mu4e-trash-folder . "/personal/[Google Mail]/Bin")
-                    (mu4e-alert-interesting-mail-query . "flag:unread AND maildir:/personal/Inbox")
-                    (smtpmail-smtp-user . "jake.prime@gmail.com")))
-           ))
-    (add-to-list 'mu4e-marks
-                 '(trash
-                   :char ("d" . "▼")
-                   :prompt "dtrash"
-                   :dyn-target (lambda (target msg) (mu4e-get-trash-folder msg))
-                   :action (lambda (docid msg target)
-                             (mu4e--server-move docid
-                                                (mu4e--mark-check-target target) "+S-N"))))
-    (add-to-list 'mu4e-marks
-                 '(flag
-                   :char ("+" . "★")
-                   :prompt "dflag"
-                   :dyn-target (lambda (target msg)
-                                 (replace-regexp-in-string "All Mail" "Starred"
-                                                           (mu4e-get-refile-folder msg)))
-                   :action (lambda (docid msg target)
-                             (mu4e--server-move docid
-                                                (mu4e--mark-check-target target))))))
-
-  (setq mu4e-maildir-shortcuts
-        '((:maildir "/cleo/Inbox" :key ?c :name "Cleo" :hide t)
-          (:maildir "/personal/Inbox" :key ?p :name "Personal" :hide t)))
-  (setq mu4e-headers-attach-mark '("a" . "+"))
-  (setq mu4e-headers-list-mark '("l" . "@"))
-  (setq mu4e-headers-personal-mark '("p" . "."))
-  (setq mu4e-headers-flagged-mark '("f" . "!"))
-  (setq mu4e-headers-new-mark '("N" . "*"))
-
-  (add-hook 'mu4e-index-updated-hook #'mu4e-alert-enable-mode-line-display)
-
-
-  (add-hook 'dired-mode-hook 'diredfl-mode)
-
-
-  (remove-hook 'org-mode-hook 'org-eldoc-load)
-
-  (setq grep-program "/opt/homebrew/bin/ggrep")
-
-  (defun jake/open-chat-gpt ()
-    (interactive)
-    (gptel "*ChatGPT*")
-    (let ((buffer (get-buffer "*ChatGPT*")))
-      (switch-to-buffer buffer)))
-  (spacemacs/set-leader-keys
-    "og" 'jake/open-chat-gpt)
-
-  (spacemacs/set-leader-keys
-    "oi" 'ibuffer)
-  (spacemacs/set-leader-keys
-    "of" 'rubocopfmt)
-  (spacemacs/set-leader-keys
-    "oql" 'hs-hide-level)
-  (spacemacs/set-leader-keys
-    "oqs" 'hs-show-block)
-  (spacemacs/set-leader-keys
-    "oqh" 'hs-hide-block)
-  (spacemacs/set-leader-keys
-    "ow" 'wdired-change-to-wdired-mode)
-
-  (defun browse-commit-on-github ()
-    (interactive)
-    (let ((hash (oref (magit-current-blame-chunk) orig-rev))) ;; elpa/28.2/develop/magit-20230523.1431/magit-blame.el:920:28
-      (browse-url (concat "https://www.github.com/meetcleo/meetcleo/commit/" hash))
-      ))
-  (spacemacs/set-leader-keys
-    "oc" 'browse-commit-on-github)
-
-  (add-hook 'calendar-today-visible-hook 'calendar-mark-today)
-  (add-hook 'calendar-mode-hook
-            (lambda ()
-              (setq-local cursor-type nil
-                          evil-default-cursor '(nil nil)
-                          evil-normal-state-cursor '(nil nil)
-                          evil-emacs-state-cursor '(nil nil)
-                          evil-motion-state-cursor '(nil nil)
-                          evil-insert-state-cursor '(nil nil)
-                          evil-visual-state-cursor '(nil nil)
-                          evil-replace-state-cursor '(nil nil))
-              (spacemacs/disable-hl-line-mode)))
-
-  (assq-delete-all 'ruby-Test::Unit compilation-error-regexp-alist-alist)
-  (add-to-list 'compilation-error-regexp-alist-alist '(ruby-Test::Unit "^ +\\([^ (].*\\):\\([1-9][0-9]*\\):in " 1 2))
-  (assoc 'ruby-Test::Unit compilation-error-regexp-alist-alist)
-
-  (use-package transient-posframe
-    :ensure t
-    :init (transient-posframe-mode))
-
-  (add-hook 'web-mode-hook
-            (lambda ()
-              (setq web-mode-markup-indent-offset 2)
-              (setq web-mode-css-indent-offset 2)
-              (setq web-mode-code-indent-offset 2)))
-
-  (require 'dired-single)
-  (defun jake/dired-single ()
-    "Bunch of stuff to run for dired, either immediately or when it's
-   loaded."
-    ;; <add other dired customizations here>
-    (define-key dired-mode-map [return] 'dired-single-buffer)
-    (define-key dired-mode-map "^"
-                (function
-                 (lambda nil (interactive) (dired-single-buffer "..")))))
-
-  ;; if dired's already loaded, then the keymap will be bound
-  (if (boundp 'dired-mode-map)
-      ;; we're good to go; just add our bindings
-      (jake/dired-single)
-    ;; it's not loaded yet, so add our bindings to the load-hook
-    (add-hook 'dired-load-hook 'jake/dired-single))
-
-  (advice-add 'lsp :before (lambda (&rest _args) (eval '(setf (lsp-session-server-id->folders (lsp-session)) (ht)))))
-
-  (with-eval-after-load 'lsp-mode
-    (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\].bundle\\'")
-    (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]tmp\\'")
-    (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\.jest-tmp\\'")
-    (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\.expo\\'")
-    (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]Pods\\'"))
   )
+
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
-(defun dotspacemacs/emacs-custom-settings ()
-  "Emacs custom settings.
-This is an auto-generated function, do not modify its content directly, use
-Emacs customize menu instead.
-This function is called at the very end of Spacemacs initialization."
-  (custom-set-variables
-   ;; custom-set-variables was added by Custom.
-   ;; If you edit it by hand, you could mess it up, so be careful.
-   ;; Your init file should contain only one such instance.
-   ;; If there is more than one, they won't work right.
-   '(doom-modeline-buffer-encoding 'nondefault)
-   '(doom-modeline-env-enable-ruby nil)
-   '(doom-modeline-env-version nil)
-   '(doom-modeline-lsp nil)
-   '(doom-modeline-mu4e t)
-   '(doom-modeline-time nil)
-   '(evil-escape-key-sequence [106 107])
-   '(highlight-parentheses-colors '("Springgreen3" "IndianRed1" "IndianRed3" "IndianRed4") nil nil "Customized with use-package highlight-parentheses")
-   '(lsp-rubocop-use-bundler t)
-   '(lsp-ruby-lsp-use-bundler t)
-   '(lsp-solargraph-use-bundler t)
-   '(ns-right-alternate-modifier 'none)
-   '(package-selected-packages
-     '(ac-ispell ace-jump-helm-line ace-link add-node-modules-path aggressive-indent
-                 all-the-icons all-the-icons-nerd-fonts anaconda-mode auto-compile
-                 auto-complete auto-highlight-symbol auto-yasnippet blacken
-                 browse-at-remote bui bundler centered-cursor-mode chruby circe
-                 clean-aindent-mode closql code-cells color-identifiers-mode
-                 column-enforce-mode company company-anaconda company-emoji
-                 company-web compleseus-spacemacs-help concurrent consult
-                 consult-lsp consult-yasnippet copilot counsel counsel-css
-                 counsel-gtags csv-mode ctable cython-mode dap-mode deferred
-                 define-word devdocs diff-hl diminish dired-quick-sort diredfl
-                 dotenv-mode drag-stuff dumb-jump eat editorconfig el-get
-                 elisp-def elisp-slime-nav ellama emacsql embark embark-consult
-                 emmet-mode emoji-cheat-sheet-plus emojify emr enh-ruby-mode epc
-                 esh-help eshell-prompt-extras eshell-z eval-sexp-fu evil-anzu
-                 evil-args evil-cleverparens evil-collection evil-easymotion
-                 evil-escape evil-evilified-state evil-exchange evil-goggles
-                 evil-iedit-state evil-indent-plus evil-lion evil-lisp-state
-                 evil-matchit evil-mc evil-nerd-commenter evil-numbers evil-org
-                 evil-surround evil-textobj-line evil-tutor evil-unimpaired
-                 evil-visual-mark-mode evil-visualstar exec-path-from-shell
-                 expand-region eyebrowse fancy-battery feature-mode flx-ido
-                 flycheck-elsa flycheck-pos-tip forge fringe-helper
-                 fsflycheck-package fuzzy ggtags gh-md ghub git-commit git-gutter
-                 git-gutter-fringe git-link git-messenger git-modes
-                 git-timemachine gitignore-templates gnuplot golden-ratio
-                 google-translate gptel grizzl haml-mode helm helm-c-yasnippet
-                 helm-comint helm-company helm-core helm-cscope helm-css-scss
-                 helm-descbinds helm-git-grep helm-ls-git helm-lsp helm-make
-                 helm-mode-manager helm-mu helm-org helm-org-rifle helm-posframe
-                 helm-projectile helm-purpose helm-pydoc helm-swoop helm-themes
-                 helm-xref help-fns+ hide-comnt hierarchy highlight-indentation
-                 highlight-numbers highlight-parentheses hl-todo holy-mode htmlize
-                 hungry-delete hybrid-mode impatient-mode import-js importmagic
-                 indent-guide inf-ruby inflections info+ inspector ivy js-doc
-                 js2-mode json-reformat json-snatcher link-hint live-py-mode
-                 load-env-vars lorem-ipsum lsp-docker lsp-mode lsp-origami
-                 lsp-pyright lsp-treemacs lsp-ui macrostep magit magit-delta
-                 magit-section marginalia markdown-mode markdown-toc minitest
-                 mmm-mode mu4e-alert mu4e-maildirs-extension multi-line multi-term
-                 multi-vterm multiple-cursors mwim nameless nerd-icons nodejs-repl
-                 nose npm-mode oauth2 open-junk-file orderless org org-bullets
-                 org-category-capture org-cliplink org-contrib org-download
-                 org-mime org-pomodoro org-present org-rich-yank org-roam
-                 org-superstar orgit orgit-forge origami overseer package-lint
-                 paradox password-generator pcre2el persistent-scratch
-                 pip-requirements pipenv pippel plz poetry popwin pos-tip
-                 prettier-js pug-mode py-isort pydoc pyenv-mode pylookup pytest
-                 pythonic pyvenv quickrun rainbow-delimiters rainbow-identifiers
-                 rainbow-mode rake rbenv request restart-emacs rjsx-mode robe
-                 rspec-mode rubocop rubocopfmt ruby-hash-syntax ruby-refactor
-                 ruby-test-mode ruby-tools rvm sass-mode scss-mode
-                 seeing-is-believing shades-of-purple-theme shell-pop skewer-mode
-                 slack slim-mode smeargle space-doc spaceline
-                 spacemacs-purpose-popwin spacemacs-whitespace-cleanup sphinx-doc
-                 sql-indent sqlup-mode stickyfunc-enhance string-edit-at-point
-                 string-inflection swiper symbol-overlay symon tagedit term-cursor
-                 terminal-here tern tide toc-org toml-mode transient
-                 transient-posframe treemacs-evil treemacs-icons-dired
-                 treemacs-magit treemacs-persp treemacs-projectile treepy
-                 typescript-mode undo-tree unfill unkillable-scratch uuidgen
-                 valign vertico vi-tilde-fringe vim-powerline vmd-mode
-                 volatile-highlights vterm web-beautify web-completion-data
-                 web-mode websocket wfnames wgrep which-key-posframe winum
-                 with-editor writeroom-mode ws-butler xah-fly-keys xcscope
-                 xterm-color yaml yaml-mode yapfify yasnippet yasnippet-snippets))
-   '(safe-local-variable-values
-     '((ruby-test-runner quote minitest) (ruby-test-runner . rspec)
-       (javascript-backend . tide) (javascript-backend . tern)
-       (javascript-backend . lsp)))
-   '(user-mail-address "jake@meetcleo.com")
-   '(vc-follow-symlinks t))
-  (custom-set-faces
-   ;; custom-set-faces was added by Custom.
-   ;; If you edit it by hand, you could mess it up, so be careful.
-   ;; Your init file should contain only one such instance.
-   ;; If there is more than one, they won't work right.
-   )
-  )
