@@ -2,3 +2,27 @@
 #+begin_src emacs-lisp
   (setq git-enable-magit-delta-plugin t)
 #+end_src
+
+* Ruby
+** Bundler
+Make sure we use bundler for flycheck and lsp tools. Otherwise we would have issues when multiple projects use different versions, especially as the work ones are out of my individual control.
+
+#+begin_src emacs-lisp
+  (setq lsp-rubocop-use-bundler t)
+  (setq lsp-ruby-lsp-use-bundler t)
+  (setq lsp-solargraph-use-bundler t)
+
+  (add-hook 'ruby-mode-hook
+            (lambda ()
+              (setq-local flycheck-command-wrapper-function
+                          (lambda (command) (append '("bundle" "exec") command)))))
+#+end_src
+
+** Tests
+For some reason by default there are a couple of spaces rendered at the beginning of the filename, breaking navigation.
+
+#+begin_src emacs-lisp
+  (assq-delete-all 'ruby-Test::Unit compilation-error-regexp-alist-alist)
+  (add-to-list 'compilation-error-regexp-alist-alist '(ruby-Test::Unit "^ +\\([^ (].*\\):\\([1-9][0-9]*\\):in " 1 2))
+  (assoc 'ruby-Test::Unit compilation-error-regexp-alist-alist)
+#+end_src
