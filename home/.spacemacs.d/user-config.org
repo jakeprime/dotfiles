@@ -2,6 +2,12 @@
 After everything has loaded.
 =, b t= to tangle files after editing.
 
+** Flow
+=j k= to escape.
+
+#+begin_src emacs-lisp :tangle "~/.spacemacs.d/user-config.el"
+  (setq evil-escape-key-sequence [106 107])
+#+end_src
 ** Git
 
 #+begin_src emacs-lisp :tangle "~/.spacemacs.d/layer-config.el"
