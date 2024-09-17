@@ -40,8 +40,10 @@ After everything has loaded.
     :init (transient-posframe-mode))
 #+end_src
 
-** Ruby
-*** Bundler
+** Coding
+
+*** Ruby
+**** Bundler
 Make sure we use bundler for flycheck and lsp tools. Otherwise we would have issues when multiple projects use different versions, especially as the work ones are out of my individual control.
 
 #+begin_src emacs-lisp :tangle "~/.spacemacs.d/user-config.el"
@@ -55,7 +57,7 @@ Make sure we use bundler for flycheck and lsp tools. Otherwise we would have iss
                           (lambda (command) (append '("bundle" "exec") command)))))
 #+end_src
 
-*** Tests
+**** Tests
 For some reason by default there are a couple of spaces rendered at the beginning of the filename, breaking navigation.
 
 #+begin_src emacs-lisp :tangle "~/.spacemacs.d/user-config.el"
@@ -63,7 +65,8 @@ For some reason by default there are a couple of spaces rendered at the beginnin
   (add-to-list 'compilation-error-regexp-alist-alist '(ruby-Test::Unit "^ +\\([^ (].*\\):\\([1-9][0-9]*\\):in " 1 2))
   (assoc 'ruby-Test::Unit compilation-error-regexp-alist-alist)
 #+end_src
-** Typescript
+
+*** Typescript
 
 #+begin_src emacs-lisp :tangle "~/.spacemacs.d/layer-config.el"
   (setq typescript-fmt-on-save t)
