@@ -1,0 +1,8 @@
+export LC_TIME="en_GB.UTF-8"
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+alias H=Hyprland
+
+# prime translatrix
+alias pt="cd ~/work/primetranslatrix/primetranslatrix-3"
