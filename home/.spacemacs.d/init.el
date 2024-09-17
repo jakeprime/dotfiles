@@ -71,7 +71,10 @@ This function should only modify configuration layer settings."
    ;; `dotspacemacs/user-config'. To use a local version of a package, use the
    ;; `:location' property: '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '()
+   dotspacemacs-additional-packages
+   '(
+     transient-posframe
+     )
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -341,7 +344,7 @@ It should only modify the values of Spacemacs settings."
    ;; `top-center', `bottom-center', `top-left-corner', `top-right-corner',
    ;; `top-right-corner', `bottom-left-corner' or `bottom-right-corner'
    ;; (default 'bottom)
-   dotspacemacs-which-key-position 'bottom
+   dotspacemacs-which-key-position '(posframe . center)
 
    ;; Control where `switch-to-buffer' displays the buffer. If nil,
    ;; `switch-to-buffer' displays the buffer in the current window even if
@@ -643,11 +646,12 @@ This function is called at the very end of Spacemacs initialization."
          simple-httpd skewer-mode smeargle space-doc spaceline
          spacemacs-purpose-popwin spacemacs-whitespace-cleanup
          string-edit-at-point string-inflection symbol-overlay symon term-cursor
-         toc-org transient treemacs-evil treemacs-icons-dired treemacs-magit
-         treemacs-persp treemacs-projectile treepy typescript-mode undo-fu
-         undo-fu-session uuidgen vi-tilde-fringe vim-powerline volatile-highlights
-         vundo web-beautify which-key winum with-editor writeroom-mode ws-butler
-         xterm-color yaml yasnippet yasnippet-snippets)))
+         toc-org transient transient-posframe treemacs-evil treemacs-icons-dired
+         treemacs-magit treemacs-persp treemacs-projectile treepy typescript-mode
+         undo-fu undo-fu-session uuidgen vi-tilde-fringe vim-powerline
+         volatile-highlights vundo web-beautify which-key which-key-posframe winum
+         with-editor writeroom-mode ws-butler xterm-color yaml yasnippet
+         yasnippet-snippets)))
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
    ;; If you edit it by hand, you could mess it up, so be careful.

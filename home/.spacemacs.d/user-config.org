@@ -32,6 +32,14 @@ After everything has loaded.
   (setq vc-follow-symlinks t)
 #+end_src
 
+** Layout
+
+#+begin_src emacs-lisp :tangle "~/.spacemacs.d/user-config.el"
+  (use-package transient-posframe
+    :ensure t
+    :init (transient-posframe-mode))
+#+end_src
+
 ** Ruby
 *** Bundler
 Make sure we use bundler for flycheck and lsp tools. Otherwise we would have issues when multiple projects use different versions, especially as the work ones are out of my individual control.
