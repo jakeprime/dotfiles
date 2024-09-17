@@ -4,10 +4,6 @@
 
 ** 😎
 
-#+begin_src emacs-lisp :table "~/.spacemacs.d/spacemacs-init.el"
-  (setq dotspacemacs-startup-banner "~/.spacemacs.d/vaporwave-sun.png")
-#+end_src
-
 #+begin_src emacs-lisp :tangle "~/.spacemacs.d/user-config.el"
   (add-to-list 'custom-theme-load-path "~/.spacemacs.d/")
   (load-file "~/.spacemacs.d/faces-init.el")
