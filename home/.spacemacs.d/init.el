@@ -46,6 +46,7 @@ This function should only modify configuration layer settings."
      emacs-lisp
      git
      helm
+     html
      javascript
      lsp
      ;; markdown
@@ -613,45 +614,46 @@ This function is called at the very end of Spacemacs initialization."
      '(a ace-jump-helm-line ace-link aggressive-indent alert all-the-icons
          auto-compile auto-highlight-symbol auto-yasnippet bui bundler
          centered-cursor-mode chruby clean-aindent-mode closql code-review
-         column-enforce-mode company dap-mode deferred define-word devdocs
-         diminish dired-quick-sort disable-mouse doom-modeline dotenv-mode
+         column-enforce-mode company company-web dap-mode deferred define-word
+         devdocs diminish dired-quick-sort disable-mouse doom-modeline dotenv-mode
          drag-stuff dumb-jump editorconfig elisp-def elisp-demos elisp-slime-nav
-         emacsql emojify emr eval-sexp-fu evil-anzu evil-args evil-cleverparens
-         evil-collection evil-easymotion evil-escape evil-evilified-state
-         evil-exchange evil-goggles evil-iedit-state evil-indent-plus evil-lion
-         evil-lisp-state evil-matchit evil-mc evil-nerd-commenter evil-numbers
-         evil-org evil-surround evil-textobj-line evil-tutor evil-unimpaired
-         evil-visual-mark-mode evil-visualstar expand-region eyebrowse
-         fancy-battery feature-mode flx-ido flycheck-elsa flycheck-package
-         flycheck-pos-tip forge ghub git-link git-messenger git-modes
-         git-timemachine gitignore-templates gntp gnuplot golden-ratio
-         google-translate helm-ag helm-c-yasnippet helm-comint helm-company
-         helm-descbinds helm-git-grep helm-ls-git helm-lsp helm-make
-         helm-mode-manager helm-org helm-org-rifle helm-projectile helm-purpose
-         helm-swoop helm-themes helm-xref hide-comnt hierarchy
-         highlight-indentation highlight-numbers highlight-parentheses hl-todo
-         holy-mode htmlize hungry-delete hybrid-mode indent-guide inf-ruby
-         inflections info+ inspector js-doc js2-mode js2-refactor json-mode
-         json-navigator json-reformat json-snatcher link-hint livid-mode log4e
-         lorem-ipsum lsp-docker lsp-mode lsp-origami lsp-treemacs lsp-ui macrostep
-         magit magit-delta magit-section markdown-mode minitest multi-line
-         multiple-cursors nameless nerd-icons nodejs-repl npm-mode open-junk-file
-         org org-category-capture org-cliplink org-contrib org-download
-         org-journal org-mime org-pomodoro org-present org-project-capture
-         org-projectile org-rich-yank org-superstar orgit orgit-forge origami
-         overseer paradox password-generator pcre2el popwin pos-tip prettier-js
-         projectile-rails quickrun rainbow-delimiters rake rbenv request
-         restart-emacs rjsx-mode robe rspec-mode rubocop rubocopfmt
-         ruby-hash-syntax ruby-refactor ruby-test-mode ruby-tools rvm
-         seeing-is-believing shrink-path simple-httpd skewer-mode smeargle
-         space-doc spaceline spacemacs-purpose-popwin spacemacs-whitespace-cleanup
-         string-edit-at-point string-inflection symbol-overlay symon term-cursor
-         tide toc-org transient transient-posframe treemacs-evil
+         emacsql emmet-mode emojify emr eval-sexp-fu evil-anzu evil-args
+         evil-cleverparens evil-collection evil-easymotion evil-escape
+         evil-evilified-state evil-exchange evil-goggles evil-iedit-state
+         evil-indent-plus evil-lion evil-lisp-state evil-matchit evil-mc
+         evil-nerd-commenter evil-numbers evil-org evil-surround evil-textobj-line
+         evil-tutor evil-unimpaired evil-visual-mark-mode evil-visualstar
+         expand-region eyebrowse fancy-battery feature-mode flx-ido flycheck-elsa
+         flycheck-package flycheck-pos-tip forge ghub git-link git-messenger
+         git-modes git-timemachine gitignore-templates gntp gnuplot golden-ratio
+         google-translate haml-mode helm-ag helm-c-yasnippet helm-comint
+         helm-company helm-css-scss helm-descbinds helm-git-grep helm-ls-git
+         helm-lsp helm-make helm-mode-manager helm-org helm-org-rifle
+         helm-projectile helm-purpose helm-swoop helm-themes helm-xref hide-comnt
+         hierarchy highlight-indentation highlight-numbers highlight-parentheses
+         hl-todo holy-mode htmlize hungry-delete hybrid-mode impatient-mode
+         indent-guide inf-ruby inflections info+ inspector js-doc js2-mode
+         js2-refactor json-mode json-navigator json-reformat json-snatcher
+         link-hint livid-mode log4e lorem-ipsum lsp-docker lsp-mode lsp-origami
+         lsp-treemacs lsp-ui macrostep magit magit-delta magit-section
+         markdown-mode minitest multi-line multiple-cursors nameless nerd-icons
+         nodejs-repl npm-mode open-junk-file org org-category-capture org-cliplink
+         org-contrib org-download org-journal org-mime org-pomodoro org-present
+         org-project-capture org-projectile org-rich-yank org-superstar orgit
+         orgit-forge origami overseer paradox password-generator pcre2el popwin
+         pos-tip prettier-js projectile-rails pug-mode quickrun rainbow-delimiters
+         rake rbenv request restart-emacs rjsx-mode robe rspec-mode rubocop
+         rubocopfmt ruby-hash-syntax ruby-refactor ruby-test-mode ruby-tools rvm
+         sass-mode scss-mode seeing-is-believing shrink-path simple-httpd
+         skewer-mode slim-mode smeargle space-doc spaceline
+         spacemacs-purpose-popwin spacemacs-whitespace-cleanup
+         string-edit-at-point string-inflection symbol-overlay symon tagedit
+         term-cursor tide toc-org transient transient-posframe treemacs-evil
          treemacs-icons-dired treemacs-magit treemacs-persp treemacs-projectile
          treepy typescript-mode undo-fu undo-fu-session uuidgen vi-tilde-fringe
-         vim-powerline volatile-highlights vundo web-beautify which-key
-         which-key-posframe winum with-editor writeroom-mode ws-butler xterm-color
-         yaml yasnippet yasnippet-snippets)))
+         vim-powerline volatile-highlights vundo web-beautify web-completion-data
+         web-mode which-key which-key-posframe winum with-editor writeroom-mode
+         ws-butler xterm-color yaml yasnippet yasnippet-snippets)))
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
    ;; If you edit it by hand, you could mess it up, so be careful.
