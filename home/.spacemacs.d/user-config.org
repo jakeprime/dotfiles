@@ -60,6 +60,7 @@ For some reason by default there are a couple of spaces rendered at the beginnin
 
 #+begin_src emacs-lisp :tangle "~/.spacemacs.d/layer-config.el"
   (setq git-enable-magit-delta-plugin t)
+  (setq git-magit-status-fullscreen t)
 #+end_src
 
 #+begin_src emacs-lisp :tangle "~/.spacemacs.d/user-config.el"
