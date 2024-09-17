@@ -46,10 +46,12 @@ This function should only modify configuration layer settings."
      emacs-lisp
      git
      helm
+     javascript
      lsp
      ;; markdown
      multiple-cursors
      org
+     react
      ruby
      ruby-on-rails
      ;; (shell :variables
@@ -640,18 +642,18 @@ This function is called at the very end of Spacemacs initialization."
          org-pomodoro org-present org-project-capture org-projectile org-rich-yank
          org-superstar orgit orgit-forge origami overseer paradox
          password-generator pcre2el popwin pos-tip prettier-js projectile-rails
-         quickrun rainbow-delimiters rake rbenv request restart-emacs robe
-         rspec-mode rubocop rubocopfmt ruby-hash-syntax ruby-refactor
+         quickrun rainbow-delimiters rake rbenv request restart-emacs rjsx-mode
+         robe rspec-mode rubocop rubocopfmt ruby-hash-syntax ruby-refactor
          ruby-test-mode ruby-tools rvm seeing-is-believing shrink-path
          simple-httpd skewer-mode smeargle space-doc spaceline
          spacemacs-purpose-popwin spacemacs-whitespace-cleanup
          string-edit-at-point string-inflection symbol-overlay symon term-cursor
-         toc-org transient transient-posframe treemacs-evil treemacs-icons-dired
-         treemacs-magit treemacs-persp treemacs-projectile treepy typescript-mode
-         undo-fu undo-fu-session uuidgen vi-tilde-fringe vim-powerline
-         volatile-highlights vundo web-beautify which-key which-key-posframe winum
-         with-editor writeroom-mode ws-butler xterm-color yaml yasnippet
-         yasnippet-snippets)))
+         tide toc-org transient transient-posframe treemacs-evil
+         treemacs-icons-dired treemacs-magit treemacs-persp treemacs-projectile
+         treepy typescript-mode undo-fu undo-fu-session uuidgen vi-tilde-fringe
+         vim-powerline volatile-highlights vundo web-beautify which-key
+         which-key-posframe winum with-editor writeroom-mode ws-butler xterm-color
+         yaml yasnippet yasnippet-snippets)))
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
    ;; If you edit it by hand, you could mess it up, so be careful.
