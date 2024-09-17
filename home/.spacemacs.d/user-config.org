@@ -1,5 +1,5 @@
-* User config
-After everything has loaded.
+* Spacemacs Config
+
 =, b t= to tangle files after editing.
 
 ** 😎
@@ -15,33 +15,7 @@ After everything has loaded.
   (setq dotspacemacs-startup-banner "~/.spacemacs.d/vaporwave-sun.png")
 #+end_src
 
-** Flow
-=j k= to escape.
-
-#+begin_src emacs-lisp :tangle "~/.spacemacs.d/user-config.el"
-  (setq evil-escape-key-sequence [106 107])
-#+end_src
-
-** Git
-
-#+begin_src emacs-lisp :tangle "~/.spacemacs.d/layer-config.el"
-  (setq git-enable-magit-delta-plugin t)
-#+end_src
-
-#+begin_src emacs-lisp :tangle "~/.spacemacs.d/user-config.el"
-  (setq vc-follow-symlinks t)
-#+end_src
-
-** Layout
-
-#+begin_src emacs-lisp :tangle "~/.spacemacs.d/user-config.el"
-  (use-package transient-posframe
-    :ensure t
-    :init (transient-posframe-mode))
-#+end_src
-
 ** Coding
-
 *** Ruby
 **** Bundler
 Make sure we use bundler for flycheck and lsp tools. Otherwise we would have issues when multiple projects use different versions, especially as the work ones are out of my individual control.
@@ -73,5 +47,66 @@ For some reason by default there are a couple of spaces rendered at the beginnin
   (setq typescript-fmt-tool 'prettier)
   (setq typescript-indent-level 2)
   (setq typescript-linter 'eslint)
+#+end_src
+
+** Flow
+=j k= to escape.
+
+#+begin_src emacs-lisp :tangle "~/.spacemacs.d/user-config.el"
+  (setq evil-escape-key-sequence [106 107])
+#+end_src
+
+** Git
+
+#+begin_src emacs-lisp :tangle "~/.spacemacs.d/layer-config.el"
+  (setq git-enable-magit-delta-plugin t)
+#+end_src
+
+#+begin_src emacs-lisp :tangle "~/.spacemacs.d/user-config.el"
+  (setq vc-follow-symlinks t)
+#+end_src
+
+** Layout
+
+#+begin_src emacs-lisp :tangle "~/.spacemacs.d/user-config.el"
+  (use-package transient-posframe
+    :ensure t
+    :init (transient-posframe-mode))
+#+end_src
+
+** Org mode
+
+#+begin_src emacs-lisp :tangle "~/.spacemacs.d/layer-config.el"
+  (setq org-agenda-files '("~/Org/Tasks.org" "~/Org/Journal/"))
+  (setq org-archive-location "~/Org/Archive.org::datetree/")
+  (setq org-ellipsis " ▾")
+  (setq org-enable-org-journal-support t)
+  (setq org-hide-emphasis-markers t)
+  (setq org-journal-dir "~/Org/Journal/")
+  (setq org-journal-file-format "%Y-%m-%d.org")
+  (setq org-journal-time-format "")
+  (setq org-journal-time-prefix "** TODO ")
+  (setq org-log-done 'time)
+  (setq org-log-into-drawer t)
+  (setq org-refile-targets '((org-agenda-files :maxlevel . 1)))
+  (setq org-superstar-headline-bullets-list '(" " "●" "○" "◦" "•" "◦" "•"))
+  (setq org-superstar-item-bullet-alist '((?+ . ?•) (?* . ?•) (?- . ?•)))
+  (setq org-tags-column 1)
+  (setq org-todo-keywords '((sequence "TODO" "|" "DONE" "REJECTED")))
+#+end_src
+
+#+begin_src emacs-lisp :tangle "~/.spacemacs.d/user-config.el"
+  (defun my-org-mode-hook ()
+    (auto-fill-mode 0)
+    (face-remap-add-relative 'hl-line `(:background nil))
+    (org-indent-mode)
+    (variable-pitch-mode 1)
+    (visual-fill-column-mode 1)
+    (visual-line-mode 1)
+    (setq evil-auto-indent nil
+          visual-fill-column-width 120
+          visual-fill-column-center-text t))
+
+  (add-hook 'org-mode-hook 'my-org-mode-hook)
 #+end_src
 

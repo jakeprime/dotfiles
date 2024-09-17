@@ -638,15 +638,15 @@ This function is called at the very end of Spacemacs initialization."
          lorem-ipsum lsp-docker lsp-mode lsp-origami lsp-treemacs lsp-ui macrostep
          magit magit-delta magit-section markdown-mode minitest multi-line
          multiple-cursors nameless nerd-icons nodejs-repl npm-mode open-junk-file
-         org org-category-capture org-cliplink org-contrib org-download org-mime
-         org-pomodoro org-present org-project-capture org-projectile org-rich-yank
-         org-superstar orgit orgit-forge origami overseer paradox
-         password-generator pcre2el popwin pos-tip prettier-js projectile-rails
-         quickrun rainbow-delimiters rake rbenv request restart-emacs rjsx-mode
-         robe rspec-mode rubocop rubocopfmt ruby-hash-syntax ruby-refactor
-         ruby-test-mode ruby-tools rvm seeing-is-believing shrink-path
-         simple-httpd skewer-mode smeargle space-doc spaceline
-         spacemacs-purpose-popwin spacemacs-whitespace-cleanup
+         org org-category-capture org-cliplink org-contrib org-download
+         org-journal org-mime org-pomodoro org-present org-project-capture
+         org-projectile org-rich-yank org-superstar orgit orgit-forge origami
+         overseer paradox password-generator pcre2el popwin pos-tip prettier-js
+         projectile-rails quickrun rainbow-delimiters rake rbenv request
+         restart-emacs rjsx-mode robe rspec-mode rubocop rubocopfmt
+         ruby-hash-syntax ruby-refactor ruby-test-mode ruby-tools rvm
+         seeing-is-believing shrink-path simple-httpd skewer-mode smeargle
+         space-doc spaceline spacemacs-purpose-popwin spacemacs-whitespace-cleanup
          string-edit-at-point string-inflection symbol-overlay symon term-cursor
          tide toc-org transient transient-posframe treemacs-evil
          treemacs-icons-dired treemacs-magit treemacs-persp treemacs-projectile
