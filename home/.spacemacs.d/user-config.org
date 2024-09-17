@@ -32,15 +32,6 @@ After everything has loaded.
   (setq vc-follow-symlinks t)
 #+end_src
 
-** Typescript
-
-#+begin_src emacs-lisp :tangle "~/.spacemacs.d/layer-config.el"
-  (setq typescript-fmt-on-save t)
-  (setq typescript-fmt-tool 'prettier)
-  (setq typescript-indent-level 2)
-  (setq typescript-linter 'eslint)
-#+end_src
-
 ** Ruby
 *** Bundler
 Make sure we use bundler for flycheck and lsp tools. Otherwise we would have issues when multiple projects use different versions, especially as the work ones are out of my individual control.
@@ -64,3 +55,12 @@ For some reason by default there are a couple of spaces rendered at the beginnin
   (add-to-list 'compilation-error-regexp-alist-alist '(ruby-Test::Unit "^ +\\([^ (].*\\):\\([1-9][0-9]*\\):in " 1 2))
   (assoc 'ruby-Test::Unit compilation-error-regexp-alist-alist)
 #+end_src
+** Typescript
+
+#+begin_src emacs-lisp :tangle "~/.spacemacs.d/layer-config.el"
+  (setq typescript-fmt-on-save t)
+  (setq typescript-fmt-tool 'prettier)
+  (setq typescript-indent-level 2)
+  (setq typescript-linter 'eslint)
+#+end_src
+
