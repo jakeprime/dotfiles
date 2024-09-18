@@ -18,7 +18,7 @@
 (setq org-log-done 'time)
 (setq org-log-into-drawer t)
 (setq org-refile-targets '((org-agenda-files :maxlevel . 1)))
-(setq org-superstar-headline-bullets-list '(" " "●" "○" "◦" "•" "◦" "•"))
+(setq org-superstar-headline-bullets-list '("" "●" "○" "◦" "•" "◦" "•"))
 (setq org-superstar-item-bullet-alist '((?+ . ?•) (?* . ?•) (?- . ?•)))
 (setq org-tags-column 1)
 (setq org-todo-keywords '((sequence "TODO" "|" "DONE" "REJECTED")))
