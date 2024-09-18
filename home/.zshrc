@@ -12,10 +12,6 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-# fix blurry fonts in Chrome
-export MOZ_ENABLE_WAYLAND=1
-
-. /opt/asdf-vm/asdf.sh
 . ~/.asdf/plugins/java/set-java-home.zsh
 
 # cleo
