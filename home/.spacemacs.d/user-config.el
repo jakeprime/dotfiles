@@ -52,6 +52,12 @@
   :ensure t
   :init (transient-posframe-mode))
 
+(setq doom-modeline-buffer-encoding 'nondefault)
+(setq doom-modeline-env-enable-ruby nil)
+(setq doom-modeline-env-version nil)
+(setq doom-modeline-lsp nil)
+(setq doom-modeline-time nil)
+
 (defun my-org-mode-hook ()
   (auto-fill-mode 0)
   (face-remap-add-relative 'hl-line `(:background nil))

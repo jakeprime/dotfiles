@@ -110,11 +110,22 @@ Use code syntax to determine a word, e.g =user_profile= should be a word.
 #+end_src
 
 ** Layout
+*** Modals
 
 #+begin_src emacs-lisp :tangle "user-config.el"
   (use-package transient-posframe
     :ensure t
     :init (transient-posframe-mode))
+#+end_src
+
+*** Modeline
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (setq doom-modeline-buffer-encoding 'nondefault)
+  (setq doom-modeline-env-enable-ruby nil)
+  (setq doom-modeline-env-version nil)
+  (setq doom-modeline-lsp nil)
+  (setq doom-modeline-time nil)
 #+end_src
 
 ** Org mode
