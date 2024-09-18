@@ -65,6 +65,12 @@ For some reason by default there are a couple of spaces rendered at the beginnin
   (setq evil-escape-key-sequence [106 107])
 #+end_src
 
+Use code syntax to determine a word, e.g =user_profile= should be a word.
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (defalias 'forward-evil-word 'forward-evil-symbol)
+#+end_src
+
 ** Git
 
 #+begin_src emacs-lisp :tangle "layer-config.el"

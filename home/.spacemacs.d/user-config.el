@@ -26,6 +26,8 @@
 
 (setq evil-escape-key-sequence [106 107])
 
+(defalias 'forward-evil-word 'forward-evil-symbol)
+
 (setq vc-follow-symlinks t)
 
 (use-package transient-posframe
