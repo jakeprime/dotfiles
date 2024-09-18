@@ -4,7 +4,7 @@
 
 ** 😎
 
-#+begin_src emacs-lisp :tangle "~/.spacemacs.d/user-config.el"
+#+begin_src emacs-lisp :tangle "user-config.el"
   (add-to-list 'custom-theme-load-path "~/.spacemacs.d/")
   (load-file "~/.spacemacs.d/faces-init.el")
 
@@ -16,7 +16,7 @@
 **** Bundler
 Make sure we use bundler for flycheck and lsp tools. Otherwise we would have issues when multiple projects use different versions, especially as the work ones are out of my individual control.
 
-#+begin_src emacs-lisp :tangle "~/.spacemacs.d/user-config.el"
+#+begin_src emacs-lisp :tangle "user-config.el"
   (setq lsp-rubocop-use-bundler t)
   (setq lsp-ruby-lsp-use-bundler t)
   (setq lsp-solargraph-use-bundler t)
@@ -30,7 +30,7 @@ Make sure we use bundler for flycheck and lsp tools. Otherwise we would have iss
 **** Tests
 For some reason by default there are a couple of spaces rendered at the beginning of the filename, breaking navigation.
 
-#+begin_src emacs-lisp :tangle "~/.spacemacs.d/user-config.el"
+#+begin_src emacs-lisp :tangle "user-config.el"
   (assq-delete-all 'ruby-Test::Unit compilation-error-regexp-alist-alist)
   (add-to-list 'compilation-error-regexp-alist-alist '(ruby-Test::Unit "^ +\\([^ (].*\\):\\([1-9][0-9]*\\):in " 1 2))
   (assoc 'ruby-Test::Unit compilation-error-regexp-alist-alist)
@@ -38,7 +38,7 @@ For some reason by default there are a couple of spaces rendered at the beginnin
 
 *** Typescript
 
-#+begin_src emacs-lisp :tangle "~/.spacemacs.d/layer-config.el"
+#+begin_src emacs-lisp :tangle "layer-config.el"
   (setq typescript-fmt-on-save t)
   (setq typescript-fmt-tool 'prettier)
   (setq typescript-indent-level 2)
@@ -48,24 +48,24 @@ For some reason by default there are a couple of spaces rendered at the beginnin
 ** Flow
 =j k= to escape.
 
-#+begin_src emacs-lisp :tangle "~/.spacemacs.d/user-config.el"
+#+begin_src emacs-lisp :tangle "user-config.el"
   (setq evil-escape-key-sequence [106 107])
 #+end_src
 
 ** Git
 
-#+begin_src emacs-lisp :tangle "~/.spacemacs.d/layer-config.el"
+#+begin_src emacs-lisp :tangle "layer-config.el"
   (setq git-enable-magit-delta-plugin t)
   (setq git-magit-status-fullscreen t)
 #+end_src
 
-#+begin_src emacs-lisp :tangle "~/.spacemacs.d/user-config.el"
+#+begin_src emacs-lisp :tangle "user-config.el"
   (setq vc-follow-symlinks t)
 #+end_src
 
 ** Layout
 
-#+begin_src emacs-lisp :tangle "~/.spacemacs.d/user-config.el"
+#+begin_src emacs-lisp :tangle "user-config.el"
   (use-package transient-posframe
     :ensure t
     :init (transient-posframe-mode))
@@ -73,7 +73,7 @@ For some reason by default there are a couple of spaces rendered at the beginnin
 
 ** Org mode
 
-#+begin_src emacs-lisp :tangle "~/.spacemacs.d/layer-config.el"
+#+begin_src emacs-lisp :tangle "layer-config.el"
   (setq org-agenda-files '("~/Org/Tasks.org" "~/Org/Journal/"))
   (setq org-archive-location "~/Org/Archive.org::datetree/")
   (setq org-ellipsis " ▾")
@@ -92,7 +92,7 @@ For some reason by default there are a couple of spaces rendered at the beginnin
   (setq org-todo-keywords '((sequence "TODO" "|" "DONE" "REJECTED")))
 #+end_src
 
-#+begin_src emacs-lisp :tangle "~/.spacemacs.d/user-config.el"
+#+begin_src emacs-lisp :tangle "user-config.el"
   (defun my-org-mode-hook ()
     (auto-fill-mode 0)
     (face-remap-add-relative 'hl-line `(:background nil))
