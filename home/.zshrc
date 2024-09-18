@@ -14,6 +14,8 @@ compinit
 
 . ~/.asdf/plugins/java/set-java-home.zsh
 
+alias H=Hyprland
+
 # cleo
 alias cl="cd ~/work/cleo/meetcleo"
 alias clm="cd ~/work/cleo/mobile-app"
@@ -25,6 +27,9 @@ export AWS_PROFILE=Engineer-878877078763
 # git
 alias gadd="git add -N . && git add -p ."
 alias gfrm="git fetch && git rebase -i --rebase-merges origin/main"
+
+# prime translatrix
+alias pt="cd ~/work/primetranslatrix/primetranslatrix-3"
 
 # rails
 alias be="bundle exec"
@@ -46,6 +51,7 @@ setopt APPEND_HISTORY
 bindkey "^[^[[D" backward-word
 bindkey "^[^[[C" forward-word
 export ZSH="$HOME/.oh-my-zsh"
+export LC_TIME="en_GB.UTF-8"
 
 ZSH_THEME="agnoster"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
@@ -56,4 +62,4 @@ source $ZSH/oh-my-zsh.sh
 
 prompt_context(){}
 
-source ~/.zshrc.local
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
