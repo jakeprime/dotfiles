@@ -74,6 +74,8 @@ This function should only modify configuration layer settings."
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages
    '(
+     dired-single
+     diredfl
      transient-posframe
      )
 
@@ -81,7 +83,10 @@ This function should only modify configuration layer settings."
    dotspacemacs-frozen-packages '()
 
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages
+   '(
+     treemacs-icons-dired
+     )
 
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
@@ -613,20 +618,20 @@ This function is called at the very end of Spacemacs initialization."
          auto-compile auto-highlight-symbol auto-yasnippet bui bundler
          centered-cursor-mode chruby clean-aindent-mode closql code-review
          column-enforce-mode company company-web dap-mode deferred define-word
-         devdocs diminish dired-quick-sort disable-mouse doom-modeline dotenv-mode
-         drag-stuff dumb-jump editorconfig elisp-def elisp-demos elisp-slime-nav
-         emacsql emmet-mode emojify emr eval-sexp-fu evil-anzu evil-args
-         evil-cleverparens evil-collection evil-easymotion evil-escape
-         evil-evilified-state evil-exchange evil-goggles evil-iedit-state
-         evil-indent-plus evil-lion evil-lisp-state evil-matchit evil-mc
-         evil-nerd-commenter evil-numbers evil-org evil-surround evil-textobj-line
-         evil-tutor evil-unimpaired evil-visual-mark-mode evil-visualstar
-         expand-region eyebrowse fancy-battery feature-mode flx-ido flycheck-elsa
-         flycheck-package flycheck-pos-tip forge ghub git-link git-messenger
-         git-modes git-timemachine gitignore-templates gntp gnuplot golden-ratio
-         google-translate haml-mode helm-ag helm-c-yasnippet helm-comint
-         helm-company helm-css-scss helm-descbinds helm-git-grep helm-ls-git
-         helm-lsp helm-make helm-mode-manager helm-org helm-org-rifle
+         devdocs diminish dired-quick-sort dired-single diredfl disable-mouse
+         doom-modeline dotenv-mode drag-stuff dumb-jump editorconfig elisp-def
+         elisp-demos elisp-slime-nav emacsql emmet-mode emojify emr eval-sexp-fu
+         evil-anzu evil-args evil-cleverparens evil-collection evil-easymotion
+         evil-escape evil-evilified-state evil-exchange evil-goggles
+         evil-iedit-state evil-indent-plus evil-lion evil-lisp-state evil-matchit
+         evil-mc evil-nerd-commenter evil-numbers evil-org evil-surround
+         evil-textobj-line evil-tutor evil-unimpaired evil-visual-mark-mode
+         evil-visualstar expand-region eyebrowse fancy-battery feature-mode
+         flx-ido flycheck-elsa flycheck-package flycheck-pos-tip forge ghub
+         git-link git-messenger git-modes git-timemachine gitignore-templates gntp
+         gnuplot golden-ratio google-translate haml-mode helm-ag helm-c-yasnippet
+         helm-comint helm-company helm-css-scss helm-descbinds helm-git-grep
+         helm-ls-git helm-lsp helm-make helm-mode-manager helm-org helm-org-rifle
          helm-projectile helm-purpose helm-swoop helm-themes helm-xref hide-comnt
          hierarchy highlight-indentation highlight-numbers highlight-parentheses
          hl-todo holy-mode htmlize hungry-delete hybrid-mode impatient-mode
