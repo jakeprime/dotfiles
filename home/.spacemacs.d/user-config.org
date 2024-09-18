@@ -27,6 +27,19 @@ Make sure we use bundler for flycheck and lsp tools. Otherwise we would have iss
                           (lambda (command) (append '("bundle" "exec") command)))))
 #+end_src
 
+**** Cleo console
+Define the Cleo prompt format, otherwise it's not possible to retrieve previous commands by pressing the up arrow.
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (add-hook 'inf-ruby-mode-hook
+            (lambda()
+              (let ((p "\\|\\(^\\[cleo\\]\\[development\\] main:[0-9]+> *\\)"))
+                (setq inf-ruby-first-prompt-pattern
+                      (concat inf-ruby-first-prompt-pattern p))
+                (setq inf-ruby-prompt-pattern
+                      (concat inf-ruby-prompt-pattern p)))))
+#+end_src
+
 **** Tests
 For some reason by default there are a couple of spaces rendered at the beginning of the filename, breaking navigation.
 
