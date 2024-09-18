@@ -1,0 +1,29 @@
+# cleo
+alias cl="cd /Users/jake/work/cleo/meetcleo"
+alias clm="cd /Users/jake/work/cleo/mobile-app"
+alias cl-ios="clm && yarn && cd ios && pod install --no-repo-update && cd .. && yarn ios"
+
+# prime translatrix
+alias pt="cd /Users/jake/work/primetranslatrix/primetranslatrix-3"
+
+# rusty bucket
+alias rb="cd /Users/jake/work/rusty-bucket/rusty-bucket"
+
+# OS
+alias dockl="defaults write com.apple.dock orientation left && killall Dock"
+alias dockb="defaults write com.apple.dock orientation bottom && killall Dock"
+alias dockr="defaults write com.apple.dock orientation right && killall Dock"
+
+alias xcode14="open /Applications/Xcode-14.app/Contents/MacOS/Xcode"
+
+export PATH="/Applications/Emacs.app/Contents/MacOS:$PATH"
+export PATH="/Users/jake/.config/emacs/bin:$PATH"
+export PATH="$PATH:/usr/local/bin/platform-tools/"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+export ASDF_DIR=/opt/homebrew/opt/asdf/libexec
+export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"
+export EMACS=/Applications/Emacs.app/Contents/MacOS/emacs
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
