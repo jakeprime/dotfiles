@@ -10,10 +10,7 @@
       )
 
 
-  ;; :height should be 130 for Mac, and 200 for Linux
-  ;; for sharp font rendering on linux we have to remove the scaling so
-  ;; the text size is much smaller on an HiDPI screen.
-  (set-face-attribute 'default nil :family "MonaspiceAr Nerd Font" :height 110 :weight 'light)
+  (set-face-attribute 'default nil :family "MonaspiceAr Nerd Font" :height 130 :weight 'light)
   (load-theme 'jakewave t)
   (load-theme 'jakewave t) ;; Necessary, but why? 🤷‍♂️
 
