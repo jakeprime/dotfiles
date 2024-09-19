@@ -98,6 +98,12 @@ Use code syntax to determine a word, e.g =user_profile= should be a word.
   (defalias 'forward-evil-word 'forward-evil-symbol)
 #+end_src
 
+Don't treat the right Alt as Alt, otherwise there is no way to write a =#= character on a Mac.
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (setq mac-right-option-modifier 'none)
+#+end_src
+
 ** Git
 
 #+begin_src emacs-lisp :tangle "layer-config.el"
