@@ -1,6 +1,7 @@
 .config
 .config/ags
-.config/hypr
 .config/foot
+.config/hypr
+.config/neofetch
 .oh-my-zsh
 .spacemacs.d
