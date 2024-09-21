@@ -14,13 +14,6 @@ compinit
 
 . ~/.asdf/plugins/java/set-java-home.zsh
 
-alias H=Hyprland
-
-# cleo
-alias cl="cd ~/work/cleo/meetcleo"
-alias clm="cd ~/work/cleo/mobile-app"
-alias cl-ios="cl && cd packages/native-app && yarn && cd ios && bundle && be pod install --no-repo-update && yarn ios --simulator=\"iPhone 15 Pro (17.2)\""
-
 export HOMEBREW_GITHUB_API_TOKEN=$(pass show github/homebrew)
 export AWS_PROFILE=Engineer-878877078763
 
