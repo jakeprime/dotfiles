@@ -104,7 +104,7 @@ prompt_dir() {
 }
 
 prompt_end() {
-    echo -n "\n %F{red}󱞩%f "
+    echo -n "\n %F{red}󱞩%f"
 }
 
 build_prompt() {
