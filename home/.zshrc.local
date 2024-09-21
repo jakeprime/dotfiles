@@ -1,5 +1,6 @@
 export LC_TIME="en_GB.UTF-8"
 export MOZ_ENABLE_WAYLAND=1
+export MU4E_DIR="/usr/share/emacs/site-lisp/mu4e"
 
 . /opt/asdf-vm/asdf.sh
 
