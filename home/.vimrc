@@ -45,3 +45,24 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+"
+
+" Enable 24-bit RGB colors for terminals
+set termguicolors
+
+" Define terminal escape sequences for insert and normal modes
+if exists('$TERM')
+    let &t_SI = "\e[6 q"  " Beam cursor (Insert mode)
+    let &t_EI = "\e[2 q"  " Block cursor (Normal mode)
+endif
+
+" Reset the cursor to block on Vim startup
+augroup SetCursorShapeOnStartup
+  autocmd!
+  autocmd VimEnter * silent! call SetCursorToBlock()
+augroup END
+
+" Function to force cursor to block
+function! SetCursorToBlock()
+  silent! echo -ne "\e[2 q"
+endfunction
