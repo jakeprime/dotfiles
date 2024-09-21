@@ -3,7 +3,6 @@ HISTFILE=~/.histfile
 HISTSIZE=1000000
 SAVEHIST=1000000
 setopt autocd
-bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/jake/.zshrc'
@@ -53,4 +52,32 @@ source ~/.zshrc.theme
 
 prompt_context(){}
 
+bindkey -v
+# Set block cursor in normal mode
+function zle-line-init {
+  if [[ $KEYMAP == vicmd ]]; then
+    echo -ne '\e[2 q'  # Block cursor (normal mode)
+  else
+    echo -ne '\e[3 q'  # Underline cursor (insert mode)
+  fi
+  zle reset-prompt
+}
+
+# Reset the cursor shape in insert mode
+function zle-keymap-select {
+  if [[ $KEYMAP == vicmd ]]; then
+    echo -ne '\e[2 q'  # Block cursor (normal mode)
+  else
+    echo -ne '\e[3 q'  # Underline cursor (insert mode)
+  fi
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+# create an alias so that we start Vim with a block cursor
+alias vim="echo -ne \"\e[2 q\" && /usr/bin/vim"
+
+
 source ~/.zshrc.local
+
