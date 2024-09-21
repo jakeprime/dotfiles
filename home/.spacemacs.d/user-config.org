@@ -11,6 +11,25 @@
   (setq dotspacemacs-startup-banner "~/.spacemacs.d/vaporwave-sun.png")
 #+end_src
 
+** ChatGPT
+
+#+begin_src emacs-lisp :tangle "layer-config.el"
+  (setq gptel-model "gpt-4o-mini")
+#+end_src
+
+Set up the keybinding.
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (defun my-open-chat-gpt ()
+    (interactive)
+    (gptel "*ChatGPT*")
+    (let ((buffer (get-buffer "*ChatGPT*")))
+      (switch-to-buffer buffer)))
+
+  (spacemacs/set-leader-keys
+    "og" 'my-open-chat-gpt)
+#+end_src
+
 ** Coding
 *** Ruby
 **** Bundler

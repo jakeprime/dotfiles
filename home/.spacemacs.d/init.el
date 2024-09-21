@@ -48,6 +48,7 @@ This function should only modify configuration layer settings."
      go
      helm
      html
+     llm-client
      javascript
      lsp
      ;; markdown
@@ -622,7 +623,7 @@ This function is called at the very end of Spacemacs initialization."
          counsel-gtags dap-mode deferred define-word devdocs diminish
          dired-quick-sort dired-single diredfl disable-mouse doom-modeline
          dotenv-mode drag-stuff dumb-jump eat editorconfig elisp-def elisp-demos
-         elisp-slime-nav emacsql emmet-mode emojify emr esh-help
+         elisp-slime-nav ellama emacsql emmet-mode emojify emr esh-help
          eshell-prompt-extras eshell-z eval-sexp-fu evil-anzu evil-args
          evil-cleverparens evil-collection evil-easymotion evil-escape
          evil-evilified-state evil-exchange evil-goggles evil-iedit-state
@@ -634,7 +635,7 @@ This function is called at the very end of Spacemacs initialization."
          flycheck-pos-tip forge ggtags ghub git-link git-messenger git-modes
          git-timemachine gitignore-templates gntp gnuplot go-eldoc go-fill-struct
          go-gen-test go-guru go-impl go-mode go-rename go-tag godoctor
-         golden-ratio google-translate haml-mode helm-ag helm-c-yasnippet
+         golden-ratio google-translate gptel haml-mode helm-ag helm-c-yasnippet
          helm-comint helm-company helm-css-scss helm-descbinds helm-git-grep
          helm-ls-git helm-lsp helm-make helm-mode-manager helm-mu helm-org
          helm-org-rifle helm-projectile helm-purpose helm-swoop helm-themes
@@ -642,20 +643,20 @@ This function is called at the very end of Spacemacs initialization."
          highlight-parentheses hl-todo holy-mode htmlize hungry-delete hybrid-mode
          impatient-mode indent-guide inf-ruby inflections info+ insert-shebang
          inspector ivy js-doc js2-mode js2-refactor json-mode json-navigator
-         json-reformat json-snatcher link-hint livid-mode log4e lorem-ipsum
+         json-reformat json-snatcher link-hint livid-mode llm log4e lorem-ipsum
          lsp-docker lsp-mode lsp-origami lsp-treemacs lsp-ui macrostep magit
          magit-delta magit-section markdown-mode minitest mu4e-alert multi-line
          multi-term multi-vterm multiple-cursors nameless nerd-icons nodejs-repl
          npm-mode open-junk-file org org-category-capture org-cliplink org-contrib
          org-download org-journal org-mime org-pomodoro org-present
          org-project-capture org-projectile org-rich-yank org-superstar orgit
-         orgit-forge origami overseer paradox password-generator pcre2el popwin
-         pos-tip prettier-js projectile-rails pug-mode quickrun rainbow-delimiters
-         rake rbenv reformatter request restart-emacs rjsx-mode robe rspec-mode
-         rubocop rubocopfmt ruby-hash-syntax ruby-refactor ruby-test-mode
-         ruby-tools rvm sass-mode scss-mode seeing-is-believing shell-pop shfmt
-         shrink-path simple-httpd skewer-mode slim-mode smeargle space-doc
-         spaceline spacemacs-purpose-popwin spacemacs-whitespace-cleanup
+         orgit-forge origami overseer paradox password-generator pcre2el plz
+         popwin pos-tip prettier-js projectile-rails pug-mode quickrun
+         rainbow-delimiters rake rbenv reformatter request restart-emacs rjsx-mode
+         robe rspec-mode rubocop rubocopfmt ruby-hash-syntax ruby-refactor
+         ruby-test-mode ruby-tools rvm sass-mode scss-mode seeing-is-believing
+         shell-pop shfmt shrink-path simple-httpd skewer-mode slim-mode smeargle
+         space-doc spaceline spacemacs-purpose-popwin spacemacs-whitespace-cleanup
          string-edit-at-point string-inflection swiper symbol-overlay symon
          tagedit term-cursor terminal-here tide toc-org transient
          transient-posframe treemacs-evil treemacs-icons-dired treemacs-magit

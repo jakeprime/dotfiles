@@ -1,3 +1,5 @@
+(setq gptel-model "gpt-4o-mini")
+
 (setq typescript-fmt-on-save t)
 (setq typescript-fmt-tool 'prettier)
 (setq typescript-indent-level 2)
