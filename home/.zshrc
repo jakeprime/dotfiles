@@ -14,11 +14,6 @@ compinit
 
 . ~/.asdf/plugins/java/set-java-home.zsh
 
-# cleo
-alias cl="cd ~/work/cleo/meetcleo"
-alias clm="cd ~/work/cleo/mobile-app"
-alias cl-ios="cl && cd packages/native-app && yarn && cd ios && bundle && be pod install --no-repo-update && yarn ios --simulator=\"iPhone 15 Pro (17.2)\""
-
 export HOMEBREW_GITHUB_API_TOKEN=$(pass show github/homebrew)
 export AWS_PROFILE=Engineer-878877078763
 
@@ -47,12 +42,14 @@ bindkey "^[^[[D" backward-word
 bindkey "^[^[[C" forward-word
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="agnoster"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
 
 plugins=(git extract sudo zsh-autosuggestions z)
 
 source $ZSH/oh-my-zsh.sh
+
+
+source ~/.zshrc.theme
 
 prompt_context(){}
 

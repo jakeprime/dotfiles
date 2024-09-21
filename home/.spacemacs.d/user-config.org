@@ -170,3 +170,9 @@ Don't treat the right Alt as Alt, otherwise there is no way to write a =#= chara
   (add-hook 'org-mode-hook 'my-org-mode-hook)
 #+end_src
 
+** Terminal
+
+#+begin_src emacs-lisp :tangle "layer-config.el"
+  (setq shell-default-height 30)
+  (setq shell-default-position 'bottom)
+#+end_src

@@ -22,3 +22,6 @@
 (setq org-superstar-item-bullet-alist '((?+ . ?•) (?* . ?•) (?- . ?•)))
 (setq org-tags-column 1)
 (setq org-todo-keywords '((sequence "TODO" "|" "DONE" "REJECTED")))
+
+(setq shell-default-height 30)
+(setq shell-default-position 'bottom)
