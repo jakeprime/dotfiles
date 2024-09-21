@@ -7,5 +7,9 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 alias H=Hyprland
 
+# cleo
+alias cl="cd ~/work/cleo/meetcleo"
+alias clm="cd ~/work/cleo/mobile-app"
+
 # prime translatrix
 alias pt="cd ~/work/primetranslatrix/primetranslatrix-3"
