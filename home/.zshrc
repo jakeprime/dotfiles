@@ -62,4 +62,4 @@ source $ZSH/oh-my-zsh.sh
 
 prompt_context(){}
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+source ~/.zshrc.local
