@@ -1,5 +1,6 @@
 .config
 .config/ags
 .config/hypr
+.config/foot
 .oh-my-zsh
 .spacemacs.d
