@@ -164,3 +164,9 @@ Use code syntax to determine a word, e.g =user_profile= should be a word.
   (add-hook 'org-mode-hook 'my-org-mode-hook)
 #+end_src
 
+** Terminal
+
+#+begin_src emacs-lisp :tangle "layer-config.el"
+  (setq shell-default-height 30)
+  (setq shell-default-position 'bottom)
+#+end_src
