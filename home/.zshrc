@@ -81,3 +81,4 @@ alias vim="echo -ne \"\e[2 q\" && /usr/bin/vim"
 
 source ~/.zshrc.local
 
+neofetch --source ~/.config/neofetch/pentagram
