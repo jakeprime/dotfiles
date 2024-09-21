@@ -3,6 +3,16 @@
 
 (setq dotspacemacs-startup-banner "~/.spacemacs.d/vaporwave-sun.png")
 
+(defun my-open-chat-gpt ()
+  (interactive)
+  (message (gptel--get-api-key))
+  (gptel "*ChatGPT*")
+  (let ((buffer (get-buffer "*ChatGPT*")))
+    (switch-to-buffer buffer)))
+
+(spacemacs/set-leader-keys
+  "og" 'my-open-chat-gpt)
+
 (setq lsp-rubocop-use-bundler t)
 (setq lsp-ruby-lsp-use-bundler t)
 (setq lsp-solargraph-use-bundler t)
