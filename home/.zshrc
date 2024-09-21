@@ -42,12 +42,14 @@ bindkey "^[^[[D" backward-word
 bindkey "^[^[[C" forward-word
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="agnoster"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
 
 plugins=(git extract sudo zsh-autosuggestions z)
 
 source $ZSH/oh-my-zsh.sh
+
+
+source ~/.zshrc.theme
 
 prompt_context(){}
 
