@@ -1,3 +1,5 @@
 secrets.sh
 
 /spacemacs/.spacemacs.env
+
+home/.config/hypr/custom/keyboard.conf
