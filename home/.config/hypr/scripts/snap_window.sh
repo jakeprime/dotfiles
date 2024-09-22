@@ -13,20 +13,23 @@ math() {
     echo $result
 }
 
-screen_width=$(hyprctl -j monitors | jq -r ".[0].width")
-screen_height=$(hyprctl -j monitors | jq -r ".[0].height")
-taskbar_height=$(hyprctl -j monitors | jq -r ".[0].reserved[1]")
-scale=$(hyprctl -j monitors | jq -r ".[0].scale")
+monitor=$(hyprctl -j activewindow | jq -r ".monitor")
+
+screen_width=$(hyprctl -j monitors | jq -r ".[$monitor].width")
+screen_height=$(hyprctl -j monitors | jq -r ".[$monitor].height")
+screen_x=$(hyprctl -j monitors | jq -r ".[$monitor].x")
+screen_y=$(hyprctl -j monitors | jq -r ".[$monitor].y")
+taskbar_height=$(hyprctl -j monitors | jq -r ".[$monitor].reserved[1]")
+scale=$(hyprctl -j monitors | jq -r ".[$monitor].scale")
 
 gaps_out=$(hyprctl -j getoption "general:gaps_out" | jq -r ".custom | split(\" \") | .[0]")
 gaps_in=$(hyprctl -j getoption "general:gaps_in" | jq -r ".custom | split(\" \") | .[0]")
 border_size=$(hyprctl -j getoption "general:border_size" | jq -r ".int")
 
-origin_x=$gaps_out
-origin_y=$(math "$taskbar_height + $gaps_out + $border_size")
+origin_x=$(math "$gaps_out + $screen_x")
+origin_y=$(math "$taskbar_height + $gaps_out + $border_size + $screen_y")
 usable_width=$(math "($screen_width / $scale) - (2 * $gaps_out)")
-usable_height=$(math "$screen_height / $scale - $origin_y - $gaps_out - $border_size")
-
+usable_height=$(math "($screen_height / $scale) - $gaps_out - $border_size")
 
 case $position in
     "left-half"|"right-half")
