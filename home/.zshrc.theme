@@ -96,7 +96,13 @@ prompt_dir() {
     local parts=("${(@s:/:)path}") # Properly split path into array in Zsh
 
     for ((i=1; i<${#parts[@]}; i++)); do
-        result+="${parts[i]:0:1}/"   # Add the first letter of each parent directory
+        local part=${parts[i]:0:1}
+        # just add the first character of parent folders, unless it starts with a `.`
+        if [[ ${part} == "." ]]; then
+            result+="${parts[i]:0:2}/"
+        else
+            result+="${parts[i]:0:1}/"
+        fi
     done
 
     result+="${parts[-1]}"       # Add the full name of the current directory
@@ -104,7 +110,7 @@ prompt_dir() {
 }
 
 prompt_end() {
-    echo -n "\n %F{red}󱞩%f "
+    echo -n "\n %F{red}󱞩%f"
 }
 
 build_prompt() {

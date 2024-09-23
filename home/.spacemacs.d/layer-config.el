@@ -1,7 +1,14 @@
+(setq gptel-model "gpt-4o-mini")
+
 (setq typescript-fmt-on-save t)
 (setq typescript-fmt-tool 'prettier)
 (setq typescript-indent-level 2)
 (setq typescript-linter 'eslint)
+
+(setq mu4e-installation-path (getenv "MU4E_DIR"))
+(setq mu4e-get-mail-command "mbsync -a")
+(setq mu4e-update-interval (* 5 60))
+(setq mu4e-change-filenames-when-moving t)
 
 (setq git-enable-magit-delta-plugin t)
 (setq git-magit-status-fullscreen t)
