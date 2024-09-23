@@ -29,7 +29,7 @@ border_size=$(hyprctl -j getoption "general:border_size" | jq -r ".int")
 origin_x=$(math "$gaps_out + $screen_x")
 origin_y=$(math "$taskbar_height + $gaps_out + $border_size + $screen_y")
 usable_width=$(math "($screen_width / $scale) - (2 * $gaps_out)")
-usable_height=$(math "($screen_height / $scale) - $gaps_out - $border_size")
+usable_height=$(math "($screen_height / $scale) - $taskbar_height - (2 * ($gaps_out + $border_size))")
 
 case $position in
     "left-half"|"right-half")
