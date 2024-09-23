@@ -31,6 +31,23 @@ origin_y=$(math "$taskbar_height + $gaps_out + $border_size + $screen_y")
 usable_width=$(math "($screen_width / $scale) - (2 * $gaps_out)")
 usable_height=$(math "($screen_height / $scale) - $taskbar_height - (2 * ($gaps_out + $border_size))")
 
+# echo "screen_width: $screen_width"
+# echo "screen_height: $screen_height"
+# echo "screen_x: $screen_x"
+# echo "screen_y: $screen_y"
+# echo "taskbar_height: $taskbar_height"
+# echo "scale: $scale"
+
+# echo "gaps_out: $gaps_out"
+# echo "gaps_in: $gaps_in"
+# echo "border_size: $border_size"
+
+# echo "origin_x: $origin_x"
+# echo "origin_y: $origin_y"
+# echo "usable_width: $usable_width"
+# echo "usable_height: $usable_height"
+
+
 case $position in
     "left-half"|"right-half")
         window_width=$(math "($usable_width / 2) - ($gaps_in + $border_size)")
@@ -62,7 +79,10 @@ case $position in
         ;;
     *)
 esac
+
 move_params=$(params $window_x $origin_y)
+# echo "resize_params: $resize_params"
+# echo "move_params: $move_params"
 
 hyprctl dispatch setfloating
 hyprctl dispatch resizeactive $resize_params
