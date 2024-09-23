@@ -55,6 +55,9 @@ case $position in
     "left-third"|"center-third"|"right-third")
         window_width=$(math "($usable_width / 3) - 2 * ($gaps_in + $border_size)")
         ;;
+    "left-twothirds"|"right-twothirds")
+        window_width=$(math "($usable_width * 2 / 3) - 2 * ($gaps_in + $border_size)")
+        ;;
     "fullscreen")
         window_width=$(math "$usable_width - 2 * ($gaps_in + $border_size)")
         ;;
@@ -63,10 +66,10 @@ esac
 resize_params=$(params $window_width $(math "$usable_height - 2 * ($gaps_in + $border_size)"))
 
 case $position in
-    "left-half"|"left-third"|"fullscreen")
+    "left-half"|"left-third"|"left-twothirds"|"fullscreen")
         window_x=$(math "$origin_x + $gaps_in + $border_size")
         ;;
-    "center-third")
+    "center-third"|"right-twothirds")
         window_x=$(math "$origin_x + ($usable_width / 3) + (1 * ($gaps_in + $border_size))")
         ;;
     "right-third")
