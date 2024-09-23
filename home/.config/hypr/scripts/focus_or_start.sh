@@ -19,6 +19,7 @@ echo $running
 if [[ $running != "" ]]
 then
 	hyprctl dispatch focuswindow pid:${running}
+  hyprctl dispatch alterzorder top,pid:${running}
 else
 	${executable} &
 fi

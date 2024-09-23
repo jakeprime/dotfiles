@@ -8,6 +8,7 @@ running=$(hyprctl -j clients | jq -r "first(.[] | select(.class == \"firefox\") 
 if [[ $running != "" ]]
 then
 	 hyprctl dispatch focuswindow pid:${running}
+	 hyprctl dispatch alterzorder top,pid:${running}
 else
     firefox -P $profile &
     app_pid=$!
