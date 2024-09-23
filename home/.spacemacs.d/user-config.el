@@ -5,7 +5,6 @@
 
 (defun my-open-chat-gpt ()
   (interactive)
-  (message (gptel--get-api-key))
   (gptel "*ChatGPT*")
   (let ((buffer (get-buffer "*ChatGPT*")))
     (switch-to-buffer buffer)))
@@ -128,7 +127,7 @@
 
 (defalias 'forward-evil-word 'forward-evil-symbol)
 
-'(ns-right-alternate-modifier 'none)
+(setq mac-right-option-modifier 'none)
 
 (setq vc-follow-symlinks t)
 
