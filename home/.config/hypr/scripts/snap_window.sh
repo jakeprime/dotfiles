@@ -26,10 +26,10 @@ gaps_out=$(hyprctl -j getoption "general:gaps_out" | jq -r ".custom | split(\" \
 gaps_in=$(hyprctl -j getoption "general:gaps_in" | jq -r ".custom | split(\" \") | .[0]")
 border_size=$(hyprctl -j getoption "general:border_size" | jq -r ".int")
 
-origin_x=$(math "$gaps_out + $screen_x")
-origin_y=$(math "$taskbar_height + $gaps_out + $border_size + $screen_y")
-usable_width=$(math "($screen_width / $scale) - (2 * $gaps_out)")
-usable_height=$(math "($screen_height / $scale) - $taskbar_height - (2 * ($gaps_out + $border_size))")
+origin_x=$(math "$screen_x + $gaps_out")
+origin_y=$(math "$taskbar_height + $screen_y + $gaps_out")
+usable_width=$(math "($screen_width / $scale) - 2 * $gaps_out")
+usable_height=$(math "($screen_height / $scale) - $taskbar_height - 2 * $gaps_out")
 
 # echo "screen_width: $screen_width"
 # echo "screen_height: $screen_height"
@@ -50,21 +50,21 @@ usable_height=$(math "($screen_height / $scale) - $taskbar_height - (2 * ($gaps_
 
 case $position in
     "left-half"|"right-half")
-        window_width=$(math "($usable_width / 2) - ($gaps_in + $border_size)")
+        window_width=$(math "($usable_width / 2) - 2 * ($gaps_in + $border_size)")
         ;;
     "left-third"|"center-third"|"right-third")
-        window_width=$(math "($usable_width / 3) - (2 * ($gaps_in + $border_size))")
+        window_width=$(math "($usable_width / 3) - 2 * ($gaps_in + $border_size)")
         ;;
     "fullscreen")
-        window_width=$usable_width
+        window_width=$(math "$usable_width - 2 * ($gaps_in + $border_size)")
         ;;
     *)
 esac
-resize_params=$(params $window_width $usable_height)
+resize_params=$(params $window_width $(math "$usable_height - 2 * ($gaps_in + $border_size)"))
 
 case $position in
     "left-half"|"left-third"|"fullscreen")
-        window_x=$(math "$origin_x + $gaps_in")
+        window_x=$(math "$origin_x + $gaps_in + $border_size")
         ;;
     "center-third")
         window_x=$(math "$origin_x + ($usable_width / 3) + (1 * ($gaps_in + $border_size))")
@@ -80,7 +80,7 @@ case $position in
     *)
 esac
 
-move_params=$(params $window_x $origin_y)
+move_params=$(params $window_x $(math "$origin_y + $gaps_in + $border_size"))
 # echo "resize_params: $resize_params"
 # echo "move_params: $move_params"
 
