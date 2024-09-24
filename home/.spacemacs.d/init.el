@@ -63,6 +63,7 @@ This function should only modify configuration layer settings."
      syntax-checking
      treemacs
      typescript
+     yaml
      )
 
 
@@ -664,7 +665,7 @@ This function is called at the very end of Spacemacs initialization."
          undo-fu-session uuidgen vi-tilde-fringe vim-powerline volatile-highlights
          vterm vundo web-beautify web-completion-data web-mode which-key
          which-key-posframe winum with-editor writeroom-mode ws-butler xterm-color
-         yaml yasnippet yasnippet-snippets)))
+         yaml yaml-mode yasnippet yasnippet-snippets)))
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
    ;; If you edit it by hand, you could mess it up, so be careful.
