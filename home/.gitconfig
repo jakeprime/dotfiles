@@ -44,3 +44,6 @@
   max-line-length = 0
 [diff]
   colorMoved = default
+[filter "readline-gemfile-gitignore"]
+	clean = sed '/readline-ext/d'
+	smudge = cat
