@@ -58,6 +58,7 @@ This function should only modify configuration layer settings."
      react
      ruby
      ruby-on-rails
+     rust
      shell
      shell-scripts
      syntax-checking
@@ -654,12 +655,13 @@ This function is called at the very end of Spacemacs initialization."
          orgit-forge origami overseer paradox password-generator pcre2el plz
          popwin pos-tip prettier-js projectile-rails pug-mode quickrun
          rainbow-delimiters rake rbenv reformatter request restart-emacs rjsx-mode
-         robe rspec-mode rubocop rubocopfmt ruby-hash-syntax ruby-refactor
-         ruby-test-mode ruby-tools rvm sass-mode scss-mode seeing-is-believing
-         shell-pop shfmt shrink-path simple-httpd skewer-mode slim-mode smeargle
-         space-doc spaceline spacemacs-purpose-popwin spacemacs-whitespace-cleanup
+         robe ron-mode rspec-mode rubocop rubocopfmt ruby-hash-syntax
+         ruby-refactor ruby-test-mode ruby-tools rust-mode rustic rvm sass-mode
+         scss-mode seeing-is-believing shell-pop shfmt shrink-path simple-httpd
+         skewer-mode slim-mode smeargle space-doc spaceline
+         spacemacs-purpose-popwin spacemacs-whitespace-cleanup
          string-edit-at-point string-inflection swiper symbol-overlay symon
-         tagedit term-cursor terminal-here tide toc-org transient
+         tagedit term-cursor terminal-here tide toc-org toml-mode transient
          transient-posframe treemacs-evil treemacs-icons-dired treemacs-magit
          treemacs-persp treemacs-projectile treepy typescript-mode undo-fu
          undo-fu-session uuidgen vi-tilde-fringe vim-powerline volatile-highlights
