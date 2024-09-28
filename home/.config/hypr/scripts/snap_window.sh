@@ -31,6 +31,11 @@ origin_y=$(math "$taskbar_height + $screen_y + $gaps_out")
 usable_width=$(math "($screen_width / $scale) - 2 * $gaps_out")
 usable_height=$(math "($screen_height / $scale) - $taskbar_height - 2 * $gaps_out")
 
+window_x=$(hyprctl -j activewindow | jq -r ".at | .[0]")
+window_y=$(math "$origin_y + $gaps_in + $border_size")
+window_width=$(hyprctl -j activewindow | jq -r ".size | .[0]")
+window_height=$(math "$usable_height - 2 * ($gaps_in + $border_size)")
+
 # echo "screen_width: $screen_width"
 # echo "screen_height: $screen_height"
 # echo "screen_x: $screen_x"
@@ -47,6 +52,11 @@ usable_height=$(math "($screen_height / $scale) - $taskbar_height - 2 * $gaps_ou
 # echo "usable_width: $usable_width"
 # echo "usable_height: $usable_height"
 
+# echo "window_x: $window_x"
+# echo "window_y: $window_y"
+# echo "window_width: $window_width"
+# echo "window_height: $window_height"
+
 
 case $position in
     "left-half"|"right-half")
@@ -61,9 +71,11 @@ case $position in
     "fullscreen")
         window_width=$(math "$usable_width - 2 * ($gaps_in + $border_size)")
         ;;
+    "up"|"down")
+        window_height=$(math "($usable_height / 2) - 2 * ($gaps_in + $border_size)")
+        ;;
     *)
 esac
-resize_params=$(params $window_width $(math "$usable_height - 2 * ($gaps_in + $border_size)"))
 
 case $position in
     "left-half"|"left-third"|"left-twothirds"|"fullscreen")
@@ -74,16 +86,18 @@ case $position in
         ;;
     "right-third")
         window_x=$(math "$origin_x + 2 * ($usable_width / 3) + (1 * ($gaps_in + $border_size))")
-        move_params="exact $window_x $origin_y"
         ;;
     "right-half")
         window_x=$(math "$origin_x + ($usable_width / 2) + (1 * ($gaps_in + $border_size))")
-        move_params="exact $window_x $origin_y"
+        ;;
+    "down")
+        window_y=$(math "$origin_y + ($usable_height / 2) + (1 * ($gaps_in + $border_size))")
         ;;
     *)
 esac
 
-move_params=$(params $window_x $(math "$origin_y + $gaps_in + $border_size"))
+move_params=$(params $window_x $window_y)
+resize_params=$(params $window_width $window_height)
 # echo "resize_params: $resize_params"
 # echo "move_params: $move_params"
 
