@@ -12,7 +12,11 @@ then
 else
     firefox -P $profile &
     app_pid=$!
-    sleep 1
+
+    while [[ -z "$(hyprctl -j clients | jq -r ".[] | select(.pid == $app_pid)")" ]]
+    do
+          sleep 0.1
+    done
 
     hyprctl dispatch tagwindow "$profile pid:$app_pid"
 fi
