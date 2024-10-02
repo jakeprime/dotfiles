@@ -5,7 +5,6 @@
 
 (defun my-open-chat-gpt ()
   (interactive)
-  (message (gptel--get-api-key))
   (gptel "*ChatGPT*")
   (let ((buffer (get-buffer "*ChatGPT*")))
     (switch-to-buffer buffer)))
