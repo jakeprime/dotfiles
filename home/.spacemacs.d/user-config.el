@@ -12,6 +12,9 @@
 (spacemacs/set-leader-keys
   "og" 'my-open-chat-gpt)
 
+(with-eval-after-load 'bug-reference
+  (remove-hook 'prog-mode-hook #'bug-reference-prog-mode))
+
 (setq lsp-rubocop-use-bundler t)
 (setq lsp-ruby-lsp-use-bundler t)
 (setq lsp-solargraph-use-bundler t)
