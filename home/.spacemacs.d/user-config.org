@@ -66,6 +66,23 @@ Define the Cleo prompt format, otherwise it's not possible to retrieve previous 
                       (concat inf-ruby-prompt-pattern p)))))
 #+end_src
 
+**** Code folding
+Hideshow doesn't know what constitutes a block in Ruby.
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (eval-after-load "hideshow"
+    '(add-to-list 'hs-special-modes-alist
+       `(ruby-mode
+          ,(rx (or "def" "class" "module" "do" "{" "[")) ; Block start
+          ,(rx (or "}" "]" "end"))                       ; Block end
+          ,(rx (or "#" "=begin"))                        ; Comment start
+          ruby-forward-sexp nil)))
+
+  (spacemacs/set-leader-keys "off" 'hs-toggle-hiding)
+  (spacemacs/set-leader-keys "ofl" 'hs-hide-level)
+  (spacemacs/set-leader-keys "ofa" 'hs-show-all)
+#+end_src
+
 **** Tests
 For some reason by default there are a couple of spaces rendered at the beginning of the filename, breaking navigation.
 
