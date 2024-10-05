@@ -66,6 +66,8 @@
   ;; it's not loaded yet, so add our bindings to the load-hook
   (add-hook 'dired-load-hook 'my-dired-single))
 
+(setq insert-directory-program "gls")
+
 (setq message-send-mail-function 'smtpmail-send-it
   smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
   smtpmail-auth-credentials (expand-file-name "~/.authinfo")

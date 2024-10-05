@@ -128,6 +128,13 @@ Use the existing buffer when navigating around dired.
     (add-hook 'dired-load-hook 'my-dired-single))
 #+end_src
 
+Use GNU ls (Mac only)
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (setq insert-directory-program "gls")
+#+end_src
+
+
 ** Email
 
 #+begin_src emacs-lisp :tangle "layer-config.el"
