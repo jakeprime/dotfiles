@@ -63,6 +63,7 @@ This function should only modify configuration layer settings."
      syntax-checking
      treemacs
      typescript
+     yaml
      )
 
 
@@ -419,7 +420,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; Show the scroll bar while scrolling. The auto hide time can be configured
    ;; by setting this variable to a number. (default t)
-   dotspacemacs-scroll-bar-while-scrolling t
+   dotspacemacs-scroll-bar-while-scrolling nil
 
    ;; Control line numbers activation.
    ;; If set to `t', `relative' or `visual' then line numbers are enabled in all
@@ -453,7 +454,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil smartparens-mode will be enabled in programming modes.
    ;; (default t)
-   dotspacemacs-activate-smartparens-mode t
+   dotspacemacs-activate-smartparens-mode nil
 
    ;; If non-nil pressing the closing parenthesis `)' key in insert mode passes
    ;; over any automatically added closing parenthesis, bracket, quote, etc...
@@ -664,7 +665,7 @@ This function is called at the very end of Spacemacs initialization."
          undo-fu-session uuidgen vi-tilde-fringe vim-powerline volatile-highlights
          vterm vundo web-beautify web-completion-data web-mode which-key
          which-key-posframe winum with-editor writeroom-mode ws-butler xterm-color
-         yaml yasnippet yasnippet-snippets)))
+         yaml yaml-mode yasnippet yasnippet-snippets)))
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
    ;; If you edit it by hand, you could mess it up, so be careful.

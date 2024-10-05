@@ -31,6 +31,13 @@ Set up the keybinding.
 #+end_src
 
 ** Coding
+*** General
+By default the =bug-reference= package treats numeric RGB values as links to an issue. Disable it.
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (with-eval-after-load 'bug-reference
+    (remove-hook 'prog-mode-hook #'bug-reference-prog-mode))
+#+end_src
 *** Ruby
 **** Bundler
 Make sure we use bundler for flycheck and lsp tools. Otherwise we would have issues when multiple projects use different versions, especially as the work ones are out of my individual control.
