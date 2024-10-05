@@ -64,6 +64,7 @@ This function should only modify configuration layer settings."
      syntax-checking
      treemacs
      typescript
+     version-control
      yaml
      )
 
@@ -191,7 +192,6 @@ It should only modify the values of Spacemacs settings."
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
    dotspacemacs-startup-banner "~/.spacemacs.d/vaporwave-sun.png"
-
 
    ;; Scale factor controls the scaling (size) of the startup banner. Default
    ;; value is `auto' for scaling the logo automatically to fit all buffer
@@ -583,7 +583,6 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-  ;; (setq-default git-magit-status-fullscreen t)
   )
 
 

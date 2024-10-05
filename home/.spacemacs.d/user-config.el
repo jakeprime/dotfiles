@@ -12,6 +12,9 @@
 (spacemacs/set-leader-keys
   "og" 'my-open-chat-gpt)
 
+(with-eval-after-load 'bug-reference
+  (remove-hook 'prog-mode-hook #'bug-reference-prog-mode))
+
 (setq lsp-rubocop-use-bundler t)
 (setq lsp-ruby-lsp-use-bundler t)
 (setq lsp-solargraph-use-bundler t)
@@ -28,6 +31,18 @@
                     (concat inf-ruby-first-prompt-pattern p))
               (setq inf-ruby-prompt-pattern
                     (concat inf-ruby-prompt-pattern p)))))
+
+(eval-after-load "hideshow"
+  '(add-to-list 'hs-special-modes-alist
+     `(ruby-mode
+        ,(rx (or "def" "class" "module" "do" "{" "[")) ; Block start
+        ,(rx (or "}" "]" "end"))                       ; Block end
+        ,(rx (or "#" "=begin"))                        ; Comment start
+        ruby-forward-sexp nil)))
+
+(spacemacs/set-leader-keys "off" 'hs-toggle-hiding)
+(spacemacs/set-leader-keys "ofl" 'hs-hide-level)
+(spacemacs/set-leader-keys "ofa" 'hs-show-all)
 
 (assq-delete-all 'ruby-Test::Unit compilation-error-regexp-alist-alist)
 (add-to-list 'compilation-error-regexp-alist-alist '(ruby-Test::Unit "^ +\\([^ (].*\\):\\([1-9][0-9]*\\):in " 1 2))
