@@ -50,22 +50,6 @@
 
 (add-hook 'dired-mode-hook 'diredfl-mode)
 
-(require 'dired-single)
-(defun my-dired-single ()
-  "Bunch of stuff to run for dired, either immediately or when it's
- loaded."
-  (define-key dired-mode-map [return] 'dired-single-buffer)
-  (define-key dired-mode-map "^"
-              (function
-               (lambda nil (interactive) (dired-single-buffer "..")))))
-
-;; if dired's already loaded, then the keymap will be bound
-(if (boundp 'dired-mode-map)
-    ;; we're good to go; just add our bindings
-    (my-dired-single)
-  ;; it's not loaded yet, so add our bindings to the load-hook
-  (add-hook 'dired-load-hook 'my-dired-single))
-
 (setq message-send-mail-function 'smtpmail-send-it
   smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
   smtpmail-auth-credentials (expand-file-name "~/.authinfo")
