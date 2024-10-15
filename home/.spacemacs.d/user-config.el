@@ -50,22 +50,6 @@
 
 (add-hook 'dired-mode-hook 'diredfl-mode)
 
-(require 'dired-single)
-(defun my-dired-single ()
-  "Bunch of stuff to run for dired, either immediately or when it's
- loaded."
-  (define-key dired-mode-map [return] 'dired-single-buffer)
-  (define-key dired-mode-map "^"
-              (function
-               (lambda nil (interactive) (dired-single-buffer "..")))))
-
-;; if dired's already loaded, then the keymap will be bound
-(if (boundp 'dired-mode-map)
-    ;; we're good to go; just add our bindings
-    (my-dired-single)
-  ;; it's not loaded yet, so add our bindings to the load-hook
-  (add-hook 'dired-load-hook 'my-dired-single))
-
 (setq insert-directory-program "gls")
 
 (setq message-send-mail-function 'smtpmail-send-it
@@ -108,6 +92,11 @@
                   (smtpmail-smtp-user . "jake.prime@gmail.com")))
          ))
 
+  (setq mu4e-modeline-all-clear '("C:" . "󰄰 "))
+  (setq mu4e-modeline-new-items '("N:" . "󰈸 "))
+  (setq mu4e-modeline-read-items '("R:" . " "))
+  (setq mu4e-modeline-unread-items '("U:" . " "))
+
   (setq mu4e-maildir-shortcuts
         '((:maildir "/cleo/Inbox" :key ?c :name "Cleo" :hide t)
           (:maildir "/personal/Inbox" :key ?p :name "Personal" :hide t))))
@@ -137,8 +126,6 @@
 (setq mu4e-headers-personal-mark '("p" . "."))
 (setq mu4e-headers-flagged-mark '("f" . "!"))
 (setq mu4e-headers-new-mark '("N" . "*"))
-
-(add-hook 'mu4e-index-updated-hook #'mu4e-alert-enable-mode-line-display)
 
 (setq evil-escape-key-sequence [106 107])
 
