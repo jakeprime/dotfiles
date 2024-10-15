@@ -131,7 +131,6 @@ This is used whenever we want to send emails, whether from mu4e or otherwise.
     smtpmail-debug-info t)
 #+end_src
 
-
 *** Mail accounts
 One for personal, one for Cleo
 
