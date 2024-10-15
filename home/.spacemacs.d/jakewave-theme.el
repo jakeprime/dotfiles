@@ -21,7 +21,7 @@
       (jake-purple "#9963ff")
       (jake-purple-subtle "#574497")
 
-      (jake-fixed "MonaspiceAr Nerd Font")
+      (jake-fixed "MonaspiceAr NFM")
       (jake-variable "Noto Sans")
       (jake-variable-heading "MonaspiceRn Nerd Font")
       (jake-script "MonaspiceRn Nerd Font")
