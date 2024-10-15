@@ -43,10 +43,10 @@ This function should only modify configuration layer settings."
      ;; ----------------------------------------------------------------
      auto-completion
      dap
+     compleseus
      emacs-lisp
      git
      go
-     helm
      html
      llm-client
      javascript
