@@ -7,8 +7,8 @@
     # RIGHT_EDGE=$'\ue0c0 '
 
     # scrape
-    LEFT_EDGE=$'\ue0ca '
-    RIGHT_EDGE=$'\ue0c8 '
+    LEFT_EDGE=$'\ue0ca  '
+    RIGHT_EDGE=$'\ue0c8  '
 
     # hex
     # RIGHT_EDGE=$'\ue0cc  '
@@ -30,7 +30,7 @@ prompt_segment() {
 
     echo -n "%K{$color}%F{black}$RIGHT_EDGE%F{black}%K{$color}"
     [[ -n $2 ]] && echo -n $2
-    echo -n "%F{$color}%k$RIGHT_EDGE%f%k%b "
+    echo -n " %F{$color}%k$RIGHT_EDGE%f%k%b "
 }
 
 # Git: branch/detached head, dirty status
