@@ -2,19 +2,35 @@
 # Takes two arguments, background and foreground. Both can be omitted,
 # rendering default background/foreground.
 () {
-    LEFT_EDGE=$'\ue0b6'
-    RIGHT_EDGE=$'\ue0b4'
+    # flame
+    # LEFT_EDGE=$'\ue0c2 '
+    # RIGHT_EDGE=$'\ue0c0 '
+
+    # scrape
+    LEFT_EDGE=$'\ue0ca  '
+    RIGHT_EDGE=$'\ue0c8  '
+
+    # hex
+    # RIGHT_EDGE=$'\ue0cc  '
+
+    # round
+    # LEFT_EDGE=$'\ue0b6 '
+    # RIGHT_EDGE=$'\ue0b4 '
 }
 
 prompt_segment() {
     local color
     [[ -n $1 ]] && color="$1" || color="%k"
 
-    [[ -n $3 ]] || echo -n "%F{red}•%f "
+    # [[ -n $3 ]] || echo -n "%F{red}•%f "
 
-    echo -n "%F{$color}%k$LEFT_EDGE%F{black}%K{$color}"
+#    echo -n "%F{$color}%k$LEFT_EDGE%F{black}%K{$color}"
+#    [[ -n $2 ]] && echo -n $2
+#    echo -n "%F{$color}%k$RIGHT_EDGE%f%k%b "
+
+    echo -n "%K{$color}%F{black}$RIGHT_EDGE%F{black}%K{$color}"
     [[ -n $2 ]] && echo -n $2
-    echo -n "%F{$color}%k$RIGHT_EDGE%f%k%b "
+    echo -n " %F{$color}%k$RIGHT_EDGE%f%k%b "
 }
 
 # Git: branch/detached head, dirty status
@@ -56,8 +72,8 @@ prompt_git() {
     zstyle ':vcs_info:*' enable git
     zstyle ':vcs_info:*' get-revision true
     zstyle ':vcs_info:*' check-for-changes true
-    zstyle ':vcs_info:*' stagedstr ''
-    zstyle ':vcs_info:*' unstagedstr ''
+    zstyle ':vcs_info:*' stagedstr ''
+    zstyle ':vcs_info:*' unstagedstr ''
 
     zstyle ':vcs_info:*' formats '%u'
     zstyle ':vcs_info:*' actionformats '%u'
