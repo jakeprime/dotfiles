@@ -22,6 +22,7 @@ export PATH="$PATH:/usr/local/bin/platform-tools/"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+export ANDROID_HOME=/Users/jake/Library/Android/sdk
 export ASDF_DIR=/opt/homebrew/opt/asdf/libexec
 export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"
 export EMACS=/Applications/Emacs.app/Contents/MacOS/emacs
