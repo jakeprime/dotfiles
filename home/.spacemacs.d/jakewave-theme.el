@@ -182,6 +182,8 @@
    `(internal-border ((t (:background ,jake-yellow))))
    `(isearch ((t (:foreground "#2D2B55" :background "#FF7300"))))
    `(isearch-fail ((((class color) (min-colors 88) (background light)) (:background "RosyBrown1")) (((class color) (min-colors 88) (background dark)) (:background "red4")) (((class color) (min-colors 16)) (:background "red")) (((class color) (min-colors 8)) (:background "red")) (((class color grayscale)) (:foreground "grey")) (t (:inverse-video t))))
+   `(js2-external-variable ((t (:foreground unspecified))))
+   `(js2-function-param ((t (:inherit font-lock-constant-face :foreground unspecified))))
    `(lazy-highlight ((t (:weight normal :background "#FFFF03" :inherit (isearch)))))
    `(line-number ((t (:inherit (fixed-pitch) :background "#1D0432" :foreground "#4A1E64"))))
    `(line-number-current-line ((t (:inherit bold :background "#1D0432" :foreground "#7912CE" :weight unspecified))))
