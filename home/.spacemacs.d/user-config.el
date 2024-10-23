@@ -15,6 +15,10 @@
 (with-eval-after-load 'bug-reference
   (remove-hook 'prog-mode-hook #'bug-reference-prog-mode))
 
+(spacemacs/set-leader-keys "off" 'hs-toggle-hiding)
+(spacemacs/set-leader-keys "ofl" 'hs-hide-level)
+(spacemacs/set-leader-keys "ofa" 'hs-show-all)
+
 (setq lsp-rubocop-use-bundler t)
 (setq lsp-ruby-lsp-use-bundler t)
 (setq lsp-solargraph-use-bundler t)
@@ -39,10 +43,6 @@
         ,(rx (or "}" "]" "end"))                       ; Block end
         ,(rx (or "#" "=begin"))                        ; Comment start
         ruby-forward-sexp nil)))
-
-(spacemacs/set-leader-keys "off" 'hs-toggle-hiding)
-(spacemacs/set-leader-keys "ofl" 'hs-hide-level)
-(spacemacs/set-leader-keys "ofa" 'hs-show-all)
 
 (assq-delete-all 'ruby-Test::Unit compilation-error-regexp-alist-alist)
 (add-to-list 'compilation-error-regexp-alist-alist '(ruby-Test::Unit "^ +\\([^ (].*\\):\\([1-9][0-9]*\\):in " 1 2))
@@ -132,6 +132,8 @@
 (defalias 'forward-evil-word 'forward-evil-symbol)
 
 (setq mac-right-option-modifier 'none)
+
+(spacemacs/set-leader-keys "oi" 'ibuffer)
 
 (setq vc-follow-symlinks t)
 
