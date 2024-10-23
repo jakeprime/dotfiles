@@ -228,6 +228,12 @@ Use code syntax to determine a word, e.g =user_profile= should be a word.
   (defalias 'forward-evil-word 'forward-evil-symbol)
 #+end_src
 
+ibuffer
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (spacemacs/set-leader-keys "oi" 'ibuffer)
+#+end_src
+
 ** Git
 
 #+begin_src emacs-lisp :tangle "layer-config.el"
