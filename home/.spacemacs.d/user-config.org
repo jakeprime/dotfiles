@@ -38,6 +38,15 @@ By default the =bug-reference= package treats numeric RGB values as links to an 
   (with-eval-after-load 'bug-reference
     (remove-hook 'prog-mode-hook #'bug-reference-prog-mode))
 #+end_src
+
+**** Code folding
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (spacemacs/set-leader-keys "off" 'hs-toggle-hiding)
+  (spacemacs/set-leader-keys "ofl" 'hs-hide-level)
+  (spacemacs/set-leader-keys "ofa" 'hs-show-all)
+#+end_src
+
 *** Ruby
 **** Bundler
 Make sure we use bundler for flycheck and lsp tools. Otherwise we would have issues when multiple projects use different versions, especially as the work ones are out of my individual control.
@@ -77,10 +86,6 @@ Hideshow doesn't know what constitutes a block in Ruby.
           ,(rx (or "}" "]" "end"))                       ; Block end
           ,(rx (or "#" "=begin"))                        ; Comment start
           ruby-forward-sexp nil)))
-
-  (spacemacs/set-leader-keys "off" 'hs-toggle-hiding)
-  (spacemacs/set-leader-keys "ofl" 'hs-hide-level)
-  (spacemacs/set-leader-keys "ofa" 'hs-show-all)
 #+end_src
 
 **** Tests
