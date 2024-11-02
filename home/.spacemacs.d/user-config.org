@@ -106,6 +106,15 @@ For some reason by default there are a couple of spaces rendered at the beginnin
   (setq typescript-linter 'eslint)
 #+end_src
 
+*** Web
+2 space indent, we're not animals.
+
+#+begin_src emacs-lisp :tangle "layer-config.el"
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-code-indent-offset 2)
+#+end_src
+
 ** Dired
 Use diredfl. It's very pretty.
 
