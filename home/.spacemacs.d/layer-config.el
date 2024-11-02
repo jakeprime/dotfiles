@@ -5,6 +5,10 @@
 (setq typescript-indent-level 2)
 (setq typescript-linter 'eslint)
 
+(setq web-mode-markup-indent-offset 2)
+(setq web-mode-css-indent-offset 2)
+(setq web-mode-code-indent-offset 2)
+
 (setq mu4e-installation-path (getenv "MU4E_DIR"))
 (setq mu4e-get-mail-command "mbsync -a")
 (setq mu4e-update-interval (* 5 60))
