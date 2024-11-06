@@ -44,5 +44,3 @@ node_modules
 #########
 .dir-locals.el
 .#*
-
-.tool-versions
