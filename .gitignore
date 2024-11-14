@@ -5,3 +5,6 @@ secrets.sh
 # one of these two should work!
 home/.config/hypr/custom/keyboard.conf
 /home/.config/hypr/custom/keyboard.conf
+
+home/.config/hypr/custom/monitors.conf
+/home/.config/hypr/custom/monitors.conf
