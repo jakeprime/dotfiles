@@ -49,12 +49,10 @@ By default the =bug-reference= package treats numeric RGB values as links to an 
 
 *** Ruby
 **** Bundler
-Make sure we use bundler for flycheck and lsp tools. Otherwise we would have issues when multiple projects use different versions, especially as the work ones are out of my individual control.
+Make sure we use bundler for flycheck and rubocop. Otherwise we would have issues when multiple projects use different versions, especially as the work ones are out of my individual control.
 
 #+begin_src emacs-lisp :tangle "user-config.el"
   (setq lsp-rubocop-use-bundler t)
-  (setq lsp-ruby-lsp-use-bundler t)
-  (setq lsp-solargraph-use-bundler t)
 
   (add-hook 'ruby-mode-hook
             (lambda ()

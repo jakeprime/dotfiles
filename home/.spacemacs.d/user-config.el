@@ -20,8 +20,6 @@
 (spacemacs/set-leader-keys "ofa" 'hs-show-all)
 
 (setq lsp-rubocop-use-bundler t)
-(setq lsp-ruby-lsp-use-bundler t)
-(setq lsp-solargraph-use-bundler t)
 
 (add-hook 'ruby-mode-hook
           (lambda ()
