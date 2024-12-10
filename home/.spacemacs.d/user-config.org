@@ -86,6 +86,13 @@ Hideshow doesn't know what constitutes a block in Ruby.
           ruby-forward-sexp nil)))
 #+end_src
 
+**** Sorbet
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (setq lsp-sorbet-as-add-on t)
+  (setq lsp-sorbet-use-bundler t)
+#+end_src
+
 **** Tests
 For some reason by default there are a couple of spaces rendered at the beginning of the filename, breaking navigation.
 
