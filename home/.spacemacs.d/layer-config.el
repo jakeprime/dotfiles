@@ -1,4 +1,4 @@
-(setq gptel-model "gpt-4o-mini")
+(setq gptel-model 'gpt-4o-mini)
 
 (setq typescript-fmt-on-save t)
 (setq typescript-fmt-tool 'prettier)

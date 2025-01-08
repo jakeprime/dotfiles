@@ -14,7 +14,7 @@
 ** ChatGPT
 
 #+begin_src emacs-lisp :tangle "layer-config.el"
-  (setq gptel-model "gpt-4o-mini")
+  (setq gptel-model 'gpt-4o-mini)
 #+end_src
 
 Set up the keybinding.
