@@ -19,13 +19,6 @@
 (spacemacs/set-leader-keys "ofl" 'hs-hide-level)
 (spacemacs/set-leader-keys "ofa" 'hs-show-all)
 
-(setq lsp-rubocop-use-bundler t)
-
-(add-hook 'ruby-mode-hook
-          (lambda ()
-            (setq-local flycheck-command-wrapper-function
-                        (lambda (command) (append '("bundle" "exec") command)))))
-
 (add-hook 'inf-ruby-mode-hook
           (lambda()
             (let ((p "\\|\\(^\\[cleo\\]\\[development\\] main:[0-9]+> *\\)"))
@@ -41,6 +34,24 @@
         ,(rx (or "}" "]" "end"))                       ; Block end
         ,(rx (or "#" "=begin"))                        ; Comment start
         ruby-forward-sexp nil)))
+
+(defun my-add-flycheck-next-checker ()
+  (message "Trying to add next checker")
+  (when (and (derived-mode-p 'ruby-mode)
+             ;; Ensure LSP checker exists
+             (flycheck-registered-checker-p 'lsp))
+    (flycheck-add-next-checker 'lsp 'ruby-rubocop)))
+
+(eval-after-load 'flycheck
+  '(add-hook 'flycheck-mode-hook #'my-add-flycheck-next-checker))
+
+(setq lsp-rubocop-use-bundler t)
+
+(add-hook
+ 'ruby-mode-hook
+ (lambda ()
+   (setq-local flycheck-command-wrapper-function
+               (lambda (command) (append '("bundle" "exec") command)))))
 
 (setq lsp-sorbet-as-add-on t)
 (setq lsp-sorbet-use-bundler t)
@@ -69,6 +80,8 @@
 (setq doom-modeline-lsp nil)
 (setq doom-modeline-mu4e t)
 (setq doom-modeline-time nil)
+
+(setq lsp-modeline-code-action-fallback-icon "")
 
 (defun my-org-mode-hook ()
   (auto-fill-mode 0)
