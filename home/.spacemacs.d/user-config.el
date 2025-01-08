@@ -19,13 +19,6 @@
 (spacemacs/set-leader-keys "ofl" 'hs-hide-level)
 (spacemacs/set-leader-keys "ofa" 'hs-show-all)
 
-(setq lsp-rubocop-use-bundler t)
-
-(add-hook 'ruby-mode-hook
-          (lambda ()
-            (setq-local flycheck-command-wrapper-function
-                        (lambda (command) (append '("bundle" "exec") command)))))
-
 (add-hook 'inf-ruby-mode-hook
           (lambda()
             (let ((p "\\|\\(^\\[cleo\\]\\[development\\] main:[0-9]+> *\\)"))
@@ -51,6 +44,14 @@
 
 (eval-after-load 'flycheck
   '(add-hook 'flycheck-mode-hook #'my-add-flycheck-next-checker))
+
+(setq lsp-rubocop-use-bundler t)
+
+(add-hook
+ 'ruby-mode-hook
+ (lambda ()
+   (setq-local flycheck-command-wrapper-function
+               (lambda (command) (append '("bundle" "exec") command)))))
 
 (setq lsp-sorbet-as-add-on t)
 (setq lsp-sorbet-use-bundler t)

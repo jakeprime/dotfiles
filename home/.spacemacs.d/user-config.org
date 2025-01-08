@@ -48,18 +48,6 @@ By default the =bug-reference= package treats numeric RGB values as links to an 
 #+end_src
 
 *** Ruby
-**** Bundler
-Make sure we use bundler for flycheck and rubocop. Otherwise we would have issues when multiple projects use different versions, especially as the work ones are out of my individual control.
-
-#+begin_src emacs-lisp :tangle "user-config.el"
-  (setq lsp-rubocop-use-bundler t)
-
-  (add-hook 'ruby-mode-hook
-            (lambda ()
-              (setq-local flycheck-command-wrapper-function
-                          (lambda (command) (append '("bundle" "exec") command)))))
-#+end_src
-
 **** Cleo console
 Define the Cleo prompt format, otherwise it's not possible to retrieve previous commands by pressing the up arrow.
 
@@ -99,6 +87,20 @@ The lsp flychecker is how we know about Sorbet errors, but we want Rubocop too s
 
   (eval-after-load 'flycheck
     '(add-hook 'flycheck-mode-hook #'my-add-flycheck-next-checker))
+#+end_src
+
+
+Make sure we use bundler for flycheck. Otherwise we would have issues when multiple projects use different versions, especially as the work ones are out of my individual control. I'm not sure I'm using the rubocop lsp, in fact fairly sure I'm not, but if I was I'd want to be using bundler, so leave that in.
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (setq lsp-rubocop-use-bundler t)
+
+  (add-hook
+   'ruby-mode-hook
+   (lambda ()
+     (setq-local flycheck-command-wrapper-function
+                 (lambda (command) (append '("bundle" "exec") command)))))
+
 #+end_src
 
 **** Sorbet
