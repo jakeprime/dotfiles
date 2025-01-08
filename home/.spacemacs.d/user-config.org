@@ -86,6 +86,21 @@ Hideshow doesn't know what constitutes a block in Ruby.
           ruby-forward-sexp nil)))
 #+end_src
 
+**** Flycheck
+The lsp flychecker is how we know about Sorbet errors, but we want Rubocop too so we have to chain them.
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (defun my-add-flycheck-next-checker ()
+    (message "Trying to add next checker")
+    (when (and (derived-mode-p 'ruby-mode)
+               ;; Ensure LSP checker exists
+               (flycheck-registered-checker-p 'lsp))
+      (flycheck-add-next-checker 'lsp 'ruby-rubocop)))
+
+  (eval-after-load 'flycheck
+    '(add-hook 'flycheck-mode-hook #'my-add-flycheck-next-checker))
+#+end_src
+
 **** Sorbet
 
 #+begin_src emacs-lisp :tangle "user-config.el"
