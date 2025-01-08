@@ -81,6 +81,8 @@
 (setq doom-modeline-mu4e t)
 (setq doom-modeline-time nil)
 
+(setq lsp-modeline-code-action-fallback-icon "")
+
 (defun my-org-mode-hook ()
   (auto-fill-mode 0)
   (face-remap-add-relative 'hl-line `(:background nil))
