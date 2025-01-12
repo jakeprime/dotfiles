@@ -59,19 +59,36 @@
 (setq lsp-sorbet-as-add-on t)
 (setq lsp-sorbet-use-bundler t)
 
-(eval-after-load "lsp-mode"
-  '(defun lsp--symbols-informations->document-symbols-hierarchy (symbols-informations current-position)
-     "Convert SYMBOLS-INFORMATIONS to symbols hierarchy on CURRENT-POSITION."
-     (--> symbols-informations
-          (-keep (-lambda (symbol)
-                   (when (and (gethash "location" symbol)
-                              (lsp-point-in-range? current-position (gethash "range" (gethash "location" symbol))))
-                     (lsp--symbol-information->document-symbol symbol)))
-                 it)
-          (sort it (-lambda ((&DocumentSymbol :range (&Range :start a-start-position :end a-end-position))
-                             (&DocumentSymbol :range (&Range :start b-start-position :end b-end-position)))
-                     (and (lsp--position-compare b-start-position a-start-position)
-                          (lsp--position-compare a-end-position b-end-position)))))))
+(defun jake/redefined-lsp-func (symbols-informations current-position)
+  "[Redefined] Convert SYMBOLS-INFORMATIONS to symbols hierarchy on CURRENT-POSITION."
+  (--> symbols-informations
+       (-keep (-lambda (symbol)
+                (when (and (gethash "location" symbol)
+                           (lsp-point-in-range? current-position (gethash "range" (gethash "location" symbol))))
+                  (lsp--symbol-information->document-symbol symbol)))
+              it)
+       (sort it (-lambda ((&DocumentSymbol :range (&Range :start a-start-position :end a-end-position))
+                          (&DocumentSymbol :range (&Range :start b-start-position :end b-end-position)))
+                  (and (lsp--position-compare b-start-position a-start-position)
+                       (lsp--position-compare a-end-position b-end-position))))))
+
+
+(defun jake/redefine-lsp ()
+  (defun lsp--symbols->document-symbols-hierarchy (symbols)
+    "Convert SYMBOLS to symbols-hierarchy."
+    (when-let* ((first-symbol (lsp-seq-first symbols)))
+      (let ((cur-position (lsp-make-position :line (plist-get (lsp--cur-position) :line)
+                                             :character (plist-get (lsp--cur-position) :character))))
+        (if (lsp-symbol-information? first-symbol)
+            (jake/redefined-lsp-func symbols cur-position)
+          (lsp--document-symbols->document-symbols-hierarchy symbols cur-position))))))
+
+; even with all these hooks it still needs a reload of the init.el file 🤷‍♂️
+(with-eval-after-load 'lsp-headerline #'jake/redefine-lsp)
+(with-eval-after-load 'lsp-mode #'jake/redefine-lsp)
+(add-hook 'ruby-mode-hook #'jake/redefine-lsp)
+(add-hook 'lsp-mode-hook #'jake/redefine-lsp)
+(add-hook 'lsp-on-idle-hook #'jake/redefine-lsp)
 
 (assq-delete-all 'ruby-Test::Unit compilation-error-regexp-alist-alist)
 (add-to-list 'compilation-error-regexp-alist-alist '(ruby-Test::Unit "^ +\\([^ (].*\\):\\([1-9][0-9]*\\):in " 1 2))
