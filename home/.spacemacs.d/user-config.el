@@ -37,7 +37,6 @@
         ruby-forward-sexp nil)))
 
 (defun my-add-flycheck-next-checker ()
-  (message "Trying to add next checker")
   (when (and (derived-mode-p 'ruby-mode)
              ;; Ensure LSP checker exists
              (flycheck-registered-checker-p 'lsp))
