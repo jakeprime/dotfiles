@@ -218,6 +218,7 @@ ibuffer
   (setq doom-modeline-time nil)
 
   (setq lsp-modeline-code-action-fallback-icon "")
+  (setq lsp-progress-prefix " ")
 #+end_src
 
 ** Org mode

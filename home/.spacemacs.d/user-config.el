@@ -100,6 +100,7 @@
 (setq doom-modeline-time nil)
 
 (setq lsp-modeline-code-action-fallback-icon "")
+(setq lsp-progress-prefix " ")
 
 (defun my-org-mode-hook ()
   (auto-fill-mode 0)
