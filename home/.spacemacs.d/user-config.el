@@ -46,13 +46,16 @@
 (eval-after-load 'flycheck
   '(add-hook 'flycheck-mode-hook #'my-add-flycheck-next-checker))
 
+(setq flycheck-disabled-checkers '(ruby-reek))
+
 (setq lsp-rubocop-use-bundler t)
 
-(add-hook
- 'ruby-mode-hook
- (lambda ()
-   (setq-local flycheck-command-wrapper-function
-               (lambda (command) (append '("bundle" "exec") command)))))
+  (add-hook
+   'ruby-mode-hook
+   (lambda ()
+     (setq-local flycheck-command-wrapper-function
+                 (lambda (command)
+(append (list (concat (project-root (project-current)) "bin/bundle") "exec") command)))))
 
 (setq lsp-sorbet-as-add-on t)
 (setq lsp-sorbet-use-bundler t)
