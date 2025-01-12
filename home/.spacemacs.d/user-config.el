@@ -2,6 +2,7 @@
 (load-file "~/.spacemacs.d/faces-init.el")
 
 (setq dotspacemacs-startup-banner "~/.spacemacs.d/vaporwave-sun.png")
+(setq lsp-ui-doc-border "#200933")
 
 (defun my-open-chat-gpt ()
   (interactive)
