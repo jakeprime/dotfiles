@@ -656,19 +656,19 @@ This function is called at the very end of Spacemacs initialization."
          impatient-mode indent-guide inf-ruby inflections info+ insert-shebang
          inspector ivy js-doc js2-mode js2-refactor json-mode json-navigator
          json-reformat json-snatcher link-hint livid-mode llm log4e lorem-ipsum
-         lsp-docker lsp-mode lsp-origami lsp-treemacs lsp-ui macrostep magit
-         magit-delta magit-section markdown-mode minitest mu4e-alert multi-line
-         multi-term multi-vterm multiple-cursors nameless nerd-icons nodejs-repl
-         npm-mode open-junk-file org org-category-capture org-cliplink org-contrib
-         org-download org-journal org-mime org-pomodoro org-present
-         org-project-capture org-projectile org-rich-yank org-superstar orgit
-         orgit-forge origami overseer paradox password-generator pcre2el plz
-         popwin pos-tip prettier-js projectile-rails pug-mode quickrun
-         rainbow-delimiters rake rbenv reformatter request restart-emacs rjsx-mode
-         robe rspec-mode rubocop rubocopfmt ruby-hash-syntax ruby-refactor
-         ruby-test-mode ruby-tools rvm sass-mode scss-mode seeing-is-believing
-         shell-pop shfmt shrink-path simple-httpd skewer-mode slim-mode smeargle
-         space-doc spaceline spacemacs-purpose-popwin spacemacs-whitespace-cleanup
+         macrostep magit magit-delta magit-section markdown-mode minitest
+         mu4e-alert multi-line multi-term multi-vterm multiple-cursors nameless
+         nerd-icons nodejs-repl npm-mode open-junk-file org org-category-capture
+         org-cliplink org-contrib org-download org-journal org-mime org-pomodoro
+         org-present org-project-capture org-projectile org-rich-yank
+         org-superstar orgit orgit-forge origami overseer paradox
+         password-generator pcre2el plz popwin pos-tip prettier-js
+         projectile-rails pug-mode quickrun rainbow-delimiters rake rbenv
+         reformatter request restart-emacs rjsx-mode robe rspec-mode rubocop
+         rubocopfmt ruby-hash-syntax ruby-refactor ruby-test-mode ruby-tools rvm
+         sass-mode scss-mode seeing-is-believing shell-pop shfmt shrink-path
+         simple-httpd skewer-mode slim-mode smeargle space-doc spaceline
+         spacemacs-purpose-popwin spacemacs-whitespace-cleanup
          string-edit-at-point string-inflection swiper symbol-overlay symon
          tagedit term-cursor terminal-here tide toc-org transient
          transient-posframe treemacs-evil treemacs-icons-dired treemacs-magit
