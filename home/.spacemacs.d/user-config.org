@@ -2,6 +2,13 @@
 
 =, b t= to tangle files after editing.
 
+** General
+Mac only:
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (setq safe-local-variable-directories
+        '("/Users/jake/work/cleo/meetcleo/"))
+#+end_src
 ** 😎
 
 #+begin_src emacs-lisp :tangle "user-config.el"
