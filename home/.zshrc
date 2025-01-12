@@ -16,6 +16,12 @@ compinit
 export HOMEBREW_GITHUB_API_TOKEN=$(pass show github/homebrew)
 export AWS_PROFILE=Engineer-878877078763
 
+# cleo
+export TERRAGRUNT_DOWNLOAD=${HOME}/.terragrunt-cache
+export TERRAGRUNT_PROVIDER_CACHE=1
+export TERRAGRUNT_PROVIDER_CACHE_DIR="$HOME/.terragrunt-provider-cache"
+export TF_PLUGIN_CACHE_DIR=${HOME}/.terraform.d/plugin-cache
+
 # git
 alias gadd="git add -N . && git add -p ."
 alias gfrm="git fetch && git rebase -i --rebase-merges origin/main"

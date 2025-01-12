@@ -9,6 +9,7 @@
   (load-file "~/.spacemacs.d/faces-init.el")
 
   (setq dotspacemacs-startup-banner "~/.spacemacs.d/vaporwave-sun.png")
+  (setq lsp-ui-doc-border "#200933")
 #+end_src
 
 ** ChatGPT
@@ -87,6 +88,8 @@ The lsp flychecker is how we know about Sorbet errors, but we want Rubocop too s
 
   (eval-after-load 'flycheck
     '(add-hook 'flycheck-mode-hook #'my-add-flycheck-next-checker))
+
+  (setq flycheck-disabled-checkers '(ruby-reek))
 #+end_src
 
 
@@ -99,8 +102,8 @@ Make sure we use bundler for flycheck. Otherwise we would have issues when multi
    'ruby-mode-hook
    (lambda ()
      (setq-local flycheck-command-wrapper-function
-                 (lambda (command) (append '("bundle" "exec") command)))))
-
+                 (lambda (command)
+(append (list (concat (project-root (project-current)) "bin/bundle") "exec") command)))))
 #+end_src
 
 **** Sorbet
@@ -108,6 +111,27 @@ Make sure we use bundler for flycheck. Otherwise we would have issues when multi
 #+begin_src emacs-lisp :tangle "user-config.el"
   (setq lsp-sorbet-as-add-on t)
   (setq lsp-sorbet-use-bundler t)
+#+end_src
+
+🚨 Nasty monkey patch alert 🚨
+
+Sorbet's LSP appears to return symbol information in a different format to ruby-ls. Locations are nested and they don't have a =location= key. Because we are running both LSPs at once all refs are processed in one list and the Sorbet ones throw an error. This adds a check that the =location= key exists.
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+
+  (eval-after-load "lsp-mode"
+    '(defun lsp--symbols-informations->document-symbols-hierarchy (symbols-informations current-position)
+       "Convert SYMBOLS-INFORMATIONS to symbols hierarchy on CURRENT-POSITION."
+       (--> symbols-informations
+            (-keep (-lambda (symbol)
+                     (when (and (gethash "location" symbol)
+                                (lsp-point-in-range? current-position (gethash "range" (gethash "location" symbol))))
+                       (lsp--symbol-information->document-symbol symbol)))
+                   it)
+            (sort it (-lambda ((&DocumentSymbol :range (&Range :start a-start-position :end a-end-position))
+                               (&DocumentSymbol :range (&Range :start b-start-position :end b-end-position)))
+                       (and (lsp--position-compare b-start-position a-start-position)
+                            (lsp--position-compare a-end-position b-end-position)))))))
 #+end_src
 
 **** Tests
@@ -194,6 +218,7 @@ ibuffer
   (setq doom-modeline-time nil)
 
   (setq lsp-modeline-code-action-fallback-icon "")
+  (setq lsp-progress-prefix " ")
 #+end_src
 
 ** Org mode

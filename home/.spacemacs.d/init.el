@@ -61,6 +61,7 @@ This function should only modify configuration layer settings."
      shell
      shell-scripts
      syntax-checking
+     terraform
      treemacs
      typescript
      version-control

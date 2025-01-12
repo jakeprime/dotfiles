@@ -2,6 +2,7 @@
 (load-file "~/.spacemacs.d/faces-init.el")
 
 (setq dotspacemacs-startup-banner "~/.spacemacs.d/vaporwave-sun.png")
+(setq lsp-ui-doc-border "#200933")
 
 (defun my-open-chat-gpt ()
   (interactive)
@@ -45,16 +46,33 @@
 (eval-after-load 'flycheck
   '(add-hook 'flycheck-mode-hook #'my-add-flycheck-next-checker))
 
+(setq flycheck-disabled-checkers '(ruby-reek))
+
 (setq lsp-rubocop-use-bundler t)
 
-(add-hook
- 'ruby-mode-hook
- (lambda ()
-   (setq-local flycheck-command-wrapper-function
-               (lambda (command) (append '("bundle" "exec") command)))))
+  (add-hook
+   'ruby-mode-hook
+   (lambda ()
+     (setq-local flycheck-command-wrapper-function
+                 (lambda (command)
+(append (list (concat (project-root (project-current)) "bin/bundle") "exec") command)))))
 
 (setq lsp-sorbet-as-add-on t)
 (setq lsp-sorbet-use-bundler t)
+
+(eval-after-load "lsp-mode"
+  '(defun lsp--symbols-informations->document-symbols-hierarchy (symbols-informations current-position)
+     "Convert SYMBOLS-INFORMATIONS to symbols hierarchy on CURRENT-POSITION."
+     (--> symbols-informations
+          (-keep (-lambda (symbol)
+                   (when (and (gethash "location" symbol)
+                              (lsp-point-in-range? current-position (gethash "range" (gethash "location" symbol))))
+                     (lsp--symbol-information->document-symbol symbol)))
+                 it)
+          (sort it (-lambda ((&DocumentSymbol :range (&Range :start a-start-position :end a-end-position))
+                             (&DocumentSymbol :range (&Range :start b-start-position :end b-end-position)))
+                     (and (lsp--position-compare b-start-position a-start-position)
+                          (lsp--position-compare a-end-position b-end-position)))))))
 
 (assq-delete-all 'ruby-Test::Unit compilation-error-regexp-alist-alist)
 (add-to-list 'compilation-error-regexp-alist-alist '(ruby-Test::Unit "^ +\\([^ (].*\\):\\([1-9][0-9]*\\):in " 1 2))
@@ -82,6 +100,7 @@
 (setq doom-modeline-time nil)
 
 (setq lsp-modeline-code-action-fallback-icon "")
+(setq lsp-progress-prefix " ")
 
 (defun my-org-mode-hook ()
   (auto-fill-mode 0)
