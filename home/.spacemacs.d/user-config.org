@@ -80,7 +80,6 @@ The lsp flychecker is how we know about Sorbet errors, but we want Rubocop too s
 
 #+begin_src emacs-lisp :tangle "user-config.el"
   (defun my-add-flycheck-next-checker ()
-    (message "Trying to add next checker")
     (when (and (derived-mode-p 'ruby-mode)
                ;; Ensure LSP checker exists
                (flycheck-registered-checker-p 'lsp))
