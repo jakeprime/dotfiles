@@ -1,5 +1,6 @@
 (setq safe-local-variable-directories
-      '("/Users/jake/work/cleo/meetcleo/"))
+      '("/Users/jake/work/cleo/meetcleo/"
+        "/Users/jake/work/rusty-bucket/rusty-bucket/"))
 
 (add-to-list 'custom-theme-load-path "~/.spacemacs.d/")
 (load-file "~/.spacemacs.d/faces-init.el")
