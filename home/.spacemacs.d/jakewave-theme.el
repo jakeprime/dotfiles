@@ -204,7 +204,7 @@
    `(magit-section-highlight ((t :inherit highlight :background unspecified)))
    `(match ((t (:foreground "#86dc2f" :background "#444155" :inherit (isearch)))))
    `(minibuffer-prompt ((t (:foreground ,jake-yellow :inherit (bold)))))
-   `(mode-line ((t (:box (:line-width (1 . 1) :color ,jake-purple :style nil) :overline ,jake-purple :inherit jake-yellow-glow :foreground unspecified :background ,jake-purple-dark))))
+   `(mode-line ((t (:box (:line-width (1 . 1) :color ,jake-purple :style nil) :overline nil :inherit jake-yellow-glow :foreground unspecified :background ,jake-purple-dark))))
    `(mode-line-buffer-id ((t (:foreground "#bc6ec5" :inherit (bold)))))
    `(mode-line-emphasis ((t (:inherit bold))))
    `(mode-line-highlight ((((supports :box t) (class color) (min-colors 88)) (:box (:line-width (2 . 2) :color "grey40" :style released-button))) (t (:inherit (highlight)))))
