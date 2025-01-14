@@ -4,6 +4,9 @@
 (setq dotspacemacs-startup-banner "~/.spacemacs.d/vaporwave-sun.png")
 (setq lsp-ui-doc-border "#200933")
 
+; need proportional width for nerdfonts or they overlap
+(setq nerd-icons-font-family "MonaspiceAr Nerd Font Propo")
+
 (defun my-open-chat-gpt ()
   (interactive)
   (gptel "*ChatGPT*")
