@@ -27,6 +27,8 @@
 (spacemacs/set-leader-keys "ofl" 'hs-hide-level)
 (spacemacs/set-leader-keys "ofa" 'hs-show-all)
 
+(setq highlight-parentheses-colors nil)
+
 (add-hook 'inf-ruby-mode-hook
           (lambda()
             (let ((p "\\|\\(^\\[cleo\\]\\[development\\] main:[0-9]+> *\\)"))
