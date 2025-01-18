@@ -1,6 +1,7 @@
 (let ((jake-pink "#fc199a")
       (jake-yellow "#d1b539")
       (jake-dark "#200933")
+      (jake-darkest "#1D0432")
       (jake-green "#a5ff90")
       (jake-cyan "#61e2ff")
       (jake-cyan-highlight "#9EFFFF")
@@ -13,6 +14,11 @@
   (set-face-attribute 'default nil :family "MonaspiceAr Nerd Font" :height 130 :weight 'light)
   (load-theme 'jakewave t)
   (load-theme 'jakewave t) ;; Necessary, but why? 🤷‍♂️
+
+  (setq xterm-color-names
+        (vconcat (list jake-darkest jake-pink jake-green jake-yellow jake-purple jake-purple jake-cyan jake-cyan)))
+  (setq xterm-color-names-bright
+        (vconcat (list jake-purple-subtle jake-pink jake-green jake-yellow jake-purple jake-purple jake-cyan jake-cyan)))
 
   (set-face-attribute 'jake-no-glow nil :shadow nil)
   (set-face-attribute 'jake-cyan nil :shadow nil)

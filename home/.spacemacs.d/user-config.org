@@ -238,6 +238,7 @@ ibuffer
 #+begin_src emacs-lisp :tangle "layer-config.el"
   (setq git-enable-magit-delta-plugin t)
   (setq git-magit-status-fullscreen t)
+  (setq magit-delta-hide-plus-minus-markers nil)
 #+end_src
 
 #+begin_src emacs-lisp :tangle "user-config.el"
