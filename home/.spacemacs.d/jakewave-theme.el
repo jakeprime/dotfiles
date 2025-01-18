@@ -299,6 +299,7 @@
    `(transient-posframe-border ((t :background ,jake-yellow)))
    `(variable-pitch ((t (:family ,jake-variable :height 1.3 :weight light))))
    `(vertical-border ((t (:foreground "#4a1e64"))))
+   `(vertico-current ((t (:inherit jake-highlight))))
    `(vertico-group-separator ((t :inherit (jake-script jake-pink-glow) :foreground unspecified :background unspecified :underline ,jake-pink)))
    `(vertico-group-title ((t :inherit (jake-script jake-pink-glow) :foreground unspecified :background unspecified :underline ,jake-pink)))
    `(vterm-color-black ((t (:foreground ,jake-dark :background ,jake-dark))))
