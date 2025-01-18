@@ -11,6 +11,7 @@
 
 (setq git-enable-magit-delta-plugin t)
 (setq git-magit-status-fullscreen t)
+(setq magit-delta-hide-plus-minus-markers nil)
 
 (setq org-agenda-files '("~/Org/Tasks.org" "~/Org/Journal/"))
 (setq org-archive-location "~/Org/Archive.org::datetree/")
