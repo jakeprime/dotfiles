@@ -39,7 +39,7 @@
 
 
   (defface jake-script `((t (:family ,jake-script))) "jakewave script face.")
-  (defface jake-highlight `((t (:background ,jake-purple-dark))))
+  (defface jake-highlight `((t (:background ,jake-purple-dark))) "jakewave dark purple")
 
   (defface jake-no-glow `((t)) "jakewave non glowing face.")
 
