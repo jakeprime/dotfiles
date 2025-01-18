@@ -39,6 +39,7 @@
 
 
   (defface jake-script `((t (:family ,jake-script))) "jakewave script face.")
+  (defface jake-highlight `((t (:background ,jake-purple-dark))))
 
   (defface jake-no-glow `((t)) "jakewave non glowing face.")
 
@@ -168,8 +169,8 @@
    `(helm-match-item ((t (:inherit (jake-no-glow bold) :foreground ,jake-dark :background ,jake-green))))
    `(helm-moccur-buffer ((t :inherit jake-yellow-glow :foreground unspecified :background unspecified)))
    `(helm-posframe-border ((t :background ,jake-yellow)))
-   `(helm-selection ((t :inherit highlight :background unspecified)))
-   `(helm-selection-line ((t :inherit highlight :background unspecified)))
+   `(helm-selection ((t :inherit jake-highlight :background unspecified)))
+   `(helm-selection-line ((t :inherit jake-highlight :background unspecified)))
    `(helm-source-header ((t :inherit (jake-script jake-pink-glow) :foreground unspecified :background unspecified :underline ,jake-pink)))
    `(highlight ((t (:foreground unspecified :background unspecified))))
    `(highlight-parentheses-highlight ((t (:inherit bold))))
@@ -212,11 +213,11 @@
    `(mode-line ((t (:box (:line-width (1 . 1) :color ,jake-purple :style nil) :overline nil :inherit jake-yellow-glow :foreground unspecified :background ,jake-purple-dark))))
    `(mode-line-buffer-id ((t (:foreground "#bc6ec5" :inherit (bold)))))
    `(mode-line-emphasis ((t (:inherit bold))))
-   `(mode-line-highlight ((((supports :box t) (class color) (min-colors 88)) (:box (:line-width (2 . 2) :color "grey40" :style released-button))) (t (:inherit (highlight)))))
+   `(mode-line-highlight ((((supports :box t) (class color) (min-colors 88)) (:box (:line-width (2 . 2) :color "grey40" :style released-button))) (t (:inherit (jake-highlight)))))
    `(mode-line-inactive ((t (:weight light :box (:line-width (1 . 1) :color ,jake-purple-subtle :style nil) :inherit jake-purple-subtle-glow :foreground unspecified :background ,jake-dark))))
    `(mu4e-flagged-face ((t (:inherit jake-yellow-glow :foreground unspecified :weight ,jake-normal-weight))))
    `(mu4e-header-face ((t (:foreground ,jake-purple))))
-   `(mu4e-header-highlight-face ((t (:background ,jake-purple-dark))))
+   `(mu4e-header-highlight-face ((t (:inherit jake-highlight :background unspecified))))
    `(mu4e-header-key-face ((t (:inherit jake-yellow-glow :foreground unspecified))))
    `(mu4e-header-title-face ((t (:inherit jake-purple-glow :foreground unspecified))))
    `(mu4e-highlight-face ((t (:inherit (jake-pink-glow bold) :foreground unspecified))))
