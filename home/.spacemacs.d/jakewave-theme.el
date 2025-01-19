@@ -274,6 +274,7 @@
    `(org-tag ((t (:inherit (jake-script jake-purple-subtle) :foreground unspecified :height 0.75 :weight ,jake-normal-weight))))
    `(org-todo ((t (:inherit jake-pink-glow :background unspecified :foreground unspecified :family ,jake-script :height 0.75 :weight thin))))
    `(org-verbatim ((t (:inherit (fixed-pitch jake-yellow-glow) :foreground unspecified :background ,jake-purple-dark :weight ,jake-normal-weight))))
+   `(origami-fold-header-face ((t)))
    `(query-replace ((t (:inherit (isearch)))))
    `(rainbow-delimiters-depth-1-face ((t (:inherit (jake-pink-glow) :foreground unspecified))))
    `(rainbow-delimiters-depth-2-face ((t (:inherit (jake-yellow-glow) :foreground unspecified))))
