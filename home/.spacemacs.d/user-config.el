@@ -27,7 +27,10 @@
 (spacemacs/set-leader-keys "ofl" 'hs-hide-level)
 (spacemacs/set-leader-keys "ofa" 'hs-show-all)
 
-(setq highlight-parentheses-colors nil)
+(add-hook 'prog-mode-hook
+          (lambda ()
+            (setq highlight-parentheses-colors nil)
+            (highlight-parentheses--color-update)))
 
 (add-hook 'inf-ruby-mode-hook
           (lambda()

@@ -202,6 +202,7 @@
    `(line-number-current-line ((t (:inherit bold :background ,jake-darkest :foreground "#7912CE" :weight unspecified))))
    `(link ((t (:inherit jake-cyan-highlight-glow :underline (:color foreground-color :style line :position nil) :foreground unspecified))))
    `(link-visited ((t (:underline (:color foreground-color :style line :position nil) :foreground "#c56ec3"))))
+   `(lsp-flycheck-info-unnecessary-face ((t (:inherit jake-purple-subtle-glow :foreground unspecified))))
    `(lsp-headerline-breadcrumb-path-face ((t (:inherit (font-lock-constant-face)))))
    `(lsp-headerline-breadcrumb-symbols-face ((t (:inherit (font-lock-type-face)))))
    `(lsp-ui-doc-background ((t :background ,jake-dark)))
