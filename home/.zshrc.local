@@ -19,6 +19,8 @@ alias xcode14="open /Applications/Xcode-14.app/Contents/MacOS/Xcode"
 export PATH="/Applications/Emacs.app/Contents/MacOS:$PATH"
 export PATH="/Users/jake/.config/emacs/bin:$PATH"
 export PATH="$PATH:/usr/local/bin/platform-tools/"
+# Created by `pipx` on 2025-01-18 16:51:43
+export PATH="$PATH:/Users/jake/.local/bin"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
