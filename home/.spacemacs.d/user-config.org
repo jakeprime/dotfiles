@@ -57,7 +57,10 @@ By default the =bug-reference= package treats numeric RGB values as links to an 
 By default all parentheses (or curly braces) that enclose the cursor are coloured in a sequence defined by this variable. But it doesn't override the colour of the glow from rainbow parents and looks terrible. Active parens are bolded though which gives us an indicator, and does play nice with the glow.
 
 #+begin_src emacs-lisp :tangle "user-config.el"
-  (setq highlight-parentheses-colors nil)
+  (add-hook 'prog-mode-hook
+            (lambda ()
+              (setq highlight-parentheses-colors nil)
+              (highlight-parentheses--color-update)))
 #+end_src
 *** Ruby
 **** Cleo console
