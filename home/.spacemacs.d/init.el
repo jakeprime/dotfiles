@@ -52,6 +52,7 @@ This function should only modify configuration layer settings."
      javascript
      lsp
      ;; markdown
+     mu4e
      multiple-cursors
      org
      react
