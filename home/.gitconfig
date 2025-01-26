@@ -30,6 +30,7 @@
 	autosetuprebase = always
 [rebase]
 	autosquash = true
+	autoRebase = true
 [commit]
 	verbose = true
 [merge]
