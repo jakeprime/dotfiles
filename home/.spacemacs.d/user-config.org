@@ -70,6 +70,12 @@ By default all parentheses (or curly braces) that enclose the cursor are coloure
               (setq highlight-parentheses-colors nil)
               (highlight-parentheses--color-update)))
 #+end_src
+
+**** Autocomplete
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (global-set-key (kbd "s-<return>") 'company-complete)
+#+end_src
 *** Ruby
 **** Cleo console
 Define the Cleo prompt format, otherwise it's not possible to retrieve previous commands by pressing the up arrow.
@@ -262,7 +268,7 @@ One for personal, one for Cleo
                 (string-prefix-p "/personal" (mu4e-message-field msg :maildir))))
             :vars '((user-mail-address . "jake@jakeprime.com")
                     (user-full-name . "Jake Prime")
-                    (mu4e-refile-folder . "/personal/[Google Mail]/All Mail")
+                    (mu4e-refile-folder . "/personal/_Archive")
                     (mu4e-sent-folder . "/personal/[Google Mail]/Sent Mail")
                     (mu4e-trash-folder . "/personal/[Google Mail]/Bin")
                     (mu4e-alert-interesting-mail-query . "flag:unread AND maildir:/personal/Inbox")
@@ -300,8 +306,8 @@ We don't actually want to delete emails, Gmail takes care of that, we just need 
                    :char ("+" . "★")
                    :prompt "dflag"
                    :dyn-target (lambda (target msg)
-                                 (replace-regexp-in-string "All Mail" "Starred"
-                                                           (mu4e-get-refile-folder msg)))
+                                 (replace-regexp-in-string "Sent Mail" "Starred"
+                                                           (mu4e-get-sent-folder msg)))
                    :action (lambda (docid msg target)
                              (mu4e--server-move docid
                                                 (mu4e--mark-check-target target))))))

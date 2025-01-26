@@ -32,6 +32,8 @@
             (setq highlight-parentheses-colors nil)
             (highlight-parentheses--color-update)))
 
+(global-set-key (kbd "s-<return>") 'company-complete)
+
 (add-hook 'inf-ruby-mode-hook
           (lambda()
             (let ((p "\\|\\(^\\[cleo\\]\\[development\\] main:[0-9]+> *\\)"))
@@ -143,7 +145,7 @@
               (string-prefix-p "/personal" (mu4e-message-field msg :maildir))))
           :vars '((user-mail-address . "jake@jakeprime.com")
                   (user-full-name . "Jake Prime")
-                  (mu4e-refile-folder . "/personal/[Google Mail]/All Mail")
+                  (mu4e-refile-folder . "/personal/_Archive")
                   (mu4e-sent-folder . "/personal/[Google Mail]/Sent Mail")
                   (mu4e-trash-folder . "/personal/[Google Mail]/Bin")
                   (mu4e-alert-interesting-mail-query . "flag:unread AND maildir:/personal/Inbox")
@@ -173,8 +175,8 @@
                  :char ("+" . "★")
                  :prompt "dflag"
                  :dyn-target (lambda (target msg)
-                               (replace-regexp-in-string "All Mail" "Starred"
-                                                         (mu4e-get-refile-folder msg)))
+                               (replace-regexp-in-string "Sent Mail" "Starred"
+                                                         (mu4e-get-sent-folder msg)))
                  :action (lambda (docid msg target)
                            (mu4e--server-move docid
                                               (mu4e--mark-check-target target))))))
