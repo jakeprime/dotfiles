@@ -28,6 +28,8 @@
             (setq highlight-parentheses-colors nil)
             (highlight-parentheses--color-update)))
 
+(global-set-key (kbd "s-<return>") 'company-complete)
+
 (add-hook 'inf-ruby-mode-hook
           (lambda()
             (let ((p "\\|\\(^\\[cleo\\]\\[development\\] main:[0-9]+> *\\)"))

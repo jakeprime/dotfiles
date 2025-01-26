@@ -62,6 +62,12 @@ By default all parentheses (or curly braces) that enclose the cursor are coloure
               (setq highlight-parentheses-colors nil)
               (highlight-parentheses--color-update)))
 #+end_src
+
+**** Autocomplete
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (global-set-key (kbd "s-<return>") 'company-complete)
+#+end_src
 *** Ruby
 **** Cleo console
 Define the Cleo prompt format, otherwise it's not possible to retrieve previous commands by pressing the up arrow.

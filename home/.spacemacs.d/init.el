@@ -628,6 +628,7 @@ This function is called at the very end of Spacemacs initialization."
    ;; If you edit it by hand, you could mess it up, so be careful.
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
+   '(company-capf-disabled-functions '(ispell-completion-at-point))
    '(package-selected-packages
      '(a ace-jump-helm-line ace-link aggressive-indent alert all-the-icons
          auto-compile auto-highlight-symbol auto-yasnippet bui bundler
