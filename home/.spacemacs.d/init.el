@@ -54,6 +54,7 @@ This function should only modify configuration layer settings."
      ;; markdown
      mu4e
      multiple-cursors
+     mu4e
      org
      react
      ruby
