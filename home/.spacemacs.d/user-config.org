@@ -243,7 +243,7 @@ One for personal, one for Cleo
                     (user-full-name . "Jake Prime")
                     (mu4e-refile-folder . "/cleo/[Gmail]/All Mail")
                     (mu4e-sent-folder . "/cleo/[Gmail]/Sent Mail")
-                    (mu4e-trash-folder . "/cleo/[Gmail]/Trash")
+                    (mu4e-trash-folder . "/cleo/[Gmail]/Bin")
                     (mu4e-alert-interesting-mail-query . "flag:unread AND maildir:/cleo/Inbox")
                     (smtpmail-smtp-user . "jake@meetcleo.com")))
            (make-mu4e-context
