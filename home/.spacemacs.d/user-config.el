@@ -27,10 +27,8 @@
 (spacemacs/set-leader-keys "ofl" 'hs-hide-level)
 (spacemacs/set-leader-keys "ofa" 'hs-show-all)
 
-(add-hook 'prog-mode-hook
-          (lambda ()
-            (setq highlight-parentheses-colors nil)
-            (highlight-parentheses--color-update)))
+(with-eval-after-load 'highlight-parentheses
+  (setq highlight-parentheses-colors nil))
 
 (global-set-key (kbd "s-<return>") 'company-complete)
 
