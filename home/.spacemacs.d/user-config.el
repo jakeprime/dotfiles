@@ -30,6 +30,15 @@
 
 (global-set-key (kbd "s-<return>") 'company-complete)
 
+(defun jake-disable-company-for-symbols (func &rest args)
+  "Prevent Company from triggering if the current word starts with `:`"
+  (if (and (derived-mode-p 'ruby-mode)
+           (looking-back ":[[:alnum:]_]*" (line-beginning-position)))
+      nil
+    (apply func args)))
+
+(advice-add 'company--should-complete :around #'jake-disable-company-for-symbols)
+
 (add-hook 'inf-ruby-mode-hook
           (lambda()
             (let ((p "\\|\\(^\\[cleo\\]\\[development\\] main:[0-9]+> *\\)"))
@@ -69,36 +78,15 @@
 (setq lsp-sorbet-as-add-on t)
 (setq lsp-sorbet-use-bundler t)
 
-(defun jake/redefined-lsp-func (symbols-informations current-position)
-  "[Redefined] Convert SYMBOLS-INFORMATIONS to symbols hierarchy on CURRENT-POSITION."
-  (--> symbols-informations
-       (-keep (-lambda (symbol)
-                (when (and (gethash "location" symbol)
-                           (lsp-point-in-range? current-position (gethash "range" (gethash "location" symbol))))
-                  (lsp--symbol-information->document-symbol symbol)))
-              it)
-       (sort it (-lambda ((&DocumentSymbol :range (&Range :start a-start-position :end a-end-position))
-                          (&DocumentSymbol :range (&Range :start b-start-position :end b-end-position)))
-                  (and (lsp--position-compare b-start-position a-start-position)
-                       (lsp--position-compare a-end-position b-end-position))))))
+(defun jake/remove-sorbet-symbols (args)
+  "Remove elements from SYMBOLS-INFORMATIONS that do not have a :location key."
+  (let* ((symbols-informations (car args))
+         (filtered-symbols (seq-filter (lambda (symbol)
+                                         (plist-member (cdr symbol) :location))
+                                       symbols-informations)))
+    (list filtered-symbols (cadr args))))
 
-
-(defun jake/redefine-lsp ()
-  (defun lsp--symbols->document-symbols-hierarchy (symbols)
-    "Convert SYMBOLS to symbols-hierarchy."
-    (when-let* ((first-symbol (lsp-seq-first symbols)))
-      (let ((cur-position (lsp-make-position :line (plist-get (lsp--cur-position) :line)
-                                             :character (plist-get (lsp--cur-position) :character))))
-        (if (lsp-symbol-information? first-symbol)
-            (jake/redefined-lsp-func symbols cur-position)
-          (lsp--document-symbols->document-symbols-hierarchy symbols cur-position))))))
-
-; even with all these hooks it still needs a reload of the init.el file 🤷‍♂️
-(with-eval-after-load 'lsp-headerline #'jake/redefine-lsp)
-(with-eval-after-load 'lsp-mode #'jake/redefine-lsp)
-(add-hook 'ruby-mode-hook #'jake/redefine-lsp)
-(add-hook 'lsp-mode-hook #'jake/redefine-lsp)
-(add-hook 'lsp-on-idle-hook #'jake/redefine-lsp)
+(advice-add 'lsp--symbols-informations->document-symbols-hierarchy :filter-args #'jake/remove-sorbet-symbols)
 
 (assq-delete-all 'ruby-Test::Unit compilation-error-regexp-alist-alist)
 (add-to-list 'compilation-error-regexp-alist-alist '(ruby-Test::Unit "^ +\\([^ (].*\\):\\([1-9][0-9]*\\):in " 1 2))
