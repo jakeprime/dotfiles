@@ -9,11 +9,6 @@
 (setq web-mode-css-indent-offset 2)
 (setq web-mode-code-indent-offset 2)
 
-(setq mu4e-installation-path (getenv "MU4E_DIR"))
-(setq mu4e-get-mail-command "mbsync -a")
-(setq mu4e-update-interval (* 5 60))
-(setq mu4e-change-filenames-when-moving t)
-
 (setq git-enable-magit-delta-plugin t)
 (setq git-magit-status-fullscreen t)
 (setq magit-delta-hide-plus-minus-markers nil)
