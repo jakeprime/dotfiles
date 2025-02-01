@@ -30,6 +30,15 @@
 
 (global-set-key (kbd "s-<return>") 'company-complete)
 
+(defun jake-disable-company-for-symbols (func &rest args)
+  "Prevent Company from triggering if the current word starts with `:`"
+  (if (and (derived-mode-p 'ruby-mode)
+           (looking-back ":[[:alnum:]_]*" (line-beginning-position)))
+      nil
+    (apply func args)))
+
+(advice-add 'company--should-complete :around #'jake-disable-company-for-symbols)
+
 (add-hook 'inf-ruby-mode-hook
           (lambda()
             (let ((p "\\|\\(^\\[cleo\\]\\[development\\] main:[0-9]+> *\\)"))

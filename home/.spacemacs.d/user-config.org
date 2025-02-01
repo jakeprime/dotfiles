@@ -64,9 +64,24 @@ By default all parentheses (or curly braces) that enclose the cursor are coloure
 #+end_src
 
 **** Autocomplete
+Autocomplete doesn't work well with the defaults for a couple or reasons:
+
+- It doesn't come up until you start typing, especially useless when adding attributes to a TSX tag
+- Following a =:= character in Ruby it wants to suggest every symbol in the whole application, and it can't cope with such a huge list
+
+So we'll turn off the auto tooltip and add a keyboard command for opening at will.
 
 #+begin_src emacs-lisp :tangle "user-config.el"
   (global-set-key (kbd "s-<return>") 'company-complete)
+
+  (defun jake-disable-company-for-symbols (func &rest args)
+    "Prevent Company from triggering if the current word starts with `:`"
+    (if (and (derived-mode-p 'ruby-mode)
+             (looking-back ":[[:alnum:]_]*" (line-beginning-position)))
+        nil
+      (apply func args)))
+
+  (advice-add 'company--should-complete :around #'jake-disable-company-for-symbols)
 #+end_src
 *** Ruby
 **** Cleo console
