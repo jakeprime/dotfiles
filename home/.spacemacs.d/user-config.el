@@ -84,7 +84,7 @@
   "Remove elements from SYMBOLS-INFORMATIONS that do not have a :location key."
   (let* ((symbols-informations (car args))
          (filtered-symbols (seq-filter (lambda (symbol)
-                                         (plist-member (cdr symbol) :location))
+                                         (lsp-get symbol :location))
                                        symbols-informations)))
     (list filtered-symbols (cadr args))))
 
