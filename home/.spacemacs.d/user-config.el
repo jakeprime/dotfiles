@@ -108,7 +108,6 @@
 (setq doom-modeline-env-enable-ruby nil)
 (setq doom-modeline-env-version nil)
 (setq doom-modeline-lsp nil)
-(setq doom-modeline-mu4e t)
 (setq doom-modeline-time nil)
 
 (setq lsp-modeline-code-action-fallback-icon "")
