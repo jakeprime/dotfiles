@@ -141,25 +141,11 @@ Make sure we use bundler for flycheck. Otherwise we would have issues when multi
 
 **** Sorbet
 
+Ensure that sorbet is the lsp used.
+
 #+begin_src emacs-lisp :tangle "user-config.el"
-  (setq lsp-sorbet-as-add-on t)
+  (setq lsp-disabled-clients '(rubocop-ls ruby-ls))
   (setq lsp-sorbet-use-bundler t)
-#+end_src
-
-🚨 Nasty monkey patch alert 🚨
-
-Sorbet's LSP appears to return symbol information in a different format to ruby-ls. Locations are nested and they don't have a =location= key. Because we are running both LSPs at once all refs are processed in one list and the Sorbet ones throw an error. This patch filters out symbols where a  =location= key doesn't exist.
-
-#+begin_src emacs-lisp :tangle "user-config.el"
-  (defun jake/remove-sorbet-symbols (args)
-    "Remove elements from SYMBOLS-INFORMATIONS that do not have a :location key."
-    (let* ((symbols-informations (car args))
-           (filtered-symbols (seq-filter (lambda (symbol)
-                                           (lsp-get symbol :location))
-                                         symbols-informations)))
-      (list filtered-symbols (cadr args))))
-
-  (advice-add 'lsp--symbols-informations->document-symbols-hierarchy :filter-args #'jake/remove-sorbet-symbols)
 #+end_src
 
 **** Tests
@@ -243,7 +229,6 @@ ibuffer
   (setq doom-modeline-env-enable-ruby nil)
   (setq doom-modeline-env-version nil)
   (setq doom-modeline-lsp nil)
-  (setq doom-modeline-mu4e t)
   (setq doom-modeline-time nil)
 
   (setq lsp-modeline-code-action-fallback-icon "")

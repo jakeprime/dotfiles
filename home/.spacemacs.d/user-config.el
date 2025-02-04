@@ -73,18 +73,8 @@
                  (lambda (command)
 (append (list (concat (project-root (project-current)) "bin/bundle") "exec") command)))))
 
-(setq lsp-sorbet-as-add-on t)
+(setq lsp-disabled-clients '(rubocop-ls ruby-ls))
 (setq lsp-sorbet-use-bundler t)
-
-(defun jake/remove-sorbet-symbols (args)
-  "Remove elements from SYMBOLS-INFORMATIONS that do not have a :location key."
-  (let* ((symbols-informations (car args))
-         (filtered-symbols (seq-filter (lambda (symbol)
-                                         (lsp-get symbol :location))
-                                       symbols-informations)))
-    (list filtered-symbols (cadr args))))
-
-(advice-add 'lsp--symbols-informations->document-symbols-hierarchy :filter-args #'jake/remove-sorbet-symbols)
 
 (assq-delete-all 'ruby-Test::Unit compilation-error-regexp-alist-alist)
 (add-to-list 'compilation-error-regexp-alist-alist '(ruby-Test::Unit "^ +\\([^ (].*\\):\\([1-9][0-9]*\\):in " 1 2))
@@ -108,7 +98,6 @@
 (setq doom-modeline-env-enable-ruby nil)
 (setq doom-modeline-env-version nil)
 (setq doom-modeline-lsp nil)
-(setq doom-modeline-mu4e t)
 (setq doom-modeline-time nil)
 
 (setq lsp-modeline-code-action-fallback-icon "")
