@@ -20,6 +20,17 @@
 (spacemacs/set-leader-keys
   "og" 'my-open-chat-gpt)
 
+(defun jake/github-codeowners-this-file ()
+  "Message the result of running github-codeowners on this file"
+  (interactive)
+  (projectile-with-default-dir (projectile-acquire-root)
+    (let* ((this-file (spacemacs/projectile-copy-file-path))
+           (codeowner (shell-command-to-string (concat "bin/cleo-codeowners find_owner " this-file))))
+      (message codeowner))))
+
+(spacemacs/set-leader-keys
+  "oo" 'jake/github-codeowners-this-file)
+
 (with-eval-after-load 'bug-reference
   (remove-hook 'prog-mode-hook #'bug-reference-prog-mode))
 
