@@ -53,6 +53,3 @@
   zero-style = "brightblack normal"
 [diff]
   colorMoved = default
-[filter "readline-gemfile-gitignore"]
-	clean = sed '/readline-ext/d'
-	smudge = cat
