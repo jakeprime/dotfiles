@@ -1,9 +1,6 @@
 export LC_TIME="en_GB.UTF-8"
 export MOZ_ENABLE_WAYLAND=1
-export MU4E_DIR="/usr/share/emacs/site-lisp/mu4e"
 export PATH="$PATH:/home/jake/work/personal/hyprswitch/target/release"
-
-. /opt/asdf-vm/asdf.sh
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
