@@ -4,6 +4,8 @@ export PATH="$PATH:/home/jake/work/personal/hyprswitch/target/release"
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+if [ -z "$SSH_AGENT_PID" ]; then eval "$(ssh-agent)"; fi
+
 alias H=Hyprland
 
 # cleo
