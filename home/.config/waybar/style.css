@@ -1,0 +1,141 @@
+@import 'pywal.css';
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "CaskaydiaCove Nerd Font";
+    font-size: 14px;
+    font-weight: 500;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+}
+
+.modules-left, .modules-right {
+    background-color: alpha(@color0, 0.85);
+    border: 2px solid alpha(@color8, 0.9);
+    border-radius: 10px;
+    border-bottom-color: @color4;
+    /* box-shadow: 0 0 6px alpha(@color13, 0.4); */
+    padding: 2px 8px;
+    margin: 0;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 4px alpha(@color13, 0.6); }
+    100% { box-shadow: 0 0 12px alpha(@color5, 0.8); }
+}
+
+#clock {
+    background: alpha(@color8, 0.7);
+    border-radius: 12px;
+    padding: 0 12px;
+    margin: 2px 6px;
+    color: @color7;
+    font-weight: bold;
+    border-left: 3px solid @color6;
+}
+
+#custom-weather {
+    background: alpha(@color8, 0.5);
+    border-radius: 12px;
+    padding: 0 12px;
+    margin: 2px 6px;
+    color: @color3;
+    font-weight: bold;
+    border-right: 3px solid @color3;
+}
+
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#network,
+#pulseaudio,
+#tray {
+    background: transparent;
+    padding: 0 6px;
+    margin: 0 2px;
+    color: @color12;
+    border-bottom: 2px solid transparent;
+}
+
+#battery {
+    border-bottom-color: @color2;
+    font-weight: bold;
+}
+
+#battery.charging, #battery.plugged {
+    color: @color7;
+    background-color: alpha(@color2, 0.15);
+    border-radius: 10px;
+}
+
+#battery.critical:not(.charging) {
+    background-color: alpha(@color1, 0.15);
+    color: @color1;
+    border-radius: 10px;
+    animation: blink 1s ease infinite;
+}
+
+@keyframes blink {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1.0; }
+}
+
+#cpu {
+    border-bottom-color: @color4;
+}
+
+#memory {
+    border-bottom-color: @color13;
+}
+
+#temperature {
+    border-bottom-color: @color9;
+}
+
+#temperature.critical {
+    background-color: alpha(@color1, 0.15);
+    color: @color1;
+    border-radius: 10px;
+}
+
+#network {
+    border-bottom-color: @color6;
+}
+
+#network.disconnected {
+    background-color: alpha(@color1, 0.15);
+    color: @color1;
+    border-radius: 10px;
+}
+
+#pulseaudio {
+    border-bottom-color: @color3;
+}
+
+#pulseaudio.muted {
+    background-color: alpha(@color10, 0.15);
+    color: @color14;
+    border-radius: 10px;
+}
+
+#tray {
+    background-color: alpha(@color8, 0.6);
+    border-radius: 10px;
+    padding: 0 8px;
+    margin-left: 4px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: alpha(@color1, 0.5);
+    border-radius: 10px;
+}

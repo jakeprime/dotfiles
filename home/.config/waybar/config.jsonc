@@ -1,0 +1,104 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 36,
+    "margin-top": 4,
+    "margin-left": 4,
+    "margin-right": 4,
+    "spacing": 6,
+    "modules-left": ["clock", "custom/weather"],
+    "modules-center": [],
+    "modules-right": ["pulseaudio", "network", "cpu", "memory", "temperature", "battery", "tray"],
+
+    "custom/weather": {
+        "format": "{}",
+        "interval": 3600,
+        "exec": "curl -s 'https://wttr.in/?format=%c%t'",
+        "exec-if": "ping wttr.in -c1"
+    },
+
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8
+    },
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "format-alt": "{:%Y-%m-%d}",
+        "tooltip-format": "<big>{:%A, %B %d, %Y}</big>\n<small>{calendar}</small>",
+        "calendar": {
+            "mode": "month",
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#eee8d5'>{}</span>",
+                "weeks": "<span color='#93a1a1'>{}</span>",
+                "weekdays": "<span color='#268bd2'>{}</span>",
+                "today": "<span color='#d33682'><b>{}</b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+
+    "cpu": {
+        "format": "󰘚 {usage}%",
+        "tooltip": true,
+        "interval": 2
+    },
+
+    "memory": {
+        "format": "󰍛 {percentage}%",
+        "tooltip-format": "{used:0.1f}GB / {total:0.1f}GB",
+        "interval": 2
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["󱃃", "󰔏", "󱃂"]
+    },
+
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰚥 {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+    },
+
+    "network": {
+        "format-wifi": "󰖩 {essid}",
+        "format-ethernet": "󰈀 {ipaddr}",
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr}\n󰖩 {essid} ({signalStrength}%)",
+        "format-linked": "󱘖 {ifname}",
+        "format-disconnected": "󰯡 Offline",
+        "format-alt": "{bandwidthUpBits} 󰁝 {bandwidthDownBits}"
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰝟",
+        "format-icons": {
+            "headphone": "󰋋",
+            "hands-free": "󰋎",
+            "headset": "󰋎",
+            "phone": "󰏲",
+            "portable": "󰏲",
+            "car": "󰄋",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol",
+        "on-click-right": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    }
+}
