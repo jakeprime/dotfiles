@@ -11,6 +11,8 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+. ~/.asdf/plugins/golang/set-env.zsh
 . ~/.asdf/plugins/java/set-java-home.zsh
 
 export HOMEBREW_GITHUB_API_TOKEN=$(pass show github/homebrew)
