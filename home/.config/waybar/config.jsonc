@@ -6,9 +6,9 @@
     "margin-left": 4,
     "margin-right": 4,
     "spacing": 6,
-    "modules-left": ["clock", "custom/weather"],
+    "modules-left": ["pulseaudio", "network", "cpu", "memory", "temperature", "battery", "tray"],
     "modules-center": [],
-    "modules-right": ["pulseaudio", "network", "cpu", "memory", "temperature", "battery", "tray"],
+    "modules-right": ["clock", "custom/weather"],
 
     "custom/weather": {
         "format": "{}",
@@ -61,7 +61,8 @@
     "temperature": {
         "critical-threshold": 80,
         "format": "{icon} {temperatureC}°C",
-        "format-icons": ["󱃃", "󰔏", "󱃂"]
+        "format-icons": ["󱃃", "󰔏", "󱃂"],
+        "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input"
     },
 
     "battery": {
