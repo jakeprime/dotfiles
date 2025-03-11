@@ -6,14 +6,14 @@
     "margin-left": 4,
     "margin-right": 4,
     "spacing": 6,
-    "modules-left": ["pulseaudio", "network", "cpu", "memory", "temperature", "battery", "tray"],
+    "modules-left": ["pulseaudio", "network", "cpu", "memory", "temperature", "battery"],
     "modules-center": [],
-    "modules-right": ["clock", "custom/weather"],
+    "modules-right": ["tray", "clock"],
 
     "custom/weather": {
         "format": "{}",
         "interval": 3600,
-        "exec": "curl -s 'https://wttr.in/?format=%c%t'",
+        "exec": "curl -s 'https://wttr.in/Dartford?format=%c%t'",
         "exec-if": "ping wttr.in -c1"
     },
 
