@@ -156,13 +156,18 @@ Make sure we use bundler for flycheck. Otherwise we would have issues when multi
 (append (list (concat (project-root (project-current)) "bin/bundle") "exec") command)))))
 #+end_src
 
-**** Sorbet
+**** LSP
+I've been round the houses on this one, but currently we are using Shopify's Ruby LSP with Sorbet as an addon.
 
-Ensure that sorbet is the lsp used.
+Both Ruby LSP and Sorbet are default gems installed by asdf with every version of Ruby, but if we want to use the bundled version of sorbet add the following as a dir-local:
+
+ #+begin_src emacs-lisp
+  ((ruby-mode . ((lsp-sorbet-use-bundler . t))))
+#+end_src
 
 #+begin_src emacs-lisp :tangle "user-config.el"
   (setq lsp-disabled-clients '(rubocop-ls ruby-ls))
-  (setq lsp-sorbet-use-bundler t)
+  (setq lsp-sorbet-as-add-on t)
 #+end_src
 
 **** Tests
