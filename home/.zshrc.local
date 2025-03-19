@@ -28,5 +28,3 @@ export ANDROID_HOME=/Users/jake/Library/Android/sdk
 export ASDF_DIR=/opt/homebrew/opt/asdf/libexec
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 export EMACS=/Applications/Emacs.app/Contents/MacOS/emacs
-
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
