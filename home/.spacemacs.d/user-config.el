@@ -84,8 +84,7 @@
                  (lambda (command)
 (append (list (concat (project-root (project-current)) "bin/bundle") "exec") command)))))
 
-(setq lsp-disabled-clients '(rubocop-ls ruby-ls))
-(setq lsp-sorbet-as-add-on t)
+(setq lsp-disabled-clients '(rubocop-ls ruby-ls sorbet-ls))
 
 (assq-delete-all 'ruby-Test::Unit compilation-error-regexp-alist-alist)
 (add-to-list 'compilation-error-regexp-alist-alist '(ruby-Test::Unit "^ +\\([^ (].*\\):\\([1-9][0-9]*\\):in " 1 2))

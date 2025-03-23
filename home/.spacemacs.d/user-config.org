@@ -163,11 +163,11 @@ Both Ruby LSP and Sorbet are default gems installed by asdf with every version o
 
  #+begin_src emacs-lisp
   ((ruby-mode . ((lsp-sorbet-use-bundler . t))))
+  (setq lsp-sorbet-as-add-on t)
 #+end_src
 
 #+begin_src emacs-lisp :tangle "user-config.el"
-  (setq lsp-disabled-clients '(rubocop-ls ruby-ls))
-  (setq lsp-sorbet-as-add-on t)
+  (setq lsp-disabled-clients '(rubocop-ls ruby-ls sorbet-ls))
 #+end_src
 
 **** Tests
