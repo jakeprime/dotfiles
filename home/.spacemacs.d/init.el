@@ -62,6 +62,7 @@ This function should only modify configuration layer settings."
      syntax-checking
      terraform
      treemacs
+     tree-sitter
      typescript
      version-control
      yaml
@@ -80,6 +81,7 @@ This function should only modify configuration layer settings."
    '(
      diredfl
      transient-posframe
+     typespec-ts-mode
      )
 
    ;; A list of packages that cannot be updated.
