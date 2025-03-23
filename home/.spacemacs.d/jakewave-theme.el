@@ -62,6 +62,9 @@
   (custom-theme-set-faces
    'jakewave
 
+   `(git-commit-keyword ((t (:inherit jake-no-glow))))
+   `(diff-context ((t (:foreground ,jake-purple-subtle))))
+   `(diff-removed ((t (:foreground ,jake-pink))))
    `(ansi-color-bright-red ((t (:foreground ,jake-pink :background ,jake-pink))))
    `(ansi-color-green ((t (:foreground ,jake-green :background ,jake-green))))
    `(ansi-color-red ((t (:foreground ,jake-pink :background ,jake-pink))))
