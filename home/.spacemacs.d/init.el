@@ -63,6 +63,7 @@ This function should only modify configuration layer settings."
      syntax-checking
      terraform
      treemacs
+     tree-sitter
      typescript
      version-control
      yaml
@@ -81,6 +82,7 @@ This function should only modify configuration layer settings."
    '(
      diredfl
      transient-posframe
+     typespec-ts-mode
      )
 
    ;; A list of packages that cannot be updated.
@@ -631,56 +633,7 @@ This function is called at the very end of Spacemacs initialization."
    ;; If there is more than one, they won't work right.
    '(company-capf-disabled-functions '(ispell-completion-at-point))
    '(package-selected-packages
-     '(a ace-jump-helm-line ace-link aggressive-indent alert all-the-icons
-         auto-compile auto-highlight-symbol auto-yasnippet bui bundler
-         centered-cursor-mode chruby clean-aindent-mode closql code-review
-         column-enforce-mode company company-go company-shell company-web counsel
-         counsel-gtags dap-mode deferred define-word devdocs diminish
-         dired-quick-sort dired-single diredfl disable-mouse doom-modeline
-         dotenv-mode drag-stuff dumb-jump eat editorconfig elisp-def elisp-demos
-         elisp-slime-nav ellama emacsql emmet-mode emojify emr esh-help
-         eshell-prompt-extras eshell-z eval-sexp-fu evil-anzu evil-args
-         evil-cleverparens evil-collection evil-easymotion evil-escape
-         evil-evilified-state evil-exchange evil-goggles evil-iedit-state
-         evil-indent-plus evil-lion evil-lisp-state evil-matchit evil-mc
-         evil-nerd-commenter evil-numbers evil-org evil-surround evil-textobj-line
-         evil-tutor evil-unimpaired evil-visual-mark-mode evil-visualstar
-         expand-region eyebrowse fancy-battery feature-mode fish-mode flx-ido
-         flycheck-bashate flycheck-elsa flycheck-golangci-lint flycheck-package
-         flycheck-pos-tip forge ggtags ghub git-link git-messenger git-modes
-         git-timemachine gitignore-templates gntp gnuplot go-eldoc go-fill-struct
-         go-gen-test go-guru go-impl go-mode go-rename go-tag godoctor
-         golden-ratio google-translate gptel haml-mode helm-ag helm-c-yasnippet
-         helm-comint helm-company helm-css-scss helm-descbinds helm-git-grep
-         helm-ls-git helm-lsp helm-make helm-mode-manager helm-mu helm-org
-         helm-org-rifle helm-projectile helm-purpose helm-swoop helm-themes
-         helm-xref hide-comnt hierarchy highlight-indentation highlight-numbers
-         highlight-parentheses hl-todo holy-mode htmlize hungry-delete hybrid-mode
-         impatient-mode indent-guide inf-ruby inflections info+ insert-shebang
-         inspector ivy js-doc js2-mode js2-refactor json-mode json-navigator
-         json-reformat json-snatcher link-hint livid-mode llm log4e lorem-ipsum
-         lsp-docker lsp-mode lsp-origami lsp-treemacs lsp-ui macrostep magit
-         magit-delta magit-section markdown-mode minitest mu4e-alert multi-line
-         multi-term multi-vterm multiple-cursors nameless nerd-icons nodejs-repl
-         npm-mode open-junk-file org org-category-capture org-cliplink org-contrib
-         org-download org-journal org-mime org-pomodoro org-present
-         org-project-capture org-projectile org-rich-yank org-superstar orgit
-         orgit-forge origami overseer paradox password-generator pcre2el plz
-         popwin pos-tip prettier-js projectile-rails pug-mode quickrun
-         rainbow-delimiters rake rbenv reformatter request restart-emacs rjsx-mode
-         robe ron-mode rspec-mode rubocop rubocopfmt ruby-hash-syntax
-         ruby-refactor ruby-test-mode ruby-tools rust-mode rustic rvm sass-mode
-         scss-mode seeing-is-believing shell-pop shfmt shrink-path simple-httpd
-         skewer-mode slim-mode smeargle space-doc spaceline
-         spacemacs-purpose-popwin spacemacs-whitespace-cleanup
-         string-edit-at-point string-inflection swiper symbol-overlay symon
-         tagedit term-cursor terminal-here tide toc-org toml-mode transient
-         transient-posframe treemacs-evil treemacs-icons-dired treemacs-magit
-         treemacs-persp treemacs-projectile treepy typescript-mode undo-fu
-         undo-fu-session uuidgen vi-tilde-fringe vim-powerline volatile-highlights
-         vterm vundo web-beautify web-completion-data web-mode which-key
-         which-key-posframe winum with-editor writeroom-mode ws-butler xterm-color
-         yaml yaml-mode yasnippet yasnippet-snippets)))
+     '()))
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
    ;; If you edit it by hand, you could mess it up, so be careful.

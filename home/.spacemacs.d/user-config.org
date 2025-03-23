@@ -163,11 +163,11 @@ Both Ruby LSP and Sorbet are default gems installed by asdf with every version o
 
  #+begin_src emacs-lisp
   ((ruby-mode . ((lsp-sorbet-use-bundler . t))))
+  (setq lsp-sorbet-as-add-on t)
 #+end_src
 
 #+begin_src emacs-lisp :tangle "user-config.el"
-  (setq lsp-disabled-clients '(rubocop-ls ruby-ls))
-  (setq lsp-sorbet-as-add-on t)
+  (setq lsp-disabled-clients '(rubocop-ls ruby-ls sorbet-ls))
 #+end_src
 
 **** Tests
@@ -186,6 +186,16 @@ For some reason by default there are a couple of spaces rendered at the beginnin
   (setq typescript-fmt-tool 'prettier)
   (setq typescript-indent-level 2)
   (setq typescript-linter 'eslint)
+#+end_src
+
+*** Typespec
+Uses tree-sitter. With the config below it will know where to look to install the grammar with:
+=M-x treesit-install-language-grammar=
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (with-eval-after-load 'treesit
+    (add-to-list 'treesit-language-source-alist
+                 '(typespec "https://github.com/happenslol/tree-sitter-typespec")))
 #+end_src
 
 *** Web

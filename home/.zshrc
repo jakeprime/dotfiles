@@ -27,6 +27,7 @@ export TF_PLUGIN_CACHE_DIR=${HOME}/.terraform.d/plugin-cache
 # git
 alias gadd="git add -N . && git add -p ."
 alias gfrm="git fetch && git rebase -i --rebase-merges origin/main"
+alias kapow="git fetch --prune && gpr && bundle && bundle exec rails db:migrate && gco -- ."
 
 # prime translatrix
 alias pt="cd ~/work/primetranslatrix/primetranslatrix-3"
