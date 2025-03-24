@@ -63,7 +63,6 @@ This function should only modify configuration layer settings."
      syntax-checking
      terraform
      treemacs
-     tree-sitter
      typescript
      version-control
      yaml
