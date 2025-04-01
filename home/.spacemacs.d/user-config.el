@@ -1,3 +1,8 @@
+(setq backup-directory-alist `(("." . "~/.emacs.d/backups")))
+(setq auto-save-file-name-transforms `((".*" "~/.emacs.d/autosaves/" t)))
+(setq backup-by-copying t) ; Avoid symlinks getting messed up
+(setq create-lockfiles nil)
+
 (setq safe-local-variable-directories
       '("/Users/jake/work/cleo/meetcleo/"
         "/Users/jake/work/rusty-bucket/rusty-bucket/"))
