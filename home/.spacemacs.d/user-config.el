@@ -1,3 +1,8 @@
+(setq backup-directory-alist `(("." . "~/.emacs.d/backups")))
+(setq auto-save-file-name-transforms `((".*" "~/.emacs.d/autosaves/" t)))
+(setq backup-by-copying t) ; Avoid symlinks getting messed up
+(setq create-lockfiles nil)
+
 (add-to-list 'custom-theme-load-path "~/.spacemacs.d/")
 (load-file "~/.spacemacs.d/faces-init.el")
 
