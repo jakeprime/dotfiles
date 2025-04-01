@@ -1,0 +1,17 @@
+sort=-time
+text-color=#61e2ff
+font="NotoSans NFP" 10
+background-color=#200933
+border-color=#574497
+border-radius=10
+border-size=1
+default-timeout=4000
+format=<b>%s</b>\n%b
+
+[urgency=normal]
+border-size=1
+border-color=#a5ff90
+
+[urgency=critical]
+border-color=#fc199a
+border-size=1
