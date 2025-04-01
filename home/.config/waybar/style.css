@@ -8,7 +8,7 @@
 }
 
 window#waybar {
-    background: transparent;
+    background: alpha(@color6, 0.1);
 }
 
 .modules-left, .modules-right {
@@ -18,7 +18,7 @@ window#waybar {
     border-bottom-color: @color4;
     /* box-shadow: 0 0 6px alpha(@color13, 0.4); */
     padding: 2px 8px;
-    margin: 0;
+    margin: 4px;
 }
 
 @keyframes glow {
