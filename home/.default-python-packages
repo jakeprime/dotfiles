@@ -14,4 +14,7 @@ pep517
 prompt_toolkit
 python-dateutil
 ruamel.yaml
+setuptools
 urllib3
+websockets
+wheel
