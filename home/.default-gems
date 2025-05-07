@@ -1,5 +1,6 @@
 bundler
 homesick
+kamal
 rubocop
 rubocop-rails
 ruby-lsp
