@@ -53,6 +53,7 @@ This function should only modify configuration layer settings."
      lsp
      ;; markdown
      multiple-cursors
+     mu4e
      org
      react
      ruby
