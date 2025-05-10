@@ -34,6 +34,7 @@ alias pt="cd ~/work/primetranslatrix/primetranslatrix-3"
 
 # rails
 alias be="bundle exec"
+alias r="bundle exec rails"
 alias rdbm="bundle exec rails db:migrate"
 alias rs="bundle exec rails server"
 alias rc="bundle exec rails console"
