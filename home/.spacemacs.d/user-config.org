@@ -238,6 +238,108 @@ Use GNU ls (Mac only)
   (setq insert-directory-program "gls")
 #+end_src
 
+** Email
+
+#+begin_src emacs-lisp :tangle "layer-config.el"
+  (setq mu4e-installation-path (getenv "MU4E_DIR"))
+  (setq mu4e-get-mail-command "mbsync -a")
+  (setq mu4e-update-interval (* 5 60))
+  (setq mu4e-change-filenames-when-moving t)
+#+end_src
+
+*** SMTP
+This is used whenever we want to send emails, whether from mu4e or otherwise.
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (setq message-send-mail-function 'smtpmail-send-it
+    smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
+    smtpmail-auth-credentials (expand-file-name "~/.authinfo")
+    smtpmail-default-smtp-server "smtp.gmail.com"
+    smtpmail-smtp-user "jake@meetcleo.com"
+    smtpmail-smtp-server "smtp.gmail.com"
+    smtpmail-smtp-service 587
+    smtpmail-debug-info t)
+#+end_src
+
+*** Mail accounts
+One for personal, one for Cleo
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (with-eval-after-load 'mu4e
+    (setq mu4e-contexts
+          (list
+           (make-mu4e-context
+            :name "Cleo"
+            :match-func
+            (lambda (msg)
+              (when msg
+                (string-prefix-p "/cleo" (mu4e-message-field msg :maildir))))
+            :vars '((user-mail-address . "jake@meetcleo.com")
+                    (user-full-name . "Jake Prime")
+                    (mu4e-refile-folder . "/cleo/[Gmail]/_Archive")
+                    (mu4e-sent-folder . "/cleo/[Gmail]/Sent Mail")
+                    (mu4e-trash-folder . "/cleo/[Gmail]/Bin")
+                    (mu4e-alert-interesting-mail-query . "flag:unread AND maildir:/cleo/Inbox")
+                    (smtpmail-smtp-user . "jake@meetcleo.com")))
+           (make-mu4e-context
+            :name "Personal"
+            :match-func
+            (lambda (msg)
+              (when msg
+                (string-prefix-p "/personal" (mu4e-message-field msg :maildir))))
+            :vars '((user-mail-address . "jake@jakeprime.com")
+                    (user-full-name . "Jake Prime")
+                    (mu4e-refile-folder . "/personal/_Archive")
+                    (mu4e-sent-folder . "/personal/[Google Mail]/Sent Mail")
+                    (mu4e-trash-folder . "/personal/[Google Mail]/Bin")
+                    (mu4e-alert-interesting-mail-query . "flag:unread AND maildir:/personal/Inbox")
+                    (smtpmail-smtp-user . "jake.prime@gmail.com")))
+           ))
+
+    (setq mu4e-modeline-all-clear '("C:" . "󰄰 "))
+    (setq mu4e-modeline-new-items '("N:" . "󰈸 "))
+    (setq mu4e-modeline-read-items '("R:" . " "))
+    (setq mu4e-modeline-unread-items '("U:" . " "))
+
+    (setq mu4e-maildir-shortcuts
+          '((:maildir "/cleo/Inbox" :key ?c :name "Cleo" :hide t)
+            (:maildir "/personal/Inbox" :key ?p :name "Personal" :hide t))))
+#+end_src
+
+*** Configure actions
+
+Change the icons for refiling, trashing, etc. The default ones don't render at the same size as a standard character, and throw off the alignment in the list.
+
+We don't actually want to delete emails, Gmail takes care of that, we just need to move to the Trash/Bin folder.
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (with-eval-after-load 'mu4e
+    (add-to-list 'mu4e-marks
+                 '(trash
+                   :char ("d" . "▼")
+                   :prompt "dtrash"
+                   :dyn-target (lambda (target msg) (mu4e-get-trash-folder msg))
+                   :action (lambda (docid msg target)
+                             (mu4e--server-move docid
+                                                (mu4e--mark-check-target target) "+S-N"))))
+    (add-to-list 'mu4e-marks
+                 '(flag
+                   :char ("+" . "★")
+                   :prompt "dflag"
+                   :dyn-target (lambda (target msg)
+                                 (replace-regexp-in-string "Sent Mail" "Starred"
+                                                           (mu4e-get-sent-folder msg)))
+                   :action (lambda (docid msg target)
+                             (mu4e--server-move docid
+                                                (mu4e--mark-check-target target))))))
+
+  (setq mu4e-headers-attach-mark '("a" . "+"))
+  (setq mu4e-headers-list-mark '("l" . "@"))
+  (setq mu4e-headers-personal-mark '("p" . "."))
+  (setq mu4e-headers-flagged-mark '("f" . "!"))
+  (setq mu4e-headers-new-mark '("N" . "*"))
+#+end_src
+
 ** Flow
 =j k= to escape.
 

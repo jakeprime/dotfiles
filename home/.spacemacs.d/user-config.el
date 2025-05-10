@@ -107,6 +107,81 @@
 
 (setq insert-directory-program "gls")
 
+(setq message-send-mail-function 'smtpmail-send-it
+  smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
+  smtpmail-auth-credentials (expand-file-name "~/.authinfo")
+  smtpmail-default-smtp-server "smtp.gmail.com"
+  smtpmail-smtp-user "jake@meetcleo.com"
+  smtpmail-smtp-server "smtp.gmail.com"
+  smtpmail-smtp-service 587
+  smtpmail-debug-info t)
+
+(with-eval-after-load 'mu4e
+  (setq mu4e-contexts
+        (list
+         (make-mu4e-context
+          :name "Cleo"
+          :match-func
+          (lambda (msg)
+            (when msg
+              (string-prefix-p "/cleo" (mu4e-message-field msg :maildir))))
+          :vars '((user-mail-address . "jake@meetcleo.com")
+                  (user-full-name . "Jake Prime")
+                  (mu4e-refile-folder . "/cleo/[Gmail]/_Archive")
+                  (mu4e-sent-folder . "/cleo/[Gmail]/Sent Mail")
+                  (mu4e-trash-folder . "/cleo/[Gmail]/Bin")
+                  (mu4e-alert-interesting-mail-query . "flag:unread AND maildir:/cleo/Inbox")
+                  (smtpmail-smtp-user . "jake@meetcleo.com")))
+         (make-mu4e-context
+          :name "Personal"
+          :match-func
+          (lambda (msg)
+            (when msg
+              (string-prefix-p "/personal" (mu4e-message-field msg :maildir))))
+          :vars '((user-mail-address . "jake@jakeprime.com")
+                  (user-full-name . "Jake Prime")
+                  (mu4e-refile-folder . "/personal/_Archive")
+                  (mu4e-sent-folder . "/personal/[Google Mail]/Sent Mail")
+                  (mu4e-trash-folder . "/personal/[Google Mail]/Bin")
+                  (mu4e-alert-interesting-mail-query . "flag:unread AND maildir:/personal/Inbox")
+                  (smtpmail-smtp-user . "jake.prime@gmail.com")))
+         ))
+
+  (setq mu4e-modeline-all-clear '("C:" . "󰄰 "))
+  (setq mu4e-modeline-new-items '("N:" . "󰈸 "))
+  (setq mu4e-modeline-read-items '("R:" . " "))
+  (setq mu4e-modeline-unread-items '("U:" . " "))
+
+  (setq mu4e-maildir-shortcuts
+        '((:maildir "/cleo/Inbox" :key ?c :name "Cleo" :hide t)
+          (:maildir "/personal/Inbox" :key ?p :name "Personal" :hide t))))
+
+(with-eval-after-load 'mu4e
+  (add-to-list 'mu4e-marks
+               '(trash
+                 :char ("d" . "▼")
+                 :prompt "dtrash"
+                 :dyn-target (lambda (target msg) (mu4e-get-trash-folder msg))
+                 :action (lambda (docid msg target)
+                           (mu4e--server-move docid
+                                              (mu4e--mark-check-target target) "+S-N"))))
+  (add-to-list 'mu4e-marks
+               '(flag
+                 :char ("+" . "★")
+                 :prompt "dflag"
+                 :dyn-target (lambda (target msg)
+                               (replace-regexp-in-string "Sent Mail" "Starred"
+                                                         (mu4e-get-sent-folder msg)))
+                 :action (lambda (docid msg target)
+                           (mu4e--server-move docid
+                                              (mu4e--mark-check-target target))))))
+
+(setq mu4e-headers-attach-mark '("a" . "+"))
+(setq mu4e-headers-list-mark '("l" . "@"))
+(setq mu4e-headers-personal-mark '("p" . "."))
+(setq mu4e-headers-flagged-mark '("f" . "!"))
+(setq mu4e-headers-new-mark '("N" . "*"))
+
 (setq evil-escape-key-sequence [106 107])
 
 (defalias 'forward-evil-word 'forward-evil-symbol)
