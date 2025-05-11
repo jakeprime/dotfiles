@@ -121,7 +121,7 @@
               (string-prefix-p "/cleo" (mu4e-message-field msg :maildir))))
           :vars '((user-mail-address . "jake@meetcleo.com")
                   (user-full-name . "Jake Prime")
-                  (mu4e-refile-folder . "/cleo/[Gmail]/_Archive")
+                  (mu4e-refile-folder . "/cleo/_Archive")
                   (mu4e-sent-folder . "/cleo/[Gmail]/Sent Mail")
                   (mu4e-trash-folder . "/cleo/[Gmail]/Bin")
                   (mu4e-alert-interesting-mail-query . "flag:unread AND maildir:/cleo/Inbox")
