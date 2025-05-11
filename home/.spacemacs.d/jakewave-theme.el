@@ -62,9 +62,6 @@
   (custom-theme-set-faces
    'jakewave
 
-   `(git-commit-keyword ((t (:inherit jake-no-glow))))
-   `(diff-context ((t (:foreground ,jake-purple-subtle))))
-   `(diff-removed ((t (:foreground ,jake-pink))))
    `(ansi-color-bright-red ((t (:foreground ,jake-pink :background ,jake-pink))))
    `(ansi-color-green ((t (:foreground ,jake-green :background ,jake-green))))
    `(ansi-color-red ((t (:foreground ,jake-pink :background ,jake-pink))))
@@ -96,9 +93,11 @@
    `(cursor ((t (:background ,jake-pink))))
    `(default ((t (:inherit nil :family ,jake-fixed :stipple nil :background ,jake-dark :foreground ,jake-cyan :inverse-video nil :box nil :strike-through nil :extend nil :overline nil :underline nil :shadow nil :slant normal :weight light :width normal :foundry "nil"))))
    `(diff-added ((t (:foreground ,jake-green))))
+   `(diff-context ((t (:foreground ,jake-purple-subtle))))
    `(diff-hl-change ((t (:background ,jake-yellow :foreground ,jake-darkest))))
    `(diff-hl-delete ((t (:background ,jake-pink :foreground ,jake-darkest))))
    `(diff-hl-insert ((t (:background ,jake-green :foreground ,jake-darkest))))
+   `(diff-removed ((t (:foreground ,jake-pink))))
    `(dired-directory ((t (:inherit (font-lock-constant-face) :foreground unspecified :background unspecified))))
    `(diredfl-compressed-file-suffix ((t (:inherit jake-green-glow))))
    `(diredfl-date-time ((t (:inherit jake-purple-glow))))
@@ -161,6 +160,7 @@
    `(font-lock-variable-use-face ((t (:inherit (font-lock-variable-name-face)))))
    `(font-lock-warning-face ((t (:foreground "#dc752f" :background "#292b2e"))))
    `(fringe ((t (:background "#1d0432" :foreground "#520c8b"))))
+   `(git-commit-keyword ((t (:inherit jake-no-glow))))
    `(gnus-header-content ((t (:foreground ,jake-purple))))
    `(gnus-header-from ((t (:inherit jake-yellow-glow :foreground unspecified :weight ,jake-normal-weight))))
    `(gnus-header-name ((t (:foreground ,jake-pink))))
