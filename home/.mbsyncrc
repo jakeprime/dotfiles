@@ -7,7 +7,7 @@ Host imap.gmail.com
 Port 993
 User jake@meetcleo.com
 PassCmd "pass imap/jake@meetcleo.com"
-SSLType IMAPS
+TLSType IMAPS
 AuthMechs PLAIN
 
 IMAPStore cleo-remote
@@ -37,7 +37,7 @@ Host imap.gmail.com
 Port 993
 User jake.prime@gmail.com
 PassCmd "pass imap/jake.prime@gmail.com"
-SSLType IMAPS
+TLSType IMAPS
 AuthMechs PLAIN
 
 IMAPStore personal-remote
