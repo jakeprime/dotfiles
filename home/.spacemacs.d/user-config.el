@@ -159,16 +159,6 @@
                  :action (lambda (docid msg target)
                            (mu4e--server-move docid
                                               (mu4e--mark-check-target target) "+S-N"))))
-  (add-to-list 'mu4e-marks
-               '(flag
-                 :char ("+" . "★")
-                 :prompt "dflag"
-                 :dyn-target (lambda (target msg)
-                               (replace-regexp-in-string "Sent Mail" "Starred"
-                                                         (mu4e-get-sent-folder msg)))
-                 :action (lambda (docid msg target)
-                           (mu4e--server-move docid
-                                              (mu4e--mark-check-target target))))))
 
 (setq mu4e-headers-attach-mark '("a" . "+"))
 (setq mu4e-headers-list-mark '("l" . "@"))
