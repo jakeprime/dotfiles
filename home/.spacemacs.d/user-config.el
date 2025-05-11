@@ -127,7 +127,7 @@
               (string-prefix-p "/cleo" (mu4e-message-field msg :maildir))))
           :vars '((user-mail-address . "jake@meetcleo.com")
                   (user-full-name . "Jake Prime")
-                  (mu4e-refile-folder . "/cleo/[Gmail]/_Archive")
+                  (mu4e-refile-folder . "/cleo/_Archive")
                   (mu4e-sent-folder . "/cleo/[Gmail]/Sent Mail")
                   (mu4e-trash-folder . "/cleo/[Gmail]/Bin")
                   (mu4e-alert-interesting-mail-query . "flag:unread AND maildir:/cleo/Inbox")
@@ -157,30 +157,37 @@
           (:maildir "/personal/Inbox" :key ?p :name "Personal" :hide t))))
 
 (with-eval-after-load 'mu4e
-  (add-to-list 'mu4e-marks
-               '(trash
-                 :char ("d" . "▼")
-                 :prompt "dtrash"
-                 :dyn-target (lambda (target msg) (mu4e-get-trash-folder msg))
-                 :action (lambda (docid msg target)
-                           (mu4e--server-move docid
-                                              (mu4e--mark-check-target target) "+S-N"))))
-  (add-to-list 'mu4e-marks
-               '(flag
-                 :char ("+" . "★")
-                 :prompt "dflag"
-                 :dyn-target (lambda (target msg)
-                               (replace-regexp-in-string "Sent Mail" "Starred"
-                                                         (mu4e-get-sent-folder msg)))
-                 :action (lambda (docid msg target)
-                           (mu4e--server-move docid
-                                              (mu4e--mark-check-target target))))))
+  (setf (alist-get 'refile mu4e-marks)
+        '(:char ("r" . "▶")
+          :prompt "refile"
+          :show-target (lambda (target)
+                         (if target target "Skip - sent message"))
+          :dyn-target (lambda (target msg)
+                        (let* ((maildir (mu4e-message-field msg :maildir))
+                               (sent-folder (mu4e-get-sent-folder msg)))
+                          (if (string= maildir sent-folder)
+                              nil
+                            (mu4e-get-refile-folder msg))))
+          :action (lambda (docid msg target)
+                    (if target
+                        (mu4e--server-move docid
+                                           (mu4e--mark-check-target target)
+                                           "+S-N")
+                      nil))))
 
-(setq mu4e-headers-attach-mark '("a" . "+"))
-(setq mu4e-headers-list-mark '("l" . "@"))
-(setq mu4e-headers-personal-mark '("p" . "."))
-(setq mu4e-headers-flagged-mark '("f" . "!"))
-(setq mu4e-headers-new-mark '("N" . "*"))
+  (setf (alist-get 'trash mu4e-marks)
+        '(:char ("d" . "▼")
+          :prompt "dtrash"
+          :dyn-target (lambda (target msg) (mu4e-get-trash-folder msg))
+          :action (lambda (docid msg target)
+                    (mu4e--server-move docid
+                                       (mu4e--mark-check-target target) "+S-N"))))
+
+  (setq mu4e-headers-attach-mark '("a" . "+"))
+  (setq mu4e-headers-list-mark '("l" . "@"))
+  (setq mu4e-headers-personal-mark '("p" . "."))
+  (setq mu4e-headers-flagged-mark '("f" . "!"))
+  (setq mu4e-headers-new-mark '("N" . "*")))
 
 (setq evil-escape-key-sequence [106 107])
 
