@@ -109,6 +109,31 @@ So we'll turn off the auto tooltip and add a keyboard command for opening at wil
 
   (advice-add 'company--should-complete :around #'jake-disable-company-for-symbols)
 #+end_src
+
+**** LSP
+All the LSP features are enabled by default and the result is hella noisy.
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (setq lsp-enable-symbol-highlighting nil)
+  (setq lsp-ui-doc-show-with-cursor nil)
+  (setq lsp-lens-enable nil)
+  (setq lsp-ui-sideline-enable nil)
+  (setq lsp-eldoc-enable-hover nil)
+  (setq lsp-modeline-diagnostics-enable nil)
+  (setq lsp-signature-auto-activate nil)
+#+end_src
+
+**** Flycheck info
+These pos-tips actually use system windows, so not easy to style, and in Hyprland they have rounded corners. Let's see how we go.
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (setq flycheck-pos-tip-max-width 80)
+  (setq flycheck-pos-tip-mode t)
+  (setq pos-tip-border-width 0)
+  (setq pos-tip-internal-border-width 4)
+  (setq pos-tip-tab-width 80)
+#+end_src
+
 *** Ruby
 **** Cleo console
 Define the Cleo prompt format, otherwise it's not possible to retrieve previous commands by pressing the up arrow.
