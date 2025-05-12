@@ -183,6 +183,12 @@
                     (mu4e--server-move docid
                                        (mu4e--mark-check-target target) "+S-N"))))
 
+  (setf (alist-get 'something mu4e-marks)
+        '(:char ("*" . "*")
+          :prompt "*something"
+          :action
+          (mu4e-error "No action for deferred mark")))
+
   (setq mu4e-headers-attach-mark '("a" . "+"))
   (setq mu4e-headers-list-mark '("l" . "@"))
   (setq mu4e-headers-personal-mark '("p" . "."))
