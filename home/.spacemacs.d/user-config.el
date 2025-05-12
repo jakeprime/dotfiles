@@ -61,6 +61,12 @@
 (setq lsp-modeline-diagnostics-enable nil)
 (setq lsp-signature-auto-activate nil)
 
+(setq flycheck-pos-tip-max-width 80)
+(setq flycheck-pos-tip-mode t)
+(setq pos-tip-border-width 0)
+(setq pos-tip-internal-border-width 4)
+(setq pos-tip-tab-width 80)
+
 (add-hook 'inf-ruby-mode-hook
           (lambda()
             (let ((p "\\|\\(^\\[cleo\\]\\[development\\] main:[0-9]+> *\\)"))
