@@ -109,6 +109,20 @@ So we'll turn off the auto tooltip and add a keyboard command for opening at wil
 
   (advice-add 'company--should-complete :around #'jake-disable-company-for-symbols)
 #+end_src
+
+**** LSP
+All the LSP features are enabled by default and the result is hella noisy.
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (setq lsp-enable-symbol-highlighting nil)
+  (setq lsp-ui-doc-show-with-cursor nil)
+  (setq lsp-lens-enable nil)
+  (setq lsp-ui-sideline-enable nil)
+  (setq lsp-eldoc-enable-hover nil)
+  (setq lsp-modeline-diagnostics-enable nil)
+  (setq lsp-signature-auto-activate nil)
+#+end_src
+
 *** Ruby
 **** Cleo console
 Define the Cleo prompt format, otherwise it's not possible to retrieve previous commands by pressing the up arrow.
