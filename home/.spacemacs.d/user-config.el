@@ -53,6 +53,14 @@
 
 (advice-add 'company--should-complete :around #'jake-disable-company-for-symbols)
 
+(setq lsp-enable-symbol-highlighting nil)
+(setq lsp-ui-doc-show-with-cursor nil)
+(setq lsp-lens-enable nil)
+(setq lsp-ui-sideline-enable nil)
+(setq lsp-eldoc-enable-hover nil)
+(setq lsp-modeline-diagnostics-enable nil)
+(setq lsp-signature-auto-activate nil)
+
 (add-hook 'inf-ruby-mode-hook
           (lambda()
             (let ((p "\\|\\(^\\[cleo\\]\\[development\\] main:[0-9]+> *\\)"))
