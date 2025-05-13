@@ -59,6 +59,7 @@ This function should only modify configuration layer settings."
      ruby-on-rails
      shell
      shell-scripts
+     slack
      syntax-checking
      terraform
      treemacs
