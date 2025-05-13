@@ -454,6 +454,21 @@ ibuffer
   (add-hook 'org-mode-hook 'my-org-mode-hook)
 #+end_src
 
+** Slack
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (slack-register-team
+   :name "cleo-team"
+   :default t
+   :client-id "jake@meetcleo.com"
+   :token (auth-source-pick-first-password
+           :host "cleo-team.slack.com"
+           :user "token")
+   :cookie (auth-source-pick-first-password
+            :host "cleo-team.slack.com"
+            :user "cookie"))
+#+end_src
+
 ** Terminal
 
 #+begin_src emacs-lisp :tangle "layer-config.el"
