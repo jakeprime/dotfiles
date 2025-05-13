@@ -200,8 +200,7 @@
   (setf (alist-get 'something mu4e-marks)
         '(:char ("*" . "*")
           :prompt "*something"
-          :action
-          (mu4e-error "No action for deferred mark")))
+          :action (mu4e-error "No action for deferred mark")))
 
   (setq mu4e-headers-attach-mark '("a" . "+"))
   (setq mu4e-headers-list-mark '("l" . "@"))
@@ -244,3 +243,14 @@
         visual-fill-column-center-text t))
 
 (add-hook 'org-mode-hook 'my-org-mode-hook)
+
+(slack-register-team
+ :name "cleo-team"
+ :default t
+ :client-id "jake@meetcleo.com"
+ :token (auth-source-pick-first-password
+         :host "cleo-team.slack.com"
+         :user "token")
+ :cookie (auth-source-pick-first-password
+          :host "cleo-team.slack.com"
+          :user "cookie"))
