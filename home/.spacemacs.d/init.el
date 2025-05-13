@@ -60,6 +60,7 @@ This function should only modify configuration layer settings."
      rust
      shell
      shell-scripts
+     slack
      syntax-checking
      terraform
      treemacs
