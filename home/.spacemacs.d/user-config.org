@@ -456,6 +456,12 @@ ibuffer
 
 ** Slack
 
+#+begin_src emacs-lisp :tangle "layer-config.el"
+  (setq slack-enable-global-mode-string t)
+  (setq slack-modeline-count-only-subscribed-channel nil)
+  (setq slack-prefer-current-team t)
+#+end_src
+
 #+begin_src emacs-lisp :tangle "user-config.el"
   (slack-register-team
    :name "cleo-team"

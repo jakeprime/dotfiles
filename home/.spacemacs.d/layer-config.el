@@ -35,5 +35,9 @@
 (setq org-tags-column 1)
 (setq org-todo-keywords '((sequence "TODO" "|" "DONE" "REJECTED")))
 
+(setq slack-enable-global-mode-string t)
+(setq slack-modeline-count-only-subscribed-channel nil)
+(setq slack-prefer-current-team t)
+
 (setq shell-default-height 30)
 (setq shell-default-position 'bottom)
