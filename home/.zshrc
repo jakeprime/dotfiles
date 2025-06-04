@@ -11,6 +11,14 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# put zsh at the top so that any clashing aliases we create take priority
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
+
+plugins=(git extract sudo zsh-autosuggestions z)
+
+source $ZSH/oh-my-zsh.sh
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 . ~/.asdf/plugins/golang/set-env.zsh
 . ~/.asdf/plugins/java/set-java-home.zsh
@@ -55,13 +63,6 @@ export HISTFILE=~/.zsh_history
 setopt APPEND_HISTORY
 bindkey "^[^[[D" backward-word
 bindkey "^[^[[C" forward-word
-export ZSH="$HOME/.oh-my-zsh"
-
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
-
-plugins=(git extract sudo zsh-autosuggestions z)
-
-source $ZSH/oh-my-zsh.sh
 
 
 source ~/.zshrc.theme
