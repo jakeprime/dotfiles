@@ -19,6 +19,12 @@ export HOMEBREW_GITHUB_API_TOKEN=$(pass show github/homebrew)
 export AWS_PROFILE=Engineer-878877078763
 
 # cleo
+export EAGER_LOAD_TEST_ENVIRONMENT=false
+export LOG_PRODUCT_FEATURES_TO_DB=false
+export NO_WEBPACK_COMPILE_CHECK=1
+export PARALLEL_WORKERS=1
+# export RAISE_API_EXCEPTIONS=true
+export SKIP_TEST_TIMEOUT=1
 export TERRAGRUNT_DOWNLOAD=${HOME}/.terragrunt-cache
 export TERRAGRUNT_PROVIDER_CACHE=1
 export TERRAGRUNT_PROVIDER_CACHE_DIR="$HOME/.terragrunt-provider-cache"
@@ -41,9 +47,6 @@ alias rb="cd ~/work/personal/rusty-bucket"
 
 export EDITOR=vim
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
-export NO_WEBPACK_COMPILE_CHECK=1
-export SKIP_TEST_TIMEOUT=1
-export LOG_PRODUCT_FEATURES_TO_DB=false
 export SAVEHIST=1000000
 export HISTFILE=~/.zsh_history
 setopt APPEND_HISTORY
