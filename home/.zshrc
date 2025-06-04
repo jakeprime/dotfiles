@@ -18,6 +18,9 @@ export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 export HOMEBREW_GITHUB_API_TOKEN=$(pass show github/homebrew)
 export AWS_PROFILE=Engineer-878877078763
 
+alias cat=bat
+alias ls="eza -lA"
+
 # cleo
 export EAGER_LOAD_TEST_ENVIRONMENT=false
 export LOG_PRODUCT_FEATURES_TO_DB=false
