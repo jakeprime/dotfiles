@@ -29,9 +29,6 @@ alias gadd="git add -N . && git add -p ."
 alias gfrm="git fetch && git rebase -i --rebase-merges origin/main"
 alias kapow="git fetch --prune && gpr && bundle && bundle exec rails db:migrate && gco -- ."
 
-# prime translatrix
-alias pt="cd ~/work/primetranslatrix/primetranslatrix-3"
-
 # rails
 alias be="bundle exec"
 alias r="bundle exec rails"
@@ -53,7 +50,6 @@ setopt APPEND_HISTORY
 bindkey "^[^[[D" backward-word
 bindkey "^[^[[C" forward-word
 export ZSH="$HOME/.oh-my-zsh"
-export LC_TIME="en_GB.UTF-8"
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
 
