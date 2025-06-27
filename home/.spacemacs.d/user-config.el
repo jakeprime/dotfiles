@@ -109,6 +109,15 @@
 (add-to-list 'compilation-error-regexp-alist-alist '(ruby-Test::Unit "^ +\\([^ (].*\\):\\([1-9][0-9]*\\):in " 1 2))
 (assoc 'ruby-Test::Unit compilation-error-regexp-alist-alist)
 
+(defun jake/add-ts-flycheck-next-checker ()
+  (when (and (derived-mode-p 'typescript-tsx-mode)
+             ;; Ensure LSP checker exists
+             (flycheck-registered-checker-p 'lsp))
+    (flycheck-add-next-checker 'lsp 'javascript-eslint)))
+
+(eval-after-load 'flycheck
+  '(add-hook 'lsp-managed-mode-hook #'jake/add-ts-flycheck-next-checker))
+
 (with-eval-after-load 'treesit
   (add-to-list 'treesit-language-source-alist
                '(typespec "https://github.com/happenslol/tree-sitter-typespec")))

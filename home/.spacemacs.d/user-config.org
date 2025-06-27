@@ -223,6 +223,22 @@ For some reason by default there are a couple of spaces rendered at the beginnin
   (setq typescript-linter 'eslint)
 #+end_src
 
+**** Flycheck
+
+The LSP flycheck picks up type errors so we want to keep that, but we need the eslint ones too, as they are checked in CI.
+
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (defun jake/add-ts-flycheck-next-checker ()
+    (when (and (derived-mode-p 'typescript-tsx-mode)
+               ;; Ensure LSP checker exists
+               (flycheck-registered-checker-p 'lsp))
+      (flycheck-add-next-checker 'lsp 'javascript-eslint)))
+
+  (eval-after-load 'flycheck
+    '(add-hook 'lsp-managed-mode-hook #'jake/add-ts-flycheck-next-checker))
+#+end_src
+
 *** Typespec
 Uses tree-sitter. With the config below it will know where to look to install the grammar with:
 =M-x treesit-install-language-grammar=
