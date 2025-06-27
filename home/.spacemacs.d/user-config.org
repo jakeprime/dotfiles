@@ -162,21 +162,10 @@ Hideshow doesn't know what constitutes a block in Ruby.
 #+end_src
 
 **** Flycheck
-The lsp flychecker is how we know about Sorbet errors, but we want Rubocop too so we have to chain them.
 
 #+begin_src emacs-lisp :tangle "user-config.el"
-  (defun my-add-flycheck-next-checker ()
-    (when (and (derived-mode-p 'ruby-mode)
-               ;; Ensure LSP checker exists
-               (flycheck-registered-checker-p 'lsp))
-      (flycheck-add-next-checker 'lsp 'ruby-rubocop)))
-
-  (eval-after-load 'flycheck
-    '(add-hook 'flycheck-mode-hook #'my-add-flycheck-next-checker))
-
   (setq flycheck-disabled-checkers '(ruby-reek))
 #+end_src
-
 
 Make sure we use bundler for flycheck. Otherwise we would have issues when multiple projects use different versions, especially as the work ones are out of my individual control. I'm not sure I'm using the rubocop lsp, in fact fairly sure I'm not, but if I was I'd want to be using bundler, so leave that in.
 

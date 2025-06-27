@@ -83,15 +83,6 @@
         ,(rx (or "#" "=begin"))                        ; Comment start
         ruby-forward-sexp nil)))
 
-(defun my-add-flycheck-next-checker ()
-  (when (and (derived-mode-p 'ruby-mode)
-             ;; Ensure LSP checker exists
-             (flycheck-registered-checker-p 'lsp))
-    (flycheck-add-next-checker 'lsp 'ruby-rubocop)))
-
-(eval-after-load 'flycheck
-  '(add-hook 'flycheck-mode-hook #'my-add-flycheck-next-checker))
-
 (setq flycheck-disabled-checkers '(ruby-reek))
 
 (setq lsp-rubocop-use-bundler t)
