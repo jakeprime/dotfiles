@@ -35,6 +35,8 @@
 (with-eval-after-load 'bug-reference
   (remove-hook 'prog-mode-hook #'bug-reference-prog-mode))
 
+(setq sh-basic-offset 2)
+
 (spacemacs/set-leader-keys "off" 'hs-toggle-hiding)
 (spacemacs/set-leader-keys "ofl" 'hs-hide-level)
 (spacemacs/set-leader-keys "ofa" 'hs-show-all)
