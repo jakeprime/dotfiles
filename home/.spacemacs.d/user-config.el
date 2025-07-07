@@ -91,12 +91,32 @@
 
 (setq lsp-rubocop-use-bundler t)
 
-  (add-hook
-   'ruby-mode-hook
-   (lambda ()
-     (setq-local flycheck-command-wrapper-function
-                 (lambda (command)
-(append (list (concat (project-root (project-current)) "bin/bundle") "exec") command)))))
+;;   (add-hook
+;;    'ruby-mode-hook
+;;    (lambda ()
+;;      (setq-local flycheck-command-wrapper-function
+;;                  (lambda (command)
+;; (append (list (concat (project-root (project-current)) "bin/bundle") "exec") command)))))
+
+(with-eval-after-load 'flycheck
+  (flycheck-define-checker ruby-sorbet
+    "A Ruby type checker using Sorbet."
+    :command ("bundle" "exec" "srb" "tc" "--lsp" "false" source)
+    ;; :command ("bundle" "exec" "srb" "tc" "--lsp" "false" source)
+    :error-patterns
+    ((error line-start (file-name) ":" line ":" column ": " (message) line-end))
+    :modes (ruby-mode)))
+
+(add-to-list 'flycheck-checkers 'ruby-sorbet)
+
+(defun jake/add-ruby-flycheck-next-checker ()
+  (when (and (derived-mode-p 'ruby-mode)
+             ;; Ensure LSP checker exists
+             (flycheck-registered-checker-p 'lsp))
+    (flycheck-add-next-checker 'lsp 'ruby-sorbet)))
+
+(eval-after-load 'flycheck
+  '(add-hook 'lsp-managed-mode-hook #'jake/add-ruby-flycheck-next-checker))
 
 (setq lsp-disabled-clients '(rubocop-ls ruby-ls sorbet-ls))
 
