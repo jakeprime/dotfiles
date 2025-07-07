@@ -1,0 +1,7 @@
+ #!/usr/bin/env bash
+
+if [[ "$GCC_VERSION" == "14" ]]; then
+  exec /usr/bin/gcc-14 "$@"
+else
+  exec /usr/bin/gcc "$@"
+fi

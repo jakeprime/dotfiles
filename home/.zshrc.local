@@ -2,6 +2,7 @@ export LC_TIME="en_GB.UTF-8"
 export MOZ_ENABLE_WAYLAND=1
 export PATH="$PATH:/home/jake/work/personal/hyprswitch/target/release"
 export ANDROID_HOME=/home/jake/Android/Sdk
+export PATH="/home/jake/.shims:$PATH"
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
