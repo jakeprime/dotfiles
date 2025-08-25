@@ -1,8 +1,2 @@
-.config
-.config/foot
-.config/hypr
-.config/mako
-.config/waybar
 .oh-my-zsh
 .spacemacs.d
-.shims
