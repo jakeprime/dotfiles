@@ -4,7 +4,7 @@
 	user = jake
 	email = jake@jakeprime.com
 	excludesfile = ~/.gitignore_global
-	editor = vim
+	editor = nvim
   pager = delta
 [push]
 	default = simple
