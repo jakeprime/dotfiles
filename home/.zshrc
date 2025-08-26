@@ -19,9 +19,6 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
 plugins=(git extract sudo zsh-autosuggestions z)
 
 source $ZSH/oh-my-zsh.sh
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
-. ~/.asdf/plugins/golang/set-env.zsh
-. ~/.asdf/plugins/java/set-java-home.zsh
 
 export HOMEBREW_GITHUB_API_TOKEN=$(pass show github/homebrew)
 export AWS_PROFILE=Engineer-878877078763
