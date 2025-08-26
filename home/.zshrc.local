@@ -16,3 +16,6 @@ alias clm="cd ~/work/cleo/mobile-app"
 
 # prime translatrix
 alias pt="cd ~/work/primetranslatrix/primetranslatrix-3"
+
+eval $(ssh-agent -s) > /dev/null
+ssh-add $HOME/.ssh/id_archibald > /dev/null
