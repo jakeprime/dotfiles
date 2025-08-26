@@ -20,6 +20,11 @@ plugins=(git extract sudo zsh-autosuggestions z)
 
 source $ZSH/oh-my-zsh.sh
 
+if command -v mise &> /dev/null; then
+  eval "$(mise activate bash)"
+fi
+
+
 export HOMEBREW_GITHUB_API_TOKEN=$(pass show github/homebrew)
 export AWS_PROFILE=Engineer-878877078763
 
