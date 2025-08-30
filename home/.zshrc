@@ -31,6 +31,8 @@ export AWS_PROFILE=Engineer-878877078763
 alias cat=bat
 alias ls="eza -lA"
 
+export LPASS_AGENT_TIMEOUT=0
+
 # cleo
 export EAGER_LOAD_TEST_ENVIRONMENT=false
 export LOG_PRODUCT_FEATURES_TO_DB=false
