@@ -25,6 +25,7 @@ if command -v mise &> /dev/null; then
 fi
 
 
+export LPASS_AGENT_TIMEOUT=0 # once signed in stay signed in
 export HOMEBREW_GITHUB_API_TOKEN=$(pass show github/homebrew)
 export AWS_PROFILE=Engineer-878877078763
 
