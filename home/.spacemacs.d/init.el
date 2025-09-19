@@ -81,6 +81,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-additional-packages
    '(
      diredfl
+     keychain-environment
      transient-posframe
      typespec-ts-mode
      )

@@ -15,9 +15,4 @@ alias clm="cd ~/work/cleo/mobile-app"
 # prime translatrix
 alias pt="cd ~/work/primetranslatrix/primetranslatrix-3"
 
-if [[ -z "$SSH_AGENT_PID" ]]; then
-  eval $(ssh-agent) >/dev/null 2>&1
-
-  ssh-add $HOME/.ssh/id_archibald >/dev/null 2>&1
-  ssh-add $HOME/.ssh/id_cleo >/dev/null 2>&1
-fi
+eval "$(keychain --eval --quiet)"

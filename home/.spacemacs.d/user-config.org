@@ -3,6 +3,7 @@
 =, b t= to tangle files after editing.
 
 ** General
+*** Autosave
 Don't put autosave files in the same folder, it messes with things that detect for file changes in the codebase. And get rid of lockfiles completely.
 
 #+begin_src emacs-lisp :tangle "user-config.el"
@@ -10,6 +11,14 @@ Don't put autosave files in the same folder, it messes with things that detect f
   (setq auto-save-file-name-transforms `((".*" "~/.emacs.d/autosaves/" t)))
   (setq backup-by-copying t) ; Avoid symlinks getting messed up
   (setq create-lockfiles nil)
+#+end_src
+
+*** SSH Agent
+Keychain keeps one global ssh-agent instance which is started on Hyprland init, and this makes it available in Emacs so we can use it for git operations.
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (require 'keychain-environment)
+  (keychain-refresh-environment)
 #+end_src
 
 ** 😎
