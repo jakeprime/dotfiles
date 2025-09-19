@@ -6,8 +6,6 @@ export PATH="/home/jake/.shims:$PATH"
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-if [ -z "$SSH_AGENT_PID" ]; then eval "$(ssh-agent)"; fi
-
 alias H=Hyprland
 
 # cleo
@@ -17,5 +15,9 @@ alias clm="cd ~/work/cleo/mobile-app"
 # prime translatrix
 alias pt="cd ~/work/primetranslatrix/primetranslatrix-3"
 
-(eval $(ssh-agent -s)) > /dev/null 2>&1
-(ssh-add $HOME/.ssh/id_archibald) > /dev/null 2>&1
+if [[ -z "$SSH_AGENT_PID" ]]; then
+  eval $(ssh-agent) >/dev/null 2>&1
+
+  ssh-add $HOME/.ssh/id_archibald >/dev/null 2>&1
+  ssh-add $HOME/.ssh/id_cleo >/dev/null 2>&1
+fi
