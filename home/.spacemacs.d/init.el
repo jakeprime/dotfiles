@@ -50,6 +50,7 @@ This function should only modify configuration layer settings."
      llm-client
      javascript
      lsp
+     lua
      ;; markdown
      multiple-cursors
      mu4e
