@@ -6,13 +6,38 @@
 (require 'keychain-environment)
 (keychain-refresh-environment)
 
-(add-to-list 'custom-theme-load-path "~/.spacemacs.d/")
-(load-file "~/.spacemacs.d/faces-init.el")
+(set-face-attribute 'default nil :family "MonaspiceAr Nerd Font" :height 100 :weight 'light)
+
+(add-to-list 'custom-theme-load-path "~/.config/omarchy/current/theme/emacs/")
+(load-theme 'omarchy t)
+(load-theme 'omarchy t) ;; necessary, but why 🤷
+
+(defvar omarchy/omarchy-current (concat (getenv "XDG_CONFIG_HOME") "/omarchy/current"))
+(defvar omarchy/loaded-theme nil)
+
+(defun omarchy/--current-theme ()
+  (file-symlink-p (concat omarchy/omarchy-current "/theme")))
+
+(defun omarchy/--theme-watch-callback (event)
+  ;; EVENT is (DESCRIPTOR ACTION FILE [FILE1])
+  (pcase-let ((`(,_ ,action ,file . ,_) event))
+    (unless (equal (omarchy/--current-theme) omarchy/loaded-theme)
+      (setq omarchy/loaded-theme (omarchy/--current-theme))
+      (message "Omarchy theme changed, reloading")
+      (load-theme 'omarchy t))))
+
+(defun omarchy/--add-theme-watch ()
+  (setq omarchy/loaded-theme (omarchy/--current-theme))
+  (file-notify-add-watch omarchy/omarchy-current
+                         '(change)
+                         #'omarchy/--theme-watch-callback))
+
+(omarchy/--add-theme-watch)
 
 (setq dotspacemacs-startup-banner "~/.spacemacs.d/vaporwave-sun.png")
 (setq lsp-ui-doc-border "#200933")
 
-; need proportional width for nerdfonts or they overlap
+;; need proportional width for nerdfonts or they overlap
 (setq nerd-icons-font-family "MonaspiceAr Nerd Font Propo")
 
 (defun my-open-chat-gpt ()
