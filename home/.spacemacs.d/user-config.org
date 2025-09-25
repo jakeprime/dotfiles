@@ -221,9 +221,11 @@ I've been round the houses on this one, but currently we are using Shopify's Rub
 
 Both Ruby LSP and Sorbet are default gems installed by asdf with every version of Ruby, but if we want to use the bundled version of sorbet add the following as a dir-local:
 
- #+begin_src emacs-lisp
-  ((ruby-mode . ((lsp-sorbet-use-bundler . t))))
-  (setq lsp-sorbet-as-add-on t)
+#+begin_src emacs-lisp
+  ;; .dir-locals.el
+  ((ruby-mode . ((lsp-sorbet-use-bundler . t)
+                 (lsp-sorbet-as-add-on . t)
+                 (lsp-disabled-clients . (rubocop-ls ruby-ls)))))
 #+end_src
 
 #+begin_src emacs-lisp :tangle "user-config.el"
