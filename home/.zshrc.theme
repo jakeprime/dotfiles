@@ -14,8 +14,8 @@
     # RIGHT_EDGE=$'\ue0cc  '
 
     # round
-    # LEFT_EDGE=$'\ue0b6 '
-    # RIGHT_EDGE=$'\ue0b4 '
+    LEFT_EDGE=$'\ue0b6'
+    RIGHT_EDGE=$'\ue0b4'
 }
 
 prompt_segment() {
@@ -24,13 +24,15 @@ prompt_segment() {
 
     # [[ -n $3 ]] || echo -n "%F{red}•%f "
 
-#    echo -n "%F{$color}%k$LEFT_EDGE%F{black}%K{$color}"
-#    [[ -n $2 ]] && echo -n $2
-#    echo -n "%F{$color}%k$RIGHT_EDGE%f%k%b "
-
-    echo -n "%K{$color}%F{black}$RIGHT_EDGE%F{black}%K{$color}"
+    # When left and right edge
+    echo -n "%F{$color}%k$LEFT_EDGE%F{black}%K{$color}"
     [[ -n $2 ]] && echo -n $2
-    echo -n " %F{$color}%k$RIGHT_EDGE%f%k%b "
+    echo -n "%F{$color}%k$RIGHT_EDGE%f%k%b "
+
+    # when left and right are same orientation, e.g. scrape
+    # echo -n "%K{$color}%F{black}$RIGHT_EDGE%F{black}%K{$color}"
+    # [[ -n $2 ]] && echo -n $2
+    # echo -n " %F{$color}%k$RIGHT_EDGE%f%k%b "
 }
 
 # Git: branch/detached head, dirty status
