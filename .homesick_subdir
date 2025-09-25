@@ -2,6 +2,7 @@
 .config/hypr
 .config/hypr/custom
 .config/hypr/hyprswitch
+.config/pipewire
 .config/uwsm
 .config/walker
 .spacemacs.d
