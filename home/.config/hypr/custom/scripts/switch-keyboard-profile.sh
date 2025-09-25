@@ -2,5 +2,8 @@
 
 keyboard=$1
 
-ln -fs ~/.config/hypr/hyprland/input/keyboard.${keyboard}.conf ~/.config/hypr/hyprland/input/keyboard.conf
+pushd ~/.config/hypr/custom/input
+ln -fs keyboard.${keyboard}.conf keyboard.conf
+
+notify-send "Changed keyhboard to $keyboard"
 hyprctl reload
