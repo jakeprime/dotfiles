@@ -5,4 +5,5 @@
 .config/pipewire
 .config/uwsm
 .config/walker
+.config/wlr-which-key
 .spacemacs.d
