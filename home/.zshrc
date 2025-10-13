@@ -28,6 +28,7 @@ alias ls="eza -lA"
 
 # XDG
 export XDG_CONFIG_HOME="$HOME/.config"
+export CLAUDE_CONFIG_DIR="$XDG_CONFIG_HOME/claude"
 
 # cleo
 export EAGER_LOAD_TEST_ENVIRONMENT=true
