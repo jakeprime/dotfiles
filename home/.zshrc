@@ -40,6 +40,7 @@ export TERRAGRUNT_DOWNLOAD=${HOME}/.terragrunt-cache
 export TERRAGRUNT_PROVIDER_CACHE=1
 export TERRAGRUNT_PROVIDER_CACHE_DIR="$HOME/.terragrunt-provider-cache"
 export TF_PLUGIN_CACHE_DIR=${HOME}/.terraform.d/plugin-cache
+alias dracarys="bundle exec rails db:reset data:quick_sync_prod db:migrate db:seed stripe:setup_dev"
 
 # git
 alias gadd="git add -N . && git add -p ."
