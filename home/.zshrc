@@ -30,7 +30,7 @@ alias ls="eza -lA"
 export XDG_CONFIG_HOME="$HOME/.config"
 
 # cleo
-export EAGER_LOAD_TEST_ENVIRONMENT=false
+export EAGER_LOAD_TEST_ENVIRONMENT=true
 export LOG_PRODUCT_FEATURES_TO_DB=false
 export NO_WEBPACK_COMPILE_CHECK=1
 export PARALLEL_WORKERS=1
