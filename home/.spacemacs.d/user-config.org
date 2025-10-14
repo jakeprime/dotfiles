@@ -34,7 +34,15 @@ Mac only:
 
 #+end_src
 
-** ChatGPT
+** AI
+*** Claude code
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (claude-code-ide-emacs-tools-setup)
+
+  (spacemacs/set-leader-keys "oc" 'claude-code-ide)
+#+end_src
+
+*** ChatGPT
 
 #+begin_src emacs-lisp :tangle "layer-config.el"
   (setq gptel-model 'gpt-4o-mini)
