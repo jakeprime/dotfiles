@@ -79,6 +79,7 @@ This function should only modify configuration layer settings."
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages
    '(
+     (claude-code-ide :location (recipe :fetcher github :repo "manzaltu/claude-code-ide.el"))
      diredfl
      transient-posframe
      typespec-ts-mode

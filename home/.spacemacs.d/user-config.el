@@ -12,6 +12,10 @@
 ; need proportional width for nerdfonts or they overlap
 (setq nerd-icons-font-family "MonaspiceAr Nerd Font Propo")
 
+(claude-code-ide-emacs-tools-setup)
+
+(spacemacs/set-leader-keys "oc" 'claude-code-ide)
+
 (defun my-open-chat-gpt ()
   (interactive)
   (gptel "*ChatGPT*")
