@@ -11,7 +11,7 @@
       )
 
 
-  (set-face-attribute 'default nil :family "MonaspiceAr Nerd Font" :height 130 :weight 'light)
+  (set-face-attribute 'default nil :family "MonaspiceAr Nerd Font" :height 120 :weight 'light)
   (load-theme 'jakewave t)
   (load-theme 'jakewave t) ;; Necessary, but why? 🤷‍♂️
 
