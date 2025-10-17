@@ -23,9 +23,9 @@ inhibit_compositor_keyboard_shortcuts: true
 auto_kbd_layout: true
 
 menu:
-  # - key: "c"
-  #   desc: Cleo
-  #   submenu:
+  - key: "c"
+    desc: Cleo
+    submenu:
       - key: "a"
         desc: App
         submenu:
@@ -37,10 +37,46 @@ menu:
             cmd: chromium --profile-directory="Profile 1" https://meetcleo.com/admin
           - key: "s"
             desc: Staging
-            cmd: chromium --profile-directory="Profile 1" https://staging.cleoites.tech/admin
+            cmd: chromium --profile-directory="Profile 1" https://cleo-staging.cleoites.tech/admin
+      - key: "b"
+        desc: Hi Bob
+        cmd: chromium --profile-directory="Profile 1" https://app.hibob.com/home
+      - key: "c"
+        desc: CircleCI
+        submenu:
+          - key: "a"
+            desc: All
+            cmd: chromium --profile-directory="Profile 1" https://app.circleci.com/pipelines/github/meetcleo
+          - key: "i"
+            desc: My branches
+            cmd: chromium --profile-directory="Profile 1" https://app.circleci.com/pipelines/github/meetcleo/meetcleo?filter=mine
+          - key: "m"
+            desc: meetcleo - main
+            cmd: chromium --profile-directory="Profile 1" https://app.circleci.com/pipelines/github/meetcleo/meetcleo?branch=main
+          - key: "r"
+            desc: meetcleo
+            cmd: chromium --profile-directory="Profile 1" https://app.circleci.com/pipelines/github/meetcleo/meetcleo
       - key: "d"
         desc: Cleonardo
         cmd: chromium --profile-directory="Profile 1" https://cleonardo.meetcleo.com/056bb4358/p/89e7ac-how-we-build-cleo
+      - key: "g"
+        desc: Github
+        submenu:
+          - key: "m"
+            desc: meetcleo
+            cmd: chromium --profile-directory="Profile 1" https://github.com/meetcleo/mobile-app
+          - key: "r"
+            desc: meetcleo
+            cmd: chromium --profile-directory="Profile 1" https://github.com/meetcleo/meetcleo
       - key: "j"
         desc: Jira
         cmd: chromium --profile-directory="Profile 1" https://cleo.atlassian.net/jira/software/c/projects/MOBILE/boards/1540
+      - key: "l"
+        desc: Coralogix
+        cmd: chromium --profile-directory="Profile 1" https://cleo.app.coralogix.us
+  - key: "p"
+    desc: Personal
+    submenu:
+      - key: "n"
+        desc: NAS
+        cmd: chromium --profile-directory=Default https://192.168.1.158:5001
