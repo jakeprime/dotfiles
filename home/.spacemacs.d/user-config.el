@@ -3,6 +3,10 @@
 (setq backup-by-copying t) ; Avoid symlinks getting messed up
 (setq create-lockfiles nil)
 
+(add-hook 'after-init-hook #'global-mise-mode)
+(require 'mise)
+(global-mise-mode)
+
 (setq safe-local-variable-directories
       '("/Users/jake/work/cleo/meetcleo/"
         "/Users/jake/work/rusty-bucket/rusty-bucket/"))

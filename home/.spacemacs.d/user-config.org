@@ -3,6 +3,7 @@
 =, b t= to tangle files after editing.
 
 ** General
+*** Autosave
 Don't put autosave files in the same folder, it messes with things that detect for file changes in the codebase. And get rid of lockfiles completely.
 
 #+begin_src emacs-lisp :tangle "user-config.el"
@@ -12,14 +13,22 @@ Don't put autosave files in the same folder, it messes with things that detect f
   (setq create-lockfiles nil)
 #+end_src
 
+** mise
 
-Mac only:
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (add-hook 'after-init-hook #'global-mise-mode)
+  (require 'mise)
+  (global-mise-mode)
+#+end_src
+
+*** Mac only
 
 #+begin_src emacs-lisp :tangle "user-config.el"
   (setq safe-local-variable-directories
         '("/Users/jake/work/cleo/meetcleo/"
           "/Users/jake/work/rusty-bucket/rusty-bucket/"))
 #+end_src
+
 ** 😎
 
 #+begin_src emacs-lisp :tangle "user-config.el"
