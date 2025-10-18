@@ -67,6 +67,7 @@
 
 (advice-add 'company--should-complete :around #'jake-disable-company-for-symbols)
 
+(setq lsp-enable-on-type-formatting nil)
 (setq lsp-enable-symbol-highlighting nil)
 (setq lsp-ui-doc-show-with-cursor nil)
 (setq lsp-lens-enable nil)

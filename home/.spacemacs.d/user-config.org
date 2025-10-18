@@ -141,6 +141,7 @@ So we'll turn off the auto tooltip and add a keyboard command for opening at wil
 All the LSP features are enabled by default and the result is hella noisy.
 
 #+begin_src emacs-lisp :tangle "user-config.el"
+  (setq lsp-enable-on-type-formatting nil)
   (setq lsp-enable-symbol-highlighting nil)
   (setq lsp-ui-doc-show-with-cursor nil)
   (setq lsp-lens-enable nil)
