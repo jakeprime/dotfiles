@@ -32,16 +32,12 @@ export AWS_PROFILE=Engineer-878877078763
 alias cat=bat
 alias ls="eza -lA"
 
-<<<<<<< HEAD
 export LPASS_AGENT_TIMEOUT=0
 
-||||||| aa592c4
-=======
 # XDG
 export XDG_CONFIG_HOME="$HOME/.config"
 export CLAUDE_CONFIG_DIR="$XDG_CONFIG_HOME/claude"
 
->>>>>>> refs/rewritten/origin-main
 # cleo
 export EAGER_LOAD_TEST_ENVIRONMENT=true
 export LOG_PRODUCT_FEATURES_TO_DB=false
