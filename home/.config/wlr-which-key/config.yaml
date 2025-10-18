@@ -59,6 +59,9 @@ menu:
       - key: "d"
         desc: Cleonardo
         cmd: chromium --profile-directory="Profile 1" https://cleonardo.meetcleo.com/056bb4358/p/89e7ac-how-we-build-cleo
+      - key: "h"
+        desc: IT Support
+        cmd: chromium --profile-directory="Profile 1" https://cleo.atlassian.net/servicedesk/customer/portal/4
       - key: "g"
         desc: Github
         submenu:
