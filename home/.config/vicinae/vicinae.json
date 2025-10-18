@@ -1,0 +1,22 @@
+{
+    "closeOnFocusLoss": false,
+    "faviconService": "google",
+    "font": {
+        "size": 10
+    },
+    "keybinding": "default",
+    "keybinds": {
+    },
+    "popToRootOnClose": false,
+    "rootSearch": {
+        "searchFiles": true
+    },
+    "theme": {
+        "name": "omarchy.json"
+    },
+    "window": {
+        "csd": true,
+        "opacity": 0.95,
+        "rounding": 10
+    }
+}
