@@ -247,6 +247,17 @@
 
 (spacemacs/set-leader-keys "oi" 'ibuffer)
 
+(defun jake/yank-from-clipboard-first ()
+  (interactive)
+  (let ((clip (when (executable-find "wl-paste")
+                (string-trim-right
+                 (shell-command-to-string "wl-paste --no-newline --type \"text/plain;charset=utf-8\"")))))
+    (if (and clip (not (string-empty-p clip)))
+        (insert clip)
+      (yank))))
+
+  (spacemacs/set-leader-keys "ov" 'jake/yank-from-clipboard-first)
+
 (setq vc-follow-symlinks t)
 
 (use-package transient-posframe

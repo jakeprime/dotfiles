@@ -444,6 +444,21 @@ ibuffer
   (spacemacs/set-leader-keys "oi" 'ibuffer)
 #+end_src
 
+clipboard management
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+(defun jake/yank-from-clipboard-first ()
+  (interactive)
+  (let ((clip (when (executable-find "wl-paste")
+                (string-trim-right
+                 (shell-command-to-string "wl-paste --no-newline --type \"text/plain;charset=utf-8\"")))))
+    (if (and clip (not (string-empty-p clip)))
+        (insert clip)
+      (yank))))
+
+  (spacemacs/set-leader-keys "ov" 'jake/yank-from-clipboard-first)
+#+end_src
+
 ** Git
 
 #+begin_src emacs-lisp :tangle "layer-config.el"
