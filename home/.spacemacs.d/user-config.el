@@ -22,7 +22,7 @@
 
 (claude-code-ide-emacs-tools-setup)
 
-(spacemacs/set-leader-keys "oc" 'claude-code-ide)
+(spacemacs/set-leader-keys "oac" 'claude-code-ide)
 
 (defun my-open-chat-gpt ()
   (interactive)
@@ -31,7 +31,7 @@
     (switch-to-buffer buffer)))
 
 (spacemacs/set-leader-keys
-  "og" 'my-open-chat-gpt)
+  "oag" 'my-open-chat-gpt)
 
 (defun jake/github-codeowners-this-file ()
   "Message the result of running github-codeowners on this file"

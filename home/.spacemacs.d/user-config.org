@@ -48,7 +48,7 @@ Don't put autosave files in the same folder, it messes with things that detect f
 #+begin_src emacs-lisp :tangle "user-config.el"
   (claude-code-ide-emacs-tools-setup)
 
-  (spacemacs/set-leader-keys "oc" 'claude-code-ide)
+  (spacemacs/set-leader-keys "oac" 'claude-code-ide)
 #+end_src
 
 *** ChatGPT
@@ -67,7 +67,7 @@ Set up the keybinding.
       (switch-to-buffer buffer)))
 
   (spacemacs/set-leader-keys
-    "og" 'my-open-chat-gpt)
+    "oag" 'my-open-chat-gpt)
 #+end_src
 
 ** Cleo
