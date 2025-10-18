@@ -3,6 +3,10 @@
 (setq backup-by-copying t) ; Avoid symlinks getting messed up
 (setq create-lockfiles nil)
 
+(add-hook 'after-init-hook #'global-mise-mode)
+(require 'mise)
+(global-mise-mode)
+
 (add-to-list 'custom-theme-load-path "~/.spacemacs.d/")
 (load-file "~/.spacemacs.d/faces-init.el")
 
