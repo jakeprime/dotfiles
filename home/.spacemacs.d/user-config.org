@@ -13,6 +13,14 @@ Don't put autosave files in the same folder, it messes with things that detect f
   (setq create-lockfiles nil)
 #+end_src
 
+*** mise
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (add-hook 'after-init-hook #'global-mise-mode)
+  (require 'mise)
+  (global-mise-mode)
+#+end_src
+
 *** SSH Agent
 Keychain keeps one global ssh-agent instance which is started on Hyprland init, and this makes it available in Emacs so we can use it for git operations.
 
@@ -60,7 +68,15 @@ Keychain keeps one global ssh-agent instance which is started on Hyprland init, 
 
 #+end_src
 
-** ChatGPT
+** AI
+*** Claude code
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (claude-code-ide-emacs-tools-setup)
+
+  (spacemacs/set-leader-keys "oc" 'claude-code-ide)
+#+end_src
+
+*** ChatGPT
 
 #+begin_src emacs-lisp :tangle "layer-config.el"
   (setq gptel-model 'gpt-4o-mini)

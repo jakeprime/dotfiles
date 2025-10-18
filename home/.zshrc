@@ -32,10 +32,18 @@ export AWS_PROFILE=Engineer-878877078763
 alias cat=bat
 alias ls="eza -lA"
 
+<<<<<<< HEAD
 export LPASS_AGENT_TIMEOUT=0
 
+||||||| aa592c4
+=======
+# XDG
+export XDG_CONFIG_HOME="$HOME/.config"
+export CLAUDE_CONFIG_DIR="$XDG_CONFIG_HOME/claude"
+
+>>>>>>> refs/rewritten/origin-main
 # cleo
-export EAGER_LOAD_TEST_ENVIRONMENT=false
+export EAGER_LOAD_TEST_ENVIRONMENT=true
 export LOG_PRODUCT_FEATURES_TO_DB=false
 export NO_WEBPACK_COMPILE_CHECK=1
 export PARALLEL_WORKERS=1
@@ -45,6 +53,7 @@ export TERRAGRUNT_DOWNLOAD=${HOME}/.terragrunt-cache
 export TERRAGRUNT_PROVIDER_CACHE=1
 export TERRAGRUNT_PROVIDER_CACHE_DIR="$HOME/.terragrunt-provider-cache"
 export TF_PLUGIN_CACHE_DIR=${HOME}/.terraform.d/plugin-cache
+alias dracarys="bundle exec rails db:reset data:quick_sync_prod db:migrate db:seed stripe:setup_dev"
 
 # git
 alias gadd="git add -N . && git add -p ."
@@ -100,5 +109,5 @@ zle -N zle-keymap-select
 # create an alias so that we start Vim with a block cursor
 alias vim="echo -ne \"\e[2 q\" && /usr/bin/vim"
 
-
 source ~/.zshrc.local
+eval "$(mise activate zsh)"

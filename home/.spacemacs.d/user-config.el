@@ -3,6 +3,10 @@
 (setq backup-by-copying t) ; Avoid symlinks getting messed up
 (setq create-lockfiles nil)
 
+(add-hook 'after-init-hook #'global-mise-mode)
+(require 'mise)
+(global-mise-mode)
+
 (require 'keychain-environment)
 (keychain-refresh-environment)
 
@@ -39,6 +43,10 @@
 
 ;; need proportional width for nerdfonts or they overlap
 (setq nerd-icons-font-family "MonaspiceAr Nerd Font Propo")
+
+(claude-code-ide-emacs-tools-setup)
+
+(spacemacs/set-leader-keys "oc" 'claude-code-ide)
 
 (defun my-open-chat-gpt ()
   (interactive)
