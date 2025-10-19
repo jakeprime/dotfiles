@@ -30,7 +30,7 @@ export HOMEBREW_GITHUB_API_TOKEN=$(pass show github/homebrew)
 export AWS_PROFILE=Engineer-878877078763
 
 alias cat=bat
-alias ls="eza -lA"
+alias ls="eza --all --long --group"
 
 export LPASS_AGENT_TIMEOUT=0
 

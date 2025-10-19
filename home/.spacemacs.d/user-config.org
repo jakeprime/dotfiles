@@ -69,6 +69,19 @@ Keychain keeps one global ssh-agent instance which is started on Hyprland init, 
 #+end_src
 
 ** AI
+*** AI Code Interface
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (use-package ai-code-interface
+    :config
+    (ai-code-set-backend  'claude-code-ide)
+    (global-set-key (kbd "C-c a") #'ai-code-menu)
+    (with-eval-after-load 'magit
+      (ai-code-magit-setup-transients)))
+  ;; ai-code-interfact uses claude-code as a wrapper for other ais
+  (setq claude-code-terminal-backend 'vterm)
+#+end_src
+
 *** Claude code
 #+begin_src emacs-lisp :tangle "user-config.el"
   (claude-code-ide-emacs-tools-setup)
