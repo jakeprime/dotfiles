@@ -20,6 +20,15 @@
 ; need proportional width for nerdfonts or they overlap
 (setq nerd-icons-font-family "MonaspiceAr Nerd Font Propo")
 
+(use-package ai-code-interface
+  :config
+  (ai-code-set-backend  'claude-code-ide)
+  (global-set-key (kbd "C-c a") #'ai-code-menu)
+  (with-eval-after-load 'magit
+    (ai-code-magit-setup-transients)))
+;; ai-code-interfact uses claude-code as a wrapper for other ais
+(setq claude-code-terminal-backend 'vterm)
+
 (claude-code-ide-emacs-tools-setup)
 
 (spacemacs/set-leader-keys "oac" 'claude-code-ide)
