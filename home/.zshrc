@@ -26,8 +26,11 @@ fi
 
 
 export LPASS_AGENT_TIMEOUT=0 # once signed in stay signed in
+
+# secrets
+export AGENT_GITHUB_PAT="$(pass show agents/github)"
+export AGENT_CIRCLECI_PAT="$(pass show agents/circleci)"
 export HOMEBREW_GITHUB_API_TOKEN=$(pass show github/homebrew)
-export AWS_PROFILE=Engineer-878877078763
 
 alias cat=bat
 alias ls="eza --all --long --group"
@@ -39,6 +42,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export CLAUDE_CONFIG_DIR="$XDG_CONFIG_HOME/claude"
 
 # cleo
+export AWS_PROFILE=Engineer-878877078763
 export EAGER_LOAD_TEST_ENVIRONMENT=true
 export LOG_PRODUCT_FEATURES_TO_DB=false
 export NO_WEBPACK_COMPILE_CHECK=1
