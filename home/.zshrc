@@ -29,7 +29,7 @@ export LPASS_AGENT_TIMEOUT=0 # once signed in stay signed in
 
 # secrets
 export AGENT_GITHUB_PAT="$(pass show agents/github)"
-export AGENT_CIRCLECI_PAT="$(pass show agents/circleci)"
+export AGENT_CIRCLECI_TOKEN="$(pass show agents/circleci)"
 export HOMEBREW_GITHUB_API_TOKEN=$(pass show github/homebrew)
 
 alias cat=bat
