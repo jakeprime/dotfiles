@@ -144,6 +144,11 @@ By default the =bug-reference= package treats numeric RGB values as links to an 
   (spacemacs/set-leader-keys "ofa" 'hs-show-all)
 #+end_src
 
+**** Text wrapping
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (setq fill-column 100)
+#+end_src
 
 **** Parentheses
 By default all parentheses (or curly braces) that enclose the cursor are coloured in a sequence defined by this variable. But it doesn't override the colour of the glow from rainbow parents and looks terrible. Active parens are bolded though which gives us an indicator, and does play nice with the glow.
