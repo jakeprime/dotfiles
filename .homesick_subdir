@@ -2,6 +2,7 @@
 .config/ags
 .config/claude
 .config/hypr
+.config/mise
 .config/neofetch
 .oh-my-zsh
 .spacemacs.d
