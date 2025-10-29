@@ -5,9 +5,12 @@
 .config/hypr
 .config/hypr/custom
 .config/hypr/hyprswitch
+.config/mise
+.config/neofetch
 .config/pipewire
 .config/uwsm
 .config/vicinae
 .config/walker
 .config/wlr-which-key
+.oh-my-zsh
 .spacemacs.d
