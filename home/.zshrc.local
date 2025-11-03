@@ -27,5 +27,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 export ANDROID_HOME=/Users/jake/Library/Android/sdk
 export ASDF_DIR=/opt/homebrew/opt/asdf/libexec
 export EMACS=/Applications/Emacs.app/Contents/MacOS/emacs
+export MU4E_DIR=/opt/homebrew/share/emacs/site-lisp/mu/mu4e
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 
