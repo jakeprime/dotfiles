@@ -83,3 +83,12 @@ menu:
       - key: "n"
         desc: NAS
         cmd: chromium --profile-directory=Default https://192.168.1.158:5001
+      - key: "s"
+        desc: Solar
+        submenu:
+          - key: "b"
+            desc: Battery
+            cmd: chromium --profile-directory=Default https://www.soliscloud.com/station/inverter/inverterdetail?id=1308675217947712992
+          - key: "s"
+            desc: Solar
+            cmd: chromium --profile-directory=Default https://www.soliscloud.com/station/stationDetails/generalSituation/1298491919449368133
