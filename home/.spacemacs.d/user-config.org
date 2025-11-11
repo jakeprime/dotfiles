@@ -22,11 +22,12 @@ Don't put autosave files in the same folder, it messes with things that detect f
 #+end_src
 
 *** SSH Agent
-Keychain keeps one global ssh-agent instance which is started on Hyprland init, and this makes it available in Emacs so we can use it for git operations.
 
 #+begin_src emacs-lisp :tangle "user-config.el"
-  (require 'keychain-environment)
-  (keychain-refresh-environment)
+  (use-package ssh-agency
+    :ensure t
+    :after magit
+    :custom (ssh-agency-keys '("~/.ssh/id_archibald")))
 #+end_src
 
 ** 😎

@@ -86,8 +86,8 @@ This function should only modify configuration layer settings."
      (claude-code :location (recipe :fetcher github :repo "stevemolitor/claude-code.el"))
      (claude-code-ide :location (recipe :fetcher github :repo "manzaltu/claude-code-ide.el"))
      diredfl
-     keychain-environment
      mise
+     ssh-agency
      transient-posframe
      typespec-ts-mode
      )
