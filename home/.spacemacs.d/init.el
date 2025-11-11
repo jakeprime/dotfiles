@@ -56,6 +56,7 @@ This function should only modify configuration layer settings."
      multiple-cursors
      mu4e
      org
+     python
      react
      ruby
      ruby-on-rails

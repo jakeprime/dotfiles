@@ -13,6 +13,7 @@ jmespath
 pep517
 prompt_toolkit
 python-dateutil
+python-lsp-server[all]
 ruamel.yaml
 setuptools
 urllib3
