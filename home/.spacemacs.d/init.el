@@ -51,6 +51,7 @@ This function should only modify configuration layer settings."
      llm-client
      javascript
      lsp
+     lua
      ;; markdown
      multiple-cursors
      mu4e
@@ -59,6 +60,7 @@ This function should only modify configuration layer settings."
      react
      ruby
      ruby-on-rails
+     rust
      shell
      shell-scripts
      slack
