@@ -2,6 +2,7 @@
 .config/ags
 .config/alacritty
 .config/claude
+.config/doom
 .config/hypr
 .config/hypr/custom
 .config/hypr/hyprswitch
