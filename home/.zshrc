@@ -72,6 +72,8 @@ setopt APPEND_HISTORY
 bindkey "^[^[[D" backward-word
 bindkey "^[^[[C" forward-word
 
+# PATH exports
+export PATH=PATH:$XDG_CONFIG_HOME/emacs/bin
 
 source ~/.zshrc.theme
 
