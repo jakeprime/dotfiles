@@ -575,3 +575,17 @@ clipboard management
   (setq shell-default-height 30)
   (setq shell-default-position 'bottom)
 #+end_src
+
+
+** Linux
+Specific config for linux
+
+*** Pasting
+Enables pasting from vicinae to work
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (with-eval-after-load 'evil
+    (define-key evil-normal-state-map (kbd "C-v") #'yank)
+    (define-key evil-visual-state-map (kbd "C-v") #'yank)
+    (define-key evil-insert-state-map (kbd "C-v") #'yank))
+#+end_src

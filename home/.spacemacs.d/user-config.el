@@ -309,3 +309,8 @@
  :cookie (auth-source-pick-first-password
           :host "cleo-team.slack.com"
           :user "cookie"))
+
+(with-eval-after-load 'evil
+  (define-key evil-normal-state-map (kbd "C-v") #'yank)
+  (define-key evil-visual-state-map (kbd "C-v") #'yank)
+  (define-key evil-insert-state-map (kbd "C-v") #'yank))
