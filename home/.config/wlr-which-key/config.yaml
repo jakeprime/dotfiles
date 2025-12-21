@@ -80,6 +80,15 @@ menu:
   - key: "p"
     desc: Personal
     submenu:
+      - key: "k"
+        desc: "Keyboard"
+        submenu:
+          - key: "l"
+            desc: "Laptop"
+            cmd: ~/.config/hypr/custom/scripts/switch-keyboard-profile.sh "laptop"
+          - key: "s"
+            desc: "Split"
+            cmd: ~/.config/hypr/custom/scripts/switch-keyboard-profile.sh "split"
       - key: "n"
         desc: NAS
         cmd: chromium --profile-directory=Default https://192.168.1.158:5001
