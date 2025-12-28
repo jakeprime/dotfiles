@@ -1,5 +1,5 @@
-(setq backup-directory-alist `(("." . "~/.emacs.d/backups")))
-(setq auto-save-file-name-transforms `((".*" "~/.emacs.d/autosaves/" t)))
+(setq backup-directory-alist `(("." . "~/.config/emacs/backups")))
+(setq auto-save-file-name-transforms `((".*" "~/.config/emacs/autosaves/" t)))
 (setq backup-by-copying t) ; Avoid symlinks getting messed up
 (setq create-lockfiles nil)
 

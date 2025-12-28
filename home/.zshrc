@@ -64,7 +64,7 @@ alias rc="bundle exec rails console"
 # rusty bucket
 alias rb="cd ~/work/personal/rusty-bucket"
 
-export EDITOR=vim
+export EDITOR=nvim
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 export SAVEHIST=1000000
 export HISTFILE=~/.zsh_history
@@ -103,7 +103,7 @@ zle -N zle-line-init
 zle -N zle-keymap-select
 
 # create an alias so that we start Vim with a block cursor
-alias vim="echo -ne \"\e[2 q\" && /usr/bin/vim"
+alias nvim="echo -ne \"\e[2 q\" && /usr/bin/nvim"
 
 source ~/.zshrc.local
 eval "$(mise activate zsh)"
