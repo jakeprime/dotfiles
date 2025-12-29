@@ -1,5 +1,9 @@
 (setq gptel-model 'gpt-4o-mini)
 
+(setq javascript-fmt-on-save t)
+(setq javascript-fmt-tool 'prettier)
+(setq javascript-indent-level 2)
+(setq javascript-linter 'eslint)
 (setq typescript-fmt-on-save t)
 (setq typescript-fmt-tool 'prettier)
 (setq typescript-indent-level 2)
