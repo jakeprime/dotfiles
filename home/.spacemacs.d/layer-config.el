@@ -1,9 +1,12 @@
 (setq gptel-model 'gpt-4o-mini)
 
+(setq javascript-backend 'lsp)
 (setq javascript-fmt-on-save t)
 (setq javascript-fmt-tool 'prettier)
 (setq javascript-indent-level 2)
 (setq javascript-linter 'eslint)
+(setq javascript-lsp-linter nil)
+(setq js2-mode-show-strict-warnings nil)
 (setq typescript-fmt-on-save t)
 (setq typescript-fmt-tool 'prettier)
 (setq typescript-indent-level 2)
