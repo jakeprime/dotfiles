@@ -73,7 +73,7 @@ Don't put autosave files in the same folder, it messes with things that detect f
 *** AI Code Interface
 
 #+begin_src emacs-lisp :tangle "user-config.el"
-  (use-package ai-code-interface
+  (use-package ai-code
     :config
     (ai-code-set-backend  'claude-code-ide)
     (global-set-key (kbd "C-c a") #'ai-code-menu)

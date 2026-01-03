@@ -46,7 +46,7 @@
 ;; need proportional width for nerdfonts or they overlap
 (setq nerd-icons-font-family "MonaspiceAr Nerd Font Propo")
 
-(use-package ai-code-interface
+(use-package ai-code
   :config
   (ai-code-set-backend  'claude-code-ide)
   (global-set-key (kbd "C-c a") #'ai-code-menu)
