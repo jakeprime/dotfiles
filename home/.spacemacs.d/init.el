@@ -88,7 +88,6 @@ This function should only modify configuration layer settings."
      (claude-code-ide :location (recipe :fetcher github :repo "manzaltu/claude-code-ide.el"))
      diredfl
      mise
-     ssh-agency
      transient-posframe
      typespec-ts-mode
      )

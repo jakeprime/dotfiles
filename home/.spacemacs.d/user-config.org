@@ -21,15 +21,6 @@ Don't put autosave files in the same folder, it messes with things that detect f
   (global-mise-mode)
 #+end_src
 
-*** SSH Agent
-
-#+begin_src emacs-lisp :tangle "user-config.el"
-  (use-package ssh-agency
-    :ensure t
-    :after magit
-    :custom (ssh-agency-keys '("~/.ssh/id_archibald")))
-#+end_src
-
 ** 😎
 
 #+begin_src emacs-lisp :tangle "user-config.el"

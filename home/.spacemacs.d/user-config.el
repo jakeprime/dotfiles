@@ -7,11 +7,6 @@
 (require 'mise)
 (global-mise-mode)
 
-(use-package ssh-agency
-  :ensure t
-  :after magit
-  :custom (ssh-agency-keys '("~/.ssh/id_archibald")))
-
 (set-face-attribute 'default nil :family "MonaspiceAr Nerd Font" :height 100 :weight 'light)
 
 (add-to-list 'custom-theme-load-path "~/.config/omarchy/current/theme/emacs/")
