@@ -77,6 +77,9 @@ menu:
       - key: "l"
         desc: Coralogix
         cmd: chromium --profile-directory="Profile 1" https://cleo.app.coralogix.us
+      - key: "n"
+        desc: Notion
+        cmd: chromium --profile-directory="Profile 1" https://www.notion.so/meetcleo/8f139b0207474ba4b4fe3bb81caf5be7
   - key: "p"
     desc: Personal
     submenu:
