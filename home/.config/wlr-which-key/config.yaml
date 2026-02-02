@@ -66,14 +66,14 @@ menu:
         desc: Github
         submenu:
           - key: "m"
-            desc: meetcleo
+            desc: mobile-app
             cmd: chromium --profile-directory="Profile 1" https://github.com/meetcleo/mobile-app
           - key: "r"
             desc: meetcleo
             cmd: chromium --profile-directory="Profile 1" https://github.com/meetcleo/meetcleo
       - key: "j"
         desc: Jira
-        cmd: chromium --profile-directory="Profile 1" https://cleo.atlassian.net/jira/software/c/projects/MOBILE/boards/1540
+        cmd: chromium --profile-directory="Profile 1" https://cleo.atlassian.net/jira/software/c/projects/BILL/boards/1441
       - key: "l"
         desc: Coralogix
         cmd: chromium --profile-directory="Profile 1" https://cleo.app.coralogix.us
