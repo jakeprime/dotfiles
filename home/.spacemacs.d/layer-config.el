@@ -7,10 +7,12 @@
 (setq javascript-linter 'eslint)
 (setq javascript-lsp-linter nil)
 (setq js2-mode-show-strict-warnings nil)
+(setq typescript-backend 'lsp)
 (setq typescript-fmt-on-save t)
 (setq typescript-fmt-tool 'prettier)
 (setq typescript-indent-level 2)
 (setq typescript-linter 'eslint)
+(setq typescript-lsp-linter nil)
 
 (setq web-mode-markup-indent-offset 2)
 (setq web-mode-css-indent-offset 2)
