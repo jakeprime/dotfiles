@@ -49,6 +49,7 @@ This function should only modify configuration layer settings."
      go
      html
      llm-client
+     java
      javascript
      lsp
      lua
