@@ -1,6 +1,5 @@
 export LC_TIME="en_GB.UTF-8"
 export MOZ_ENABLE_WAYLAND=1
-export PATH="$PATH:/home/jake/work/personal/hyprswitch/target/release"
 
 export ANDROID_HOME=/home/jake/Android/Sdk
 export ANDROID_SDK_ROOT=/home/jake/Android/Sdk
