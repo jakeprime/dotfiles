@@ -4,6 +4,7 @@ experimental = true
 
 [tools]
 go = "latest"
+java = "24"
 node = "22.16.0"
 python = "3"
 ruby = "4.0.0"
