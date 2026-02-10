@@ -45,6 +45,10 @@ node_modules
 .dir-locals.el
 .#*
 
+# Agents *
+#*****####
+**/.claude/settings.local.json
+
 # Temporary files #
 ###################
 tmp
