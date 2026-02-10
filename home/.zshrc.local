@@ -1,7 +1,7 @@
 # cleo
 alias cl="cd /Users/jake/work/cleo/meetcleo"
 alias clm="cd /Users/jake/work/cleo/mobile-app"
-alias cl-ios="clm && yarn && cd ios && pod install --no-repo-update && cd .. && yarn ios"
+alias cl-ios="clm && yarn && cd ios && pod install --repo-update && cd .. && yarn ios"
 
 # prime translatrix
 alias pt="cd /Users/jake/work/primetranslatrix/primetranslatrix-3"
