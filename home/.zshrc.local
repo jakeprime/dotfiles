@@ -5,6 +5,8 @@ export ANDROID_HOME=/home/jake/Android/Sdk
 export ANDROID_SDK_ROOT=/home/jake/Android/Sdk
 export MU4E_DIR=/usr/share/emacs/site-lisp/mu4e
 
+export PATH="$HOME/.local/share/cask/bin:$PATH"
+
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 alias H=Hyprland
