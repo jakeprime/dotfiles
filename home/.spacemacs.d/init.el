@@ -89,9 +89,12 @@ This function should only modify configuration layer settings."
      (claude-code-ide :location (recipe :fetcher github :repo "manzaltu/claude-code-ide.el"))
      diredfl
      mise
+     (ruby-test-mode :location (recipe
+                                :fetcher github
+                                :repo "jakeprime/ruby-test-mode"
+                                :branch "configure-test-command"))
      transient-posframe
-     typespec-ts-mode
-     )
+     typespec-ts-mode)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -621,7 +624,8 @@ This function is called at the very end of Spacemacs initialization."
      '((lsp-sorbet-use-bundler . t) (lsp-sorbet-as-add-on . t)
        (typescript-backend . tide) (typescript-backend . lsp)
        (javascript-backend . tide) (javascript-backend . tern)
-       (javascript-backend . lsp))))
+       (javascript-backend . lsp)
+       (ruby-test-rails-test-command . "bin/spring rails test"))))
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
    ;; If you edit it by hand, you could mess it up, so be careful.
