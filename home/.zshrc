@@ -51,7 +51,7 @@ alias dracarys="bundle exec rails db:reset data:quick_sync_prod db:migrate db:se
 
 # git
 alias gadd="git add -N . && git add -p ."
-alias gfrm="git fetch && git rebase -i --rebase-merges origin/main"
+alias gfrm="git fetch && git rebase -i --rebase-merges origin/main --autostash"
 alias kapow="git fetch --prune && gpr && bundle && bundle exec rails db:migrate && gco -- ."
 
 # rails
