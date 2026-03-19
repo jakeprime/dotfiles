@@ -62,7 +62,9 @@
 (spacemacs/set-leader-keys "ofl" 'hs-hide-level)
 (spacemacs/set-leader-keys "ofa" 'hs-show-all)
 
-(setq fill-column 100)
+(add-hook 'after-init-hook
+          (lambda ()
+            (setq-default fill-column 100)))
 
 (with-eval-after-load 'highlight-parentheses
   (setq highlight-parentheses-colors nil))

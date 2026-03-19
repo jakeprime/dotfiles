@@ -42,6 +42,7 @@ This function should only modify configuration layer settings."
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      auto-completion
+     csv
      colors
      compleseus
      emacs-lisp
@@ -53,7 +54,7 @@ This function should only modify configuration layer settings."
      javascript
      lsp
      lua
-     ;; markdown
+     markdown
      multiple-cursors
      mu4e
      org
