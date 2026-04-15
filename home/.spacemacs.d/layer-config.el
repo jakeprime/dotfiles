@@ -23,6 +23,7 @@
 (setq mu4e-update-interval (* 5 60))
 (setq mu4e-change-filenames-when-moving t)
 
+(setq git-commit-summary-max-length 50)
 (setq git-enable-magit-delta-plugin t)
 (setq git-magit-status-fullscreen t)
 (setq magit-delta-hide-plus-minus-markers nil)
