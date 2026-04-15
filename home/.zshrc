@@ -103,8 +103,5 @@ function zle-keymap-select {
 zle -N zle-line-init
 zle -N zle-keymap-select
 
-# create an alias so that we start Vim with a block cursor
-alias nvim="echo -ne \"\e[2 q\" && /usr/bin/nvim"
-
 source ~/.zshrc.local
 eval "$(mise activate zsh)"
