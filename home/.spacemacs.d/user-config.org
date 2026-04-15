@@ -462,6 +462,7 @@ ibuffer
 ** Git
 
 #+begin_src emacs-lisp :tangle "layer-config.el"
+  (setq git-commit-summary-max-length 50)
   (setq git-enable-magit-delta-plugin t)
   (setq git-magit-status-fullscreen t)
   (setq magit-delta-hide-plus-minus-markers nil)
