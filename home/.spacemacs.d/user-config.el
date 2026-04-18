@@ -1,3 +1,5 @@
+;; -*- lexical-binding: nil -*-
+
 (setq backup-directory-alist `(("." . "~/.config/emacs/backups")))
 (setq auto-save-file-name-transforms `((".*" "~/.config/emacs/autosaves/" t)))
 (setq backup-by-copying t) ; Avoid symlinks getting messed up
