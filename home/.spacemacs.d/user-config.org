@@ -3,6 +3,17 @@
 =, b t= to tangle files after editing.
 
 ** General
+*** Lexical binding
+As of Emacs 31 Lexical binding has to be declared, as either =t= or =nil=, depending on if using the newer Lisp dialect. This must be the first entry.
+
+#+begin_src emacs-lisp :tangle "layer-config.el"
+;; -*- lexical-binding: nil -*-
+#+end_src
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+;; -*- lexical-binding: nil -*-
+#+end_src
+
 *** Autosave
 Don't put autosave files in the same folder, it messes with things that detect for file changes in the codebase. And get rid of lockfiles completely.
 

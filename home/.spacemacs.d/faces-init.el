@@ -1,3 +1,5 @@
+;; -*- lexical-binding: nil -*-
+
 (let ((jake-pink "#fc199a")
       (jake-yellow "#d1b539")
       (jake-dark "#200933")
