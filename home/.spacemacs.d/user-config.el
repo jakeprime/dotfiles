@@ -151,14 +151,26 @@
 (add-to-list 'compilation-error-regexp-alist-alist '(ruby-Test::Unit "^ +\\([^ (].*\\):\\([1-9][0-9]*\\):in " 1 2))
 (assoc 'ruby-Test::Unit compilation-error-regexp-alist-alist)
 
-(defun jake/add-ts-flycheck-next-checker ()
-  (when (and (derived-mode-p 'typescript-tsx-mode)
-             ;; Ensure LSP checker exists
-             (flycheck-registered-checker-p 'lsp))
-    (flycheck-add-next-checker 'lsp 'javascript-eslint)))
+(with-eval-after-load 'lsp-mode
+  (setq lsp-diagnostics-provider :flycheck)
+  (lsp-flycheck-add-mode 'typescript-tsx-mode))
 
-(eval-after-load 'flycheck
-  '(add-hook 'lsp-managed-mode-hook #'jake/add-ts-flycheck-next-checker))
+(defun jake/tsx-prime-flycheck-from-lsp ()
+  (remove-hook 'lsp-diagnostics-updated-hook
+               #'jake/tsx-prime-flycheck-from-lsp
+               t)
+  (when (derived-mode-p 'typescript-tsx-mode)
+    (flycheck-buffer)))
+
+(defun jake/use-lsp-checker-for-tsx ()
+  (when (derived-mode-p 'typescript-tsx-mode)
+    (setq-local flycheck-checker 'lsp)
+    (add-hook 'lsp-diagnostics-updated-hook
+              #'jake/tsx-prime-flycheck-from-lsp
+              nil
+              t)))
+
+(add-hook 'lsp-managed-mode-hook #'jake/use-lsp-checker-for-tsx)
 
 (with-eval-after-load 'treesit
   (add-to-list 'treesit-language-source-alist

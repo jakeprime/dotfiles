@@ -288,15 +288,11 @@ For some reason by default there are a couple of spaces rendered at the beginnin
   (setq javascript-fmt-on-save t)
   (setq javascript-fmt-tool 'prettier)
   (setq javascript-indent-level 2)
-  (setq javascript-linter 'eslint)
-  (setq javascript-lsp-linter nil)
   (setq js2-mode-show-strict-warnings nil)
   (setq typescript-backend 'lsp)
   (setq typescript-fmt-on-save t)
   (setq typescript-fmt-tool 'prettier)
   (setq typescript-indent-level 2)
-  (setq typescript-linter 'eslint)
-  (setq typescript-lsp-linter nil)
 #+end_src
 
 **** Flycheck
@@ -305,14 +301,28 @@ The LSP flycheck picks up type errors so we want to keep that, but we need the e
 
 
 #+begin_src emacs-lisp :tangle "user-config.el"
-  (defun jake/add-ts-flycheck-next-checker ()
-    (when (and (derived-mode-p 'typescript-tsx-mode)
-               ;; Ensure LSP checker exists
-               (flycheck-registered-checker-p 'lsp))
-      (flycheck-add-next-checker 'lsp 'javascript-eslint)))
 
-  (eval-after-load 'flycheck
-    '(add-hook 'lsp-managed-mode-hook #'jake/add-ts-flycheck-next-checker))
+  (with-eval-after-load 'lsp-mode
+    (setq lsp-diagnostics-provider :flycheck)
+    (lsp-flycheck-add-mode 'typescript-tsx-mode))
+
+  (defun jake/tsx-prime-flycheck-from-lsp ()
+    (remove-hook 'lsp-diagnostics-updated-hook
+                 #'jake/tsx-prime-flycheck-from-lsp
+                 t)
+    (when (derived-mode-p 'typescript-tsx-mode)
+      (flycheck-buffer)))
+
+  (defun jake/use-lsp-checker-for-tsx ()
+    (when (derived-mode-p 'typescript-tsx-mode)
+      (setq-local flycheck-checker 'lsp)
+      (add-hook 'lsp-diagnostics-updated-hook
+                #'jake/tsx-prime-flycheck-from-lsp
+                nil
+                t)))
+
+  (add-hook 'lsp-managed-mode-hook #'jake/use-lsp-checker-for-tsx)
+
 #+end_src
 
 *** Typespec
