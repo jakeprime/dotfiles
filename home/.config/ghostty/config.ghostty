@@ -35,3 +35,5 @@ palette-glow = 14
 
 bold-text-glow = true
 font-style-bold = false
+
+config-file = ~/.config/ghostty/local.ghostty
