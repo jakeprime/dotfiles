@@ -82,6 +82,7 @@ bindkey "^[^[[C" forward-word
 
 # PATH exports
 export PATH=$PATH:$XDG_CONFIG_HOME/emacs/bin
+export PATH=$PATH:$HOME/.local/bin
 
 source ~/.zshrc.theme
 
