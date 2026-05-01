@@ -227,6 +227,7 @@
    `(magit-branch-remote ((t :inherit jake-green-glow :foreground unspecified :background unspecified)))
    `(magit-diff-hunk-heading ((t (:inherit jake-purple-subtle-glow :foreground ,jake-purple-subtle :background ,jake-dark :underline t))))
    `(magit-diff-hunk-heading-highlight ((t (:inherit jake-purple-glow :foreground unspecified :background ,jake-dark :underline t))))
+   `(magit-diff-revision-summary-highlight ((t (:inherit jake-pink-glow :foreground unspecified))))
    `(magit-section-highlight ((t :inherit jake-highlight :background unspecified)))
    `(match ((t :inherit (jake-green-glow bold) :background unspecified :foreground unspecified)))
    `(minibuffer-prompt ((t (:foreground ,jake-yellow :inherit (bold)))))
