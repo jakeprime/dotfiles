@@ -20,6 +20,8 @@ plugins=(git extract sudo zsh-autosuggestions z)
 
 source $ZSH/oh-my-zsh.sh
 
+export USER=jake
+
 
 # secrets
 export AGENT_GITHUB_PAT="$(pass show agents/github)"
@@ -48,7 +50,7 @@ export TERRAGRUNT_DOWNLOAD=${HOME}/.terragrunt-cache
 export TERRAGRUNT_PROVIDER_CACHE=1
 export TERRAGRUNT_PROVIDER_CACHE_DIR="$HOME/.terragrunt-provider-cache"
 export TF_PLUGIN_CACHE_DIR=${HOME}/.terraform.d/plugin-cache
-alias dracarys="bundle exec rails db:reset data:quick_sync_prod db:migrate db:seed stripe:setup_dev"
+alias dracarys="bundle exec rails db:reset data:quick_sync_prod db:seed db:migrate stripe:setup_dev"
 
 # git
 alias gadd="git add -N . && git add -p ."
