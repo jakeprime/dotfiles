@@ -1,6 +1,6 @@
 ;; -*- lexical-binding: nil -*-
 
-(setq gptel-model 'gpt-4o-mini)
+;; (setq gptel-model 'gpt-4o-mini)
 
 (setq javascript-backend 'lsp)
 (setq javascript-fmt-on-save t)
