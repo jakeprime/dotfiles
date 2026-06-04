@@ -20,6 +20,8 @@ plugins=(git extract sudo zsh-autosuggestions z)
 
 source $ZSH/oh-my-zsh.sh
 
+export USER=jake
+
 
 # secrets
 export AGENT_GITHUB_PAT="$(pass show agents/github)"
