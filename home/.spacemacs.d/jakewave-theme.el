@@ -64,8 +64,16 @@
   (custom-theme-set-faces
    'jakewave
 
-   `(ansi-color-bright-red ((t (:foreground ,jake-pink :background ,jake-pink))))
+   `(ansi-color-black ((t (:foreground ,jake-dark :background ,jake-dark))))
+   `(ansi-color-blue ((t (:foreground ,jake-purple :background ,jake-purple))))
+   `(ansi-color-bright-black ((t (:foreground ,jake-purple-subtle :background ,jake-purple-subtle))))
+   `(ansi-color-bright-blue ((t (:inherit jake-purple-glow :foreground ,jake-purple :background ,jake-purple))))
+   `(ansi-color-bright-green ((t (:inherit jake-green-flow :foreground ,jake-green :background ,jake-green))))
+   `(ansi-color-bright-magenta ((t (:inherit jake-pink-glow :foreground ,jake-pink :background ,jake-pink))))
+   `(ansi-color-bright-red ((t (:inherit jake-pink-glow :foreground ,jake-pink :background ,jake-pink))))
+   `(ansi-color-bright-yellow ((t (:inherit jake-yellow-glow :foreground ,jake-yellow :background ,jake-yellow))))
    `(ansi-color-green ((t (:foreground ,jake-green :background ,jake-green))))
+   `(ansi-color-magenta ((t (:foreground ,jake-pink :background ,jake-pink))))
    `(ansi-color-red ((t (:foreground ,jake-pink :background ,jake-pink))))
    `(ansi-color-yellow ((t (:foreground ,jake-yellow :background ,jake-yellow))))
    `(avy-background-face ((t (:inherit jake-no-glow :foreground ,jake-cyan :background ,jake-dark))))
