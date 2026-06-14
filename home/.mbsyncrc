@@ -2,13 +2,12 @@
 CopyArrivalDate yes
 
 IMAPAccount cleo
-# Address to connect to
 Host imap.gmail.com
 Port 993
-User jake@meetcleo.com
-PassCmd "pass imap/jake@meetcleo.com"
 TLSType IMAPS
-AuthMechs PLAIN
+AuthMechs XOAUTH2
+User jake@meetcleo.com
+PassCmd "mutt-oauth2 --username jake@meetcleo.com"
 
 IMAPStore cleo-remote
 Account cleo
@@ -16,8 +15,8 @@ Account cleo
 MaildirStore cleo-local
 SubFolders Verbatim
 # The trailing "/" is important
-Path ~/.mail/cleo/
-Inbox ~/.mail/cleo/Inbox
+Path .local/share/mail/cleo/
+Inbox .local/share/mail/cleo/Inbox
 
 Channel cleo
 Far :cleo-remote:
@@ -46,8 +45,8 @@ Account personal
 MaildirStore personal-local
 SubFolders Verbatim
 # The trailing "/" is important
-Path ~/.mail/personal/
-Inbox ~/.mail/personal/Inbox
+Path .local/share/mail/personal/
+Inbox .local/share/mail/personal/Inbox
 
 Channel personal
 Far :personal-remote:

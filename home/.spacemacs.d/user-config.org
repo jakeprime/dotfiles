@@ -325,12 +325,49 @@ Use diredfl. It's very pretty.
 #+end_src
 
 ** Email
+To set up email:
+1. Install =isync= and =mu=, with brew or pacman
+   Cleo will require OAuth2. Howebrew
+2. Create mailbox folders, e.g. =mkdir -p ~/.local/share/mail/personal=
+3. Sync with =mbsync -a=
+4. Set up =mu= with
+   =mu init --maildir==~/.local/share/mail --my-address=jake@jakeprime.com --my-address=jake.prime@gmail.com --my-address=jake@meetcleo.com=
+   =mu index=
+
 
 #+begin_src emacs-lisp :tangle "layer-config.el"
   (setq mu4e-installation-path (getenv "MU4E_DIR"))
   (setq mu4e-get-mail-command "mbsync -a")
   (setq mu4e-update-interval (* 5 60))
   (setq mu4e-change-filenames-when-moving t)
+#+end_src
+
+*** Cleo OAuth2 setup
+Cleo requires OAuth2, which requires a few steps:
+
+- Install =pip3 install --user mutt-oauth2= to be able to authorise and get a token
+- Initialize with =mutt-oauth2 --authorize --username jake@meetcleo.com=
+- Build =mbsync= from source to support it. Following instructions for Mac, maybe don't bother on Arch:
+
+#+begin_src sh
+  brew install autoconf automake libtool pkg-config cyrus-sasl openssl
+
+  curl -LO https://downloads.sourceforge.net/project/isync/isync/1.5.1/isync-1.5.1.tar.gz
+  tar xf isync-1.5.1.tar.gz
+  cd isync-1.5.1
+  PKG_CONFIG_PATH="/opt/homebrew/opt/cyrus-sasl/lib/pkgconfig:/opt/homebrew/opt/openssl@3/lib/pkgconfig" \
+    LDFLAGS="-L/opt/homebrew/opt/cyrus-sasl/lib -L/opt/homebrew/opt/openssl@3/lib" \
+    CPPFLAGS="-I/opt/homebrew/opt/cyrus-sasl/include -I/opt/homebrew/opt/openssl@3/include" \
+  ./configure --prefix="$HOME/.local" --with-sasl=/opt/homebrew/opt/cyrus-sasl --with-ssl=/opt/homebrew/opt/openssl@3
+  make
+  make install
+
+  git clone https://github.com/moriyoshi/cyrus-sasl-xoauth2.git
+  cd cyrus-sasl-xoauth2
+  ./autogen.sh
+  make
+  make install
+  PKG_CONFIG_PATH="/opt/homebrew/opt/cyrus-sasl/lib/pkgconfig" ./configure --prefix="$HOME/.local" --with-cyrus-sasl=/opt/homebrew/opt/cyrus-sasl
 #+end_src
 
 *** SMTP
