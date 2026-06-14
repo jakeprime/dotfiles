@@ -1,1 +1,1 @@
-/home/jake/.config/omarchy/current/theme/neovim.lua
+../../../jake/theme/current/neovim.lua
