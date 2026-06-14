@@ -75,40 +75,40 @@ Don't put autosave files in the same folder, it messes with things that detect f
 *** AI Code Interface
 
 #+begin_src emacs-lisp :tangle "user-config.el"
-  (use-package ai-code
-    :config
-    (ai-code-set-backend  'claude-code-ide)
-    (global-set-key (kbd "C-c a") #'ai-code-menu)
-    (with-eval-after-load 'magit
-      (ai-code-magit-setup-transients)))
-  ;; ai-code-interfact uses claude-code as a wrapper for other ais
-  (setq claude-code-terminal-backend 'vterm)
+  ;; (use-package ai-code
+  ;;   :config
+  ;;   (ai-code-set-backend  'claude-code-ide)
+  ;;   (global-set-key (kbd "C-c a") #'ai-code-menu)
+  ;;   (with-eval-after-load 'magit
+  ;;     (ai-code-magit-setup-transients)))
+  ;; ;; ai-code-interfact uses claude-code as a wrapper for other ais
+  ;; (setq claude-code-terminal-backend 'vterm)
 #+end_src
 
 *** Claude code
 #+begin_src emacs-lisp :tangle "user-config.el"
-  (claude-code-ide-emacs-tools-setup)
+  ;; (claude-code-ide-emacs-tools-setup)
 
-  (spacemacs/set-leader-keys "oac" 'claude-code-ide)
+  ;; (spacemacs/set-leader-keys "oac" 'claude-code-ide)
 #+end_src
 
 *** ChatGPT
 
 #+begin_src emacs-lisp :tangle "layer-config.el"
-  (setq gptel-model 'gpt-4o-mini)
+  ;; (setq gptel-model 'gpt-4o-mini)
 #+end_src
 
 Set up the keybinding.
 
 #+begin_src emacs-lisp :tangle "user-config.el"
-  (defun my-open-chat-gpt ()
-    (interactive)
-    (gptel "*ChatGPT*")
-    (let ((buffer (get-buffer "*ChatGPT*")))
-      (switch-to-buffer buffer)))
+  ;; (defun my-open-chat-gpt ()
+  ;;   (interactive)
+  ;;   (gptel "*ChatGPT*")
+  ;;   (let ((buffer (get-buffer "*ChatGPT*")))
+  ;;     (switch-to-buffer buffer)))
 
-  (spacemacs/set-leader-keys
-    "oag" 'my-open-chat-gpt)
+  ;; (spacemacs/set-leader-keys
+  ;;   "oag" 'my-open-chat-gpt)
 #+end_src
 
 ** Cleo
@@ -508,6 +508,9 @@ clipboard management
   (setq git-enable-magit-delta-plugin t)
   (setq git-magit-status-fullscreen t)
   (setq magit-delta-hide-plus-minus-markers nil)
+  (add-hook 'git-commit-mode-hook
+            (lambda ()
+              (setq fill-column 72)))
 #+end_src
 
 #+begin_src emacs-lisp :tangle "user-config.el"

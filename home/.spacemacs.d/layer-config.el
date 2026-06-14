@@ -1,6 +1,6 @@
 ;; -*- lexical-binding: nil -*-
 
-(setq gptel-model 'gpt-4o-mini)
+;; (setq gptel-model 'gpt-4o-mini)
 
 (setq javascript-backend 'lsp)
 (setq javascript-fmt-on-save t)
@@ -25,6 +25,9 @@
 (setq git-enable-magit-delta-plugin t)
 (setq git-magit-status-fullscreen t)
 (setq magit-delta-hide-plus-minus-markers nil)
+(add-hook 'git-commit-mode-hook
+          (lambda ()
+            (setq fill-column 72)))
 
 (setq org-agenda-files '("~/Org/Tasks.org" "~/Org/Journal/"))
 (setq org-archive-location "~/Org/Archive.org::datetree/")

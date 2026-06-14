@@ -1,0 +1,30 @@
+[meta]
+version = 1
+name = "Omarchy"
+description = "Omarchy system theme"
+variant = "dark"
+icon = "icons/omarchy.png"
+
+[colors.core]
+background = "#1D0432"        # UI background (darker than editor)
+foreground = "#9EFFFF"        # Main text
+secondary_background = "#200933"  # Editor background (elevated)
+border = "#371057"            # Line color
+accent = "#FC199A"            # Tag color
+
+[colors.accents]
+blue = "#9963FF"              # Entity
+green = "#A5FF90"             # String
+magenta = "#FC199A"           # Constant
+orange = "#FAD000"            # Keyword
+purple = "#9963FF"            # Constant
+red = "#FC199A"               # Error/VCS removed
+yellow = "#FAD000"            # Function
+cyan = "#61E2FF"              # Regexp
+
+[colors.list.item.selection]
+background = "#371057"        # Slightly lighter than UI bg
+secondary_background = "#9963ff"  # Line color on secondary
+
+[colors.list.item.hover]
+background = "#574497"        # Very subtle hover

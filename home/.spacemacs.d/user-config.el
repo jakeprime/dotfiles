@@ -43,27 +43,27 @@
 ;; need proportional width for nerdfonts or they overlap
 (setq nerd-icons-font-family "MonaspiceAr Nerd Font Propo")
 
-(use-package ai-code
-  :config
-  (ai-code-set-backend  'claude-code-ide)
-  (global-set-key (kbd "C-c a") #'ai-code-menu)
-  (with-eval-after-load 'magit
-    (ai-code-magit-setup-transients)))
-;; ai-code-interfact uses claude-code as a wrapper for other ais
-(setq claude-code-terminal-backend 'vterm)
+;; (use-package ai-code
+;;   :config
+;;   (ai-code-set-backend  'claude-code-ide)
+;;   (global-set-key (kbd "C-c a") #'ai-code-menu)
+;;   (with-eval-after-load 'magit
+;;     (ai-code-magit-setup-transients)))
+;; ;; ai-code-interfact uses claude-code as a wrapper for other ais
+;; (setq claude-code-terminal-backend 'vterm)
 
-(claude-code-ide-emacs-tools-setup)
+;; (claude-code-ide-emacs-tools-setup)
 
-(spacemacs/set-leader-keys "oac" 'claude-code-ide)
+;; (spacemacs/set-leader-keys "oac" 'claude-code-ide)
 
-(defun my-open-chat-gpt ()
-  (interactive)
-  (gptel "*ChatGPT*")
-  (let ((buffer (get-buffer "*ChatGPT*")))
-    (switch-to-buffer buffer)))
+;; (defun my-open-chat-gpt ()
+;;   (interactive)
+;;   (gptel "*ChatGPT*")
+;;   (let ((buffer (get-buffer "*ChatGPT*")))
+;;     (switch-to-buffer buffer)))
 
-(spacemacs/set-leader-keys
-  "oag" 'my-open-chat-gpt)
+;; (spacemacs/set-leader-keys
+;;   "oag" 'my-open-chat-gpt)
 
 (defun jake/github-codeowners-this-file ()
   "Message the result of running github-codeowners on this file"
