@@ -14,11 +14,13 @@
     "OTEL_METRIC_EXPORT_INTERVAL": "10000",
     "OTEL_RESOURCE_ATTRIBUTES": "enduser.id=jake@meetcleo.com"
   },
+  "permissions": {
+    "defaultMode": "auto"
+  },
   "enabledPlugins": {
     "typescript-lsp@claude-plugins-official": true
   },
+  "theme": "dark-ansi",
   "skipAutoPermissionPrompt": true,
-  "permissions": {
-    "defaultMode": "auto"
-  }
+  "model": "claude-fable-5[1m]"
 }

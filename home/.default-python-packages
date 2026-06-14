@@ -10,6 +10,7 @@ flit-core
 hatchling
 installer
 jmespath
+mutt-oauth2
 pep517
 prompt_toolkit
 python-dateutil
