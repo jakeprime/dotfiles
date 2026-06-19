@@ -22,6 +22,12 @@ source $ZSH/oh-my-zsh.sh
 
 export USER=jake
 
+# XDG
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export CLAUDE_CONFIG_DIR="$XDG_CONFIG_HOME/claude"
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
+# export KUBECONFIG="$XDG_CONFIG_HOME/kube/settings."
 
 # secrets
 export HOMEBREW_GITHUB_API_TOKEN=$(pass show github/homebrew)
@@ -30,11 +36,6 @@ export MISE_GITHUB_TOKEN=$(pass show github/homebrew)
 alias f=fzf
 alias cat=bat
 alias ls="eza --all --long --group"
-
-# XDG
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"
-export CLAUDE_CONFIG_DIR="$XDG_CONFIG_HOME/claude"
 
 # cleo
 export AWS_PROFILE=Engineer-878877078763
