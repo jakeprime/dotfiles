@@ -7,6 +7,7 @@
 (setq javascript-fmt-tool 'prettier)
 (setq javascript-indent-level 2)
 (setq js2-mode-show-strict-warnings nil)
+(setq lsp-clients-typescript-prefer-use-project-ts-server t)
 (setq typescript-backend 'lsp)
 (setq typescript-fmt-on-save t)
 (setq typescript-fmt-tool 'prettier)

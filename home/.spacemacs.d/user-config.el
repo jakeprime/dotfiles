@@ -243,6 +243,8 @@
 
 (defalias 'forward-evil-word 'forward-evil-symbol)
 
+(setq mac-right-option-modifier 'none)
+
 (spacemacs/set-leader-keys "oi" 'ibuffer)
 
 (setq vc-follow-symlinks t)
