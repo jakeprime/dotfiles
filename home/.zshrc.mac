@@ -25,3 +25,9 @@ export EMACS=/Applications/Emacs.app/Contents/MacOS/emacs
 export MU4E_DIR=/opt/homebrew/share/emacs/site-lisp/mu/mu4e
 export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
 
+launchctl setenv SPACEMACSDIR $SPACEMACSDIR
+
+ghostty_dir="${XDG_CONFIG_HOME}/ghostty"
+if ! [[ -f "$ghostty_dir/local.ghostty" ]]; then
+  ln -sf "${ghostty_dir}/mac.ghostty" "${ghostty_dir}/local.ghostty"
+fi

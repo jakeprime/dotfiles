@@ -17,3 +17,8 @@ alias clm="cd ~/work/cleo/mobile-app"
 
 # prime translatrix
 alias pt="cd ~/work/primetranslatrix/primetranslatrix-3"
+
+ghostty_dir="${XDG_CONFIG_HOME}/ghostty"
+if ! [[ -f "$ghostty_dir/local.ghostty" ]]; then
+  ln -sf "${ghostty_dir}/arch.ghostty" "${ghostty_dir}/local.ghostty"
+fi

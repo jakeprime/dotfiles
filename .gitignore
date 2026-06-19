@@ -4,5 +4,7 @@ secrets.sh
 
 home/.config/spacemacs/.spacemacs.env
 
+home/.config/ghostty/local.ghostty
+
 home/.config/hypr/custom/input/keyboard.conf
 home/.config/hypr/custom/monitors/monitors.conf
