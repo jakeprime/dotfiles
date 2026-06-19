@@ -1,0 +1,31 @@
+.client-image {
+    margin: 2px;
+}
+
+.client {
+    margin: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+.client_active {
+    border: none;
+    background-color: rgba(153, 99, 255, 0.5);
+}
+
+.workspace {
+    border-radius: 15px;
+    border: none;
+    background-color: transparent;
+}
+
+.workspaces {
+    border: none;
+    background-color: transparent;
+    margin: 10px;
+}
+
+window {
+    border: none;
+    background-color: rgba(127, 127, 127, 0.5);
+}

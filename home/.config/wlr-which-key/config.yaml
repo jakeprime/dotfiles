@@ -1,0 +1,106 @@
+# Theming
+font: MonaspiceAr NFM
+background: "#371057ee"
+color: "#61e2ff"
+border: "#9963ff"
+separator: " : "
+border_width: 2
+corner_r: 4
+padding: 12 # Defaults to corner_r
+rows_per_column: 5 # No limit by default
+column_padding: 25 # Defaults to padding
+
+# Anchor and margin
+anchor: top # One of center, left, right, top, bottom, bottom-left, top-left, etc.
+# Only relevant when anchor is not center
+margin_top: 50
+
+# Permits key bindings that conflict with compositor key bindings.
+# Default is `false`.
+inhibit_compositor_keyboard_shortcuts: true
+
+# Try to guess the correct keyboard layout to use. Default is `false`.
+auto_kbd_layout: true
+
+menu:
+  - key: "c"
+    desc: Cleo
+    submenu:
+      - key: "a"
+        desc: App
+        submenu:
+          - key: "d"
+            desc: Dev
+            cmd: chromium --profile-directory="Profile 1" https://jake.dev.cleoites.tech/admin
+          - key: "p"
+            desc: Production
+            cmd: chromium --profile-directory="Profile 1" https://meetcleo.com/admin
+          - key: "s"
+            desc: Staging
+            cmd: chromium --profile-directory="Profile 1" https://cleo-staging.cleoites.tech/admin
+      - key: "b"
+        desc: Hi Bob
+        cmd: chromium --profile-directory="Profile 1" https://app.hibob.com/home
+      - key: "c"
+        desc: CircleCI
+        submenu:
+          - key: "a"
+            desc: All
+            cmd: chromium --profile-directory="Profile 1" https://app.circleci.com/pipelines/github/meetcleo
+          - key: "i"
+            desc: My branches
+            cmd: chromium --profile-directory="Profile 1" https://app.circleci.com/pipelines/github/meetcleo/meetcleo?filter=mine
+          - key: "m"
+            desc: meetcleo - main
+            cmd: chromium --profile-directory="Profile 1" https://app.circleci.com/pipelines/github/meetcleo/meetcleo?branch=main
+          - key: "r"
+            desc: meetcleo
+            cmd: chromium --profile-directory="Profile 1" https://app.circleci.com/pipelines/github/meetcleo/meetcleo
+      - key: "d"
+        desc: Cleonardo
+        cmd: chromium --profile-directory="Profile 1" https://cleonardo.meetcleo.com/056bb4358/p/89e7ac-how-we-build-cleo
+      - key: "h"
+        desc: IT Support
+        cmd: chromium --profile-directory="Profile 1" https://cleo.atlassian.net/servicedesk/customer/portal/4
+      - key: "g"
+        desc: Github
+        submenu:
+          - key: "m"
+            desc: mobile-app
+            cmd: chromium --profile-directory="Profile 1" https://github.com/meetcleo/mobile-app
+          - key: "r"
+            desc: meetcleo
+            cmd: chromium --profile-directory="Profile 1" https://github.com/meetcleo/meetcleo
+      - key: "j"
+        desc: Jira
+        cmd: chromium --profile-directory="Profile 1" https://cleo.atlassian.net/jira/software/c/projects/BILL/boards/1441
+      - key: "l"
+        desc: Coralogix
+        cmd: chromium --profile-directory="Profile 1" https://cleo.app.coralogix.us
+      - key: "n"
+        desc: Notion
+        cmd: chromium --profile-directory="Profile 1" https://www.notion.so/meetcleo/8f139b0207474ba4b4fe3bb81caf5be7
+  - key: "p"
+    desc: Personal
+    submenu:
+      - key: "k"
+        desc: "Keyboard"
+        submenu:
+          - key: "l"
+            desc: "Laptop"
+            cmd: ~/.config/hypr/custom/scripts/switch-keyboard-profile.sh "laptop"
+          - key: "s"
+            desc: "Split"
+            cmd: ~/.config/hypr/custom/scripts/switch-keyboard-profile.sh "split"
+      - key: "n"
+        desc: NAS
+        cmd: chromium --profile-directory=Default https://192.168.1.158:5001
+      - key: "s"
+        desc: Solar
+        submenu:
+          - key: "b"
+            desc: Battery
+            cmd: chromium --profile-directory=Default https://www.soliscloud.com/station/inverter/inverterdetail?id=1308675217947712992
+          - key: "s"
+            desc: Solar
+            cmd: chromium --profile-directory=Default https://www.soliscloud.com/station/stationDetails/generalSituation/1298491919449368133
