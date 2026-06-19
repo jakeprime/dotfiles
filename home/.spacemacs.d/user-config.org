@@ -265,6 +265,7 @@ For some reason by default there are a couple of spaces rendered at the beginnin
   (setq javascript-fmt-tool 'prettier)
   (setq javascript-indent-level 2)
   (setq js2-mode-show-strict-warnings nil)
+  (setq lsp-clients-typescript-prefer-use-project-ts-server t)
   (setq typescript-backend 'lsp)
   (setq typescript-fmt-on-save t)
   (setq typescript-fmt-tool 'prettier)
@@ -491,6 +492,12 @@ Use code syntax to determine a word, e.g =user_profile= should be a word.
 
 #+begin_src emacs-lisp :tangle "user-config.el"
   (defalias 'forward-evil-word 'forward-evil-symbol)
+#+end_src
+
+Don't treat the right Alt as Alt, otherwise there is no way to write a =#= character on a Mac.
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (setq mac-right-option-modifier 'none)
 #+end_src
 
 ibuffer
