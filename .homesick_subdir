@@ -1,9 +1,3 @@
 .config
-.config/ags
-.config/claude
-.config/doom
-.config/hypr
-.config/mise
-.config/neofetch
 .oh-my-zsh
 .spacemacs.d
