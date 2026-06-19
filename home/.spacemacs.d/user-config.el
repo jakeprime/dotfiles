@@ -10,12 +10,15 @@
 (global-mise-mode)
 
 (add-to-list 'custom-theme-load-path "~/.spacemacs.d/")
-(load-file "~/.spacemacs.d/faces-init.el")
+(set-face-attribute 'default nil :family "MonaspiceAr Nerd Font" :height 110 :weight 'light)
+(load-theme 'jakewave t)
+(load-theme 'jakewave t)
+
 
 (setq dotspacemacs-startup-banner "~/.spacemacs.d/vaporwave-sun.png")
 (setq lsp-ui-doc-border "#200933")
 
-; need proportional width for nerdfonts or they overlap
+;; need proportional width for nerdfonts or they overlap
 (setq nerd-icons-font-family "MonaspiceAr Nerd Font Propo")
 
 ;; (use-package ai-code
