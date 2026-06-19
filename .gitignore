@@ -3,7 +3,5 @@ secrets.sh
 /spacemacs/.spacemacs.env
 
 # one of these two should work!
-home/.config/hypr/custom/keyboard.conf
-/home/.config/hypr/custom/keyboard.conf
-
-
+home/.config/hypr/custom/input/keyboard.conf
+home/.config/hypr/custom/monitors/monitors.conf
