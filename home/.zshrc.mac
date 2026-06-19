@@ -1,0 +1,27 @@
+# cleo
+alias cl="cd /Users/jake/work/cleo/meetcleo"
+alias clm="cd /Users/jake/work/cleo/mobile-app"
+alias cl-ios="clm && yarn && cd ios && pod install --repo-update && cd .. && yarn ios"
+
+# prime translatrix
+alias pt="cd /Users/jake/work/primetranslatrix/primetranslatrix-3"
+
+# rusty bucket
+alias rb="cd /Users/jake/work/rusty-bucket/rusty-bucket"
+
+# OS
+alias dockl="defaults write com.apple.dock orientation left && killall Dock"
+alias dockb="defaults write com.apple.dock orientation bottom && killall Dock"
+alias dockr="defaults write com.apple.dock orientation right && killall Dock"
+
+export PATH="/Applications/Emacs.app/Contents/MacOS:$PATH"
+export PATH="/Users/jake/.config/emacs/bin:$PATH"
+export PATH="$PATH:/usr/local/bin/platform-tools/"
+# Created by `pipx` on 2025-01-18 16:51:43
+export PATH="$PATH:/Users/jake/.local/bin"
+
+export ANDROID_HOME=/Users/jake/Library/Android/sdk
+export EMACS=/Applications/Emacs.app/Contents/MacOS/emacs
+export MU4E_DIR=/opt/homebrew/share/emacs/site-lisp/mu/mu4e
+export PATH="/opt/homebrew/opt/postgresql@16/bin:$PATH"
+

@@ -105,5 +105,13 @@ function zle-keymap-select {
 zle -N zle-line-init
 zle -N zle-keymap-select
 
-source ~/.zshrc.local
+case "$(uname)" in
+  "Darwin")
+    source ~/.homesick/repos/main/home/.zshrc.mac
+    ;;
+  "Linux")
+    source ~/.homesick/repos/main/home/.zshrc.arch
+    ;;
+esac
+
 eval "$(mise activate zsh)"
