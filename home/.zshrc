@@ -24,11 +24,8 @@ export USER=jake
 
 
 # secrets
-export AGENT_GITHUB_PAT="$(pass show agents/github)"
-export AGENT_CIRCLECI_TOKEN="$(pass show agents/circleci)"
 export HOMEBREW_GITHUB_API_TOKEN=$(pass show github/homebrew)
 export MISE_GITHUB_TOKEN=$(pass show github/homebrew)
-
 
 alias f=fzf
 alias cat=bat
