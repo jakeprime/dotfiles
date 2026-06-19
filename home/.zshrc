@@ -27,6 +27,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export CLAUDE_CONFIG_DIR="$XDG_CONFIG_HOME/claude"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
+export SPACEMACSDIR="$XDG_CONFIG_HOME/spacemacs"
 # export KUBECONFIG="$XDG_CONFIG_HOME/kube/settings."
 
 # secrets
