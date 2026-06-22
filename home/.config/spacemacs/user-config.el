@@ -241,7 +241,18 @@
   (setq mu4e-headers-list-mark '("l" . "@"))
   (setq mu4e-headers-personal-mark '("p" . "."))
   (setq mu4e-headers-flagged-mark '("f" . "!"))
-  (setq mu4e-headers-new-mark '("N" . "*")))
+  (setq mu4e-headers-new-mark '("N" . "*"))
+
+  (setq mu4e-bookmarks
+        '((:name "Personal inbox" :query "maildir:/personal/Inbox" :key 112
+                 :type bookmarks :count 0 :unread 0 :delta-count 0 :delta-unread 0
+                 :maildir nil :effective-query "flag:unread AND maildir:/cleo/Inbox")
+          (:name "Cleo inbox" :query "maildir:/cleo/Inbox" :key 99
+                 :type bookmarks :count 0 :unread 0 :delta-count 0 :delta-unread 0
+                 :maildir nil :effective-query "flag:unread AND maildir:/personal/Inbox")
+          (:name "Unread messages" :query "flag:unread AND NOT flag:trashed" :key 117
+                 :type bookmarks :count 0 :unread 0 :delta-count 0 :delta-unread 0
+                 :maildir nil :effective-query "flag:unread AND NOT flag:trashed"))))
 
 (setq evil-escape-key-sequence [106 107])
 
