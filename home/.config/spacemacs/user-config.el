@@ -10,10 +10,21 @@
 (global-mise-mode)
 
 (add-to-list 'custom-theme-load-path "~/.config/spacemacs/")
-(set-face-attribute 'default nil :family "MonaspiceAr Nerd Font" :height 110 :weight 'light)
-(load-theme 'jakewave t)
-(load-theme 'jakewave t)
 
+(defconst jake/font-height
+  (cond
+   (jake/is-mac 130)
+   (jake/is-linux 110)
+   (t 120)))
+
+(set-face-attribute
+ 'default nil
+ :family "MonaspiceAr Nerd Font"
+ :height jake/font-height
+ :weight 'light)
+
+(load-theme 'jakewave t)
+(load-theme 'jakewave t)
 
 (setq dotspacemacs-startup-banner "~/.config/spacemacs/vaporwave-sun.png")
 (setq lsp-ui-doc-border "#200933")

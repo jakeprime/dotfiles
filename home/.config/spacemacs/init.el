@@ -6,6 +6,7 @@
   "Layer configuration:
 This function should only modify configuration layer settings."
 
+  (load-file "~/.config/spacemacs/helpers.el")
   (load-file "~/.config/spacemacs/layer-config.el")
 
   (setq-default
