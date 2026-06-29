@@ -551,6 +551,30 @@ ibuffer
   (setq vc-follow-symlinks t)
 #+end_src
 
+*** Conflicts
+The Ruby syntax highlighting takes precedence over the smerge font faces when displaying a merge conflict, so we have to do this:
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (defun jake-smerge-fix-markers (start end)
+    "Strip all syntax highlighting from smerge conflict marker lines."
+    (save-excursion
+      (goto-char start)
+      (while (re-search-forward
+              "^\\(?:<<<<<<<\\|||||||\\|=======\\|>>>>>>>\\).*$"
+              end t)
+        (remove-text-properties (match-beginning 0) (match-end 0)
+                                '(face nil font-lock-face nil))
+        (put-text-property (match-beginning 0) (match-end 0)
+                           'font-lock-face 'smerge-markers))))
+
+  (add-hook 'smerge-mode-hook
+            (lambda ()
+              (if smerge-mode
+                  (add-hook 'jit-lock-functions #'jake-smerge-fix-markers t t)
+                (remove-hook 'jit-lock-functions #'jake-smerge-fix-markers t))
+              (font-lock-flush)))
+#+end_src
+
 ** Layout
 *** Modals
 
