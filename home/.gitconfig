@@ -23,9 +23,8 @@
 	set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 	pushf = push --force-with-lease
 	praise = blame
-	cleanup = !git fetch --prune && git branch -vv | awk \"/: gone]/{print \\$1}\" | xargs git branch -d
-	cleanupf = !git fetch --prune && git branch -vv | awk \"/: gone]/{print \\$1}\" | xargs git branch -D
-
+ cleanup = !git fetch --prune && git branch -vv | awk \"/.*\\[.*\\:\\ gone\\].*/ { if (\\$1 != \\\"*\\\") print \\$1 }\" | xargs git branch -d
+ cleanupf = !git fetch --prune && git branch -vv | awk \"/.*\\[.*\\:\\ gone\\].*/ { if (\\$1 != \\\"*\\\") print \\$1 }\" | xargs git branch -D
 [init]
 	defaultBranch = main
 [branch]
@@ -45,7 +44,6 @@
   light = false
   max-line-length = 0
   minus-emph-style = "black red"
-  minus-style = "#red normal"
   minus-style = "red normal"
   navigate = true
   plus-emph-style = "black green"
