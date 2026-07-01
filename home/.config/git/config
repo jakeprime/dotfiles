@@ -6,6 +6,7 @@
 	excludesfile = ~/.config/git/ignore
 	editor = nvim
 	pager = delta
+	hooksPath = ~/.config/git/hooks
 [push]
 	default = simple
 [user]
