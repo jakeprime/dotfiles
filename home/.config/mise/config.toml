@@ -4,8 +4,19 @@ experimental = true
 
 [tools]
 go = "latest"
+
 java = "25"
-node = "22.16.0"
+
+node = {
+  version = "latest",
+  postinstall = "xargs npm i -g < ~/.config/mise/default-packages/npm"
+}
+
 python = "3"
-ruby = "4.0.1"
+
+ruby = {
+  version = "latest",
+  postinstall = "xargs gem install < ~/.config/mise/default-packages/ruby"
+}
+
 yarn = "latest"
