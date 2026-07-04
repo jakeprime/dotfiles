@@ -5,7 +5,7 @@ SAVEHIST=1000000
 setopt autocd
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/jake/.zshrc'
+zstyle :compinstall filename "$HOME/.config/zsh/zshrc"
 
 autoload -Uz compinit
 compinit
@@ -26,6 +26,7 @@ export USER=jake
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export CLAUDE_CONFIG_DIR="$XDG_CONFIG_HOME/claude"
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
 export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
 export SPACEMACSDIR="$XDG_CONFIG_HOME/spacemacs"
 # export KUBECONFIG="$XDG_CONFIG_HOME/kube/settings."
@@ -79,7 +80,7 @@ bindkey "^[^[[C" forward-word
 export PATH=$PATH:$XDG_CONFIG_HOME/emacs/bin
 export PATH=$PATH:$HOME/.local/bin
 
-source ~/.zshrc.theme
+source $XDG_CONFIG_HOME/zsh/theme
 
 prompt_context(){}
 
@@ -108,10 +109,10 @@ zle -N zle-keymap-select
 
 case "$(uname)" in
   "Darwin")
-    source ~/.homesick/repos/main/home/.zshrc.mac
+    source $XDG_CONFIG_HOME/zsh/local.mac
     ;;
   "Linux")
-    source ~/.homesick/repos/main/home/.zshrc.arch
+    source $XDG_CONFIG_HOME/zsh/local.arch
     ;;
 esac
 
