@@ -11,19 +11,7 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-# XDG
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share"
-
-export CLAUDE_CONFIG_DIR="$XDG_DATA_HOME/claude"
-export CODEX_HOME="$XDG_DATA_HOME/codex"
-export GNUPGHOME="$XDG_DATA_HOME/gnupg"
-export HOMESICKDIR="$XDG_DATA_HOME/homesick"
-export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
-export SPACEMACSDIR="$XDG_CONFIG_HOME/spacemacs"
-export ZSH="$XDG_DATA_HOME/oh-my-zsh"
-# export KUBECONFIG="$XDG_CONFIG_HOME/kube/settings."
-
+source $HOME/.config/zsh/xdg
 # put zsh at the top so that any clashing aliases we create take priority
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"

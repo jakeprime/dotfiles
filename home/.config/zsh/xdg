@@ -1,0 +1,12 @@
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+
+export CLAUDE_CONFIG_DIR="$XDG_DATA_HOME/claude"
+export CODEX_HOME="$XDG_DATA_HOME/codex"
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export HOMESICKDIR="$XDG_DATA_HOME/homesick"
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME/pass"
+export SPACEMACSDIR="$XDG_CONFIG_HOME/spacemacs"
+export ZSH="$XDG_DATA_HOME/oh-my-zsh"
+export ZSHZ_DATA="$XDG_DATA_HOME/zsh/z"
+# export KUBECONFIG="$XDG_CONFIG_HOME/kube/settings."
