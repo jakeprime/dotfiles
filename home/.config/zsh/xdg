@@ -31,11 +31,14 @@ xdg_set_and_create_dir() {
   [ -d "$xdg_dir/$dir_name" ] || mkdir -p "$xdg_dir/$dir_name"
 }
 
+xdg_cache "ZSH_COMPDUMP" "zsh/zcompdump-$ZSH_VERSION" zsh
+
 xdg_config "SPACEMACSDIR" spacemacs
 
 xdg_data "CLAUDE_CONFIG_DIR" claude
 xdg_data "CODEX_HOME" codex
 xdg_data "GNUPGHOME" gnupg
+xdg_data "HISTFILE" zsh/history zsh
 xdg_data "HOMESICKDIR" homesick
 xdg_data "PASSWORD_STORE_DIR" pass
 xdg_data "ZSH" oh-my-zsh
