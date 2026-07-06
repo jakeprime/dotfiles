@@ -43,3 +43,7 @@ xdg_data "HOMESICKDIR" homesick
 xdg_data "PASSWORD_STORE_DIR" pass
 xdg_data "ZSH" oh-my-zsh
 xdg_data "ZSHZ_DATA" zsh/z zsh
+
+
+# isync
+alias mbsync="mbsync -c $XDG_CONFIG_HOME/isync/mbsyncrc"
