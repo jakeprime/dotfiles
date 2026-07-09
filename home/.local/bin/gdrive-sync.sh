@@ -52,7 +52,7 @@ WATCH_EVENTS="modify,delete,create,move"
 SYNC_DELAY=5
 
 # SYNC_INTERVAL: Wait this many seconds between forced synchronizations:
-SYNC_INTERVAL=3600
+SYNC_INTERVAL=360
 
 # NOTIFY_ENABLE: Enable Desktop notifications
 NOTIFY_ENABLE=true
@@ -77,14 +77,15 @@ rclone_sync() {
     while [[ true ]] ; do
 	inotifywait --recursive --timeout ${SYNC_INTERVAL} -e ${WATCH_EVENTS} \
 		    ${RCLONE_SYNC_PATH} 2>/dev/null
-	if [ $? -eq 0 ]; then
+ result=$?
+	if [ $result -eq 0 ]; then
 	    # File change detected, sync the files after waiting a few seconds:
 	    sleep ${SYNC_DELAY} && ${RCLONE_CMD}
-	elif [ $? -eq 1 ]; then
+	elif [ $result -eq 1 ]; then
 	    # inotify error occured
 	    notify "inotifywait error exit code 1"
         sleep 10
-	elif [ $? -eq 2 ]; then
+	elif [ $result -eq 2 ]; then
 	    # Do the sync now even though no changes were detected:
 	    ${RCLONE_CMD}
 	fi
