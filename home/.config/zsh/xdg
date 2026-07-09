@@ -37,6 +37,7 @@ xdg_cache "ZSH_COMPDUMP" "zsh/zcompdump-$ZSH_VERSION" zsh
 xdg_config "AWS_CONFIG_FILE" aws/config aws
 xdg_config "AWS_SHARED_CREDENTIALS_FILE" aws/credentials aws
 xdg_config "BUNDLE_USER_HOME" bundle
+xdg_config "KUBECONFIG" kube/config.yml kube
 xdg_config "NPM_CONFIG_USERCONFIG" npm/npmrc npm
 xdg_config "SPACEMACSDIR" spacemacs
 
