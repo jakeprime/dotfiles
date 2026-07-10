@@ -47,6 +47,7 @@ xdg_data "GNUPGHOME" gnupg
 xdg_data "HISTFILE" zsh/history zsh
 xdg_data "HOMESICKDIR" homesick
 xdg_data "PASSWORD_STORE_DIR" pass
+xdg_data "PI_CODING_AGENT_DIR" pi/agent pi
 xdg_data "PSQL_HISTORY" pg/history pg
 xdg_data "ZSH" oh-my-zsh
 xdg_data "ZSHZ_DATA" zsh/z zsh
