@@ -1,1 +1,0 @@
-../../../jake/theme/current/neovim.lua
