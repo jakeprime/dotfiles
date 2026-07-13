@@ -309,7 +309,8 @@
 
 (defun my-org-mode-hook ()
   (auto-fill-mode 0)
-  (face-remap-add-relative 'hl-line `(:background nil))
+  ;; commenting out as `nil` is a bad background param, but leaving it in as a todo
+  ;; (face-remap-add-relative 'hl-line `(:background nil))
   (org-indent-mode)
   (variable-pitch-mode 1)
   (visual-fill-column-mode 1)
