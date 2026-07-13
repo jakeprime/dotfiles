@@ -17,6 +17,11 @@
 (setq web-mode-css-indent-offset 2)
 (setq web-mode-code-indent-offset 2)
 
+(add-to-list 'major-mode-remap-alist
+             '(yaml-mode . yaml-ts-mode))
+
+(add-hook 'yaml-ts-mode-hook #'hs-minor-mode)
+
 (setq mu4e-installation-path (getenv "MU4E_DIR"))
 (setq mu4e-get-mail-command "mbsync -c $XDG_CONFIG_HOME/isync/mbsyncrc -a")
 (setq mu4e-update-interval (* 5 60))

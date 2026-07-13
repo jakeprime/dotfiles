@@ -342,6 +342,18 @@ Uses tree-sitter. With the config below it will know where to look to install th
   (setq web-mode-code-indent-offset 2)
 #+end_src
 
+*** YAML
+Enable code-folding in YAML pages.
+
+#+begin_src emacs-lisp :tangle "layer-config.el"
+
+  (add-to-list 'major-mode-remap-alist
+               '(yaml-mode . yaml-ts-mode))
+
+  (add-hook 'yaml-ts-mode-hook #'hs-minor-mode)
+
+#+end_src
+
 ** Dired
 Use diredfl. It's very pretty.
 
