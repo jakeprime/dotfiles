@@ -3,13 +3,6 @@
 =, b t= to tangle files after editing.
 
 ** General
-*** Helpers
-
-#+begin_src emacs-lisp :tangle "helpers.el"
-  (defconst jake/is-mac (eq system-type 'darwin))
-  (defconst jake/is-linux (eq system-type 'gnu/linux))
-#+end_src
-
 *** Lexical binding
 As of Emacs 31 Lexical binding has to be declared, as either =t= or =nil=, depending on if using the newer Lisp dialect. This must be the first entry.
 
@@ -21,6 +14,10 @@ As of Emacs 31 Lexical binding has to be declared, as either =t= or =nil=, depen
 ;; -*- lexical-binding: nil -*-
 #+end_src
 
+#+begin_src emacs-lisp :tangle "helpers.el"
+;; -*- lexical-binding: nil -*-
+#+end_src
+
 *** Autosave
 Don't put autosave files in the same folder, it messes with things that detect for file changes in the codebase. And get rid of lockfiles completely.
 
@@ -29,6 +26,13 @@ Don't put autosave files in the same folder, it messes with things that detect f
   (setq auto-save-file-name-transforms `((".*" "~/.config/emacs/autosaves/" t)))
   (setq backup-by-copying t) ; Avoid symlinks getting messed up
   (setq create-lockfiles nil)
+#+end_src
+
+*** Helpers
+
+#+begin_src emacs-lisp :tangle "helpers.el"
+  (defconst jake/is-mac (eq system-type 'darwin))
+  (defconst jake/is-linux (eq system-type 'gnu/linux))
 #+end_src
 
 ** mise
