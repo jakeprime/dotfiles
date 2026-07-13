@@ -48,3 +48,6 @@ echo "$THEME_NAME" >"$HOME/.config/omarchy/current/theme.name"
 if [[ -n "$(ps aux | grep ghostty | grep -v grep)" ]]; then
   killall -SIGUSR2 ghostty
 fi
+
+rm -f "$XDG_CONFIG_HOME/spacemacs/jakewave-theme.el"
+cp "$CURRENT_THEME_PATH/emacs.el" "$XDG_CONFIG_HOME/spacemacs/jakewave-theme.el"

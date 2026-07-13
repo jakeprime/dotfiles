@@ -627,6 +627,8 @@ This function is called at the very end of Spacemacs initialization."
    ;; If you edit it by hand, you could mess it up, so be careful.
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
+   '(custom-safe-themes
+     '("7f309fd335b3c87e27abf0bd190d3a3d5ad93695d8dd96cbd2d03c7a2c2ad296" default))
    '(safe-local-variable-values
      '((lsp-sorbet-use-bundler . t) (lsp-sorbet-as-add-on . t)
        (typescript-backend . tide) (typescript-backend . lsp)
@@ -638,4 +640,5 @@ This function is called at the very end of Spacemacs initialization."
    ;; If you edit it by hand, you could mess it up, so be careful.
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
-   ))
+   )
+  )
