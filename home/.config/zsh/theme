@@ -106,6 +106,8 @@ prompt_git() {
         echo -n "%F{yellow}󰰠%f "
     fi
   fi
+
+  echo -n " "
 }
 
 prompt_dir() {
@@ -127,6 +129,12 @@ prompt_dir() {
     prompt_segment blue ${result} true
 }
 
+prompt_homesick () {
+  if [[ -n "$HOMESICK_SHELL" ]]; then
+    echo -n "%F{yellow} %f"
+  fi
+}
+
 prompt_end() {
     #   󰋇    
     echo -n "\n%B%F{red} 󰋇%f%b"
@@ -139,6 +147,7 @@ build_prompt() {
     echo ""
     prompt_dir
     prompt_git
+    prompt_homesick
     prompt_end
 }
 
