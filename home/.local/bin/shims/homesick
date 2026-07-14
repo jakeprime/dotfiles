@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+ruby_version=$(zsh -c "cd ~; mise current | grep ruby | awk '{ print $"2" }'")
+echo "$ruby_version"
+mise x ruby@$ruby_version -- homesick "$@"
