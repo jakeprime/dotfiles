@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 ruby_version=$(zsh -c "cd ~; mise current | grep ruby | awk '{ print $"2" }'")
 echo "$ruby_version"
