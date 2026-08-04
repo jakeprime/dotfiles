@@ -238,7 +238,7 @@
    `(magit-diff-hunk-heading-highlight ((t (:inherit jake-purple-glow :foreground unspecified :background ,jake-dark :underline t))))
    `(magit-diff-revision-summary-highlight ((t (:inherit jake-pink-glow :foreground unspecified))))
    `(magit-section-highlight ((t :inherit jake-highlight :background unspecified)))
-   `(markdown-code-face ((t :inherit org-verbatim :height 1)))
+   `(markdown-code-face ((t :inherit org-verbatim)))
    `(markdown-header-face-1 ((t :inherit org-level-1 :foreground unspecified)))
    `(markdown-header-face-2 ((t :inherit org-level-2 :foreground unspecified)))
    `(markdown-header-face-3 ((t :inherit org-level-3 :foreground unspecified)))
