@@ -10,6 +10,10 @@ As of Emacs 31 Lexical binding has to be declared, as either =t= or =nil=, depen
 ;; -*- lexical-binding: nil -*-
 #+end_src
 
+#+begin_src emacs-lisp :tangle "user-env.el"
+;; -*- lexical-binding: nil -*-
+#+end_src
+
 #+begin_src emacs-lisp :tangle "user-config.el"
 ;; -*- lexical-binding: nil -*-
 #+end_src
@@ -36,6 +40,12 @@ Don't put autosave files in the same folder, it messes with things that detect f
 #+end_src
 
 ** mise
+
+#+begin_src emacs-lisp :tangle "user-env.el"
+  (let ((shims (expand-file-name "~/.local/share/mise/shims")))
+    (setq exec-path (cons shims (delete shims exec-path)))
+    (setenv "PATH" (concat shims path-separator (getenv "PATH"))))
+#+end_src
 
 #+begin_src emacs-lisp :tangle "user-config.el"
   (add-hook 'after-init-hook #'global-mise-mode)
