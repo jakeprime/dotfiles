@@ -74,9 +74,10 @@
 (spacemacs/set-leader-keys "ofl" 'hs-hide-level)
 (spacemacs/set-leader-keys "ofa" 'hs-show-all)
 
-(add-hook 'after-init-hook
-          (lambda ()
-            (setq-default fill-column 100)))
+(defun jake/set-fill-column ()
+  (setq fill-column 100))
+
+(add-hook 'prog-mode-hook #'jake/set-fill-column)
 
 (with-eval-after-load 'highlight-parentheses
   (setq highlight-parentheses-colors nil))

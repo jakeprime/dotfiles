@@ -149,9 +149,10 @@ By default the =bug-reference= package treats numeric RGB values as links to an 
 **** Text wrapping
 
 #+begin_src emacs-lisp :tangle "user-config.el"
-  (add-hook 'after-init-hook
-            (lambda ()
-              (setq-default fill-column 100)))
+  (defun jake/set-fill-column ()
+    (setq fill-column 100))
+
+  (add-hook 'prog-mode-hook #'jake/set-fill-column)
 #+end_src
 
 **** Parentheses
