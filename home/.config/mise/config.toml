@@ -18,5 +18,3 @@ ruby = {
   version = "latest",
   postinstall = "xargs gem install < ~/.config/mise/default-packages/ruby"
 }
-
-yarn = "latest"
