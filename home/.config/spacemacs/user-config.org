@@ -300,28 +300,28 @@ The LSP flycheck picks up type errors so we want to keep that, but we need the e
 
 
 #+begin_src emacs-lisp :tangle "user-config.el"
-
   (with-eval-after-load 'lsp-mode
     (setq lsp-diagnostics-provider :flycheck)
-    (lsp-flycheck-add-mode 'typescript-tsx-mode))
+    (lsp-flycheck-add-mode 'typescript-tsx-mode)
+    (lsp-flycheck-add-mode 'typescript-mode))
 
   (defun jake/tsx-prime-flycheck-from-lsp ()
     (remove-hook 'lsp-diagnostics-updated-hook
                  #'jake/tsx-prime-flycheck-from-lsp
                  t)
-    (when (derived-mode-p 'typescript-tsx-mode)
+    (when (derived-mode-p 'typescript-mode 'typescript-tsx-mode)
       (flycheck-buffer)))
 
   (defun jake/use-lsp-checker-for-tsx ()
-    (when (derived-mode-p 'typescript-tsx-mode)
+    (when (derived-mode-p 'typescript-mode 'typescript-tsx-mode)
       (setq-local flycheck-checker 'lsp)
+      (flycheck-add-next-checker 'lsp 'javascript-eslint)
       (add-hook 'lsp-diagnostics-updated-hook
                 #'jake/tsx-prime-flycheck-from-lsp
                 nil
                 t)))
 
   (add-hook 'lsp-managed-mode-hook #'jake/use-lsp-checker-for-tsx)
-
 #+end_src
 
 *** Typespec
