@@ -3,18 +3,26 @@ idiomatic_version_file_enable_tools = []
 experimental = true
 
 [tools]
+"gem:bundler" = "latest"
+"gem:kamal" = "latest"
+"gem:rubocop" = "latest"
+"gem:rubocop-rails" = "latest"
+"gem:ruby-lsp" = "latest"
+"gem:sorbet" = "latest"
+
 go = "latest"
 
 java = "25"
 
-node = {
-  version = "latest",
-  postinstall = "xargs npm i -g < ~/.config/mise/default-packages/npm"
-}
+node = "latest"
+
+"npm:bash-language-server" = "latest"
+"npm:eslint" = "latest"
+"npm:js-beautify" = "latest"
+"npm:prettier" = "latest"
+"npm:typescript" = "latest"
+"npm:typescript-language-server" = "latest"
 
 python = "3"
 
-ruby = {
-  version = "latest",
-  postinstall = "xargs gem install < ~/.config/mise/default-packages/ruby"
-}
+ruby = "latest"
