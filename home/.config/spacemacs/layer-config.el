@@ -8,6 +8,7 @@
 (setq javascript-indent-level 2)
 (setq js-indent-level 2)
 (setq js2-mode-show-strict-warnings nil)
+(setq json-reformat:indent-width 2)
 (setq lsp-clients-typescript-prefer-use-project-ts-server t)
 (setq typescript-backend 'lsp)
 (setq typescript-fmt-on-save t)
