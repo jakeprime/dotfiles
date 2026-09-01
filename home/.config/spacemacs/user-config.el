@@ -124,16 +124,12 @@
         ,(rx (or "#" "=begin"))                        ; Comment start
         ruby-forward-sexp nil)))
 
-(setq flycheck-disabled-checkers '(ruby-reek))
-
 (setq lsp-rubocop-use-bundler t)
 
-  (add-hook
-   'ruby-mode-hook
-   (lambda ()
-     (setq-local flycheck-command-wrapper-function
-                 (lambda (command)
-(append (list (concat (project-root (project-current)) "bin/bundle") "exec") command)))))
+(add-hook 'lsp-managed-mode-hook
+          (lambda ()
+            (if (derived-mode-p 'ruby-mode)
+            (flycheck-add-next-checker 'lsp 'ruby-reek))))
 
 (setq lsp-disabled-clients '(rubocop-ls ruby-ls sorbet-ls))
 
