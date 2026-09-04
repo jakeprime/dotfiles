@@ -16,8 +16,8 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
 export USER=jake
 
 # secrets
-export HOMEBREW_GITHUB_API_TOKEN=$(pass show github/homebrew)
-export MISE_GITHUB_TOKEN=$(pass show github/homebrew)
+export HOMEBREW_GITHUB_API_TOKEN=$(pass show github/homebrew 2>/dev/null)
+export MISE_GITHUB_TOKEN=$(pass show github/homebrew 2>/dev/null)
 
 alias f=fzf
 alias cat=bat
