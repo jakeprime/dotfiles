@@ -3,4 +3,6 @@
                (lsp-disabled-clients . (rubocop-ls ruby-ls))
                (projectile-project-type . rails-test)
                (ruby-test-rails-test-command . "bin/spring rails test")
-               (flycheck-reekrc . "~/.config/jake/projects/meetcleo/meetcleo/reek.yml"))))
+               (flycheck-reekrc . "~/.config/jake/projects/meetcleo/meetcleo/reek.yml")))
+ (nil . ((eval . (setq flycheck-javascript-eslint-executable
+                       (concat (projectile-project-root) "node_modules/.bin/eslint"))))))

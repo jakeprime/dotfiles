@@ -1,1 +1,2 @@
-((nil . ((flycheck-javascript-eslint-executable . "node_modules/.bin/eslint"))))
+((nil . ((eval . (setq flycheck-javascript-eslint-executable
+                       (concat (projectile-project-root) "node_modules/.bin/eslint"))))))
