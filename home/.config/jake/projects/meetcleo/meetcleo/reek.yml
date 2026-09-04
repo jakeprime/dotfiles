@@ -1,4 +1,10 @@
 ---
 detectors:
+  BooleanParameter:
+    enabled: false
   IrresponsibleModule:
+    enabled: false
+  UncommunicativeVariableName:
+    enabled: false
+  UtilityFunction:
     enabled: false
