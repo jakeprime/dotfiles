@@ -5,6 +5,7 @@ experimental = true
 [tools]
 "gem:bundler" = "latest"
 "gem:kamal" = "latest"
+"gem:reek" = "latest"
 "gem:rubocop" = "latest"
 "gem:rubocop-rails" = "latest"
 "gem:ruby-lsp" = "latest"
