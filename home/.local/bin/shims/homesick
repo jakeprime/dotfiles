@@ -1,4 +1,3 @@
 #!/bin/bash
 
-ruby_version=$(zsh -c "cd ~; mise current | grep -e \"^ruby\s\" | awk '{ print $"2" }'")
-mise x ruby@$ruby_version -- homesick "$@"
+mise x ruby@4.0.5 -- homesick "$@"
