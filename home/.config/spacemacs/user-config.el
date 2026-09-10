@@ -86,7 +86,7 @@
 
 (defun jake-disable-company-for-symbols (func &rest args)
   "Prevent Company from triggering if the current word starts with `:`"
-  (if (and (derived-mode-p 'ruby-mode)
+  (if (and (derived-mode-p 'ruby-base-mode)
            (looking-back ":[[:alnum:]_]*" (line-beginning-position)))
       nil
     (apply func args)))
@@ -108,6 +108,8 @@
 (setq pos-tip-internal-border-width 4)
 (setq pos-tip-tab-width 80)
 
+(setq treesit-font-lock-level 4)
+
 (add-hook 'inf-ruby-mode-hook
           (lambda()
             (let ((p "\\|\\(^\\[cleo\\]\\[development\\] main:[0-9]+> *\\)"))
@@ -118,7 +120,7 @@
 
 (eval-after-load "hideshow"
   '(add-to-list 'hs-special-modes-alist
-     `(ruby-mode
+     `(ruby-base-mode
         ,(rx (or "def" "class" "module" "do" "{" "[")) ; Block start
         ,(rx (or "}" "]" "end"))                       ; Block end
         ,(rx (or "#" "=begin"))                        ; Comment start
@@ -128,8 +130,11 @@
 
 (add-hook 'lsp-managed-mode-hook
           (lambda ()
-            (if (derived-mode-p 'ruby-mode)
+            (if (derived-mode-p 'ruby-base-mode)
             (flycheck-add-next-checker 'lsp 'ruby-reek))))
+
+(add-to-list 'major-mode-remap-alist '(ruby-mode . ruby-ts-mode))
+(add-hook 'ruby-base-mode-hook #'lsp-deferred)
 
 (setq lsp-disabled-clients '(rubocop-ls ruby-ls sorbet-ls))
 
