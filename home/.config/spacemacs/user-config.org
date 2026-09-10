@@ -255,15 +255,9 @@ Hideshow doesn't know what constitutes a block in Ruby.
 
 **** Flycheck
 
-Add reek to flycheck chain. We use it for quality at Cleo.
-
 #+begin_src emacs-lisp :tangle "user-config.el"
     (setq lsp-rubocop-use-bundler t)
-
-    (add-hook 'lsp-managed-mode-hook
-              (lambda ()
-                (if (derived-mode-p 'ruby-base-mode)
-                (flycheck-add-next-checker 'lsp 'ruby-reek))))
+    (setq flycheck-disabled-checkers '(ruby-reek))
 #+end_src
 
 **** LSP

@@ -127,11 +127,7 @@
         ruby-forward-sexp nil)))
 
 (setq lsp-rubocop-use-bundler t)
-
-(add-hook 'lsp-managed-mode-hook
-          (lambda ()
-            (if (derived-mode-p 'ruby-base-mode)
-            (flycheck-add-next-checker 'lsp 'ruby-reek))))
+(setq flycheck-disabled-checkers '(ruby-reek))
 
 (add-to-list 'major-mode-remap-alist '(ruby-mode . ruby-ts-mode))
 (add-hook 'ruby-base-mode-hook #'lsp-deferred)
