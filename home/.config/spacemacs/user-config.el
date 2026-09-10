@@ -142,6 +142,30 @@
 (add-to-list 'compilation-error-regexp-alist-alist '(ruby-Test::Unit "^ +\\([^ (].*\\):\\([1-9][0-9]*\\):in " 1 2))
 (assoc 'ruby-Test::Unit compilation-error-regexp-alist-alist)
 
+(defun jake-ruby-fontify-sigs (start end)
+  "Paint Sorbet `sig' blocks between START and END as comments."
+  (when (treesit-parser-list)
+    (pcase-dolist (`(,name . ,node)
+                   (treesit-query-capture
+                    (treesit-buffer-root-node 'ruby)
+                    '((call method: (identifier) @_m
+                            block: (_)
+                            (:equal @_m "sig"))
+                      @sig)
+                    start end))
+      (when (and (eq name 'sig)
+                 (not (treesit-node-check node 'has-error)))
+        (let ((node-beg (treesit-node-start node))
+              (node-end (treesit-node-end node)))
+          (remove-text-properties node-beg node-end '(face nil font-lock-face nil))
+          (put-text-property node-beg node-end 'face 'jake-sorbet-sig-face)
+          (put-text-property node-beg node-end 'font-lock-multiline t))))))
+
+(add-hook 'ruby-ts-mode-hook
+          (lambda ()
+            (add-hook 'jit-lock-functions #'jake-ruby-fontify-sigs t t)
+            (font-lock-flush)))
+
 (with-eval-after-load 'lsp-mode
   (setq lsp-diagnostics-provider :flycheck)
   (lsp-flycheck-add-mode 'typescript-tsx-mode)

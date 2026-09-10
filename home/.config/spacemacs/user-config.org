@@ -296,6 +296,35 @@ For some reason by default there are a couple of spaces rendered at the beginnin
   (assoc 'ruby-Test::Unit compilation-error-regexp-alist-alist)
 #+end_src
 
+**** Sorbet
+The =sig= blocks have normal ruby syntax highlighting which is very distracting, move them into the background with its own subtle styling.
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (defun jake-ruby-fontify-sigs (start end)
+    "Paint Sorbet `sig' blocks between START and END as comments."
+    (when (treesit-parser-list)
+      (pcase-dolist (`(,name . ,node)
+                     (treesit-query-capture
+                      (treesit-buffer-root-node 'ruby)
+                      '((call method: (identifier) @_m
+                              block: (_)
+                              (:equal @_m "sig"))
+                        @sig)
+                      start end))
+        (when (and (eq name 'sig)
+                   (not (treesit-node-check node 'has-error)))
+          (let ((node-beg (treesit-node-start node))
+                (node-end (treesit-node-end node)))
+            (remove-text-properties node-beg node-end '(face nil font-lock-face nil))
+            (put-text-property node-beg node-end 'face 'jake-sorbet-sig-face)
+            (put-text-property node-beg node-end 'font-lock-multiline t))))))
+
+  (add-hook 'ruby-ts-mode-hook
+            (lambda ()
+              (add-hook 'jit-lock-functions #'jake-ruby-fontify-sigs t t)
+              (font-lock-flush)))
+#+end_src
+
 *** Typescript (and Javascript)
 
 #+begin_src emacs-lisp :tangle "layer-config.el"

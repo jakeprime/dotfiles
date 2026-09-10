@@ -207,6 +207,7 @@
    `(info-xref-visited ((t (:inherit jake-purple-glow :foreground unspecified :underline t))))
    `(isearch ((t (:foreground "#2D2B55" :background "#FF7300"))))
    `(isearch-fail ((((class color) (min-colors 88) (background light)) (:background "RosyBrown1")) (((class color) (min-colors 88) (background dark)) (:background "red4")) (((class color) (min-colors 16)) (:background "red")) (((class color) (min-colors 8)) (:background "red")) (((class color grayscale)) (:foreground "grey")) (t (:inverse-video t))))
+   `(jake-sorbet-sig-face ((t (:foreground ,jake-purple-subtle))))
    `(js2-external-variable ((t (:foreground unspecified))))
    `(js2-function-call ((t (:inherit web-mode-function-call-face :foreground unspecified))))
    `(js2-function-param ((t (:inherit font-lock-constant-face :foreground unspecified))))
