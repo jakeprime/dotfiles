@@ -294,6 +294,11 @@ For some reason by default there are a couple of spaces rendered at the beginnin
 The =sig= blocks have normal ruby syntax highlighting which is very distracting, move them into the background with its own subtle styling.
 
 #+begin_src emacs-lisp :tangle "user-config.el"
+  (defface jake-sorbet-sig
+    '((t (:inherit font-lock-comment-face)))
+    "Sorbet signature"
+    :group 'jakewave-faces)
+
   (defun jake-ruby-fontify-sigs (start end)
     "Paint Sorbet `sig' blocks between START and END as comments."
     (when (treesit-parser-list)
@@ -310,7 +315,7 @@ The =sig= blocks have normal ruby syntax highlighting which is very distracting,
           (let ((node-beg (treesit-node-start node))
                 (node-end (treesit-node-end node)))
             (remove-text-properties node-beg node-end '(face nil font-lock-face nil))
-            (put-text-property node-beg node-end 'face 'jake-sorbet-sig-face)
+            (put-text-property node-beg node-end 'face 'jake-sorbet-sig)
             (put-text-property node-beg node-end 'font-lock-multiline t))))))
 
   (add-hook 'ruby-ts-mode-hook
