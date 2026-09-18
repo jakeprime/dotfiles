@@ -661,6 +661,25 @@ The Ruby syntax highlighting takes precedence over the smerge font faces when di
   (setq lsp-progress-prefix " ")
 #+end_src
 
+** Markdown mode
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  ;; TODO: a lot of this is shared with Org mode, can the code by dryed?
+  (defun my-markdown-mode-hook ()
+    (auto-fill-mode 0)
+    ;; commenting out as `nil` is a bad background param, but leaving it in as a todo
+    ;; (face-remap-add-relative 'hl-line `(:background nil))
+    (markdown-toggle-markup-hiding t)
+    (variable-pitch-mode 1)
+    (visual-fill-column-mode 1)
+    (visual-line-mode 1)
+    (setq evil-auto-indent nil
+          visual-fill-column-width 120
+          visual-fill-column-center-text t))
+
+  (add-hook 'markdown-mode-hook 'my-markdown-mode-hook)
+#+end_src
+
 ** Org mode
 
 #+begin_src emacs-lisp :tangle "layer-config.el"
