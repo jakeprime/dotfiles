@@ -26,7 +26,7 @@
 
 (let ((jake-fixed "MonaspiceAr NFM")
       (jake-variable "Noto Sans")
-      (jake-variable-heading "MonaspiceRn Nerd Font")
+      (jake-variable-heading "Baumans")
       (jake-script "MonaspiceRn Nerd Font")
 
       (jake-normal-weight 'light)
@@ -144,7 +144,7 @@
    `(font-lock-builtin-face ((t (:inherit jake-pink-glow :foreground unspecified))))
    `(font-lock-comment-delimiter-face ((default (:inherit font-lock-comment-face))))
    `(font-lock-comment-face ((t (:inherit (jake-script jake-purple-subtle-glow) :foreground unspecified :background unspecified))))
-   `(font-lock-constant-face ((t (:foreground ,jake-purple))))
+   `(font-lock-constant-face ((t (:inherit jake-no-glow :foreground ,jake-purple))))
    `(font-lock-delimiter-face ((t (:inherit (font-lock-punctuation-face)))))
    `(font-lock-doc-face ((t (:inherit (jake-script jake-purple-glow) :foreground unspecified))))
    `(font-lock-doc-markup-face ((t (:inherit (font-lock-constant-face)))))
@@ -239,7 +239,7 @@
    `(magit-diff-hunk-heading-highlight ((t (:inherit jake-purple-glow :foreground unspecified :background ,jake-dark :underline t))))
    `(magit-diff-revision-summary-highlight ((t (:inherit jake-pink-glow :foreground unspecified))))
    `(magit-section-highlight ((t :inherit jake-highlight :background unspecified)))
-   `(markdown-code-face ((t :inherit org-verbatim)))
+   `(markdown-code-face ((t :inherit org-verbatim :height 1 :extend t)))
    `(markdown-header-face-1 ((t :inherit org-level-1 :foreground unspecified)))
    `(markdown-header-face-2 ((t :inherit org-level-2 :foreground unspecified)))
    `(markdown-header-face-3 ((t :inherit org-level-3 :foreground unspecified)))
