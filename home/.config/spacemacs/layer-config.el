@@ -24,19 +24,6 @@
 
 (add-hook 'yaml-ts-mode-hook #'hs-minor-mode)
 
-(setq mu4e-installation-path (getenv "MU4E_DIR"))
-(setq mu4e-get-mail-command "mbsync -c $XDG_CONFIG_HOME/isync/mbsyncrc -a")
-(setq mu4e-update-interval (* 5 60))
-(setq mu4e-change-filenames-when-moving t)
-
-(setq git-commit-summary-max-length 50)
-(setq git-enable-magit-delta-plugin t)
-(setq git-magit-status-fullscreen t)
-(setq magit-delta-hide-plus-minus-markers nil)
-(add-hook 'git-commit-mode-hook
-          (lambda ()
-            (setq fill-column 72)))
-
 (setq org-agenda-files '("~/Org/Tasks.org" "~/Org/Journal/"))
 (setq org-archive-location "~/Org/Archive.org::datetree/")
 (setq org-ellipsis " ▾")
@@ -53,6 +40,19 @@
 (setq org-superstar-item-bullet-alist '((?+ . ?•) (?* . ?•) (?- . ?•)))
 (setq org-tags-column 1)
 (setq org-todo-keywords '((sequence "TODO" "|" "DONE" "REJECTED")))
+
+(setq mu4e-installation-path (getenv "MU4E_DIR"))
+(setq mu4e-get-mail-command "mbsync -c $XDG_CONFIG_HOME/isync/mbsyncrc -a")
+(setq mu4e-update-interval (* 5 60))
+(setq mu4e-change-filenames-when-moving t)
+
+(setq git-commit-summary-max-length 50)
+(setq git-enable-magit-delta-plugin t)
+(setq git-magit-status-fullscreen t)
+(setq magit-delta-hide-plus-minus-markers nil)
+(add-hook 'git-commit-mode-hook
+          (lambda ()
+            (setq fill-column 72)))
 
 (setq slack-enable-global-mode-string t)
 (setq slack-modeline-count-only-subscribed-channel nil)

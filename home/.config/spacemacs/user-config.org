@@ -397,6 +397,75 @@ Use diredfl. It's very pretty.
   (add-hook 'dired-mode-hook 'diredfl-mode)
 #+end_src
 
+** Documents
+Update evil navigation to work on visual lines in visual mode, used in Markdown and Org mode.
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (with-eval-after-load 'evil
+    (dolist (mapping
+             '((evil-next-line . evil-next-visual-line)
+               (evil-previous-line . evil-previous-visual-line)
+               (evil-beginning-of-line . evil-beginning-of-visual-line)
+               (evil-end-of-line . evil-end-of-visual-line)))
+      (define-key visual-line-mode-map
+                  (vector 'remap (car mapping))
+                  (cdr mapping))))
+#+end_src
+
+*** Markdown mode
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  ;; TODO: a lot of this is shared with Org mode, can the code by dryed?
+  (defun my-markdown-mode-hook ()
+    (auto-fill-mode 0)
+    (face-remap-set-base 'hl-line nil)
+    (markdown-toggle-markup-hiding t)
+    (variable-pitch-mode 1)
+    (visual-fill-column-mode 1)
+    (visual-line-mode 1)
+    (setq evil-auto-indent nil
+          visual-fill-column-width 120
+          visual-fill-column-center-text t))
+
+  (add-hook 'markdown-mode-hook 'my-markdown-mode-hook)
+#+end_src
+
+*** Org mode
+
+#+begin_src emacs-lisp :tangle "layer-config.el"
+  (setq org-agenda-files '("~/Org/Tasks.org" "~/Org/Journal/"))
+  (setq org-archive-location "~/Org/Archive.org::datetree/")
+  (setq org-ellipsis " ▾")
+  (setq org-enable-org-journal-support t)
+  (setq org-hide-emphasis-markers t)
+  (setq org-journal-dir "~/Org/Journal/")
+  (setq org-journal-file-format "%Y-%m-%d.org")
+  (setq org-journal-time-format "")
+  (setq org-journal-time-prefix "** TODO ")
+  (setq org-log-done 'time)
+  (setq org-log-into-drawer t)
+  (setq org-refile-targets '((org-agenda-files :maxlevel . 1)))
+  (setq org-superstar-headline-bullets-list '("" "●" "○" "◦" "•" "◦" "•"))
+  (setq org-superstar-item-bullet-alist '((?+ . ?•) (?* . ?•) (?- . ?•)))
+  (setq org-tags-column 1)
+  (setq org-todo-keywords '((sequence "TODO" "|" "DONE" "REJECTED")))
+#+end_src
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (defun my-org-mode-hook ()
+    (auto-fill-mode 0)
+    (face-remap-set-base 'hl-line nil)
+    (org-indent-mode)
+    (variable-pitch-mode 1)
+    (visual-fill-column-mode 1)
+    (visual-line-mode 1)
+    (setq evil-auto-indent nil
+          visual-fill-column-width 120
+          visual-fill-column-center-text t))
+
+  (add-hook 'org-mode-hook 'my-org-mode-hook)
+#+end_src
+
 ** Email
 To set up email:
 1. Install =isync= and =mu=, with brew or pacman
@@ -647,62 +716,6 @@ The Ruby syntax highlighting takes precedence over the smerge font faces when di
 
   (setq lsp-modeline-code-action-fallback-icon "")
   (setq lsp-progress-prefix " ")
-#+end_src
-
-** Markdown mode
-
-#+begin_src emacs-lisp :tangle "user-config.el"
-  ;; TODO: a lot of this is shared with Org mode, can the code by dryed?
-  (defun my-markdown-mode-hook ()
-    (auto-fill-mode 0)
-    ;; commenting out as `nil` is a bad background param, but leaving it in as a todo
-    ;; (face-remap-add-relative 'hl-line `(:background nil))
-    (markdown-toggle-markup-hiding t)
-    (variable-pitch-mode 1)
-    (visual-fill-column-mode 1)
-    (visual-line-mode 1)
-    (setq evil-auto-indent nil
-          visual-fill-column-width 120
-          visual-fill-column-center-text t))
-
-  (add-hook 'markdown-mode-hook 'my-markdown-mode-hook)
-#+end_src
-
-** Org mode
-
-#+begin_src emacs-lisp :tangle "layer-config.el"
-  (setq org-agenda-files '("~/Org/Tasks.org" "~/Org/Journal/"))
-  (setq org-archive-location "~/Org/Archive.org::datetree/")
-  (setq org-ellipsis " ▾")
-  (setq org-enable-org-journal-support t)
-  (setq org-hide-emphasis-markers t)
-  (setq org-journal-dir "~/Org/Journal/")
-  (setq org-journal-file-format "%Y-%m-%d.org")
-  (setq org-journal-time-format "")
-  (setq org-journal-time-prefix "** TODO ")
-  (setq org-log-done 'time)
-  (setq org-log-into-drawer t)
-  (setq org-refile-targets '((org-agenda-files :maxlevel . 1)))
-  (setq org-superstar-headline-bullets-list '("" "●" "○" "◦" "•" "◦" "•"))
-  (setq org-superstar-item-bullet-alist '((?+ . ?•) (?* . ?•) (?- . ?•)))
-  (setq org-tags-column 1)
-  (setq org-todo-keywords '((sequence "TODO" "|" "DONE" "REJECTED")))
-#+end_src
-
-#+begin_src emacs-lisp :tangle "user-config.el"
-  (defun my-org-mode-hook ()
-    (auto-fill-mode 0)
-    ;; commenting out as `nil` is a bad background param, but leaving it in as a todo
-    ;; (face-remap-add-relative 'hl-line `(:background nil))
-    (org-indent-mode)
-    (variable-pitch-mode 1)
-    (visual-fill-column-mode 1)
-    (visual-line-mode 1)
-    (setq evil-auto-indent nil
-          visual-fill-column-width 120
-          visual-fill-column-center-text t))
-
-  (add-hook 'org-mode-hook 'my-org-mode-hook)
 #+end_src
 
 ** Slack

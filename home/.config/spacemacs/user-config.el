@@ -184,6 +184,43 @@
 
 (add-hook 'dired-mode-hook 'diredfl-mode)
 
+(with-eval-after-load 'evil
+  (dolist (mapping
+           '((evil-next-line . evil-next-visual-line)
+             (evil-previous-line . evil-previous-visual-line)
+             (evil-beginning-of-line . evil-beginning-of-visual-line)
+             (evil-end-of-line . evil-end-of-visual-line)))
+    (define-key visual-line-mode-map
+                (vector 'remap (car mapping))
+                (cdr mapping))))
+
+;; TODO: a lot of this is shared with Org mode, can the code by dryed?
+(defun my-markdown-mode-hook ()
+  (auto-fill-mode 0)
+  (face-remap-set-base 'hl-line nil)
+  (markdown-toggle-markup-hiding t)
+  (variable-pitch-mode 1)
+  (visual-fill-column-mode 1)
+  (visual-line-mode 1)
+  (setq evil-auto-indent nil
+        visual-fill-column-width 120
+        visual-fill-column-center-text t))
+
+(add-hook 'markdown-mode-hook 'my-markdown-mode-hook)
+
+(defun my-org-mode-hook ()
+  (auto-fill-mode 0)
+  (face-remap-set-base 'hl-line nil)
+  (org-indent-mode)
+  (variable-pitch-mode 1)
+  (visual-fill-column-mode 1)
+  (visual-line-mode 1)
+  (setq evil-auto-indent nil
+        visual-fill-column-width 120
+        visual-fill-column-center-text t))
+
+(add-hook 'org-mode-hook 'my-org-mode-hook)
+
 (setq message-send-mail-function 'smtpmail-send-it
   smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
   smtpmail-auth-credentials (expand-file-name "~/.authinfo")
@@ -323,35 +360,6 @@
 
 (setq lsp-modeline-code-action-fallback-icon "")
 (setq lsp-progress-prefix " ")
-
-;; TODO: a lot of this is shared with Org mode, can the code by dryed?
-(defun my-markdown-mode-hook ()
-  (auto-fill-mode 0)
-  ;; commenting out as `nil` is a bad background param, but leaving it in as a todo
-  ;; (face-remap-add-relative 'hl-line `(:background nil))
-  (markdown-toggle-markup-hiding t)
-  (variable-pitch-mode 1)
-  (visual-fill-column-mode 1)
-  (visual-line-mode 1)
-  (setq evil-auto-indent nil
-        visual-fill-column-width 120
-        visual-fill-column-center-text t))
-
-(add-hook 'markdown-mode-hook 'my-markdown-mode-hook)
-
-(defun my-org-mode-hook ()
-  (auto-fill-mode 0)
-  ;; commenting out as `nil` is a bad background param, but leaving it in as a todo
-  ;; (face-remap-add-relative 'hl-line `(:background nil))
-  (org-indent-mode)
-  (variable-pitch-mode 1)
-  (visual-fill-column-mode 1)
-  (visual-line-mode 1)
-  (setq evil-auto-indent nil
-        visual-fill-column-width 120
-        visual-fill-column-center-text t))
-
-(add-hook 'org-mode-hook 'my-org-mode-hook)
 
 (slack-register-team
  :name "cleo-team"
