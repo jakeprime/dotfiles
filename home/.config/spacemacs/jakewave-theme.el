@@ -24,12 +24,13 @@
 (defvar jake-purple "#9963ff")
 (defvar jake-purple-subtle "#574497")
 
-(let ((jake-fixed "MonaspiceAr NFM")
-      (jake-variable "Noto Sans")
+(let ((jake-fixed "MonaspiceNe NFM")
+      (jake-variable "Source Sans 3")
       (jake-variable-heading "Baumans")
       (jake-script "MonaspiceRn Nerd Font")
 
       (jake-normal-weight 'light)
+      (jake-font-height (cond (jake/is-mac 130) (jake/is-linux 110) (t 120)))
 
       (jake-org-2 (jake-interpolate-color jake-yellow jake-cyan 0.0))
       (jake-org-3 (jake-interpolate-color jake-yellow jake-cyan 0.3))
@@ -39,9 +40,15 @@
       (jake-org-7 (jake-interpolate-color jake-yellow jake-cyan 0.9))
       (jake-org-8 (jake-interpolate-color jake-yellow jake-cyan 0.95)))
 
+  (set-face-attribute
+   'default nil
+   :family jake-fixed
+   :height jake-font-height
+   :weight jake-normal-weight)
 
   (defface jake-script `((t (:family ,jake-script))) "jakewave script face.")
   (defface jake-highlight `((t (:background ,jake-purple-dark))) "jakewave dark purple")
+  (defface jake-doc-heading `((t (:family ,jake-variable-heading :weight light))) "jakewave document heading")
 
   (defface jake-no-glow `((t)) "jakewave non glowing face.")
 
@@ -294,14 +301,14 @@
    `(org-ellipsis ((t (:inherit jake-green-glow :foreground unspecified))))
    `(org-indent ((t (:inherit (org-hide fixed-pitch)))))
    `(org-journal-calendar-entry-face ((t (:foreground unspecified))))
-   `(org-level-1 ((t (:family ,jake-variable-heading :inherit jake-pink-glow :foreground unspecified :height 2.0))))
-   `(org-level-2 ((t (:family ,jake-variable-heading :foreground ,jake-org-2 :height 1.5))))
-   `(org-level-3 ((t (:family ,jake-variable-heading :foreground ,jake-org-3 :height 1.25))))
-   `(org-level-4 ((t (:family ,jake-variable-heading :foreground ,jake-org-4 :height 1.1))))
-   `(org-level-5 ((t (:family ,jake-variable-heading :foreground ,jake-org-5 :height 1.1))))
-   `(org-level-6 ((t (:family ,jake-variable-heading :foreground ,jake-org-6 :height 1.1))))
-   `(org-level-7 ((t (:family ,jake-variable-heading :foreground ,jake-org-7 :height 1.1))))
-   `(org-level-8 ((t (:family ,jake-variable-heading :foreground ,jake-org-8 :height 1.1))))
+   `(org-level-1 ((t (:inherit (jake-doc-heading jake-pink-glow) :foreground unspecified :height 2.0 :weight unspecified))))
+   `(org-level-2 ((t (:inherit jake-doc-heading :foreground ,jake-org-2 :height 1.5))))
+   `(org-level-3 ((t (:inherit jake-doc-heading :foreground ,jake-org-3 :height 1.25))))
+   `(org-level-4 ((t (:inherit jake-doc-heading :foreground ,jake-org-4 :height 1.1))))
+   `(org-level-5 ((t (:inherit jake-doc-heading :foreground ,jake-org-5 :height 1.0))))
+   `(org-level-6 ((t (:inherit jake-doc-heading :foreground ,jake-org-6 :height 1.0))))
+   `(org-level-7 ((t (:inherit jake-doc-heading :foreground ,jake-org-7 :height 1.0))))
+   `(org-level-8 ((t (:inherit jake-doc-heading :foreground ,jake-org-8 :height 1.0))))
    `(org-link ((t (:inherit (jake-cyan-highlight-glow) :foreground unspecified :underline unspecified))))
    `(org-meta-line ((t (:inherit (fixed-pitch) :foreground ,jake-purple-subtle :background unspecified :height 0.75))))
    `(org-priority ((t (:inherit (jake-script jake-purple) :foreground unspecified :height 0.75 :weight ,jake-normal-weight))))

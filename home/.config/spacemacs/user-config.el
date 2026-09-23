@@ -11,18 +11,6 @@
 
 (add-to-list 'custom-theme-load-path "~/.config/spacemacs/")
 
-(defconst jake/font-height
-  (cond
-   (jake/is-mac 130)
-   (jake/is-linux 110)
-   (t 120)))
-
-(set-face-attribute
- 'default nil
- :family "MonaspiceAr Nerd Font"
- :height jake/font-height
- :weight 'light)
-
 (load-theme 'jakewave t)
 (load-theme 'jakewave t)
 
@@ -30,7 +18,7 @@
 (setq lsp-ui-doc-border "#200933")
 
 ;; need proportional width for nerdfonts or they overlap
-(setq nerd-icons-font-family "MonaspiceAr Nerd Font Propo")
+(setq nerd-icons-font-family "MonaspiceNe Nerd Font Propo")
 
 ;; (use-package ai-code
 ;;   :config
