@@ -45,6 +45,7 @@ This function should only modify configuration layer settings."
      auto-completion
      csv
      colors
+     command-log
      compleseus
      emacs-lisp
      git
