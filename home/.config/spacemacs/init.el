@@ -462,6 +462,7 @@ It should only modify the values of Spacemacs settings."
    ;; When used in a plist, `visual' takes precedence over `relative'.
    ;; (default nil)
    dotspacemacs-line-numbers '(:disabled-for-modes dired-mode
+                                                   markdown-mode
                                                    org-mode)
 
    ;; Code folding method. Possible values are `evil', `origami' and `vimish'.

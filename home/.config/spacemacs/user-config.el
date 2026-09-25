@@ -198,6 +198,7 @@
 (defun my-markdown-mode-hook ()
   (auto-fill-mode 0)
   (face-remap-set-base 'hl-line nil)
+  (hl-todo-mode 0)
   (markdown-toggle-markup-hiding t)
   (variable-pitch-mode 1)
   (visual-fill-column-mode 1)
