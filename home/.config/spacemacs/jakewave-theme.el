@@ -25,8 +25,8 @@
 (defvar jake-purple-subtle "#574497")
 
 (let ((jake-fixed "MonaspiceNe NFM")
-      (jake-variable "Source Sans 3")
-      (jake-variable-heading "Baumans")
+      (jake-variable "SauceSans3 Nerd Font")
+      (jake-variable-heading "Baumans Nerd Font")
       (jake-script "MonaspiceRn Nerd Font")
 
       (jake-normal-weight 'light)
