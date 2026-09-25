@@ -91,6 +91,10 @@ This function should only modify configuration layer settings."
      ;; (claude-code :location (recipe :fetcher github :repo "stevemolitor/claude-code.el"))
      ;; (claude-code-ide :location (recipe :fetcher github :repo "manzaltu/claude-code-ide.el"))
      diredfl
+     (markdown-mode :location (recipe
+                               :fetcher github
+                               :repo "jakeprime/markdown-mode"
+                               :branch "feat/gfm-callouts"))
      mise
      (ruby-test-mode :location (recipe
                                 :fetcher github
@@ -616,7 +620,6 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (load-file "~/.config/spacemacs/user-config.el")
-  (load-file "~/.config/spacemacs/jake-markdown.el")
 
   )
 
