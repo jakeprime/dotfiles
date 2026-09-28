@@ -214,6 +214,13 @@ These pos-tips actually use system windows, so not easy to style, and in Hyprlan
   (setq treesit-font-lock-level 4)
 #+end_src
 
+*** Elisp
+The auto-indenting is generally useful, but it's a different style to some open source projects, which is a nightmare.
+
+#+begin_src emacs-lisp :tangle "layer-config.el"
+(setq emacs-lisp-format-on-save nil)
+#+end_src
+
 *** Ruby
 **** Cleo console
 Define the Cleo prompt format, otherwise it's not possible to retrieve previous commands by pressing the up arrow.

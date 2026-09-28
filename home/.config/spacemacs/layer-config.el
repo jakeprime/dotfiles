@@ -2,6 +2,8 @@
 
 ;; (setq gptel-model 'gpt-4o-mini)
 
+(setq emacs-lisp-format-on-save nil)
+
 (setq javascript-backend 'lsp)
 (setq javascript-fmt-on-save t)
 (setq javascript-fmt-tool 'prettier)
