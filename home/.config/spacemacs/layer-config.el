@@ -57,6 +57,15 @@
 (setq slack-enable-global-mode-string t)
 (setq slack-modeline-count-only-subscribed-channel nil)
 (setq slack-prefer-current-team t)
+(setq slack-render-profile-images-p nil)
+
+(defun jake/slack-hook ()
+    (variable-pitch-mode 1)
+    (visual-fill-column-mode 1)
+    (visual-line-mode 1)
+    (setq visual-fill-column-width 120))
+
+(add-hook 'slack-message-buffer-mode-hook #'jake/slack-hook)
 
 (setq shell-default-height 30)
 (setq shell-default-position 'bottom)

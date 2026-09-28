@@ -722,22 +722,33 @@ The Ruby syntax highlighting takes precedence over the smerge font faces when di
 ** Slack
 
 #+begin_src emacs-lisp :tangle "layer-config.el"
-  (setq slack-enable-global-mode-string t)
-  (setq slack-modeline-count-only-subscribed-channel nil)
+    (setq slack-enable-global-mode-string t)
+    (setq slack-modeline-count-only-subscribed-channel nil)
   (setq slack-prefer-current-team t)
+    (setq slack-render-profile-images-p nil)
+
+    (defun jake/slack-hook ()
+        (variable-pitch-mode 1)
+        (visual-fill-column-mode 1)
+        (visual-line-mode 1)
+        (setq visual-fill-column-width 120))
+
+    (add-hook 'slack-message-buffer-mode-hook #'jake/slack-hook)
 #+end_src
 
 #+begin_src emacs-lisp :tangle "user-config.el"
-  (slack-register-team
-   :name "cleo-team"
-   :default t
-   :client-id "jake@meetcleo.com"
-   :token (auth-source-pick-first-password
-           :host "cleo-team.slack.com"
-           :user "token")
-   :cookie (auth-source-pick-first-password
+
+  (with-eval-after-load 'slack
+    (slack-register-team
+    :name "cleo-team"
+    :default t
+    :client-id "jake@meetcleo.com"
+    :token (auth-source-pick-first-password
             :host "cleo-team.slack.com"
-            :user "cookie"))
+            :user "token")
+    :cookie (auth-source-pick-first-password
+              :host "cleo-team.slack.com"
+              :user "cookie")))
 #+end_src
 
 ** Terminal

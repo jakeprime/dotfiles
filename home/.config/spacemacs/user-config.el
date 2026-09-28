@@ -362,13 +362,14 @@
 (setq lsp-modeline-code-action-fallback-icon "")
 (setq lsp-progress-prefix " ")
 
-(slack-register-team
- :name "cleo-team"
- :default t
- :client-id "jake@meetcleo.com"
- :token (auth-source-pick-first-password
-         :host "cleo-team.slack.com"
-         :user "token")
- :cookie (auth-source-pick-first-password
+(with-eval-after-load 'slack
+  (slack-register-team
+  :name "cleo-team"
+  :default t
+  :client-id "jake@meetcleo.com"
+  :token (auth-source-pick-first-password
           :host "cleo-team.slack.com"
-          :user "cookie"))
+          :user "token")
+  :cookie (auth-source-pick-first-password
+            :host "cleo-team.slack.com"
+            :user "cookie")))

@@ -100,6 +100,9 @@ This function should only modify configuration layer settings."
                                 :fetcher github
                                 :repo "jakeprime/ruby-test-mode"
                                 :branch "configure-test-command"))
+     (slack :location "~/repos/emacs-slack")
+     ;; slack dependencies
+     alert circe oauth2 request ts websocket
      transient-posframe
      typespec-ts-mode)
 
