@@ -35,7 +35,8 @@ export TERRAGRUNT_DOWNLOAD=${HOME}/.terragrunt-cache
 export TERRAGRUNT_PROVIDER_CACHE=1
 export TERRAGRUNT_PROVIDER_CACHE_DIR="$HOME/.terragrunt-provider-cache"
 export TF_PLUGIN_CACHE_DIR=${HOME}/.terraform.d/plugin-cache
-alias dracarys="bundle exec rails db:reset data:quick_sync_prod db:seed db:migrate stripe:setup_dev"
+alias setup_dev_user="bundle exec rails runner \"AdminUser.create(email: 'jake@meetcleo.com', job_role: :engineer, password: '$(pass cleo/dev_password)')\""
+alias dracarys="bundle exec rails db:reset data:quick_sync_prod db:seed db:migrate stripe:setup_dev && setup_dev_user"
 
 # git
 alias gadd="git add -N . && git add -p ."
