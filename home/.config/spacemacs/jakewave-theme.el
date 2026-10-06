@@ -254,6 +254,8 @@
    `(magit-diff-hunk-heading-highlight ((t (:inherit jake-purple-glow :foreground unspecified :background ,jake-dark :underline t))))
    `(magit-diff-revision-summary-highlight ((t (:inherit jake-pink-glow :foreground unspecified))))
    `(magit-section-highlight ((t :inherit jake-highlight :background unspecified)))
+   `(markdown-blockquote-face ((t :inherit jake-no-glow)))
+   `(markdown-gfm-callout-face ((t :inherit jake-no-glow :background ,jake-purple-dark :extend t)))
    `(markdown-code-face ((t :inherit org-verbatim :height 1.0 :extend t)))
    `(markdown-header-face-1 ((t :inherit org-level-1 :foreground unspecified)))
    `(markdown-header-face-2 ((t :inherit org-level-2 :foreground unspecified)))
