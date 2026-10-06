@@ -642,7 +642,8 @@ This function is called at the very end of Spacemacs initialization."
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
    '(safe-local-variable-values
-     '((eval setq flycheck-javascript-eslint-executable
+     '((flycheck-reekrc . "~/.config/jake/projects/meetcleo/meetcleo/reek.yml")
+       (eval setq flycheck-javascript-eslint-executable
              (concat (projectile-project-root) "node_modules/.bin/eslint"))
        (lsp-sorbet-use-bundler . t) (lsp-sorbet-as-add-on . t)
        (typescript-backend . tide) (typescript-backend . lsp)
