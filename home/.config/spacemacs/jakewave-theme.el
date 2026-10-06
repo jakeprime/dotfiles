@@ -25,7 +25,7 @@
 (defvar jake-purple-subtle "#574497")
 
 (let ((jake-fixed "MonaspiceNe NFM")
-      (jake-variable "SauceSans3 Nerd Font")
+      (jake-variable "SourceSans3")
       (jake-variable-heading "Baumans Nerd Font")
       (jake-script "MonaspiceRn Nerd Font")
 
@@ -70,6 +70,14 @@
 
   (custom-theme-set-faces
    'jakewave
+
+   `(lui-button-face ((t (:inherit jake-pink-glow :foreground unspecified :underline nil))))
+   `(slack-message-output-text ((t (:weight normal :size 8) )))
+   `(slack-message-output-header ((t (:foreground ,jake-yellow :weight bold :height 1.2))))
+   `(slack-message-date ((t (:inherit header-line :foreground ,jake-purple :extend t :weight normal))))
+   `(slack-message-timestamp ((t (:foreground ,jake-purple))))
+   `(slack-mrkdwn-code-face ((t (:inherit org-verbatim))))
+   `(slack-message-mention-face ((t (:inherit jake-green-glow :foreground unspecified :background unspecified))))
 
    `(ansi-color-black ((t (:foreground ,jake-dark :background ,jake-dark))))
    `(ansi-color-blue ((t (:foreground ,jake-purple :background ,jake-purple))))
@@ -367,7 +375,7 @@
    `(transient-inactive-argument ((t (:inherit jake-purple-glow :foreground unspecified))))
    `(transient-posframe ((t :background ,jake-purple-dark)))
    `(transient-posframe-border ((t :background ,jake-yellow)))
-   `(variable-pitch ((t (:family ,jake-variable :height 1.3 :weight light))))
+   `(variable-pitch ((t (:family ,jake-variable :height 1.3 :weight regular))))
    `(vertical-border ((t (:foreground "#4a1e64"))))
    `(vertico-current ((t (:inherit jake-highlight))))
    `(vertico-group-separator ((t :inherit (jake-script jake-pink-glow) :foreground unspecified :background unspecified :underline ,jake-pink)))
