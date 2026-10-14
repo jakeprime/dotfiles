@@ -78,14 +78,11 @@ menu:
             desc: meetcleo
             cmd: chromium --profile-directory="Profile 1" https://github.com/meetcleo/meetcleo
       - key: "j"
-        desc: Jira
+        desc: Linear
         submenu:
           - key: "j"
-            desc: "Build"
-            cmd: chromium --profile-directory="Profile 1" https://cleo.atlassian.net/jira/software/projects/SA/boards/3841
-          - key: "m"
-            desc: "Mobile"
-            cmd: chromium --profile-directory="Profile 1" https://cleo.atlassian.net/jira/software/c/projects/MOBILE/boards/1540
+            desc: "Boosts"
+            cmd: chromium --profile-directory="Profile 1" https://linear.app/meetcleo/project/boosts-improvements-b897902b4c70/overview
       - key: "l"
         desc: Coralogix
         cmd: chromium --profile-directory="Profile 1" https://cleo.app.coralogix.us
