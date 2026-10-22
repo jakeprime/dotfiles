@@ -25,7 +25,7 @@
 (defvar jake-purple-subtle "#574497")
 
 (let ((jake-fixed "MonaspiceNe NFM")
-      (jake-variable "SourceSans3")
+      (jake-variable "SauceSans3 Nerd Font")
       (jake-variable-heading "Baumans Nerd Font")
       (jake-script "MonaspiceRn Nerd Font")
 
@@ -257,6 +257,7 @@
    `(magit-diff-revision-summary-highlight ((t (:inherit jake-pink-glow :foreground unspecified))))
    `(magit-section-highlight ((t :inherit jake-highlight :background unspecified)))
    `(markdown-blockquote-face ((t :inherit jake-no-glow)))
+   `(markdown-bold-face ((t :weight medium)))
    `(markdown-gfm-callout-face ((t :inherit jake-no-glow :background ,jake-purple-dark :extend t)))
    `(markdown-code-face ((t :inherit org-verbatim :height 1.0 :extend t)))
    `(markdown-header-face-1 ((t :inherit org-level-1 :foreground unspecified)))
@@ -379,7 +380,7 @@
    `(transient-inactive-argument ((t (:inherit jake-purple-glow :foreground unspecified))))
    `(transient-posframe ((t :background ,jake-purple-dark)))
    `(transient-posframe-border ((t :background ,jake-yellow)))
-   `(variable-pitch ((t (:family ,jake-variable :height 1.3 :weight regular))))
+   `(variable-pitch ((t (:family ,jake-variable :height 1.3 :weight light))))
    `(vertical-border ((t (:foreground "#4a1e64"))))
    `(vertico-current ((t (:inherit jake-highlight))))
    `(vertico-group-separator ((t :inherit (jake-script jake-pink-glow) :foreground unspecified :background unspecified :underline ,jake-pink)))
