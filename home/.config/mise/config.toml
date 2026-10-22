@@ -3,6 +3,7 @@ idiomatic_version_file_enable_tools = []
 experimental = true
 
 [tools]
+codex = "latest"
 "gem:bundler" = "latest"
 "gem:kamal" = "latest"
 "gem:reek" = "latest"
