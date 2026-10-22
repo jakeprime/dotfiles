@@ -349,6 +349,18 @@
               (remove-hook 'jit-lock-functions #'jake-smerge-fix-markers t))
             (font-lock-flush)))
 
+(if jake/is-linux
+    (let ((env (shell-command-to-string "keychain -q --noask --eval --dir ~/.local/state/keychain")))
+      (list (and env
+                 (string-match "SSH_AUTH_SOCK[=\s]\"?\\([^\s;\n\"]*\\)" env)
+                 (setenv       "SSH_AUTH_SOCK" (match-string 1 env)))
+            (and env
+                 (string-match "SSH_AGENT_PID[=\s]\"?\\([0-9]*\\)?" env)
+                 (setenv       "SSH_AGENT_PID" (match-string 1 env)))
+            (and env
+                 (string-match "GPG_AGENT_INFO[=\s]\"?\\([^\s;\n\"]*\\)" env)
+                 (setenv       "GPG_AGENT_INFO" (match-string 1 env))))))
+
 (use-package transient-posframe
   :ensure t
   :init (transient-posframe-mode))

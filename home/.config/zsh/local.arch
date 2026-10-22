@@ -11,6 +11,12 @@ if [[ -d /home/linuxbrew ]]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
+keychain_dir=$XDG_STATE_HOME/keychain
+if [[ -z $(keychain list --dir $keychain_dir) ]]; then
+  keychain id_archibald --dir $keychain_dir
+fi
+. $keychain_dir/archibald-sh
+
 alias H=Hyprland
 
 # cleo
