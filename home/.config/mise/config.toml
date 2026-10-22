@@ -27,3 +27,5 @@ node = "latest"
 python = "3"
 
 ruby = "latest"
+rust = "latest"
+zig = "0.17"
