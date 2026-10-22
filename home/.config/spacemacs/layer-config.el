@@ -62,8 +62,8 @@
   (setq slack-render-profile-images-p nil)
 
   (defun jake/slack-hook ()
-      (hl-todo-mode 0)
-      (hl-line-mode 0)
+      ;; (hl-todo-mode 0)
+      ;; (hl-line-mode 0)
       (variable-pitch-mode 1)
       (visual-fill-column-mode 1)
       (visual-line-mode 1)

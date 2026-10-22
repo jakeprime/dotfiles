@@ -100,9 +100,13 @@ This function should only modify configuration layer settings."
                                 :fetcher github
                                 :repo "jakeprime/ruby-test-mode"
                                 :branch "configure-test-command"))
+ 
+     (slack :location (recipe
+                                :fetcher github
+                                :repo "jakeprime/emacs-slack"
+                                :branch "visual-tweaks"))
      (slack :location "~/repos/emacs-slack")
-     ;; slack dependencies
-     alert circe oauth2 request ts websocket
+     alert circe oauth2 request ts websocket ; slack dependencies
      transient-posframe
      typespec-ts-mode)
 
@@ -624,8 +628,11 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (load-file "~/.config/spacemacs/user-config.el")
 
-  (load-file "~/repos/emacs-slack/slack-message-buffer.el")
-
+  ;; (load-file "~/repos/emacs-slack/slack-block-table.el")
+  ;; (load-file "~/repos/emacs-slack/slack-attachment.el")
+  ;; (load-file "~/repos/emacs-slack/slack-message-faces.el")
+  ;; (load-file "~/repos/emacs-slack/slack-message-buffer.el")
+  ;; (load-file "~/repos/emacs-slack/slack-message-formatter.el")
   )
 
 

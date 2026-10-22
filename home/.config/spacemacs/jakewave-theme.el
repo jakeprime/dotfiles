@@ -78,6 +78,8 @@
    `(slack-message-timestamp ((t (:foreground ,jake-purple))))
    `(slack-mrkdwn-code-face ((t (:inherit org-verbatim))))
    `(slack-message-mention-face ((t (:inherit jake-green-glow :foreground unspecified :background unspecified))))
+   `(slack-attachment-block ((t (:background ,jake-purple-dark :extend t))))
+   `(slack-attachment-border ((t (:background ,jake-green))))
 
    `(ansi-color-black ((t (:foreground ,jake-dark :background ,jake-dark))))
    `(ansi-color-blue ((t (:foreground ,jake-purple :background ,jake-purple))))
