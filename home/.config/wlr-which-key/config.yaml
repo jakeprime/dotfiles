@@ -31,64 +31,76 @@ menu:
         submenu:
           - key: "d"
             desc: Dev
-            cmd: chromium --profile-directory="Profile 1" https://jake.dev.cleoites.tech/admin
+            cmd: chromium --profile-directory="Profile 2" https://jake.dev.cleoites.tech/admin
           - key: "p"
             desc: Production
-            cmd: chromium --profile-directory="Profile 1" https://meetcleo.com/admin
+            cmd: chromium --profile-directory="Profile 2" https://meetcleo.com/admin
           - key: "s"
             desc: Staging
-            cmd: chromium --profile-directory="Profile 1" https://cleo-staging.cleoites.tech/admin
+            cmd: chromium --profile-directory="Profile 2" https://cleo-staging.cleoites.tech/admin
       - key: "b"
         desc: Hi Bob
-        cmd: chromium --profile-directory="Profile 1" https://app.hibob.com/home
+        cmd: chromium --profile-directory="Profile 2" https://app.hibob.com/home
       - key: "c"
-        desc: CircleCI
+        desc: "C…"
         submenu:
-          - key: "a"
-            desc: All
-            cmd: chromium --profile-directory="Profile 1" https://app.circleci.com/pipelines/github/meetcleo
           - key: "i"
-            desc: My branches
-            cmd: chromium --profile-directory="Profile 1" https://app.circleci.com/pipelines/github/meetcleo/meetcleo?filter=mine
-          - key: "m"
-            desc: meetcleo - main
-            cmd: chromium --profile-directory="Profile 1" https://app.circleci.com/pipelines/github/meetcleo/meetcleo?branch=main
-          - key: "r"
-            desc: meetcleo
-            cmd: chromium --profile-directory="Profile 1" https://app.circleci.com/pipelines/github/meetcleo/meetcleo
+            desc: CircleCI
+            submenu:
+              - key: "a"
+                desc: All
+                cmd: chromium --profile-directory="Profile 2" https://app.circleci.com/pipelines/github/meetcleo
+              - key: "i"
+                desc: My branches
+                cmd: chromium --profile-directory="Profile 2" https://app.circleci.com/pipelines/github/meetcleo/meetcleo?filter=mine
+              - key: "m"
+                desc: meetcleo - main
+                cmd: chromium --profile-directory="Profile 2" https://app.circleci.com/pipelines/github/meetcleo/meetcleo?branch=main
+              - key: "r"
+                desc: meetcleo
+                cmd: chromium --profile-directory="Profile 2" https://app.circleci.com/pipelines/github/meetcleo/meetcleo
+          - key: "o"
+            desc: "Co…"
+            submenu:
+              - key: "r"
+                desc: Coralogix
+                cmd: chromium --profile-directory="Profile 2" https://cleo.app.coralogix.us
+              - key: "u"
+                desc: Count
+                cmd: chromium --profile-directory="Profile 2" https://eu.count.co/canvas/0yY4pPnHnfD
       - key: "d"
         desc: "Dashboards"
         submenu:
           - key: "c"
             desc: CEO
-            cmd: chromium --profile-directory="Profile 1" https://cleo-dashboard.com/
+            cmd: chromium --profile-directory="Profile 2" https://cleo-dashboard.com/
           - key: "e"
             desc: Eng Health
-            cmd: chromium --profile-directory="Profile 1" https://eng-health.meetcleo.com/
-      - key: "h"
-        desc: IT Support
-        cmd: chromium --profile-directory="Profile 1" https://cleo.atlassian.net/servicedesk/customer/portal/4
+            cmd: chromium --profile-directory="Profile 2" https://eng-health.meetcleo.com/
       - key: "g"
         desc: Github
         submenu:
           - key: "m"
             desc: mobile-app
-            cmd: chromium --profile-directory="Profile 1" https://github.com/meetcleo/mobile-app
+            cmd: chromium --profile-directory="Profile 2" https://github.com/meetcleo/mobile-app
           - key: "r"
             desc: meetcleo
-            cmd: chromium --profile-directory="Profile 1" https://github.com/meetcleo/meetcleo
+            cmd: chromium --profile-directory="Profile 2" https://github.com/meetcleo/meetcleo
+      - key: "h"
+        desc: IT Support
+        cmd: chromium --profile-directory="Profile 2" https://cleo.atlassian.net/servicedesk/customer/portal/4
       - key: "j"
         desc: Linear
         submenu:
           - key: "j"
             desc: "Boosts"
-            cmd: chromium --profile-directory="Profile 1" https://linear.app/meetcleo/project/boosts-improvements-b897902b4c70/overview
+            cmd: chromium --profile-directory="Profile 2" https://linear.app/meetcleo/project/boosts-improvements-b897902b4c70/overview
       - key: "l"
         desc: Coralogix
-        cmd: chromium --profile-directory="Profile 1" https://cleo.app.coralogix.us
+        cmd: chromium --profile-directory="Profile 2" https://cleo.app.coralogix.us
       - key: "n"
         desc: Notion
-        cmd: chromium --profile-directory="Profile 1" https://www.notion.so/meetcleo/8f139b0207474ba4b4fe3bb81caf5be7
+        cmd: chromium --profile-directory="Profile 2" https://www.notion.so/meetcleo/8f139b0207474ba4b4fe3bb81caf5be7
   - key: "p"
     desc: Personal
     submenu:

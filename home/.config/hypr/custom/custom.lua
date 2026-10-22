@@ -1,0 +1,7 @@
+require("~/.config/hypr/custom/autostart.lua")
+require("~/.config/hypr/custom/bindings.lua")
+require("~/.config/hypr/custom/envs.lua")
+require("~/.config/hypr/custom/input.lua")
+require("~/.config/hypr/custom/monitors.lua")
+require("~/.config/hypr/custom/rules.lua")
+require("~/.config/hypr/custom/style.lua")

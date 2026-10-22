@@ -1,0 +1,5 @@
+hl.on("hyprland.start", function ()
+  hl.exec_cmd("GDK_WAYLAND_DISABLE=ext_background_effect_manager_v1 hyprswitch init --custom-css ~/.config/hypr/hyprswitch/hyprswitch.css &")
+  hl.exec_cmd("(pkill walker || true) && uwsm app -- walker --gapplication-service &")
+  hl.exec_cmd("vicinae server &")
+end)

@@ -5,7 +5,7 @@ position=$1
 params() {
     local x=$(echo "scale=0; ($1 + 0.5) / 1" | bc)
     local y=$(echo "scale=0; ($2 + 0.5) / 1" | bc)
-    echo "exact $x $y"
+    echo "{ x = $x, y = $y }"
 }
 
 math() {
@@ -22,8 +22,8 @@ screen_y=$(hyprctl -j monitors | jq -r ".[$monitor].y")
 taskbar_height=$(hyprctl -j monitors | jq -r ".[$monitor].reserved[1]")
 scale=$(hyprctl -j monitors | jq -r ".[$monitor].scale")
 
-gaps_out=$(hyprctl -j getoption "general:gaps_out" | jq -r ".custom | split(\" \") | .[0]")
-gaps_in=$(hyprctl -j getoption "general:gaps_in" | jq -r ".custom | split(\" \") | .[0]")
+gaps_out=$(hyprctl -j getoption "general:gaps_out" | jq -r ".css | split(\" \") | .[0]")
+gaps_in=$(hyprctl -j getoption "general:gaps_in" | jq -r ".css | split(\" \") | .[0]")
 border_size=$(hyprctl -j getoption "general:border_size" | jq -r ".int")
 
 origin_x=$(math "$screen_x + $gaps_out")
@@ -101,6 +101,6 @@ resize_params=$(params $window_width $window_height)
 # echo "resize_params: $resize_params"
 # echo "move_params: $move_params"
 
-hyprctl dispatch setfloating
-hyprctl dispatch resizeactive $resize_params
-hyprctl dispatch moveactive $move_params
+# hyprctl dispatch "hl.dsp.window.float({ action = \"set\" })"
+hyprctl dispatch "hl.dsp.window.resize($resize_params)"
+hyprctl dispatch "hl.dsp.window.move($move_params)"
