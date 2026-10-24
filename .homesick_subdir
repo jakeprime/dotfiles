@@ -1,3 +1,4 @@
 .config
 .local/bin
+.local/share/icons
 .oh-my-zsh
