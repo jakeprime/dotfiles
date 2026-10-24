@@ -32,6 +32,13 @@ Don't put autosave files in the same folder, it messes with things that detect f
   (setq create-lockfiles nil)
 #+end_src
 
+*** Clipboard
+
+#+begin_src emacs-lisp :tangle "user-config.el"
+  (if jake/is-linux
+      (progn (define-key evil-normal-state-map (kbd "C-v") #'spacemacs/evil-mc-paste-after)
+             (define-key evil-insert-state-map (kbd "C-v") #'spacemacs/evil-mc-paste-after)))
+#+end_src
 *** Helpers
 
 #+begin_src emacs-lisp :tangle "helpers.el"

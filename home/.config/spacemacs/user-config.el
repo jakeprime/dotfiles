@@ -5,6 +5,10 @@
 (setq backup-by-copying t) ; Avoid symlinks getting messed up
 (setq create-lockfiles nil)
 
+(if jake/is-linux
+    (progn (define-key evil-normal-state-map (kbd "C-v") #'spacemacs/evil-mc-paste-after)
+           (define-key evil-insert-state-map (kbd "C-v") #'spacemacs/evil-mc-paste-after)))
+
 (add-hook 'after-init-hook #'global-mise-mode)
 (require 'mise)
 (global-mise-mode)
